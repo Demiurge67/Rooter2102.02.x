@@ -1,4 +1,4 @@
-m = Map("dawn", translate("Hearing Map"), translate("Hearing Map"))
+m = Map("dawn", "Hearing Map", translate("Hearing Map"))
 m.pageaction = false
 
 s = m:section(NamedSection, "__hearingmap__")
@@ -16,20 +16,20 @@ function s.render(self, sid)
 			for name, macs in pairs(stat) do
 		%>
 			<div class="cbi-section-node">
-				<h3><%:SSID: %><%= xml.pcdata(name) %></h3>
+				<h3>SSID: <%= xml.pcdata(name) %></h3>
 				<table class="table" id="dawn_hearing_map">
 					<tr class="tr table-titles">
-						<th class="th"><%:Client MAC%></th>
-						<th class="th"><%:AP MAC%></th>
-						<th class="th"><%:Frequency%></th>
-						<th class="th"><%:HT Sup%></th>
-						<th class="th"><%:VHT Sup%></th>
-						<th class="th"><%:Signal%></th>
-						<th class="th"><%:RCPI%></th>
-						<th class="th"><%:RSNI%></th>
-						<th class="th"><%:Channel Utilization%></th>
-						<th class="th"><%:Station connect to AP%></th>
-						<th class="th"><%:Score%></th>
+						<th class="th">Client MAC</th>
+						<th class="th">AP MAC</th>
+						<th class="th">Frequency</th>
+						<th class="th">HT Sup</th>
+						<th class="th">VHT Sup</th>
+						<th class="th">Signal</th>
+						<th class="th">RCPI</th>
+						<th class="th">RSNI</th>
+						<th class="th">Channel Utilization</th>
+						<th class="th">Station connect to AP</th>
+						<th class="th">Score</th>
 					</tr>
 					<%
 						local mac, data
@@ -42,7 +42,7 @@ function s.render(self, sid)
 						<tr class="tr">
 							<td class="td"><%= (count_loop == 0) and mac or "" %></td>
 							<td class="td"><%= mac2 %></td>
-							<td class="td"><%= "%.3f" %( data2.freq / 1000 ) %> <%:GHz Channel:%> <%= "%d" %( status.frequency_to_channel(data2.freq) ) %></td>
+							<td class="td"><%= "%.3f" %( data2.freq / 1000 ) %> GHz Channel: <%= "%d" %( status.frequency_to_channel(data2.freq) ) %></td>
 							<td class="td"><%= (data2.ht_capabilities == true and data2.ht_support == true) and "True" or "False" %></td>
 							<td class="td"><%= (data2.vht_capabilities == true and data2.vht_support == true) and "True" or "False" %></td>
 							<td class="td"><%= "%d" % data2.signal %></td>
