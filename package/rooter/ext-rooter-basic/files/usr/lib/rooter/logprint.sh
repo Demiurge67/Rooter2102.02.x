@@ -1,5 +1,5 @@
 #!/bin/sh
 #
 
-modlog "Log Print " "$1 $2 $3 $4 $5 $6"
+logger -t "Log Print " "$@"
 exit 0

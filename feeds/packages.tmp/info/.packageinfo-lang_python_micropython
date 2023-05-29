@@ -1,59 +1,25 @@
 Source-Makefile: feeds/packages/lang/python/micropython/Makefile
-Build-Types: host
 
-Package: micropython-mbedtls
+Package: micropython
 Submenu: Python
-Version: 1.18-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libffi +libmbedtls
-Conflicts: 
-Menu-Depends: 
-Provides: micropython
-Build-Variant: mbedtls
-Default-Variant: mbedtls
-Section: lang
-Category: Languages
-Repository: base
-Title: MicroPython (mbedtls)
-Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: micropython-1.18.tar.xz
-License: MIT
-LicenseFiles: LICENSE
-Type: ipkg
-Description:   MicroPython is a lean and efficient implementation of the Python 3
-  programming language that includes a small subset of the Python
-  standard library and is optimised to run on microcontrollers and in
-  constrained environments.
-
-  This version uses the Mbed TLS library.
-https://micropython.org
-Jeffery To <jeffery.to@gmail.com>
-@@
-
-Package: micropython-nossl
-Submenu: Python
-Version: 1.18-1
+Version: 1.9.4-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libffi
 Conflicts: 
 Menu-Depends: 
-Provides: micropython
-Build-Variant: nossl
+Provides: 
 Section: lang
 Category: Languages
 Repository: base
-Title: MicroPython (nossl)
-Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: micropython-1.18.tar.xz
+Title: Micro Python
+Maintainer: Roger D <rogerdammit@gmail.com>
+Source: micropython-1.9.4.tar.gz
 License: MIT
 LicenseFiles: LICENSE
 Type: ipkg
-Description:   MicroPython is a lean and efficient implementation of the Python 3
-  programming language that includes a small subset of the Python
-  standard library and is optimised to run on microcontrollers and in
-  constrained environments.
-
-  This version is built without TLS and upip.
+Description:  This package contains Micro Python, a lean and fast implementation of the Python 3.4 programming language
+ that is optimised to run on a microcontroller (and low power computers).
 https://micropython.org
-Jeffery To <jeffery.to@gmail.com>
+Roger D <rogerdammit@gmail.com>
 @@
 
 

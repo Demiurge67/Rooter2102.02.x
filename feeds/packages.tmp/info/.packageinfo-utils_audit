@@ -1,7 +1,8 @@
 Source-Makefile: feeds/packages/utils/audit/Makefile
+Build-Types: host
 
 Package: libauparse
-Version: 2.8.5-0
+Version: 2.8.5-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libaudit
 Conflicts: 
 Menu-Depends: 
@@ -24,7 +25,7 @@ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 @@
 
 Package: audit-utils
-Version: 2.8.5-0
+Version: 2.8.5-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libaudit +libauparse
 Conflicts: 
 Menu-Depends: 
@@ -47,7 +48,7 @@ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 @@
 
 Package: audit
-Version: 2.8.5-0
+Version: 2.8.5-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libaudit +libauparse +audit-utils +libev
 Conflicts: 
 Menu-Depends: 

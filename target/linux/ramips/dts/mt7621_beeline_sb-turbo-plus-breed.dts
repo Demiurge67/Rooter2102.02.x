@@ -70,8 +70,8 @@
 		};
 	};
 	
-	palmbus@1E000000 {
-		uartlite3@e00 {
+	palmbus: palmbus@1E000000 {
+		uartlite3: uartlite3@e00 {
 			compatible = "ns16550a";
 			reg = <0xe00 0x100>;
 

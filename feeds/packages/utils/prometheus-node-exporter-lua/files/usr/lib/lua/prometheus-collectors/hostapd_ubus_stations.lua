@@ -1,13 +1,14 @@
 local ubus = require "ubus"
 local bit = require "bit"
 
-local function get_wifi_hostapd_interfaces(u)
-  local ubuslist = u:objects()
+local function get_wifi_interfaces() -- based on hostapd_stations.lua
+  local u = ubus.connect()
+  local status = u:call("network.wireless", "status", {})
   local interfaces = {}
 
-  for _,net in ipairs(ubuslist) do
-    if net.find(net,"hostapd.") then
-      table.insert(interfaces, net)
+  for _, dev_table in pairs(status) do
+    for _, intf in ipairs(dev_table['interfaces']) do
+      table.insert(interfaces, intf['ifname'])
     end
   end
 
@@ -15,7 +16,6 @@ local function get_wifi_hostapd_interfaces(u)
 end
 
 local function scrape()
-  local u = ubus.connect()
   local metric_hostapd_ubus_station_rrm_caps_link_measurement =
     metric("hostapd_ubus_station_rrm_caps_link_measurement", "gauge")
   local metric_hostapd_ubus_station_rrm_caps_neighbor_report =
@@ -55,15 +55,14 @@ local function scrape()
     metric_hostapd_ubus_station_rrm_caps_ftm_range_report(label_station, rrm_caps_ftm_range_report)
   end
 
-  for _, hostapd_int in ipairs(get_wifi_hostapd_interfaces(u)) do
-    local clients_call = u:call(hostapd_int, "get_clients", {})
-    local ifname = hostapd_int:gsub("hostapd.", "")
+  for _, ifname in ipairs(get_wifi_interfaces()) do
+    local u = ubus.connect()
+    local clients_call = u:call("hostapd." .. ifname, "get_clients", {})
 
     for client, client_table in pairs(clients_call['clients']) do
       evaluate_metrics(ifname,  clients_call['freq'], client, client_table)
     end
   end
-  u:close()
 end
 
 return { scrape = scrape }

@@ -121,26 +121,6 @@ Description:     Translation for luci-app-fwknopd - Čeština (Czech)
 Jonathan Bennett <JBennett@incomsystems.biz>
 @@
 
-Package: luci-i18n-fwknopd-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-fwknopd
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-fwknopd - da translation
-Maintainer: Jonathan Bennett <JBennett@incomsystems.biz>
-Source: 
-License: GPLv2
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-fwknopd - Dansk (Danish)
-Jonathan Bennett <JBennett@incomsystems.biz>
-@@
-
 Package: luci-i18n-fwknopd-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

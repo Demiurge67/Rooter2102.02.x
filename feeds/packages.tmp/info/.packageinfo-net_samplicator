@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/samplicator/Makefile
 
 Package: samplicator
-Version: 2021-10-11-ceeb1d280188c155b71d819282490be86190f6f6-0
+Version: 1.3.6-0
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Network
 Repository: base
 Title: UDP Samplicator
 Maintainer: Nick Hainke <vincent@systemli.org>
-Source: samplicator-2021-10-11-ceeb1d280188c155b71d819282490be86190f6f6.tar.xz
+Source: samplicator-1.3.6.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 Type: ipkg

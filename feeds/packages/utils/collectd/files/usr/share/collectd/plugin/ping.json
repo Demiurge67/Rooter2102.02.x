@@ -1,8 +1,7 @@
 {
 	"string": [
 		"TTL",
-		"Interval",
-		"MaxMissed"
+		"Interval"
 	],
 	"list": [
 		"Host"

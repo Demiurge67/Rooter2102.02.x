@@ -5,7 +5,7 @@ VAL=$2	# 0 or 1
 WAIT=$3	# delay in seconds, optional
 
 log() {
-	modlog "GPIO Set" "$@"
+	logger -t "GPIO Set" "$@"
 }
 
 

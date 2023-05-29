@@ -1,18 +1,19 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libulfius
-PKG_VERSION:=2.7.3
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=2.6.9
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/babelouest/ulfius/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=a20f575b3e81924c4ddb72c4ccdced134b5756a86b017f4a38b51608610628c5
+PKG_HASH:=2255346a7715f14e8a9b8caeeb4f6ccd75e3617371a7028ac062742a972fcc0b
 
 PKG_MAINTAINER:=Toni Uhlig <matzeton@googlemail.com>
 PKG_LICENSE:=LGPL-2.1-or-later
 PKG_LICENSE_FILES:=LICENSE
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)-$(BUILD_VARIANT)/ulfius-$(PKG_VERSION)
+PKG_BUILD_PARALLEL:=1
 CMAKE_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
@@ -38,7 +39,7 @@ define Package/libulfius-gnutls
 $(call Package/libulfius/default)
   TITLE+= with SSL support
   VARIANT:=gnutls
-  DEPENDS:=+libmicrohttpd +libcurl +liborcania +libgnutls +zlib
+  DEPENDS:=+libmicrohttpd +libcurl +libgnutls +liborcania
   PROVIDES:=libulfius
 endef
 

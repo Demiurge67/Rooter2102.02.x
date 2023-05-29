@@ -19,25 +19,22 @@ PKG_LICENSE:=GPL-2.0
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/arptables-legacy
+define Package/arptables
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=ARP firewalling software
   DEPENDS:=+kmod-arptables
   URL:=https://git.netfilter.org/arptables/
-  PROVIDES:=arptables
-  ALTERNATIVES:=\
-    200:/usr/sbin/arptables:/usr/sbin/arptables-legacy
 endef
 
 MAKE_FLAGS += \
 	COPT_FLAGS="$(TARGET_CFLAGS) -D__OPTIMIZE__=1" \
 	KERNEL_DIR="$(LINUX_DIR)"
 
-define Package/arptables-legacy/install
+define Package/arptables/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/arptables $(1)/usr/sbin/arptables-legacy
+	$(CP) $(PKG_BUILD_DIR)/$(PKG_NAME) $(1)/usr/sbin/
 endef
 
-$(eval $(call BuildPackage,arptables-legacy))
+$(eval $(call BuildPackage,arptables))

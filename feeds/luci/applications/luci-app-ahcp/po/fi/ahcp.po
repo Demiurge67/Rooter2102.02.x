@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-04-23 11:39+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"PO-Revision-Date: 2021-06-18 19:32+0000\n"
+"Last-Translator: Demian Wright <wright.demian+weblate@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsahcp/fi/>\n"
 "Language: fi\n"
@@ -10,12 +10,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1-dev\n"
+"X-Generator: Weblate 4.7\n"
 
 #: applications/luci-app-ahcp/luasrc/controller/ahcp.lua:11
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:4
 msgid "AHCP Server"
-msgstr "AHCP-palvelin"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:4
 msgid ""
@@ -27,7 +27,7 @@ msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:34
 msgid "Active AHCP Leases"
-msgstr "Aktiiviset AHCP-lainat"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:38
 msgid "Address"
@@ -39,7 +39,7 @@ msgstr "Lisäasetukset"
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:39
 msgid "Age"
-msgstr "Ikä"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:38
 msgid "Announced DNS servers"
@@ -47,11 +47,11 @@ msgstr "Ilmoitetut DNS-palvelimet"
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:44
 msgid "Announced NTP servers"
-msgstr "Ilmoitetut NTP-palvelimet"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:32
 msgid "Announced prefixes"
-msgstr "Ilmoitetut etuliitteet"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:42
 msgid "Collecting data..."
@@ -59,7 +59,7 @@ msgstr "Kerätään tietoja…"
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:55
 msgid "Disable DNS setup"
-msgstr "Poista DNS-määritykset käytöstä"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:21
 msgid "Forwarder"
@@ -71,7 +71,7 @@ msgstr "Yleiset asetukset"
 
 #: applications/luci-app-ahcp/root/usr/share/rpcd/acl.d/luci-app-ahcp.json:3
 msgid "Grant UCI access for luci-app-ahcp"
-msgstr "Myönnä UCI-pääsy luci-app-ahcp:lle"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:24
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:61
@@ -90,12 +90,12 @@ msgstr "Vain IPv6"
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:97
 msgid "Lease directory"
-msgstr "Lainahakemisto"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:62
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:91
 msgid "Lease validity time"
-msgstr "Lainan pätevyysaika"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:105
 msgid "Log file"
@@ -104,11 +104,11 @@ msgstr "Lokitiedosto"
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:11
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:50
 msgid "Multicast address"
-msgstr "Ryhmälähetysosoite"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:19
 msgid "Operation mode"
-msgstr "Toimintatila"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:17
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:55
@@ -118,15 +118,15 @@ msgstr "Portti"
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:23
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:60
 msgid "Protocol family"
-msgstr "Protokollaperhe"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:23
 msgid "Served interfaces"
-msgstr "Tarjotut sovittimet"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:20
 msgid "Server"
-msgstr "Palvelin"
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:45
 msgid "Specifies the announced IPv4 and IPv6 NTP servers"
@@ -142,16 +142,16 @@ msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:25
 msgid "The AHCP Service is not running."
-msgstr "AHCP-palvelu ei ole käynnissä."
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:27
 msgid "The AHCP Service is running with ID %s."
-msgstr "AHCP-palvelu on käynnissä ID:llä %s."
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/view/ahcp_status.htm:22
 msgid "There are no active leases."
-msgstr "Ei aktiivisia lainoja."
+msgstr ""
 
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:101
 msgid "Unique ID file"
-msgstr "Uniikki ID-tiedosto"
+msgstr ""

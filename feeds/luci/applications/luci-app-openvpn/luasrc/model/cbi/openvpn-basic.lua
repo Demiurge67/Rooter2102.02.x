@@ -42,7 +42,7 @@ local basicParams = {
 	{ ListValue,
 		"comp_lzo",
 		{"yes","no","adaptive"},
-		translate("Security recommendation: It is recommended to not enable compression and set this parameter to `no`")},
+		translate("Use fast LZO compression") },
 	{ Value,
 		"keepalive",
 		"10 60",

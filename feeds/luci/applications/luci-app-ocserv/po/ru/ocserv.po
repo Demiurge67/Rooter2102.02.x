@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-30 16:38+0000\n"
-"Last-Translator: masta0f1eave <lomskoff.dima@gmail.com>\n"
+"PO-Revision-Date: 2021-04-09 12:29+0000\n"
+"Last-Translator: The_BadUser <vanjavs@mail.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsocserv/ru/>\n"
 "Language: ru\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:124
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/user-config.lua:80
@@ -17,8 +17,6 @@ msgid ""
 "<abbr title=\"Classless Inter-Domain Routing\">CIDR</abbr>-Notation: address/"
 "prefix"
 msgstr ""
-"<abbr title=\"Бесклассовая Междоменная Маршрутизация\">CIDR</abbr>-Запись: "
-"адрес/префикс"
 
 #: applications/luci-app-ocserv/luasrc/view/ocserv_status.htm:48
 msgid "Active OpenConnect Users"
@@ -59,7 +57,7 @@ msgstr "DNS-серверы"
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:60
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/user-config.lua:54
 msgid "Dead peer detection time (secs)"
-msgstr "Время обнаружения \"мёртвого узла\" (сек)"
+msgstr ""
 
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/users.lua:70
 #: applications/luci-app-ocserv/luasrc/view/ocserv_status.htm:55
@@ -89,8 +87,6 @@ msgid ""
 "Enable UDP channel support; this must be enabled unless you know what you "
 "are doing"
 msgstr ""
-"Включить поддержку UDP channel; опция должна быть включена только если вы "
-"знаете что делаете"
 
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:66
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:67
@@ -227,8 +223,6 @@ msgid ""
 "The DNS servers to be provided to clients; can be either IPv6 or IPv4. "
 "Typically you should include the address of this device"
 msgstr ""
-"DNS-серверы, предоставляемые клиентам; может быть IPv6 или IPv4. Обычно вы "
-"должны указать адрес этого устройства"
 
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:111
 msgid ""
@@ -285,7 +279,7 @@ msgstr ""
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:57
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/user-config.lua:51
 msgid "The same UDP and TCP ports will be used"
-msgstr "Будут использоваться одни и те же порты UDP и TCP"
+msgstr ""
 
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/main.lua:21
 msgid ""

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-03-13 23:17+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"PO-Revision-Date: 2020-06-24 17:42+0000\n"
+"Last-Translator: Petri Asikainen <uniluodossa@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsnut/fi/>\n"
 "Language: fi\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:216
 msgid "Additional Shutdown Time(s)"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:23
 msgid "Allowed actions"
-msgstr "Sallitut toiminnot"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:20
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:188
@@ -36,11 +36,11 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:174
 msgid "CA Certificate path"
-msgstr "CA-varmenteen polku"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:73
 msgid "Certificate file (SSL)"
-msgstr "Varmennetiedosto (SSL)"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:63
 msgid "Communications lost message"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:35
 msgid "Control UPS via CGI"
-msgstr "Ohjaa UPS:ää CGI:n kautta"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:43
 msgid "Deadtime"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:32
 msgid "Display name"
-msgstr "Näyttönimi"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:169
 msgid "Don't lock port when starting driver"
@@ -84,23 +84,23 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:132
 msgid "Driver"
-msgstr "Ajuri"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:114
 msgid "Driver Configuration"
-msgstr "Ajurin määritys"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:77
 msgid "Driver Global Settings"
-msgstr "Ajurin yleiset asetukset"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:83
 msgid "Driver Path"
-msgstr "Ajurin polku"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:212
 msgid "Driver Shutdown Order"
-msgstr "Ajurin sammutusjärjestys"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:106
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:244
@@ -136,11 +136,11 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:26
 msgid "Forced Shutdown"
-msgstr "Pakotettu sammutus"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:57
 msgid "Forced shutdown message"
-msgstr "Pakotetun sammutuksen viesti"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:10
 msgid "Global Settings"
@@ -160,12 +160,12 @@ msgstr "Palvelin"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:23
 msgid "Hostname or IP address"
-msgstr "Laitenimi tai IP-osoite"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:191
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:220
 msgid "Hostname or address of UPS"
-msgstr "UPS-varavirtalähteen laitenimi tai osoite"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:39
 msgid "Hot Sync"
@@ -173,7 +173,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:41
 msgid "IP Address"
-msgstr "IP-osoite"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:95
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:104
@@ -315,11 +315,11 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:90
 msgid "Notification defaults"
-msgstr "Ilmoituksen oletukset"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:26
 msgid "Notify command"
-msgstr "Ilmoituskomento"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:99
 msgid "Notify when back online"
@@ -386,7 +386,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:63
 msgid "Path to state file"
-msgstr "Polku tilatiedostoon"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:54
 msgid "Period after which data is considered stale"
@@ -453,11 +453,11 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:125
 msgid "SNMP Community"
-msgstr "SNMP-yhteisö"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:222
 msgid "SNMP retries"
-msgstr "SNMP-uudelleenyritykset"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:226
 msgid "SNMP timeout(s)"
@@ -465,39 +465,39 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:230
 msgid "SNMP version"
-msgstr "SNMP-versio"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:232
 msgid "SNMPv1"
-msgstr "SNMPv1"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:233
 msgid "SNMPv2c"
-msgstr "SNMPv2c"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:234
 msgid "SNMPv3"
-msgstr "SNMPv3"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:219
 msgid "Serial Number"
-msgstr "Sarjanumero"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:138
 msgid "Set USB serial port permissions"
-msgstr "Aseta USB-sarjaportin oikeudet"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:25
 msgid "Set variables"
-msgstr "Aseta muuttujat"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:22
 msgid "Shutdown command"
-msgstr "Sammutuskomento"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:66
 msgid "Shutdown message"
-msgstr "Sammutusviesti"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:33
 msgid "Slave"
@@ -526,7 +526,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:51
 msgid "UPS Server Global Settings"
-msgstr "UPS-palvelimen yleiset asetukset"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:212
 msgid "UPS Slave"
@@ -589,7 +589,7 @@ msgstr ""
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:159
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:167
 msgid "Write to syslog"
-msgstr "Kirjoita syslogiin"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:80
 msgid "chroot"

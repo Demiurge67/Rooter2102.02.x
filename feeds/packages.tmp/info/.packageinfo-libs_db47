@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/libs/db47/Makefile
 Build-Depends: libxml2
 
 Package: libdb47
-Version: 4.7.25.4.NC-7
+Version: 4.7.25.4.NC-6
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -22,8 +22,8 @@ Marcel Denia <naoir@gmx.net>
 @@
 
 Package: libdb47xx
-Version: 4.7.25.4.NC-7
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libdb47 +libstdcpp
+Version: 4.7.25.4.NC-6
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libdb47 +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp
 Conflicts: 
 Menu-Depends: 
 Provides: libdb47xx-full

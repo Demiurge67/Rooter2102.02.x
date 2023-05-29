@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/utils/hashdeep/Makefile
 
 Package: hashdeep
-Version: 4.4-3
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Version: 4.4-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp
 Conflicts: 
 Menu-Depends: 
 Provides: 

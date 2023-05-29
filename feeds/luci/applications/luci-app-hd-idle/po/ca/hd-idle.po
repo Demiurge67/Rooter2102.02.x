@@ -16,23 +16,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.5.1\n"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:43
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:22
 msgid "Add new hdd setting..."
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:61
-msgid "Bus"
-msgstr ""
-
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:53
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:27
 msgid "Disk"
 msgstr "Disc"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:46
-msgid "Disk Settings"
-msgstr ""
-
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:49
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:24
 msgid "Enable"
 msgstr "Habilita"
 
@@ -40,52 +32,47 @@ msgstr "Habilita"
 msgid "Grant UCI access for luci-app-hd-idle"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:37
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:17
 #: applications/luci-app-hd-idle/root/usr/share/luci/menu.d/luci-app-hd-idle.json:3
 msgid "HDD Idle"
 msgstr "HDD Idle"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:37
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:17
 msgid ""
-"HDD Idle is a utility program for spinning-down disks after a period of idle "
-"time."
+"HDD Idle is a utility program for spinning-down external disks after a "
+"period of idle time."
 msgstr ""
-"HDD Idle és un programa per ralentitzar els discos després d'un període de "
-"temps inactiu."
+"HDD Idle és un programa per ralentitzar els discos externs després d'un "
+"període de temps inactiu."
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:75
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:87
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:32
 msgid "Idle time"
 msgstr "Temps d'inactivitat"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:79
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:35
 msgid "Idle time unit"
 msgstr "Unitat de temps d'inactivitat"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:39
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:19
 msgid "Settings"
 msgstr "Paràmetres"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:68
-msgid "Vendor / Model"
-msgstr ""
-
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:84
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:39
 msgctxt "Abbreviation for days"
-msgid "days"
+msgid "d"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:83
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:38
 msgctxt "Abbreviation for hours"
-msgid "hours"
+msgid "h"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:82
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:37
 msgctxt "Abbreviation for minutes"
-msgid "minutes"
+msgid "min"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:81
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:36
 msgctxt "Abbreviation for seconds"
-msgid "seconds"
+msgid "s"
 msgstr ""

@@ -13,30 +13,26 @@ include $(INCLUDE_DIR)/package.mk
 define Package/ext-rooterbcm16
   SECTION:=utils
   CATEGORY:=ROOter
-  DEPENDS:=+luci +ext-rooter-basic +ext-logo \
+  DEPENDS:=+luci +ext-rooter-basic \
 		+luci-app-mwan3 +luci-app-dnsmasq-ipset \
-		+luci-app-ddns +ddns-scripts \
-		+luci-app-rootervpn +ext-wireguard \
+		+luci-app-ddns +ddns-scripts +luci-app-rootervpn +ext-wireguard \
 		+webconsole +bwmon +464xlat \
-		+ext-theme +luci-theme-argon +luci-theme-argondark \
-		+luci-theme-tomato +ext-login \
+		+ext-theme +luci-theme-argon +luci-theme-argondark +ext-login \
 		+ca-bundle +ca-certificates +libustream-wolfssl \
 		+luci-app-ksmbd +usb-storage \
 		+ext-p910nd +luci-app-sqm +kmod-sched-cake +luci-app-nft-qos \
 		+ext-command +ext-speedtest +luci-app-guestwifi \
-		+openvpn-easy-rsa +openvpn-openssl \
-		+ext-extra +luci-app-wol \
+		+openvpn-easy-rsa +openvpn-openssl +ext-extra +luci-app-wol \
 		+usbmuxd +libusbmuxd-utils +libimobiledevice-utils +kmod-usb-net-ipheth \
 		+qlog +luci-ssl +usbutils +openssl-util +irqbalance +ext-splashconfig \
 		+nano +picocom +wpad +wget +qfirehose +luci-app-vpnbypass
-  TITLE:=ROOter support for 16meg and larger Broadcom routers w/o Hotspot Manager
+  TITLE:=ROOter support for 16meg+ routers w/o Hotspot Manager
   PKGARCH:=all
 endef
 
 define Package/ext-rooterbcm16/description
   Helper scripts to enable ROOter on 16meg and larger Broadcom routers w/o Hotspot Manager
 endef
-
 
 define Build/Compile
 endef

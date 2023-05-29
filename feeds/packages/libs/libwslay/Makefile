@@ -2,18 +2,19 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libwslay
 PKG_VERSION:=1.1.1
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_RELEASE:=1
 
 PKG_SOURCE:=release-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/tatsuhiro-t/wslay/tar.gz/release-$(PKG_VERSION)?
 PKG_HASH:=7b9f4b9df09adaa6e07ec309b68ab376c0db2cfd916613023b52a47adfda224a
 PKG_BUILD_DIR:=$(BUILD_DIR)/wslay-release-$(PKG_VERSION)
 
-PKG_MAINTAINER:=Peter van Dijk <peter.van.dijk@powerdns.com>
+PKG_MAINTAINER:=James Taylor <james@jtaylor.id.au>
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=COPYING
 
 CMAKE_INSTALL:=1
+PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk

@@ -1,32 +1,32 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-29 23:26+0000\n"
-"Last-Translator: Dex94 <Dasvaresu@dr.com>\n"
+"PO-Revision-Date: 2021-05-15 14:33+0000\n"
+"Last-Translator: Marco Mihai Condrache <marcomihaicondrache@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsser2net/it/>\n"
 "Language: it\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/proxies.js:72
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:71
 msgid "Allow the RFC 2217 protocol"
-msgstr "Consenti il protocollo RFC 2217"
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/proxies.js:38
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:37
 msgid "Baud rate"
-msgstr "Velocità di trasmissione"
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:25
 msgid "Binding address"
-msgstr "Indirizzo di bind"
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/leds.js:23
 msgid "Blink duration."
-msgstr "Durata lampeggio."
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:19
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:29
@@ -49,7 +49,7 @@ msgstr "Dispositivo"
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/leds.js:15
 msgid "Driver"
-msgstr "Driver"
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/leds.js:23
 msgid "Duration"
@@ -141,7 +141,7 @@ msgstr "Impostazioni"
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/leds.js:27
 msgid "State"
-msgstr "Stato"
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/proxies.js:64
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:63
@@ -196,7 +196,7 @@ msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/proxies.js:30
 msgid "Timeout"
-msgstr "Tempo scaduto"
+msgstr ""
 
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/proxies.js:70
 #: applications/luci-app-ser2net/htdocs/luci-static/resources/view/ser2net/settings.js:69

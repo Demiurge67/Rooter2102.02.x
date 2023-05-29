@@ -178,7 +178,7 @@ struct ag71xx {
 
 	struct phy_device	*phy_dev;
 	void			*phy_priv;
-	phy_interface_t		phy_if_mode;
+	int			phy_if_mode;
 
 	unsigned int		link;
 	unsigned int		speed;

@@ -2,9 +2,9 @@ Source-Makefile: feeds/routing/opennds/Makefile
 
 Package: opennds
 Submenu: Captive Portals
-Version: 9.10.0-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +iptables-nft +kmod-ipt-conntrack +kmod-ipt-nat +libmicrohttpd-no-ssl
-Conflicts: nodogsplash
+Version: 9.3.0-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +iptables-mod-ipopt +libmicrohttpd-no-ssl
+Conflicts: nodogsplash nodogsplash2
 Menu-Depends: 
 Provides: 
 Section: net
@@ -12,15 +12,15 @@ Category: Network
 Repository: base
 Title: Open public network gateway daemon
 Maintainer: Rob White <rob@blue-wave.net>
-Source: opennds-9.10.0.tar.gz
-License: GPL-2.0-or-later
-LicenseFiles: COPYING
+Source: opennds-9.3.0.tar.gz
+License: GPL-2.0+
 Type: ipkg
-Description:   openNDS (open Network Demarcation Service) is a high performance, small footprint, Captive Portal.
-  It provides a border control gateway between a public local area network and the Internet.
-  It supports all scenarios ranging from small stand alone venues through to large mesh networks with multiple portal entry points.
-  Both the client driven Captive Portal Detection method (CPD) and gateway driven Captive Portal Identification method (CPI - RFC 8910 and RFC 8908) are supported.
-  This version requires iptables-nft.
+Description: 	openNDS is a Captive Portal solution that offers an instant way to provide restricted access to the Internet.
+	With little or no configuration, a dynamically generated and adaptive splash page sequence is automatically served.
+	Internet access is granted by either a click to continue button, or after credential verification.
+	The package incorporates the FAS API allowing many flexible customisation options.
+	The creation of sophisticated third party authentication applications is fully supported.
+	Internet hosted https portals can be utilised to inspire maximum user confidence.
 https://github.com/opennds/opennds
 Rob White <rob@blue-wave.net>
 @@

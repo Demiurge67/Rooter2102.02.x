@@ -4,7 +4,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-ddns
 Submenu: 3. Applications
 Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-mod-admin-full +ddns-scripts
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-lib-ipkg +luci-mod-admin-full +ddns-scripts
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -118,26 +118,6 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-ddns - Čeština (Czech)
-Ansuel Smith <ansuelsmth@gmail.com>
-@@
-
-Package: luci-i18n-ddns-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-ddns
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-ddns - da translation
-Maintainer: Ansuel Smith <ansuelsmth@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-ddns - Dansk (Danish)
 Ansuel Smith <ansuelsmth@gmail.com>
 @@
 

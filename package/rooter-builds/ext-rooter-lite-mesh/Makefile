@@ -15,26 +15,27 @@ define Package/ext-rooter-lite-mesh
   CATEGORY:=ROOter
   DEPENDS:=+luci +ext-rooter-basic \
 		+luci-app-ddns +ddns-scripts \
-		+luci-app-openvpn +ext-wireguard \
+		+luci-app-rootervpn +ext-wireguard \
 		+bwmon +464xlat +webconsole \
-		+ext-theme +luci-theme-materialgrey +ext-login \
+		+ext-theme +luci-theme-argon +luci-theme-argondark +luci-theme-materialgray +ext-login \
 		+ca-bundle +ca-certificates +libustream-wolfssl \
 		+luci-app-ksmbd +usb-storage \
-		+ext-p910nd +luci-app-sqm +kmod-sched-cake +luci-app-nft-qos \
-		+ext-command +openvpn-easy-rsa +openvpn-openssl \
-		+ext-extra +luci-app-wol +luci-app-shadowsocks-libev +simple-obfs \
+		+ext-p910nd +luci-app-sqm \
+		+kmod-sched-cake +luci-app-nft-qos \
+		+ext-command +luci-app-shadowsocks-libev +simple-obfs \
+		+openvpn-easy-rsa +openvpn-openssl \
+		+ext-extra +luci-app-wol +luci-app-guestwifi \
 		+mesh-mesh +mesh-wpad +iperf3 +socat \
 		+usbmuxd +libusbmuxd-utils +libimobiledevice-utils +kmod-usb-net-ipheth \
-		+qlog +luci-ssl +usbutils +openssl-util +irqbalance \
-		+nano +picocom +wget +kmod-mtd-rw +qfirehose +luci-app-vpnbypass 
-  TITLE:=ROOter for 16+Meg routers with MESH w/o MWan3 
+		+nano +picocom +wget +kmod-mtd-rw \
+		+qfirehose +luci-app-vpnbypass 
+  TITLE:=ROOter support MESH w/o MWan3 for 16meg and larger routers
   PKGARCH:=all
 endef
 
 define Package/ext-rooter-lite-mesh/description
-  Helper scripts to enable ROOter for 16+Meg routers with MESH w/o MWan3
+  Helper scripts to enable ROOter support MESH w/o MWan3 for 16meg and larger routers
 endef
-
 
 define Build/Compile
 endef

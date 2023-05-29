@@ -286,16 +286,10 @@ function net.conntrack(callback)
 
 	local line, connt = nil, (not callback) and { }
 	for line in nfct do
-		local fam, l3, l4, rest =
-			line:match("^(ipv[46]) +(%d+) +%S+ +(%d+) +(.+)$")
+		local fam, l3, l4, timeout, tuples =
+			line:match("^(ipv[46]) +(%d+) +%S+ +(%d+) +(%d+) +(.+)$")
 
-		local timeout, tuples = rest:match("^(%d+) +(.+)$")
-
-		if not tuples then
-			tuples = rest
-		end
-
-		if fam and l3 and l4 and not tuples:match("^TIME_WAIT ") then
+		if fam and l3 and l4 and timeout and not tuples:match("^TIME_WAIT ") then
 			l4 = nixio.getprotobynumber(l4)
 
 			local entry = {
@@ -572,7 +566,6 @@ function init.names()
 end
 
 function init.index(name)
-	name = fs.basename(name)
 	if fs.access(init.dir..name) then
 		return call("env -i sh -c 'source %s%s enabled; exit ${START:-255}' >/dev/null"
 			%{ init.dir, name })
@@ -580,7 +573,6 @@ function init.index(name)
 end
 
 local function init_action(action, name)
-	name = fs.basename(name)
 	if fs.access(init.dir..name) then
 		return call("env -i %s%s %s >/dev/null" %{ init.dir, name, action })
 	end

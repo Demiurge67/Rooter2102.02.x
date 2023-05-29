@@ -121,26 +121,6 @@ Description:     Translation for luci-app-uhttpd - Čeština (Czech)
 Daniel Dickinson <openwrt@daniel.thecshore.com>
 @@
 
-Package: luci-i18n-uhttpd-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-uhttpd
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-uhttpd - da translation
-Maintainer: Daniel Dickinson <openwrt@daniel.thecshore.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-uhttpd - Dansk (Danish)
-Daniel Dickinson <openwrt@daniel.thecshore.com>
-@@
-
 Package: luci-i18n-uhttpd-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

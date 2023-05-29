@@ -4,7 +4,7 @@ ROOTER=/usr/lib/rooter
 ROOTER_LINK="/tmp/links"
 
 log() {
-	modlog "PostConnect $CURRMODEM" "$@"
+	logger -t "PostConnect" "$@"
 }
 
 CURRMODEM=$1

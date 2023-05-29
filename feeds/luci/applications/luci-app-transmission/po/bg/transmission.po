@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 20:27+0200\n"
-"PO-Revision-Date: 2021-09-15 08:34+0000\n"
+"PO-Revision-Date: 2021-08-01 22:08+0000\n"
 "Last-Translator: Iskren Mihaylov <iskren.mihaylov91@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationstransmission/bg/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:65
 msgid "Alternative download speed"
@@ -112,11 +112,11 @@ msgstr "Разрешен"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:136
 msgid "Encryption"
-msgstr "Криптиране"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:149
 msgid "Error"
-msgstr "Грешка"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:107
 msgid "Fast"
@@ -388,8 +388,8 @@ msgstr ""
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
 msgid ""
 "This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
+"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer noopener"
+"\">tcp-congestion-control</a>."
 msgstr ""
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3

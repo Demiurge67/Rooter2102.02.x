@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2016-2021 eGloo, Incorporated
+# Copyright (C) 2016-2020 eGloo, Incorporated
 #
 # This is free software, licensed under the GNU General Public License v2.
 
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netifyd
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 PKG_MAINTAINER:=Darryl Sokoloski <darryl@egloo.ca>
 PKG_LICENSE:=GPL-3.0-or-later
 
@@ -16,10 +16,10 @@ PKG_INSTALL:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://gitlab.com/netify.ai/public/netify-agent.git
-PKG_SOURCE_DATE:=2021-11-17
-PKG_SOURCE_VERSION:=v3.09
-#PKG_SOURCE_VERSION:=358ec2b0ac321e0608e78c75f6b7434ed1aec326
-PKG_MIRROR_HASH:=660079a75a17a07c638b25dab0ecc972c02fec2124930068bfcf15d28abf4121
+PKG_SOURCE_DATE:=2020-09-15
+PKG_SOURCE_VERSION:=v3.05
+#PKG_SOURCE_VERSION:=09fa5fb202ba95ee2d73a4eb0fefe9265d15c780
+PKG_MIRROR_HASH:=2bcaa54f1660a30070f0c79a79259e96f169a9c7a0fe4a1195bb74f7de184204
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -74,19 +74,12 @@ endif
 
 define Build/Configure
 	(cd $(PKG_BUILD_DIR); ./autogen.sh)
-	$(call Build/Configure/Default)
+	$(call Build/Configure/Default,$(CONFIGURE_ARGS))
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/netifyd
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/netifyd/*.h $(1)/usr/include/netifyd
-	$(INSTALL_DIR) $(1)/usr/include/netifyd/pcap-compat
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/netifyd/pcap-compat/*.h $(1)/usr/include/netifyd/pcap-compat
-	$(INSTALL_DIR) $(1)/usr/include/netifyd/nlohmann
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/netifyd/nlohmann/*.hpp $(1)/usr/include/netifyd/nlohmann
-	$(INSTALL_DIR) $(1)/usr/include/libndpi-2.9.0
-	$(INSTALL_DIR) $(1)/usr/include/libndpi-2.9.0/libndpi
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/libndpi-2.9.0/libndpi/*.h $(1)/usr/include/libndpi-2.9.0/libndpi
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libnetifyd.{a,so*} $(1)/usr/lib/
 	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig

@@ -22,13 +22,16 @@ PKG_LICENSE_FILES:=LICENSE
 
 include $(INCLUDE_DIR)/package.mk
 
+
+
+
 define Package/chicken-scheme/Default
-  TITLE:=Chicken Scheme
   SECTION:=lang
   CATEGORY:=Languages
   URL:=https://call-cc.org
   ABI_VERSION:=11
 endef
+
 
 ##
 ## chicken-scheme-interpreter
@@ -36,8 +39,9 @@ endef
 
 define Package/chicken-scheme-interpreter
 $(call Package/chicken-scheme/Default)
-  TITLE+=interpreter only
-  CONFLICTS:=chicken-scheme-full
+  TITLE:=Chicken Scheme -- interpreter only
+  SECTION:=lang
+  CATEGORY:=Languages
 endef
 
 define Package/chicken-scheme-interpreter/description
@@ -91,7 +95,9 @@ include $(TOPDIR)/rules.mk
 
 define Package/chicken-scheme-full
 $(call Package/chicken-scheme/Default)
-  TITLE+=full package
+  TITLE:=Chicken Scheme -- full package
+  SECTION:=lang
+  CATEGORY:=Languages
   # csc depends on gcc; chicken-install uses the 'install' command from coreutils
   EXTRA_DEPENDS:= gcc, coreutils-install
 endef

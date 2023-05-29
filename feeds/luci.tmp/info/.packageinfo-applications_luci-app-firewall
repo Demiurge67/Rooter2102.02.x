@@ -4,7 +4,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-firewall
 Submenu: 3. Applications
 Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +uci-firewall
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +firewall
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -118,26 +118,6 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-firewall - Čeština (Czech)
-
-@@
-
-Package: luci-i18n-firewall-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-firewall
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-firewall - da translation
-Maintainer: 
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-firewall - Dansk (Danish)
 
 @@
 
@@ -438,26 +418,6 @@ License: Apache-2.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-firewall - Norsk (Norwegian)
-
-@@
-
-Package: luci-i18n-firewall-nl
-Default: LUCI_LANG_nl||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-firewall
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-firewall - nl translation
-Maintainer: 
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-firewall - Nederlands (Dutch)
 
 @@
 

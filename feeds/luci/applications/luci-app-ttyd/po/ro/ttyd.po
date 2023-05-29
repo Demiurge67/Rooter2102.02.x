@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-30 13:10+0000\n"
-"Last-Translator: Simona Iacob <s@zp1.net>\n"
+"PO-Revision-Date: 2020-03-29 21:22+0000\n"
+"Last-Translator: Cristian Ionescu <joker_op@yahoo.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsttyd/ro/>\n"
 "Language: ro\n"
@@ -9,35 +9,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Accept only one client and exit on disconnection"
-msgstr "Acceptă doar un singur client și iese la deconectare"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:15
 msgid "Add instance"
-msgstr "Adăugați o instanță"
+msgstr "Adaugă instanţă"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:40
 msgid "Allow URL args"
-msgstr "Permiteți argetele URL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:40
 msgid ""
 "Allow client to send command line arguments in URL (eg: http://"
 "localhost:7681?arg=foo&arg=bar)"
 msgstr ""
-"Permiteți clientului să trimită argumente de linie de comandă în URL (de "
-"exemplu: http://localhost:7681?arg=foo&arg=bar)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:50
 msgid "Check origin"
-msgstr "Verificați originea"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:44
 msgid "Client option"
-msgstr "Opțiunea clientului"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:80
 msgid "Command"
@@ -45,71 +43,71 @@ msgstr "Comandă"
 
 #: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:23
 msgid "Config"
-msgstr "Configurare"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:28
 msgid "Credential"
-msgstr "Acreditare"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:28
 msgid "Credential for Basic Authentication"
-msgstr "Credențial pentru autentificarea de bază"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:58
 msgid "Custom index.html path"
-msgstr "Calea index.html personalizată"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:73
 msgid "Debug"
-msgstr "Depanare"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:42
 msgid "Do not allow clients to write to the TTY"
-msgstr "Nu permiteți clienților să scrie pe TTY"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:50
 msgid "Do not allow websocket connection from different origin"
-msgstr "Nu permiteți conexiunea websocket de la origini diferite"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:17
 msgid "Enable"
-msgstr "Activați"
+msgstr "Activează"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:60
 msgid "Enable IPv6 support"
-msgstr "Activați suportul IPv6"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:62
 msgid "Enable SSL"
-msgstr "Activați SSL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:74
 msgid "Error"
-msgstr "Eroare"
+msgstr ""
 
 #: applications/luci-app-ttyd/root/usr/share/rpcd/acl.d/luci-app-ttyd.json:3
 msgid "Grant UCI access for luci-app-ttyd"
-msgstr "Acordă acces UCI pentru luci-app-ttyd"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:34
 msgid "Group ID"
-msgstr "ID-ul grupului"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:34
 msgid "Group id to run with"
-msgstr "Id de grup cu care se execută"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:60
 msgid "IPv6"
-msgstr "IPv6"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:58
 msgid "Index"
-msgstr "Index"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:77
 msgid "Info"
-msgstr "Informații"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:24
 msgid "Interface"
@@ -117,27 +115,25 @@ msgstr "Interfață"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:52
 msgid "Max clients"
-msgstr "Număr maxim de clienți"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:52
 msgid "Maximum clients to support (default: 0, no limit)"
-msgstr "Numărul maxim de clienți de acceptat (implicit: 0, fără limită)"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:24
 msgid ""
 "Network interface to bind (eg: eth0), or UNIX domain socket path (eg: /var/"
 "run/ttyd.sock)"
 msgstr ""
-"Interfață de rețea de legat (de exemplu: eth0), sau calea socket-ului de "
-"domeniu UNIX (de exemplu: /var/run/ttyd.sock)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
 msgid "Notice"
-msgstr "Aviz"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Once"
-msgstr "O dată"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "Port"
@@ -146,15 +142,12 @@ msgstr "Port"
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "Port to listen (default: 7681, use `0` for random port)"
 msgstr ""
-"Port de ascultare (implicit: 7681, folosiți `0` pentru un port aleatoriu)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
-"Random ttyd port (port=0) is not supported.<br />Change to a fixed port and "
+"Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
 "try again."
 msgstr ""
-"Portul ttyd aleatoriu (port=0) nu este acceptat.<br />Schimbă la un port fix "
-"și încearcă din nou."
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:42
 msgid "Read-only"
@@ -162,73 +155,73 @@ msgstr "Doar citire"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:62
 msgid "SSL"
-msgstr "SSL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:70
 msgid "SSL CA file path for client certificate verification"
-msgstr "Calea fișierului SSL CA pentru verificarea certificatului clientului"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:70
 msgid "SSL ca"
-msgstr "SSL ca"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:64
 msgid "SSL cert"
-msgstr "Certificatul SSL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:64
 msgid "SSL certificate file path"
-msgstr "Calea fișierului de certificat SSL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:67
 msgid "SSL key"
-msgstr "Cheia SSL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:67
 msgid "SSL key file path"
-msgstr "Calea fișierului cheie SSL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:44
 msgid "Send option to client"
-msgstr "Trimite opțiunea către client"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:73
 msgid "Set log level (default: 7)"
-msgstr "Setați nivelul de jurnal (implicit: 7)"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:37
 msgid "Signal"
-msgstr "Semnal"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:37
 msgid "Signal to send to the command when exit it (default: 1, SIGHUP)"
-msgstr "Semnal de trimis comenzii la ieșirea acesteia (implicit: 1, SIGHUP)"
+msgstr ""
 
 #: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:3
 #: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:14
 msgid "Terminal"
-msgstr "Terminalul"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:47
 msgid "Terminal type"
-msgstr "Tip terminal"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:47
 msgid "Terminal type to report (default: xterm-256color)"
-msgstr "Tipul de terminal de raportat (implicit: xterm-256color)"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:31
 msgid "User ID"
-msgstr "ID-ul utilizatorului"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:31
 msgid "User id to run with"
-msgstr "ID-ul de utilizator cu care se execută"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:75
 msgid "Warning"
-msgstr "Avertisment"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:12
 msgid "ttyd Instance"
-msgstr "Instanța ttyd"
+msgstr ""

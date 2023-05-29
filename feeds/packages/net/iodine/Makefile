@@ -49,9 +49,6 @@ define Package/iodined/description
  iodine server version
 endef
 
-MAKE_FLAGS += \
-	TARGETOS="Linux"
-
 define Build/Configure
 endef
 

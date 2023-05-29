@@ -7,23 +7,27 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=v4l2rtspserver
-PKG_VERSION:=0.2.3
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=0.2.1
+PKG_RELEASE:=1
 
 #cannot use codeload as this uses submodules
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/mpromonet/v4l2rtspserver
 PKG_SOURCE_VERSION:=v$(PKG_VERSION)
-PKG_MIRROR_HASH:=f047fd24441a070b123252bf82c7d7e42bb0c3280b78ad2ddb01cf200acc3a32
+PKG_MIRROR_HASH:=ddc4217ee12e57a4c248b6667309559323458028dc0fa085942b91dbbcd74146
 
-LIVE555_VERSION:=2021.10.28
-LIVE555_HASH:=84dd36267940dcea848f54dc1f6d73171a949dee907750fac3a5a0b39e94dbd9
+LIVE555_VERSION:=2020.11.29
+LIVE555_HASH:=0300f1f0b92529909623d3e870edeadff9841bbc9097a481a8583c5b9a6cc3ae
 LIVE555_FILE:=live.$(LIVE555_VERSION).tar.gz
 
 PKG_MAINTAINER:=Roger Dammit <rogerdammit@gmail.com>
 PKG_LICENSE:=Unlicense
 PKG_LICENSE_FILES:=LICENSE
 
+PKG_BUILD_PARALLEL:=1
+CMAKE_INSTALL:=1
+
+include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
@@ -31,7 +35,7 @@ define Package/v4l2rtspserver
 	SECTION:=multimedia
 	CATEGORY:=Multimedia
 	TITLE:=v4l2rtspserver
-	DEPENDS:=+libstdcpp
+	DEPENDS:=$(CXX_DEPENDS)
 	URL:=https://github.com/mpromonet/v4l2rtspserver
 endef
 
@@ -57,11 +61,12 @@ CMAKE_OPTIONS += \
 	-DLIVE555CFLAGS=" -DSOCKLEN_T=socklen_t -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 -DLOCALE_NOT_USED -DNO_SSTREAM=1 -DALLOW_RTSP_SERVER_PORT_REUSE=1 -DNO_OPENSSL"
 
 define Build/Prepare
+	$(Build/Prepare/Default)
+
 	# download live555
 	$(eval $(call Download,live555))
 	mkdir -p $(PKG_BUILD_DIR)/live
 	$(TAR) -xf $(DL_DIR)/$(LIVE555_FILE) --strip=1 -C $(PKG_BUILD_DIR)/live
-	$(Build/Prepare/Default)
 endef
 
 define Package/v4l2rtspserver/install

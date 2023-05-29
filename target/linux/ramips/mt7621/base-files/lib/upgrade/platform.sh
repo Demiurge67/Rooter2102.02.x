@@ -39,7 +39,6 @@ platform_do_upgrade() {
 	mikrotik,routerboard-m33g)
 		[ "$(rootfs_type)" = "tmpfs" ] && mtd erase firmware
 		;;
-	beeline,smartbox-giga|\
 	asus,rt-ac65p|\
 	asus,rt-ac85p)
 		echo "Backing up firmware"
@@ -55,7 +54,7 @@ platform_do_upgrade() {
 	asus,rt-ac65p|\
 	asus,rt-ac85p|\
 	asus,rt-ax53u|\
-	beeline,smartbox-flash|\
+	bbeeline,smartbox-flash|\
 	beeline,smartbox-giga|\
 	beeline,smartbox-pro|\
 	beeline,smartbox-turbo|\
@@ -98,18 +97,12 @@ platform_do_upgrade() {
 	xiaomi,mi-router-3-pro|\
 	xiaomi,mi-router-4|\
 	xiaomi,mi-router-ac2100|\
-	xiaomi,mi-router-cr6606|\
-	xiaomi,mi-router-cr6608|\
-	xiaomi,mi-router-cr6609|\
-	xiaomi,redmi-router-ac2100|\
-	zyxel,nwa50ax|\
-	zyxel,nwa55axe)
+	xiaomi,redmi-router-ac2100)
 		nand_do_upgrade "$1"
 		;;
 	iodata,wn-ax1167gr2|\
 	iodata,wn-ax2033gr|\
-	iodata,wn-dx1167r|\
-	iodata,wn-dx2033gr)
+	iodata,wn-dx1167r)
 		iodata_mstc_upgrade_prepare "0xfe75"
 		nand_do_upgrade "$1"
 		;;
@@ -124,7 +117,6 @@ platform_do_upgrade() {
 	zyxel,nr7101)
 		fw_setenv CheckBypass 0
 		fw_setenv Image1Stable 0
-		[ "$(fw_printenv -n BootingFlag)" = "0" ] || fw_setenv BootingFlag 0
 		CI_KERNPART="Kernel"
 		nand_do_upgrade "$1"
 		;;

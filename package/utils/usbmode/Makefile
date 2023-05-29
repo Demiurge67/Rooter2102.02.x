@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=usbmode
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/usbmode.git
-PKG_SOURCE_DATE:=2022-02-24
-PKG_SOURCE_VERSION:=3c8595a4e75510f58fa231b145d5506768dcafc9
-PKG_MIRROR_HASH:=5f0234945f61639080f039522172151452180dd4aec33bafc8a61b60131c3bed
+PKG_SOURCE_DATE:=2017-12-19
+PKG_SOURCE_VERSION:=f40f84c27534159066c94dadc0c08e0b255c3e26
+PKG_MIRROR_HASH:=840c7ee2843102b09d8943a20820025251cc259385e2b0bde6b7c8cce8190f83
 CMAKE_INSTALL:=1
 
 PKG_LICENSE:=GPL-2.0
@@ -65,7 +65,7 @@ define Package/usb-modeswitch/install
 	$(INSTALL_DIR) $(1)/etc/hotplug.d/usb $(1)/etc/init.d $(1)/sbin
 	perl $(PKG_BUILD_DIR)/convert-modeswitch.pl \
 		$(PKG_BUILD_DIR)/$(PKG_DATA_PATH)/usb_modeswitch.d/* \
-		> $(1)/etc/usb-mode.json
+		> $(1)/etc/usb-mode1.json
 	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/usbmode $(1)/sbin/
 endef
 

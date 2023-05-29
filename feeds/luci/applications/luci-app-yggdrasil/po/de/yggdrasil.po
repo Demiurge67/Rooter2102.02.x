@@ -1,20 +1,72 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-27 13:49+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2021-02-08 04:46+0000\n"
+"Last-Translator: Zocker1012 <julian.schoemer.1997@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsyggdrasil/de/>\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/status.js:33
 msgid "Active peers"
 msgstr "Aktive Peers"
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:17
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:56
+msgid "Address to listen for incoming connections"
+msgstr "Adresse für eingehende Verbindungen"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:16
+msgid "Allow from direct"
+msgstr "Erlaube direkten Zugriff"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:18
+msgid "Allow from remote"
+msgstr "Remote-Zugriff erlauben"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:17
+msgid "Allow network traffic from directly connected peers"
+msgstr "Erlaube Netzwerkverkehr von direkt verbundenen Teilnehmern"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:19
+msgid ""
+"Allow network traffic from remote nodes on the network that you are not "
+"directly peered with"
+msgstr ""
+"Erlaube Netzwerkverkehr mit entfernten Teilnehmern, die nicht direkt "
+"angebunden sind"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:21
+msgid ""
+"Allow outbound network traffic regardless of AllowFromDirect or "
+"AllowFromRemote"
+msgstr ""
+"Erlaube ausgehenden Verkehr unabhängig von AllowFromDirect oder "
+"AllowFromRemote"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:14
+msgid ""
+"Allow tunneling non-Yggdrasil traffic over Yggdrasil. This effectively "
+"allows you to use Yggdrasil to route to, or to bridge other networks, "
+"similar to a VPN tunnel. Tunnelling works between any two nodes and does not "
+"require them to be directly peered."
+msgstr ""
+"Erlaube das Tunneln von nicht-Yggdrasil-Netzwerkverkehr. Dies ermöglicht "
+"Yggdrasil als Netzrouter oder -Brücke ähnlich zu einem VPN-Tunnel zu "
+"agieren. Tunneln funktioniert zwischen allen Knoten, unabhängig ob diese "
+"direkt verbunden sind."
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:21
+msgid "Always allow outbound"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:31
+msgid "Blacklisted public keys"
+msgstr "Public-Key-Blacklist"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:23
 msgid ""
 "By default, nodeinfo contains some defaults including the platform, "
 "architecture and Yggdrasil version. These can help when surveying the "
@@ -28,41 +80,26 @@ msgstr ""
 "verhindert dies, indem nur in \"NodeInfo\" spezifierte Elemente übermittelt "
 "werden."
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:45
-msgid ""
-"Configuration for which interfaces multicast peer discovery should be "
-"enabled on. Regex is a regular expression which is matched against an "
-"interface name, and interfaces use the first configuration that they match "
-"gainst. Beacon configures whether or not the node should send link-local "
-"multicast beacons to advertise their presence, while listening for incoming "
-"connections on Port. Listen controls whether or not the node listens for "
-"multicast beacons and opens outgoing connections."
-msgstr ""
-"Konfigurationen, für welche Schnittstellen die Erkennung von Multicast-Peers "
-"aktiviert werden soll. Regex ist ein regulärer Ausdruck, der mit einem "
-"Schnittstellennamen abgeglichen wird, und die Schnittstellen verwenden die "
-"erste Konfiguration, auf die sie zutreffen. Beacon konfiguriert, ob der "
-"Knoten link-local Multicast Beacons senden soll, um seine Anwesenheit "
-"anzukündigen, während er auf Port auf eingehende Verbindungen wartet oder "
-"nicht. Listen steuert, ob der Knoten auf Multicast-Baken lauscht und "
-"ausgehende Verbindungen öffnet oder nicht."
-
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:16
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:22
 msgid "Enable NodeInfo privacy"
 msgstr "Aktiviere NodeInfo-Privacy"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:14
+msgid "Enable session firewall"
+msgstr "Aktiviere Session-Firewall"
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:11
 #: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:41
 msgid "Encryption keys"
-msgstr "Schlüssel zur Verschlüsselung"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:15
 msgid "Encryption private key"
-msgstr "Privater Schlüssel zur Verschlüsselung"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:14
 msgid "Encryption public key"
-msgstr "Öffentlicher Schlüssel zur Verschlüsselung"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:11
 msgid "General settings"
@@ -70,25 +107,85 @@ msgstr "Allgemeine Einstellungen"
 
 #: applications/luci-app-yggdrasil/root/usr/share/rpcd/acl.d/luci-app-yggdrasil.json:3
 msgid "Grant access to LuCI app yggdrasil"
-msgstr "Zugang zur LuCI-Anwendung yggdrasil gewähren"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:26
+msgid "IPv4 local subnet"
+msgstr "IPv4 lokales Subnetz"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:19
+msgid "IPv4 remote subnet"
+msgstr "IPv4 entferntes Subnetz"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:22
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:29
+msgid "IPv4 subnet"
+msgstr "IPv4-Subnetz"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:20
+msgid "IPv4 subnets belonging to remote nodes, mapped to the node's public"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:27
+msgid ""
+"IPv4 subnets belonging to this node's end of the tunnels. Only traffic from "
+"these ranges will be tunnelled."
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:40
+msgid "IPv6 local subnet"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:33
+msgid "IPv6 remote subnet"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:36
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:44
+msgid "IPv6 subnet"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:34
+msgid "IPv6 subnets belonging to remote nodes, mapped to the node's public"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:41
+msgid ""
+"IPv6 subnets belonging to this node's end of the tunnels. Only traffic from "
+"these ranges (or the Yggdrasil node's IPv6 address/subnet) will be tunnelled."
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:15
+msgid ""
+"If disabled, network traffic from any node will be allowed. If enabled, the "
+"below rules apply"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/peers.js:25
 msgid "Interface"
 msgstr "Schnittstelle"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:45
+msgid "Interface name"
+msgstr "Schnittstellenname"
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/peers.js:20
 msgid "Interface peers"
 msgstr "Schnittstellen-Gegenstellen"
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:16
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:19
 msgid "Keep this private. When compromised, generate a new keypair and IPv6."
 msgstr ""
-"Halte dies geheim. Wenn kompromittiert, generiere ein neues Schlüsselpaar "
-"und IPv6."
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:52
-msgid "Link-local port"
-msgstr "Verbindungs-lokaler Port"
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:21
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:35
+msgid "Key"
+msgstr "Schlüssel"
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:15
+msgid "Link-local TCP port"
+msgstr "Link-local TCP-Port"
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/peers.js:21
 msgid ""
@@ -97,10 +194,6 @@ msgid ""
 "that SOCKS peerings will NOT be affected by this option and should go in the "
 "\"Peers\" section instead."
 msgstr ""
-"Liste der Verbindungszeichenfolgen für ausgehende Peer-Verbindungen im URI-"
-"Format, geordnet nach Quellschnittstelle, z. B. { \"eth0\": [ tcp://a.b.c.d:"
-"e ] }. Beachten Sie, dass SOCKS-Peerings von dieser Option NICHT betroffen "
-"sind und stattdessen in den Abschnitt \"Peers\" aufgenommen werden sollten."
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/peers.js:12
 msgid ""
@@ -109,17 +202,12 @@ msgid ""
 "the operating system routing table, therefore you should use this section "
 "when you may connect via different interfaces."
 msgstr ""
-"Liste der Verbindungszeichenfolgen für ausgehende Peer-Verbindungen im URI-"
-"Format, z. B. tcp://a.b.c.d:e oder socks://a.b.c.d:e/f.g.h.i:j. Diese "
-"Verbindungen richten sich nach der Routing-Tabelle des Betriebssystems, "
-"daher sollten Sie diesen Abschnitt verwenden, wenn Sie eine Verbindung über "
-"verschiedene Schnittstellen herstellen möchten."
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:33
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:50
 msgid "Listen addresses"
-msgstr "Listen-Adresse"
+msgstr ""
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:34
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:51
 msgid ""
 "Listen addresses for incoming connections. You will need to add listeners in "
 "order to accept incoming peerings from non-local nodes. Multicast peer "
@@ -127,72 +215,132 @@ msgid ""
 "should be specified in URI format as above, e.g. tcp://0.0.0.0:0 or tcp://"
 "[::]:0 to listen on all interfaces."
 msgstr ""
-"Listen-Adressen für eingehende Verbindungen. Sie müssen Listener hinzufügen, "
-"um eingehende Peerings von nicht-lokalen Knoten zu akzeptieren. Die "
-"Erkennung von Multicast-Peers funktioniert unabhängig von den hier "
-"eingestellten Listenern. Jeder Listener sollte im URI-Format wie oben "
-"angegeben werden, z. B. tcp://0.0.0.0:0 oder tcp://[::]:0, um auf allen "
-"Schnittstellen zu lauschen."
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:51
-msgid "Listen for beacons"
-msgstr "Auf Beacons achten"
-
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:31
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:37
 msgid "MTU size for the interface"
-msgstr "MTU-Größe für die Schnittstelle"
+msgstr ""
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:44
-msgid "Multicast interface"
-msgstr "Multicast-Schnittstelle"
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:39
+msgid "Maximum size of all switch queues combined"
+msgstr ""
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:23
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:41
+msgid "Multicast interfaces"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:25
+msgid ""
+"Network traffic is always accepted from those peers, regardless of "
+"AllowFromDirect or AllowFromRemote"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:32
+msgid ""
+"Network traffic is always rejected from those peers, regardless of "
+"AllowFromDirect or AllowFromRemote"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:29
 msgid "NodeInfo"
-msgstr "NodeInfo"
+msgstr ""
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:24
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:30
 msgid ""
 "Optional node info. This must be a { \"key\": \"value\", ... } map or set as "
 "null. This is entirely optional but, if set, is visible to the whole network "
 "on request."
 msgstr ""
-"Optionale Knoteninformationen. Dies muss eine { \"key\": \"value\", ... }-"
-"Map oder als null festgelegt sein. Dies ist völlig optional, ist aber, wenn "
-"eingestellt, auf Anfrage für das gesamte Netzwerk sichtbar."
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/peers.js:11
 #: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:23
 msgid "Peers"
-msgstr "Partner"
+msgstr "Verbindungspartner"
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:49
-msgid "Regular expression"
-msgstr "Regulärer Ausdruck"
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:21
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:35
+msgid "Public encryption key"
+msgstr ""
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:50
-msgid "Send beacons"
-msgstr "Beacons senden"
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:26
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:33
+msgid "Public key"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:42
+msgid ""
+"Regular expressions for which interfaces multicast peer discovery should be "
+"enabled on. If none specified, multicast peer discovery is disabled. The "
+"default value is .* which uses all interfaces."
+msgstr ""
+
+#: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:50
+msgid "Session firewall"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:11
+msgid "Session firewall settings"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:46
+msgid "Set .* to multicast on all interfaces"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:32
 msgid "Settings"
 msgstr "Einstellungen"
 
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:18
+msgid "Signing private key"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/keys.js:17
+msgid "Signing public key"
+msgstr ""
+
 #: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:14
 msgid "Status"
 msgstr "Status"
 
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:22
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:29
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:36
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:44
+msgid "Subnet"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:16
+msgid ""
+"The port number to be used for the link-local TCP listeners for the "
+"configured MulticastInterfaces. This option does not affect "
+"listenersspecified in the Listen option. Unless you plan to firewall link-"
+"localtraffic, it is best to leave this as the default value of 0. This "
+"option cannot currently be changed by reloading config during runtime."
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/tunnel_routing.js:11
+msgid "Tunnel Routing"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:59
+msgid "Tunnel routing"
+msgstr ""
+
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/session_firewall.js:24
+msgid "Whitelisted public keys"
+msgstr ""
+
 #: applications/luci-app-yggdrasil/root/usr/share/luci/menu.d/luci-app-yggdrasil.json:3
 msgid "Yggdrasil"
-msgstr "Yggdrasil"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/status.js:30
 msgid "Yggdrasil node status"
-msgstr "Yggdrasil Knotenstatus"
+msgstr ""
 
 #: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:14
 msgid "Yggdrasil's network interface name"
-msgstr "Yggdrasils Netzwerkschnittstellenname"
+msgstr ""
 
-#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:40
+#: applications/luci-app-yggdrasil/htdocs/luci-static/resources/view/yggdrasil/settings.js:58
 msgid "e.g. tcp://0.0.0.0:0 or tcp://[::]:0"
-msgstr "z.B. tcp://0.0.0.0:0 oder tcp://[::]:0"
+msgstr ""

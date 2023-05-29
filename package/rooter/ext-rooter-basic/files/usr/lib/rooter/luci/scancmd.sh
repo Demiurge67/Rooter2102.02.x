@@ -3,7 +3,7 @@
 ROOTER=/usr/lib/rooter
 
 log() {
-	modlog "Scan Command $CURRMODEM" "$@"
+	logger -t "Scan Command" "$@"
 }
 
 fibdecode() {
@@ -104,14 +104,9 @@ case $uVid in
 		M5=""
 		case $uPid in
 			"0125" ) # EC25-A
-				M1='ATI'
-				OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M1")
-				REV=$(echo $OX" " | grep -o "Revision: .\+ OK " | tr " " ",")
-				MODL=$(echo $REV | cut -d, -f2)
-				log "$REV $MODL"
-				EC25AF=$(echo $MODL | grep "EC25AFF")
-				if [ ! -z "$EC25AF" ]; then # EC25-AF
-					MX='40000000000000381A'
+				EC25=$(echo $model | grep "EC25-AF")
+				if [ ! -z $EC25 ]; then
+					MX='400000000000003818'
 				else
 					MX='81a'
 				fi
@@ -119,7 +114,7 @@ case $uVid in
 			;;
 			"0306" )
 				M1='AT+GMR'
-				OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M1")
+				OX=$($ROOTER/gcom/gcom-locked "$CPORT" "run-at.gcom" "$CURRMODEM" "$M1")
 				EP06E=$(echo $OX | grep "EP06E")
 				if [ ! -z $EP06E ]; then # EP06E
 					M3='1a080800d5'
@@ -132,22 +127,8 @@ case $uVid in
 				M3="420000A7E23B0E38DF"
 				M4='AT+QCFG="band",0,'$M3',0'
 			;;
-			"6005" ) # EM060
-				M3="0x200000080080000df"
-				M4='AT+QCFG="band",0,'$M3',0'
-			;;
 			"0512" ) # EM12-G
-				EM12=$(echo $model | grep "EG18")
-				if [ -z "$EM12" ]; then
-					M3="2000001E0BB1F39DF"
-				else # EG18
-					EM12=$(echo $model | grep "EA")
-					if [ -z "$EM12" ]; then # NA
-						M3="4200000100330138A"
-					else # EA
-						M3="1A0080800C5"
-					fi
-				fi
+				M3="2000001E0BB1F39DF"
 				M4='AT+QCFG="band",0,'$M3',0'
 			;;
 			"0620" ) # EM20-G
@@ -159,7 +140,11 @@ case $uVid in
 						mask="42000087E2BB0F38DF"
 						fibdecode $mask 1 1
 						M4F='AT+QNWPREFCFG="lte_band",'$lst
+						#mask5='7042000081A0090808D7'
+						#fibdecode $mask5 1 1
+						#M5F='AT+QNWPREFCFG="nsa_nr5g_band",'$lst
 						log "Fake RM500 $M4F"
+						#log "Fake Scan to All $M5F"
 					fi
 					
 				else # EM160
@@ -168,7 +153,7 @@ case $uVid in
 					M4='AT+QNWPREFCFG="lte_band",'$lst
 				fi
 			;;
-			"0800"|"0900"|"0801" )
+			"0800"|"0900" )
 
 			;;
 			* )
@@ -177,8 +162,8 @@ case $uVid in
 			;;
 		esac
 		
-		#OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M4")
-		#log "$OX"
+		OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M4")
+		log "$OX"
 		if [ ! -z $M5 ]; then
 			OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M5")
 			log "$OX"
@@ -379,8 +364,8 @@ case $uVid in
 			else
 				M4='AT+QCFG="band",0,'$L1',0'
 			fi
-			#OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M4")
-			#log "$OX"
+			OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M4")
+			log "$OX"
 		fi
 	;;
 	"1199" )

@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=upmpdcli
-PKG_VERSION:=1.5.13
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=1.5.0
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://www.lesbonscomptes.com/upmpdcli/downloads
-PKG_HASH:=c7726f0d4062ae253159102e499759bd513d3c68bfe16c44997ee3fba35509f8
+PKG_HASH:=c971ed29cf00ebe70b6461f30ec4b9d58e0acaf52c6fd452876678bb6fe53009
 
-PKG_MAINTAINER:=
+PKG_MAINTAINER:=Petko Bordjukov <bordjukov@gmail.com>
 PKG_LICENSE:=LGPL-2.1-or-later
 PKG_LICENSE_FILES:=COPYING
 
@@ -41,6 +41,8 @@ endef
 define Package/upmpdcli/config
 	source "$(SOURCE)/Config.in"
 endef
+
+TARGET_LDFLAGS += $(if $(CONFIG_USE_GLIBC),-lm)
 
 define Package/upmpdcli/conffiles
 /etc/config/upmpdcli

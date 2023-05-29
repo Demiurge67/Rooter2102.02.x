@@ -57,7 +57,7 @@ msgstr "Config file (e.g. for credentials for Basic Auth)"
 msgid "Connection reuse"
 msgstr "Connection reuse"
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:229
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
 msgid "Country"
 msgstr "Country"
 
@@ -125,10 +125,6 @@ msgstr ""
 msgid "HTTPS listener (address:port)"
 msgstr "HTTPS listener (address:port)"
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "If empty, a random/unique value is used in cert generation"
-msgstr ""
-
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:90
 msgid "Ignore private IPs on public interface"
 msgstr "Ignore private IPs on public interface"
@@ -149,7 +145,7 @@ msgstr ""
 msgid "Length of key in bits"
 msgstr "Length of key in bits"
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:223
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:227
 msgid "Location"
 msgstr "Location"
 
@@ -168,10 +164,6 @@ msgstr "Maximum wait time for Lua, CGI, or ubus execution"
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:182
 msgid "Maximum wait time for network activity"
 msgstr "Maximum wait time for network activity"
-
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "Organization"
-msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:166
 msgid "Override path for ubus socket"
@@ -215,7 +207,7 @@ msgid ""
 msgstr ""
 "Settings which are either rarely needed or which affect serving the WebUI"
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:226
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:224
 msgid "State"
 msgstr "State"
 

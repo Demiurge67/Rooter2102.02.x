@@ -5,7 +5,6 @@
 'require uci';
 'require rpc';
 'require form';
-'require tools.widgets as widgets';
 
 var callInitList, callInitAction, callTimezone,
     callGetLocaltime, callSetLocaltime, CBILocalTime;
@@ -30,9 +29,9 @@ callInitAction = rpc.declare({
 });
 
 callGetLocaltime = rpc.declare({
-	object: 'system',
-	method: 'info',
-	expect: { localtime: 0 }
+	object: 'luci',
+	method: 'getLocaltime',
+	expect: { result: 0 }
 });
 
 callSetLocaltime = rpc.declare({
@@ -48,19 +47,6 @@ callTimezone = rpc.declare({
 	expect: { '': {} }
 });
 
-function formatTime(epoch) {
-	var date = new Date(epoch * 1000);
-
-	return '%04d-%02d-%02d %02d:%02d:%02d'.format(
-		date.getUTCFullYear(),
-		date.getUTCMonth() + 1,
-		date.getUTCDate(),
-		date.getUTCHours(),
-		date.getUTCMinutes(),
-		date.getUTCSeconds()
-	);
-}
-
 CBILocalTime = form.DummyValue.extend({
 	renderWidget: function(section_id, option_id, cfgvalue) {
 		return E([], [
@@ -68,7 +54,7 @@ CBILocalTime = form.DummyValue.extend({
 				'id': 'localtime',
 				'type': 'text',
 				'readonly': true,
-				'value': formatTime(cfgvalue)
+				'value': new Date(cfgvalue * 1000).toLocaleString()
 			}),
 			E('br'),
 			E('span', { 'class': 'control-group' }, [
@@ -228,11 +214,10 @@ return view.extend({
 		o.ucioption = 'lang';
 		o.value('auto');
 
-		var l = Object.assign({ en: 'English' }, uci.get('luci', 'languages')),
-		    k = Object.keys(l).sort();
+		var k = Object.keys(uci.get('luci', 'languages') || {}).sort();
 		for (var i = 0; i < k.length; i++)
 			if (k[i].charAt(0) != '.')
-				o.value(k[i], l[k[i]]);
+				o.value(k[i], uci.get('luci', 'languages', k[i]));
 
 		o = s.taboption('language', form.ListValue, '_mediaurlbase', _('Design'))
 		o.uciconfig = 'luci';
@@ -283,15 +268,6 @@ return view.extend({
 			o.ucisection = 'ntp';
 			o.depends('enabled', '1');
 
-			o = s.taboption('timesync', widgets.NetworkSelect, 'interface',
-				_('Bind NTP server'),
-				_('Provide the NTP server to the selected interface or, if unspecified, to all interfaces'));
-			o.ucisection = 'ntp';
-			o.depends('enable_server', '1');
-			o.multiple = false;
-			o.nocreate = true;
-			o.optional = true;
-
 			o = s.taboption('timesync', form.Flag, 'use_dhcp', _('Use DHCP advertised servers'));
 			o.ucisection = 'ntp';
 			o.default = o.enabled;
@@ -309,7 +285,7 @@ return view.extend({
 		return m.render().then(function(mapEl) {
 			poll.add(function() {
 				return callGetLocaltime().then(function(t) {
-					mapEl.querySelector('#localtime').value = formatTime(t);
+					mapEl.querySelector('#localtime').value = new Date(t * 1000).toLocaleString();
 				});
 			});
 

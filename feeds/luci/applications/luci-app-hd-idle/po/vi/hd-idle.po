@@ -14,23 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.1.0\n"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:43
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:22
 msgid "Add new hdd setting..."
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:61
-msgid "Bus"
-msgstr ""
-
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:53
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:27
 msgid "Disk"
 msgstr "Ổ đĩa"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:46
-msgid "Disk Settings"
-msgstr ""
-
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:49
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:24
 #, fuzzy
 msgid "Enable"
 msgstr "Kích hoạt debug"
@@ -39,54 +31,49 @@ msgstr "Kích hoạt debug"
 msgid "Grant UCI access for luci-app-hd-idle"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:37
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:17
 #: applications/luci-app-hd-idle/root/usr/share/luci/menu.d/luci-app-hd-idle.json:3
 msgid "HDD Idle"
 msgstr "HDD Idle"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:37
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:17
 msgid ""
-"HDD Idle is a utility program for spinning-down disks after a period of idle "
-"time."
+"HDD Idle is a utility program for spinning-down external disks after a "
+"period of idle time."
 msgstr ""
-"HDD Idle là một chương trình tiện ích để quay các đĩa sau một khoảng thời "
-"gian idle."
+"HDD Idle là một chương trình tiện ích để quay các đĩa ngoài sau một khoảng "
+"thời gian idle."
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:75
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:87
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:32
 #, fuzzy
 msgid "Idle time"
 msgstr "Thời gian Idle"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:79
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:35
 #, fuzzy
 msgid "Idle time unit"
 msgstr "Đơn vị thời gian Idle"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:39
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:19
 msgid "Settings"
 msgstr "Sắp đặt"
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:68
-msgid "Vendor / Model"
-msgstr ""
-
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:84
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:39
 msgctxt "Abbreviation for days"
-msgid "days"
+msgid "d"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:83
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:38
 msgctxt "Abbreviation for hours"
-msgid "hours"
+msgid "h"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:82
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:37
 msgctxt "Abbreviation for minutes"
-msgid "minutes"
+msgid "min"
 msgstr ""
 
-#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:81
+#: applications/luci-app-hd-idle/htdocs/luci-static/resources/view/hd_idle.js:36
 msgctxt "Abbreviation for seconds"
-msgid "seconds"
+msgid "s"
 msgstr ""

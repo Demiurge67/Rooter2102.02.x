@@ -115,25 +115,6 @@ Description:     Translation for luci-app-pagekitec - Čeština (Czech)
 Karl Palsson <karlp@tweak.net.au>
 @@
 
-Package: luci-i18n-pagekitec-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-pagekitec
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-pagekitec - da translation
-Maintainer: Karl Palsson <karlp@tweak.net.au>
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-pagekitec - Dansk (Danish)
-Karl Palsson <karlp@tweak.net.au>
-@@
-
 Package: luci-i18n-pagekitec-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

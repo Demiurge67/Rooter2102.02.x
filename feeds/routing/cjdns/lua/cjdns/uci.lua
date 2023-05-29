@@ -53,10 +53,6 @@ function UCI.get()
     obj.router.interface.tunDevice = config.tun_device
   end
 
-  cursor:foreach("cjdns", "supernodes", function(supernodes)
-    table.insert(obj.router.supernodes, supernodes.public_key)
-  end)
-
   for i,section in pairs(obj.security) do
     if type(section.seccomp) == "number" then
       obj.security[i].seccomp = tonumber(config.seccomp)

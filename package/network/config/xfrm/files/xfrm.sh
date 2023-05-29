@@ -68,5 +68,5 @@ proto_xfrm_init_config() {
 
 
 [ -n "$INCLUDE_ONLY" ] || {
-	[ -d /sys/module/xfrm_interface ] && add_protocol xfrm
+	[ -f /lib/modules/$(uname -r)/xfrm_interface.ko -o -d /sys/module/xfrm_interface ] && add_protocol xfrm
 }

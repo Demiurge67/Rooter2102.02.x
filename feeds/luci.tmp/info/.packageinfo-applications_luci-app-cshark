@@ -115,25 +115,6 @@ Description:     Translation for luci-app-cshark - Čeština (Czech)
 Luka Perkov <luka@openwrt.org>
 @@
 
-Package: luci-i18n-cshark-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-cshark
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-cshark - da translation
-Maintainer: Luka Perkov <luka@openwrt.org>
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-cshark - Dansk (Danish)
-Luka Perkov <luka@openwrt.org>
-@@
-
 Package: luci-i18n-cshark-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

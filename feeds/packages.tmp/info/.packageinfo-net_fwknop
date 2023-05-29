@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/net/fwknop/Makefile
 
 Package: fwknopd
 Submenu: Firewall
-Version: 2.6.10-7
+Version: 2.6.10-6
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +iptables +libfko +!FWKNOPD_NFQ_CAPTURE:libpcap +FWKNOPD_NFQ_CAPTURE:iptables-mod-nfqueue +FWKNOPD_NFQ_CAPTURE:libnetfilter-queue +FWKNOPD_NFQ_CAPTURE:libnfnetlink +FWKNOP_GPG:gnupg +FWKNOP_GPG:libgpgme
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +34,7 @@ Config:
 
 Package: fwknop
 Submenu: Firewall
-Version: 2.6.10-7
+Version: 2.6.10-6
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libfko +FWKNOPD_GPG:gnupg +FWKNOPD_GPG:libgpgme
 Conflicts: 
 Menu-Depends: 
@@ -63,7 +63,7 @@ Jonathan Bennett <JBennett@incomsystems.biz>
 
 Package: libfko
 Submenu: Firewall
-Version: 2.6.10-7
+Version: 2.6.10-6
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +FWKNOPD_GPG:gnupg +FWKNOPD_GPG:libgpgme
 Conflicts: 
 Menu-Depends: 

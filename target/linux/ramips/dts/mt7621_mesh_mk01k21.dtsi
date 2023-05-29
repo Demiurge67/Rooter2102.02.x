@@ -132,6 +132,7 @@
 			factory: partition@40000 {
 				label = "factory";
 				reg = <0x40000 0x10000>;
+				read-only;
 			};
 
 			firmware: partition@50000 {
@@ -146,15 +147,8 @@
 	status = "okay";
 };
 
-&pcie0 {
+&pcie2 {
 	wifi0: wifi@0,0 {
-		compatible = "mediatek,mt76";
-		mtd-mac-address = <&factory 0x0c00>;
-	};
-};
-
-&pcie1 {
-	wifi1: wifi@0,0 {
 		compatible = "mediatek,mt76";
 		mtd-mac-address = <&factory 0x0c00>;
 	};
@@ -187,7 +181,7 @@
 
 &state_default {
 	gpio {
-		groups = "wdt", "jtag", "uart3";
+		groups = "wdt", "rgmii2", "jtag", "uart3";
 		function = "gpio";
 	};
 };

@@ -4,7 +4,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-wireguard
 Submenu: 3. Applications
 Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-proto-wireguard
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +wireguard-tools +kmod-wireguard +luci-proto-wireguard
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -112,25 +112,6 @@ Source:
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-wireguard - Čeština (Czech)
-
-@@
-
-Package: luci-i18n-wireguard-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-wireguard
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-wireguard - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-wireguard - Dansk (Danish)
 
 @@
 

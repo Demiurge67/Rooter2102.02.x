@@ -27,7 +27,7 @@ empty:=
 space:= $(empty) $(empty)
 comma:=,
 merge=$(subst $(space),,$(1))
-confvar=$(shell echo '$(foreach v,$(1),$(v)=$(subst ','\'',$($(v))))' | $(MKHASH) md5)
+confvar=$(shell echo '$(foreach v,$(1),$(v)=$(subst ','\'',$($(v))))' | $(STAGING_DIR_HOST)/bin/mkhash md5)
 strip_last=$(patsubst %.$(lastword $(subst .,$(space),$(1))),%,$(1))
 
 paren_left = (
@@ -62,6 +62,7 @@ ARCH_PACKAGES:=$(call qstrip,$(CONFIG_TARGET_ARCH_PACKAGES))
 BOARD:=$(call qstrip,$(CONFIG_TARGET_BOARD))
 SUBTARGET:=$(call qstrip,$(CONFIG_TARGET_SUBTARGET))
 TARGET_OPTIMIZATION:=$(call qstrip,$(CONFIG_TARGET_OPTIMIZATION))
+export EXTRA_OPTIMIZATION:=$(filter-out -fno-plt,$(call qstrip,$(CONFIG_EXTRA_OPTIMIZATION)))
 TARGET_SUFFIX=$(call qstrip,$(CONFIG_TARGET_SUFFIX))
 BUILD_SUFFIX:=$(call qstrip,$(CONFIG_BUILD_SUFFIX))
 SUBDIR:=$(patsubst $(TOPDIR)/%,%,${CURDIR})
@@ -137,7 +138,11 @@ else
 endif
 
 ifeq ($(or $(CONFIG_EXTERNAL_TOOLCHAIN),$(CONFIG_TARGET_uml)),)
-  iremap = -f$(if $(CONFIG_REPRODUCIBLE_DEBUG_INFO),file,macro)-prefix-map=$(1)=$(2)
+  ifeq ($(CONFIG_GCC_USE_IREMAP),y)
+    iremap = -iremap$(1):$(2)
+  else
+    iremap = -f$(if $(CONFIG_REPRODUCIBLE_DEBUG_INFO),file,macro)-prefix-map=$(1)=$(2)
+  endif
 endif
 
 PACKAGE_DIR:=$(BIN_DIR)/packages
@@ -208,6 +213,7 @@ ifndef DUMP
       ifneq ($(TOOLCHAIN_LIB_DIRS),)
         TARGET_LDFLAGS+= $(patsubst %,-L%,$(TOOLCHAIN_LIB_DIRS))
       endif
+      TARGET_PATH:=$(TOOLCHAIN_DIR)/bin:$(TARGET_PATH)
     endif
   endif
 endif
@@ -238,28 +244,28 @@ export PKG_CONFIG
 HOSTCC:=gcc
 HOSTCXX:=g++
 HOST_CPPFLAGS:=-I$(STAGING_DIR_HOST)/include $(if $(IS_PACKAGE_BUILD),-I$(STAGING_DIR_HOSTPKG)/include -I$(STAGING_DIR)/host/include)
-HOST_CXXFLAGS:=
 HOST_CFLAGS:=-O2 $(HOST_CPPFLAGS)
 HOST_LDFLAGS:=-L$(STAGING_DIR_HOST)/lib $(if $(IS_PACKAGE_BUILD),-L$(STAGING_DIR_HOSTPKG)/lib -L$(STAGING_DIR)/host/lib)
+
+ifeq ($(CONFIG_EXTERNAL_TOOLCHAIN),)
+  TARGET_AR:=$(TARGET_CROSS)gcc-ar
+  TARGET_RANLIB:=$(TARGET_CROSS)gcc-ranlib
+  TARGET_NM:=$(TARGET_CROSS)gcc-nm
+else
+  TARGET_AR:=$(TARGET_CROSS)ar
+  TARGET_RANLIB:=$(TARGET_CROSS)ranlib
+  TARGET_NM:=$(TARGET_CROSS)nm
+endif
 
 BUILD_KEY=$(TOPDIR)/key-build
 
 FAKEROOT:=$(STAGING_DIR_HOST)/bin/fakeroot
 
-TARGET_AR:=$(TARGET_CROSS)gcc-ar
-TARGET_RANLIB:=$(TARGET_CROSS)gcc-ranlib
-TARGET_NM:=$(TARGET_CROSS)gcc-nm
 TARGET_CC:=$(TARGET_CROSS)gcc
 TARGET_CXX:=$(TARGET_CROSS)g++
 KPATCH:=$(SCRIPT_DIR)/patch-kernel.sh
 SED:=$(STAGING_DIR_HOST)/bin/sed -i -e
 ESED:=$(STAGING_DIR_HOST)/bin/sed -E -i -e
-MKHASH:=$(STAGING_DIR_HOST)/bin/mkhash
-# MKHASH is used in /scripts, so we export it here.
-export MKHASH
-# DOWNLOAD_CHECK_CERTIFICATE is used in /scripts, so we export it here.
-DOWNLOAD_CHECK_CERTIFICATE:=$(CONFIG_DOWNLOAD_CHECK_CERTIFICATE)
-export DOWNLOAD_CHECK_CERTIFICATE
 CP:=cp -fpR
 LN:=ln -sf
 XARGS:=xargs -r
@@ -268,7 +274,7 @@ BASH:=bash
 TAR:=tar
 FIND:=find
 PATCH:=patch
-PYTHON:=python3
+PYTHON:=python
 
 INSTALL_BIN:=install -m0755
 INSTALL_SUID:=install -m4755
@@ -333,12 +339,6 @@ else
     $(SCRIPT_DIR)/rstrip.sh
 endif
 
-NINJA = \
-	MAKEFLAGS="$(MAKE_JOBSERVER)" \
-	$(STAGING_DIR_HOST)/bin/ninja \
-		$(if $(findstring c,$(OPENWRT_VERBOSE)),-v) \
-		$(if $(MAKE_JOBSERVER),,-j1)
-
 ifeq ($(CONFIG_IPV6),y)
   DISABLE_IPV6:=
 else
@@ -399,7 +399,7 @@ endef
 # $(2) => If set, recurse into subdirectories
 define sha256sums
 	(cd $(1); find . $(if $(2),,-maxdepth 1) -type f -not -name 'sha256sums' -printf "%P\n" | sort | \
-		xargs -r $(MKHASH) -n sha256 | sed -ne 's!^\(.*\) \(.*\)$$!\1 *\2!p' > sha256sums)
+		xargs -r $(STAGING_DIR_HOST)/bin/mkhash -n sha256 | sed -ne 's!^\(.*\) \(.*\)$$!\1 *\2!p' > sha256sums)
 endef
 
 # file extension
@@ -412,7 +412,7 @@ $(shell \
   if git log -1 >/dev/null 2>/dev/null; then \
     if [ -n "$(1)" ]; then \
       last_bump="$$(git log --pretty=format:'%h %s' . | \
-        grep -m 1 -e ': [uU]pdate to ' -e ': [bB]ump to ' | \
+        grep --max-count=1 -e ': [uU]pdate to ' -e ': [bB]ump to ' | \
         cut -f 1 -d ' ')"; \
     fi; \
     if [ -n "$$last_bump" ]; then \

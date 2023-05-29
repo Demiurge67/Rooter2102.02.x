@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-10-03 08:34+0000\n"
-"Last-Translator: TakissX <pxatzidakis@gmail.com>\n"
+"PO-Revision-Date: 2021-01-23 03:57+0000\n"
+"Last-Translator: Savvas Sfantos <savvassfa@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdockerman/el/>\n"
 "Language: el\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/newcontainer.lua:604
 msgid "A list of kernel capabilities to add to the container"
@@ -306,13 +306,13 @@ msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/view/dockerman/container_file.htm:14
 msgid "Download"
-msgstr "Λήψη"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/networks.lua:79
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/newnetwork.lua:32
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/volumes.lua:85
 msgid "Driver"
-msgstr "Οδηγός"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/container.lua:263
 msgid "Duplicate/Edit"
@@ -578,7 +578,7 @@ msgstr ""
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/container.lua:411
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/volumes.lua:83
 msgid "Name"
-msgstr "Ονομα"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/newnetwork.lua:29
 msgid "Name of the network that can be selected during container creation"
@@ -588,7 +588,7 @@ msgstr ""
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/container.lua:520
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/containers.lua:132
 msgid "Network"
-msgstr "Δίκτυο"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/networks.lua:77
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/newnetwork.lua:28
@@ -654,7 +654,7 @@ msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/view/dockerman/container_file.htm:7
 msgid "Path"
-msgstr "Διαδρομή"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/view/dockerman/images_import.htm:54
 msgid "Please input new tag"
@@ -675,7 +675,7 @@ msgstr ""
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/container.lua:347
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/containers.lua:135
 msgid "Ports"
-msgstr "Θύρες"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/newnetwork.lua:52
 msgid "Private (Prevent communication between MAC VLANs)"
@@ -900,7 +900,7 @@ msgstr ""
 #: applications/luci-app-dockerman/luasrc/view/dockerman/container_file.htm:2
 #: applications/luci-app-dockerman/luasrc/view/dockerman/container_file.htm:13
 msgid "Upload"
-msgstr "Μεταφόρτωση"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/view/dockerman/container_file.htm:46
 msgid "Upload Error"
@@ -916,7 +916,7 @@ msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/container.lua:331
 msgid "User"
-msgstr "Χρήστης"
+msgstr ""
 
 #: applications/luci-app-dockerman/luasrc/model/cbi/dockerman/newcontainer.lua:524
 msgid "User(-u)"

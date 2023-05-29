@@ -6,7 +6,7 @@ ROOTER=/usr/lib/rooter
 ROOTER_LINK="/tmp/links"
 
 log() {
-	modlog "Get Profile $CURRMODEM" "$@"
+	logger -t "Get Profile" "$@"
 }
 
 CURRMODEM=$1
@@ -31,81 +31,6 @@ else
 fi
 
 MATCH=0
-
-country() {
-	ispdata=$(uci -q get country.general.ispdata)
-	uci set modem.modeminfo$CURRMODEM.apn2=""
-	uci set modem.modeminfo$CURRMODEM.apn=$(echo $ispdata | cut -d, -f2)
-	user=$(echo $ispdata | cut -d, -f6)
-	if [ "$user" = "~" ]; then
-		user=""
-	fi
-	uci set modem.modeminfo$CURRMODEM.user=$user
-	passw=$(echo $ispdata | cut -d, -f4)
-	if [ "$passw" = "~" ]; then
-		passw=""
-	fi
-	uci set modem.modeminfo$CURRMODEM.passw=$passw
-	uci set modem.modeminfo$CURRMODEM.context=$(echo $ispdata | cut -d, -f5)
-	auth=$(echo $ispdata | cut -d, -f7)
-	if [ "$auth" = "~" ]; then
-		auth="0"
-	fi
-	uci set modem.modeminfo$CURRMODEM.auth=$auth
-	pdp=$(echo $ispdata | cut -d, -f8)
-	if [ $pdp = "0" ]; then
-		pdp=""
-	fi
-	uci set modem.modeminfo$CURRMODEM.pdptype=$pdp
-	
-	uci set modem.modeminfo$CURRMODEM.ppp='0'
-	uci set modem.modeminfo$CURRMODEM.inter=0
-	uci set modem.modeminfo$CURRMODEM.delay='0'
-	uci set modem.modeminfo$CURRMODEM.lock=$(uci -q get country.global.roaming)
-	uci set modem.modeminfo$CURRMODEM.mcc=$(uci -q get country.global.mcc)
-	uci set modem.modeminfo$CURRMODEM.mnc=$(uci -q get country.global.mnc)
-	uci set modem.modeminfo$CURRMODEM.dns1=$(uci -q get country.global.ip1)
-	uci set modem.modeminfo$CURRMODEM.dns2=$(uci -q get country.global.ip2)
-	uci set modem.modeminfo$CURRMODEM.dns3=$(uci -q get country.global.ip3)
-	uci set modem.modeminfo$CURRMODEM.dns4=''
-	uci set modem.modeminfo$CURRMODEM.log='0'
-	uci set modem.modeminfo$CURRMODEM.lb='1'
-	uci set modem.modeminfo$CURRMODEM.at=''
-	uci set modem.modeminfo$CURRMODEM.atc=''
-	uci set modem.modeminfo$CURRMODEM.tzone=$(uci -q get country.global.autoset)
-	uci set modem.modeminfo$CURRMODEM.mtu=$(uci -q get country.global.mtu)	
-	uci set modem.modeminfo$CURRMODEM.nodhcp='1'
-	ttl=$(uci -q get country.global.ttl)
-	if [ "$ttl" = "255" ]; then
-		ttl='TTL-INC 1'
-	fi
-	uci set modem.modeminfo$CURRMODEM.ttl=$ttl
-	uci set modem.modeminfo$CURRMODEM.ttloption="0"
-	uci set modem.modeminfo$CURRMODEM.hostless="0"
-	uci set modem.modeminfo$CURRMODEM.bwday='0'
-	uci set modem.modeminfo$CURRMODEM.bwphone="0"
-	uci set modem.modeminfo$CURRMODEM.bwdelay='0'
-	
-	uci delete modem.pinginfo$CURRMODEM
-	uci set modem.pinginfo$CURRMODEM=pinfo$CURRMODEM
-	uci set modem.pinginfo$CURRMODEM.alive=$(uci -q get country.global.status)
-	uci add_list modem.pinginfo$CURRMODEM.trackip=$(uci -q get country.global.ip1)
-	uci add_list modem.pinginfo$CURRMODEM.trackip=$(uci -q get country.global.ip2)
-	uci add_list modem.pinginfo$CURRMODEM.trackip=$(uci -q get country.global.ip3)
-
-	uci set modem.pinginfo$CURRMODEM.reliability='1'
-	uci set modem.pinginfo$CURRMODEM.count='1'
-	uci set modem.pinginfo$CURRMODEM.pingtime=$(uci -q get country.global.interval)
-	uci set modem.pinginfo$CURRMODEM.pingwait=$(uci -q get country.global.timeout)
-	uci set modem.pinginfo$CURRMODEM.packetsize='52'
-	uci set modem.pinginfo$CURRMODEM.down=$(uci -q get country.global.check)
-	uci set modem.pinginfo$CURRMODEM.up=$(uci -q get country.global.check)
-	uci commit modem
-	log "Selected ISP $(echo $ispdata | cut -d, -f3)"
-	log "APN of profile used is $(echo $ispdata | cut -d, -f2)"
-
-	touch /tmp/profile$CURRMODEM
-}
 
 do_custom() {
 	local config=$1
@@ -226,21 +151,16 @@ do_custom() {
 					dapn=$(echo "$apn" | grep "|")
 					if [ -z $dapn ]; then
 						apn2=""
-						apn3=""
 					else
 						fapn=$apn"|"
 						fapn=$(echo $fapn" " | tr "|" ",")
 						apn=$(echo $fapn | cut -d, -f1)
 						apn2=$(echo $fapn | cut -d, -f2)
-						apn3=$(echo $fapn | cut -d, -f3)
 					fi
 					uci set modem.modeminfo$CURRMODEM.apn=$apn
 					uci set modem.modeminfo$CURRMODEM.apn2=$apn2
-					uci set modem.modeminfo$CURRMODEM.apn3=$apn3
 					config_get mtu $1 mtu
 					uci set modem.modeminfo$CURRMODEM.mtu=$mtu
-					config_get context $1 context
-					uci set modem.modeminfo$CURRMODEM.context=$context
 					config_get user $1 user
 					uci set modem.modeminfo$CURRMODEM.user=$user
 					config_get passw $1 passw
@@ -291,11 +211,6 @@ do_custom() {
 						ttl="0"
 					fi
 					uci set modem.modeminfo$CURRMODEM.ttl="$ttl"
-					config_get ttloption $1 ttloption
-					if [ -z "$ttloption" ]; then
-						ttloption="0"
-					fi
-					uci set modem.modeminfo$CURRMODEM.ttloption="$ttloption"
 					config_get hostless $1 hostless
 					if [ -z "$hostless" ]; then
 						hostless="0"
@@ -358,65 +273,33 @@ do_custom() {
 	fi
 }
 
-cselect=$(uci -q get country.general.selected)
-if [ "$cselect" = "1" ]; then
-	log "Using Country Selected ISP"
-	country
-	exit 0
-fi
-
-autoapn=$(uci -q get profile.disable.autoapn)
-apd=0
-if [ -e /usr/lib/autoapn/apn.data ]; then
-	apd=1
-fi
-
-if [ $autoapn = "1" -a $apd -eq 1 ]; then
+autod=$(uci -q get profile.disable.enabled)
+if [ $autod = "1" ]; then
 	MATCH=0
 else
-	autod=$(uci -q get profile.disable.enabled)
-	if [ $autod = "1" ]; then
-		MATCH=0
-	else
-		config_load profile
-		config_foreach do_custom custom
-	fi
+	config_load profile
+	config_foreach do_custom custom
 fi
 
 if [ $MATCH = 0 ]; then
-	if [ $autod = "1" ]; then
-		if [ -e /etc/config/isp ]; then
-			MATCH=1
-		fi
-	fi
-	if [ $MATCH = 1 ]; then
-		isp=$(uci -q get isp.general.current)
-		apn=$(uci -q get isp.$isp.apn)
+	apn=$(uci -q get profile.default.apn)
+	dapn=$(echo "$apn" | grep "|")
+	if [ -z $dapn ]; then
 		apn2=""
 	else
-		apn=$(uci -q get profile.default.apn)
-		dapn=$(echo "$apn" | grep "|")
-		if [ -z $dapn ]; then
-			apn2=""
-			apn3=""
-		else
-			fapn=$apn"|"
-			fapn=$(echo $fapn" " | tr "|" ",")
-			apn=$(echo $fapn | cut -d, -f1)
-			apn2=$(echo $fapn | cut -d, -f2)
-			apn3=$(echo $fapn | cut -d, -f3)
-		fi
+		fapn=$apn"|"
+		fapn=$(echo $fapn" " | tr "|" ",")
+		apn=$(echo $fapn | cut -d, -f1)
+		apn2=$(echo $fapn | cut -d, -f2)
 	fi
 	uci set modem.modeminfo$CURRMODEM.apn=$apn
 	uci set modem.modeminfo$CURRMODEM.apn2=$apn2
-	uci set modem.modeminfo$CURRMODEM.apn3=$apn3
 	if [ -n "$ICCID" ]; then
-		iccid="891223"
+		iccid="891490"
 		case $ICCID in
 		"$iccid"*)
 			uci set modem.modeminfo$CURRMODEM.apn2=""
-			uci set modem.modeminfo$CURRMODEM.apn3=""
-			uci set modem.modeminfo$CURRMODEM.apn="sp.koodo.com"
+			uci set modem.modeminfo$CURRMODEM.apn="internet.freedommobile.ca"
 			;;
 		esac
 	fi
@@ -424,7 +307,6 @@ if [ $MATCH = 0 ]; then
 	uci set modem.modeminfo$CURRMODEM.user=$(uci -q get profile.default.user)
 	uci set modem.modeminfo$CURRMODEM.passw=$(uci -q get profile.default.passw)
 	uci set modem.modeminfo$CURRMODEM.pincode=$(uci -q get profile.default.pincode)
-	uci set modem.modeminfo$CURRMODEM.context=$(uci -q get profile.default.context)
 	uci set modem.modeminfo$CURRMODEM.auth=$(uci get profile.default.auth)
 	uci set modem.modeminfo$CURRMODEM.ppp=$(uci get profile.default.ppp)
 	uci set modem.modeminfo$CURRMODEM.inter=0
@@ -453,11 +335,6 @@ if [ $MATCH = 0 ]; then
 		ttl="0"
 	fi
 	uci set modem.modeminfo$CURRMODEM.ttl="$ttl"
-	ttloption=$(uci -q get profile.default.ttloption)
-	if [ -z "$ttloption" ]; then
-		ttloption="0"
-	fi
-	uci set modem.modeminfo$CURRMODEM.ttloption="$ttloption"
 	hostless=$(uci -q get profile.default.hostless)
 	if [ -z "$hostless" ]; then
 		hostless="0"
@@ -504,19 +381,15 @@ if [ $MATCH = 0 ]; then
 	fi
 
 	uci commit modem
-	if [ "$autoapn" = "1" -a $apd -eq 1 ]; then
-		log "Automatic APN Used"
-	else
-		log "Default Profile Used"
-		[ -n "$(uci -q get profile.default.apn)" ] || log "Default profile has no APN configured"
-	fi
+	log "Default Profile Used"
+	[ -n "$(uci -q get profile.default.apn)" ] || log "Default profile has no APN configured"
 fi
 
-if [ ! -e /etc/config/isp ]; then
-	if [ "$autoapn" != "1" -a $apd -eq 1 ]; then
-		APN=$(uci -q get modem.modeminfo$CURRMODEM.apn)
-		log "APN of profile used is $APN"
-	fi
-fi
+APN=$(uci -q get modem.modeminfo$CURRMODEM.apn)
+log "APN of profile used is $APN"
 
 touch /tmp/profile$CURRMODEM
+
+if [ -e /usr/lib/rooter/autoapn.sh ]; then
+	/usr/lib/rooter/autoapn.sh $CURRMODEM
+fi

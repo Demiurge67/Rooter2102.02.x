@@ -115,25 +115,6 @@ Description:     Translation for luci-app-ntpc - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-ntpc-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-ntpc
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-ntpc - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-ntpc - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-ntpc-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

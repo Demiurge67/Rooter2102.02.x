@@ -15,32 +15,14 @@
 
 	local node = disp.context.dispatched
 
-	local darkpref
-
-	if theme == "bootstrap-dark" then
-		darkpref = "true"
-	elseif theme == "bootstrap-light" then
-		darkpref = "false"
-	end
-
 	-- send as HTML5
 	http.prepare_content("text/html")
 -%>
 <!DOCTYPE html>
-<html lang="<%=luci.i18n.context.lang%>"<%= ifattr(darkpref ~= nil, "data-darkmode", darkpref) %>>
+<html lang="<%=luci.i18n.context.lang%>">
 	<head>
 		<meta charset="utf-8">
 		<title><%=striptags( (boardinfo.hostname or "?") .. ( (node and node.title) and ' - ' .. translate(node.title) or '')) %> - LuCI</title>
-		<% if darkpref == nil then %>
-			<script type="text/javascript">
-				var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)'),
-				    rootElement = document.querySelector(':root'),
-				    setDarkMode = function(match) { rootElement.setAttribute('data-darkmode', match.matches) };
-
-				mediaQuery.addEventListener('change', setDarkMode);
-				setDarkMode(mediaQuery);
-			</script>
-		<% end %>
 		<meta name="viewport" content="initial-scale=1.0">
 		<link rel="stylesheet" href="<%=media%>/cascade.css">
 		<link rel="stylesheet" media="only screen and (max-device-width: 854px)" href="<%=media%>/mobile.css" type="text/css" />
@@ -56,11 +38,14 @@
 	</head>
 
 	<body class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><%- end %>" data-page="<%= pcdata(table.concat(disp.context.requestpath, "-")) %>">
-		<% if not blank_page then %>
 		<header>
-			<a class="brand" href="/"><%=striptags(boardinfo.hostname or "?")%></a>
-			<ul class="nav" id="topmenu" style="display:none"></ul>
-			<div id="indicators" class="pull-right"></div>
+			<div class="fill">
+				<div class="container">
+					<a class="brand" href="/"><%=striptags(boardinfo.hostname or "?")%></a>
+					<ul class="nav" id="topmenu" style="display:none"></ul>
+					<div id="indicators" class="pull-right"></div>
+				</div>
+			</div>
 		</header>
 
 		<div id="maincontent" class="container">
@@ -74,16 +59,6 @@
 				</div>
 			<%- end -%>
 
-			<%- if boardinfo.rootfs_type == "initramfs" then -%>
-				<div class="alert-message warning">
-					<h4><%:System running in recovery (initramfs) mode.%></h4>
-					<p><%:No changes to settings will be stored and are lost after rebooting. This mode should only be used to install a firmware upgrade%></p>
-					<% if disp.lookup("admin/system/flash") then %>
-					  <div class="right"><a class="btn" href="<%=url("admin/system/flash")%>"><%:Go to firmware upgrade...%></a></div>
-					<% end %>
-				</div>
-			<%- end -%>
-
 			<noscript>
 				<div class="alert-message warning">
 					<h4><%:JavaScript required!%></h4>
@@ -92,4 +67,3 @@
 			</noscript>
 
 			<div id="tabmenu" style="display:none"></div>
-		<% end %>

@@ -14,9 +14,6 @@ LUCI_SECTION?=luci
 LUCI_CATEGORY?=LuCI
 LUCI_URL?=https://github.com/openwrt/luci
 LUCI_MAINTAINER?=OpenWrt LuCI community
-LUCI_MINIFY_LUA?=1
-LUCI_MINIFY_CSS?=1
-LUCI_MINIFY_JS?=1
 
 # Language code titles
 LUCI_LANG.ar=العربية (Arabic)
@@ -24,7 +21,6 @@ LUCI_LANG.bg=български (Bulgarian)
 LUCI_LANG.bn_BD=বাংলা (Bengali)
 LUCI_LANG.ca=Català (Catalan)
 LUCI_LANG.cs=Čeština (Czech)
-LUCI_LANG.da=Dansk (Danish)
 LUCI_LANG.de=Deutsch (German)
 LUCI_LANG.el=Ελληνικά (Greek)
 LUCI_LANG.en=English
@@ -210,7 +206,8 @@ endef
 
 ifndef Package/$(PKG_NAME)/postinst
 define Package/$(PKG_NAME)/postinst
-[ -n "$${IPKG_INSTROOT}" ] || { \
+[ -n "$${IPKG_INSTROOT}" ] || {$(foreach script,$(LUCI_DEFAULTS),
+	(. /etc/uci-defaults/$(script)) && rm -f /etc/uci-defaults/$(script))
 	rm -f /tmp/luci-indexcache
 	rm -rf /tmp/luci-modulecache/
 	killall -HUP rpcd 2>/dev/null
@@ -220,44 +217,26 @@ endef
 endif
 
 # some generic macros that can be used by all packages
-ifeq ($(LUCI_MINIFY_JS),1)
-  define SrcDiet
+define SrcDiet
 	$(FIND) $(1) -type f -name '*.lua' | while read src; do \
 		if LUA_PATH="$(STAGING_DIR_HOSTPKG)/lib/lua/5.1/?.lua" luasrcdiet --noopt-binequiv -o "$$$$src.o" "$$$$src"; \
 		then mv "$$$$src.o" "$$$$src"; fi; \
 	done
-  endef
-else
-  define SrcDiet
-	$$(call MESSAGE,$$(LUCI_NAME) does not support Lua source minification)
-  endef
-endif
+endef
 
-ifeq ($(LUCI_MINIFY_JS),1)
-  define JsMin
+define JsMin
 	$(FIND) $(1) -type f -name '*.js' | while read src; do \
 		if jsmin < "$$$$src" > "$$$$src.o"; \
 		then mv "$$$$src.o" "$$$$src"; fi; \
 	done
-  endef
-else
-  define JsMin
-	$$(call MESSAGE,$$(LUCI_NAME) does not support JavaScript source minification)
-  endef
-endif
+endef
 
-ifeq ($(LUCI_MINIFY_CSS),1)
-  define CssTidy
+define CssTidy
 	$(FIND) $(1) -type f -name '*.css' | while read src; do \
 		if csstidy "$$$$src" --template=highest --remove_last_semicolon=true "$$$$src.o"; \
 		then mv "$$$$src.o" "$$$$src"; fi; \
 	done
-  endef
-else
-  define CssTidy
-	$$(call MESSAGE,$$(LUCI_NAME) does not support CSS source minification)
-  endef
-endif
+endef
 
 define SubstituteVersion
 	$(FIND) $(1) -type f -name '*.htm' | while read src; do \
@@ -282,10 +261,10 @@ ifeq ($(PKG_NAME),luci-base)
         bool "Minify CSS files"
         default y
 
-   menu "Translations"$(foreach lang,$(LUCI_LANGUAGES),$(if $(LUCI_LANG.$(lang)),
+   menu "Translations"$(foreach lang,$(LUCI_LANGUAGES),
 
      config LUCI_LANG_$(lang)
-	   tristate "$(shell echo '$(LUCI_LANG.$(lang))' | sed -e 's/^.* (\(.*\))$$/\1/') ($(lang))"))
+	   tristate "$(shell echo '$(LUCI_LANG.$(lang))' | sed -e 's/^.* (\(.*\))$$/\1/') ($(lang))")
 
    endmenu
  endef
@@ -333,5 +312,5 @@ define LuciTranslation
 
 endef
 
-$(foreach lang,$(LUCI_LANGUAGES),$(if $(LUCI_LANG.$(lang)),$(eval $(call LuciTranslation,$(firstword $(LUCI_LC_ALIAS.$(lang)) $(lang)),$(lang)))))
+$(foreach lang,$(LUCI_LANGUAGES),$(eval $(call LuciTranslation,$(firstword $(LUCI_LC_ALIAS.$(lang)) $(lang)),$(lang))))
 $(foreach pkg,$(LUCI_BUILD_PACKAGES),$(eval $(call BuildPackage,$(pkg))))

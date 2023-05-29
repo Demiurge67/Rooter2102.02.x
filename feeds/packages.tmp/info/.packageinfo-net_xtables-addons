@@ -3,7 +3,7 @@ Build-Depends: iptables
 
 Package: kmod-ipt-compat-xtables
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +IPV6:kmod-ip6tables
 Conflicts: 
 Menu-Depends: 
@@ -12,9 +12,8 @@ Section: kernel
 Category: Kernel modules
 Title: API compatibilty layer netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: API compatibilty layer netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -22,7 +21,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-nathelper-rtsp
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-conntrack-extra +kmod-ipt-nat
 Conflicts: 
 Menu-Depends: 
@@ -31,9 +30,8 @@ Section: kernel
 Category: Kernel modules
 Title: RTSP Conntrack and NAT netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: RTSP Conntrack and NAT netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -41,7 +39,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-account
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-account
 Conflicts: 
 Menu-Depends: 
@@ -51,9 +49,8 @@ Category: Network
 Repository: base
 Title: ACCOUNT iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: ACCOUNT iptables extension
 https://inai.de/projects/xtables-addons/
@@ -62,7 +59,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-account
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -71,9 +68,8 @@ Section: kernel
 Category: Kernel modules
 Title: ACCOUNT netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: ACCOUNT netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -81,7 +77,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-chaos
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-chaos
 Conflicts: 
 Menu-Depends: 
@@ -91,9 +87,8 @@ Category: Network
 Repository: base
 Title: CHAOS iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: CHAOS iptables extension
 https://inai.de/projects/xtables-addons/
@@ -102,7 +97,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-chaos
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables +kmod-ipt-delude +kmod-ipt-tarpit
 Conflicts: 
 Menu-Depends: 
@@ -111,9 +106,8 @@ Section: kernel
 Category: Kernel modules
 Title: CHAOS netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: CHAOS netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -121,7 +115,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-condition
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-condition
 Conflicts: 
 Menu-Depends: 
@@ -131,9 +125,8 @@ Category: Network
 Repository: base
 Title: Condition iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: Condition iptables extension
 https://inai.de/projects/xtables-addons/
@@ -142,7 +135,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-condition
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -151,9 +144,8 @@ Section: kernel
 Category: Kernel modules
 Title: Condition netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: Condition netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -161,7 +153,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-delude
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-delude
 Conflicts: 
 Menu-Depends: 
@@ -171,9 +163,8 @@ Category: Network
 Repository: base
 Title: DELUDE iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: DELUDE iptables extension
 https://inai.de/projects/xtables-addons/
@@ -182,7 +173,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-delude
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -191,9 +182,8 @@ Section: kernel
 Category: Kernel modules
 Title: DELUDE netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: DELUDE netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -201,7 +191,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-dhcpmac
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-dhcpmac
 Conflicts: 
 Menu-Depends: 
@@ -211,9 +201,8 @@ Category: Network
 Repository: base
 Title: DHCPMAC iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: DHCPMAC iptables extension
 https://inai.de/projects/xtables-addons/
@@ -222,7 +211,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-dhcpmac
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -231,9 +220,8 @@ Section: kernel
 Category: Kernel modules
 Title: DHCPMAC netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: DHCPMAC netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -241,7 +229,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-dnetmap
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-dnetmap
 Conflicts: 
 Menu-Depends: 
@@ -251,9 +239,8 @@ Category: Network
 Repository: base
 Title: DNETMAP iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: DNETMAP iptables extension
 https://inai.de/projects/xtables-addons/
@@ -262,7 +249,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-dnetmap
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables +kmod-ipt-nat
 Conflicts: 
 Menu-Depends: 
@@ -271,9 +258,8 @@ Section: kernel
 Category: Kernel modules
 Title: DNETMAP netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: DNETMAP netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -281,7 +267,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-fuzzy
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-fuzzy
 Conflicts: 
 Menu-Depends: 
@@ -291,9 +277,8 @@ Category: Network
 Repository: base
 Title: fuzzy iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: fuzzy iptables extension
 https://inai.de/projects/xtables-addons/
@@ -302,7 +287,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-fuzzy
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -311,9 +296,8 @@ Section: kernel
 Category: Kernel modules
 Title: fuzzy netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: fuzzy netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -321,7 +305,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-geoip
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-geoip
 Conflicts: 
 Menu-Depends: 
@@ -331,9 +315,8 @@ Category: Network
 Repository: base
 Title: geoip iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: geoip iptables extension
 https://inai.de/projects/xtables-addons/
@@ -342,7 +325,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-geoip
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -351,9 +334,8 @@ Section: kernel
 Category: Kernel modules
 Title: geoip netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: geoip netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -361,7 +343,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-iface
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-iface
 Conflicts: 
 Menu-Depends: 
@@ -371,9 +353,8 @@ Category: Network
 Repository: base
 Title: iface iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: iface iptables extension
 https://inai.de/projects/xtables-addons/
@@ -382,7 +363,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-iface
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -391,9 +372,8 @@ Section: kernel
 Category: Kernel modules
 Title: iface netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: iface netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -401,7 +381,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-ipmark
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-ipmark
 Conflicts: 
 Menu-Depends: 
@@ -411,9 +391,8 @@ Category: Network
 Repository: base
 Title: IPMARK iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: IPMARK iptables extension
 https://inai.de/projects/xtables-addons/
@@ -422,7 +401,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-ipmark
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -431,9 +410,8 @@ Section: kernel
 Category: Kernel modules
 Title: IPMARK netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: IPMARK netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -441,7 +419,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-ipp2p
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-ipp2p
 Conflicts: 
 Menu-Depends: 
@@ -451,9 +429,8 @@ Category: Network
 Repository: base
 Title: IPP2P iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: IPP2P iptables extension
 https://inai.de/projects/xtables-addons/
@@ -462,7 +439,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-ipp2p
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -471,9 +448,8 @@ Section: kernel
 Category: Kernel modules
 Title: IPP2P netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: IPP2P netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -481,7 +457,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-ipv4options
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-ipv4options
 Conflicts: 
 Menu-Depends: 
@@ -491,9 +467,8 @@ Category: Network
 Repository: base
 Title: ipv4options iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: ipv4options iptables extension
 https://inai.de/projects/xtables-addons/
@@ -502,7 +477,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-ipv4options
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -511,9 +486,8 @@ Section: kernel
 Category: Kernel modules
 Title: ipv4options netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: ipv4options netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -521,7 +495,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-length2
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-length2
 Conflicts: 
 Menu-Depends: 
@@ -531,9 +505,8 @@ Category: Network
 Repository: base
 Title: length2 iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: length2 iptables extension
 https://inai.de/projects/xtables-addons/
@@ -542,7 +515,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-length2
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -551,9 +524,8 @@ Section: kernel
 Category: Kernel modules
 Title: length2 netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: length2 netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -561,7 +533,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-logmark
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-logmark
 Conflicts: 
 Menu-Depends: 
@@ -571,9 +543,8 @@ Category: Network
 Repository: base
 Title: LOGMARK iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: LOGMARK iptables extension
 https://inai.de/projects/xtables-addons/
@@ -582,7 +553,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-logmark
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -591,9 +562,8 @@ Section: kernel
 Category: Kernel modules
 Title: LOGMARK netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: LOGMARK netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -601,7 +571,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-lscan
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-lscan
 Conflicts: 
 Menu-Depends: 
@@ -611,9 +581,8 @@ Category: Network
 Repository: base
 Title: lscan iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: lscan iptables extension
 https://inai.de/projects/xtables-addons/
@@ -622,7 +591,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-lscan
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -631,9 +600,8 @@ Section: kernel
 Category: Kernel modules
 Title: lscan netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: lscan netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -641,7 +609,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-lua
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-lua
 Conflicts: 
 Menu-Depends: 
@@ -651,9 +619,8 @@ Category: Network
 Repository: base
 Title: Lua PacketScript iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: Lua PacketScript iptables extension
 https://inai.de/projects/xtables-addons/
@@ -662,7 +629,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-lua
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-conntrack-extra
 Conflicts: 
 Menu-Depends: 
@@ -671,9 +638,8 @@ Section: kernel
 Category: Kernel modules
 Title: Lua PacketScript netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: Lua PacketScript netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -681,7 +647,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-proto
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-proto
 Conflicts: 
 Menu-Depends: 
@@ -691,9 +657,8 @@ Category: Network
 Repository: base
 Title: PROTO iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: PROTO iptables extension
 https://inai.de/projects/xtables-addons/
@@ -702,7 +667,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-proto
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -711,9 +676,8 @@ Section: kernel
 Category: Kernel modules
 Title: PROTO netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: PROTO netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -721,7 +685,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-psd
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-psd
 Conflicts: 
 Menu-Depends: 
@@ -731,9 +695,8 @@ Category: Network
 Repository: base
 Title: psd iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: psd iptables extension
 https://inai.de/projects/xtables-addons/
@@ -742,7 +705,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-psd
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -751,9 +714,8 @@ Section: kernel
 Category: Kernel modules
 Title: psd netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: psd netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -761,7 +723,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-quota2
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-quota2
 Conflicts: 
 Menu-Depends: 
@@ -771,9 +733,8 @@ Category: Network
 Repository: base
 Title: quota2 iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: quota2 iptables extension
 https://inai.de/projects/xtables-addons/
@@ -782,7 +743,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-quota2
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core 
 Conflicts: 
 Menu-Depends: 
@@ -791,9 +752,8 @@ Section: kernel
 Category: Kernel modules
 Title: quota2 netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: quota2 netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -801,7 +761,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-sysrq
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-sysrq
 Conflicts: 
 Menu-Depends: 
@@ -811,9 +771,8 @@ Category: Network
 Repository: base
 Title: SYSRQ iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: SYSRQ iptables extension
 https://inai.de/projects/xtables-addons/
@@ -822,7 +781,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-sysrq
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables +kmod-crypto-hash
 Conflicts: 
 Menu-Depends: 
@@ -831,9 +790,8 @@ Section: kernel
 Category: Kernel modules
 Title: SYSRQ netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: SYSRQ netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -841,7 +799,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptables-mod-tarpit
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +kmod-ipt-tarpit
 Conflicts: 
 Menu-Depends: 
@@ -851,9 +809,8 @@ Category: Network
 Repository: base
 Title: TARPIT iptables extension
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: TARPIT iptables extension
 https://inai.de/projects/xtables-addons/
@@ -862,7 +819,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: kmod-ipt-tarpit
 Submenu: Netfilter Extensions
-Version: <LINUX_VERSION>+3.21-0
+Version: <LINUX_VERSION>+3.13-4
 Depends: +kmod-ipt-core +kmod-ipt-compat-xtables
 Conflicts: 
 Menu-Depends: 
@@ -871,9 +828,8 @@ Section: kernel
 Category: Kernel modules
 Title: TARPIT netfilter module
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: TARPIT netfilter module
 Jo-Philipp Wich <jo@mein.io>
@@ -881,7 +837,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptaccount
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +iptables-mod-account
 Conflicts: 
 Menu-Depends: 
@@ -891,9 +847,8 @@ Category: Network
 Repository: base
 Title: iptables-mod-account control utility
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: iptables-mod-account control utility
 https://inai.de/projects/xtables-addons/
@@ -902,7 +857,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: iptgeoip
 Submenu: Firewall
-Version: 3.21-0
+Version: 3.13-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread iptables +iptables-mod-geoip +perl +perlbase-getopt +perlbase-io +perl-text-csv_xs +perl-net-cidr-lite +wget-ssl +!BUSYBOX_CONFIG_ZCAT:gzip
 Conflicts: 
 Menu-Depends: 
@@ -912,9 +867,8 @@ Category: Network
 Repository: base
 Title: iptables-mod-geoip support scripts for MaxMind GeoIP databases
 Maintainer: Jo-Philipp Wich <jo@mein.io>
-Source: xtables-addons-3.21.tar.xz
+Source: xtables-addons-3.13.tar.xz
 License: GPL-2.0
-LicenseFiles: COPYING
 Type: ipkg
 Description: iptables-mod-geoip support scripts for MaxMind GeoIP databases
 https://inai.de/projects/xtables-addons/

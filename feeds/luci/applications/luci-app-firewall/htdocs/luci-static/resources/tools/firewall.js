@@ -590,7 +590,8 @@ return baseclass.extend({
 			});
 
 			widget.createChoiceElement = function(sb, value) {
-				var p = lookupProto(value);
+				var m = value.match(/^(0x[0-9a-f]{1,2}|[0-9]{1,3})$/),
+				    p = lookupProto(lookupProto(m ? +m[1] : value)[0]);
 
 				return ui.Dropdown.prototype.createChoiceElement.call(this, sb, p[2], p[1]);
 			};
@@ -600,10 +601,8 @@ return baseclass.extend({
 					var m = value.match(/^(0x[0-9a-f]{1,2}|[0-9]{1,3})$/),
 					    p = lookupProto(m ? +m[1] : value);
 
-					return (p[0] > -1) ? p[2] : p[1];
+					return (p[0] > -1) ? p[2] : value;
 				});
-
-				values.sort();
 
 				return ui.Dropdown.prototype.createItems.call(this, sb, values.join(' '));
 			};

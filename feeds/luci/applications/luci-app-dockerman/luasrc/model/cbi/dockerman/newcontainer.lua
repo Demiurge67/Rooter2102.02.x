@@ -442,7 +442,7 @@ m.redirect = luci.dispatcher.build_url("admin", "docker", "containers")
 s = m:section(SimpleSection)
 s.template = "dockerman/apply_widget"
 s.err=docker:read_status()
-s.err=s.err and s.err:gsub("\n","<br />"):gsub(" ","&#160;")
+s.err=s.err and s.err:gsub("\n","<br>"):gsub(" ","&nbsp;")
 if s.err then
 	docker:clear_status()
 end
@@ -720,7 +720,7 @@ m.handle = function(self, state, data)
 	local memory = data.memory or 0
 	local cpu_shares = data.cpu_shares or 0
 	local cpus = data.cpus or 0
-	local blkio_weight = data.blkio_weight or nil
+	local blkio_weight = data.blkio_weight or 500
 
 	local portbindings = {}
 	local exposedports = {}

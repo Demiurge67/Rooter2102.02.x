@@ -1,7 +1,6 @@
 #!/bin/sh /etc/rc.common
 
 START=98
-STOP=05
 USE_PROCD=1
 
 SAMBA_IFACE=""
@@ -26,7 +25,7 @@ smb_header() {
 	)
 
 	# we dont use netbios anymore as default and wsd/avahi is dns based
-	hostname="$(sed 's/\..*//' /proc/sys/kernel/hostname | tr -d '{};%?=#\n')"
+	hostname="$(cat /proc/sys/kernel/hostname | tr -d '{};%?=#\n')"
 
 	config_get_sane workgroup "$1" workgroup "WORKGROUP"
 	config_get_sane description "$1" description "Samba on OpenWrt"
@@ -115,8 +114,9 @@ smb_add_share() {
 		if [ "$force_root" -eq 1 ]; then
 			printf "\tforce user = root\n"
 			printf "\tforce group = root\n"
+		else
+			[ -n "$users" ] && printf "\tvalid users = %s\n" "$users"
 		fi
-		[ -n "$users" ] && printf "\tvalid users = %s\n" "$users"
 
 		[ -n "$create_mask" ] && printf "\tcreate mask = %s\n" "$create_mask"
 		[ -n "$dir_mask" ] && printf "\tdirectory mask = %s\n" "$dir_mask"

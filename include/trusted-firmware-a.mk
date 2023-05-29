@@ -1,5 +1,5 @@
 PKG_NAME ?= trusted-firmware-a
-PKG_CPE_ID ?= cpe:/a:arm:trusted_firmware-a
+PKG_CPE_ID ?= cpe:/a:arm:arm_trusted_firmware
 
 ifndef PKG_SOURCE_PROTO
 PKG_SOURCE = trusted-firmware-a-$(PKG_VERSION).tar.gz
@@ -68,9 +68,6 @@ define Build/Trusted-Firmware-A/Target
   endef
 endef
 
-define Build/Configure/Trusted-Firmware-A
-	$(INSTALL_DIR) $(STAGING_DIR)/usr/include
-endef
 
 define Build/Compile/Trusted-Firmware-A
 	+$(MAKE) $(PKG_JOBS) -C $(PKG_BUILD_DIR) \

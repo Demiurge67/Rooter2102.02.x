@@ -1,4 +1,6 @@
 Source-Makefile: feeds/packages/libs/libebml/Makefile
+Build-Depends: ninja/host
+Build-Depends/host: ninja/host
 
 Package: libebml
 Version: 1.4.2-0

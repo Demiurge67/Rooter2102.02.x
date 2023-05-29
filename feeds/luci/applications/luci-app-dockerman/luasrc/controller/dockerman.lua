@@ -9,7 +9,7 @@ module("luci.controller.dockerman",package.seeall)
 
 function index()
 	entry({"admin", "docker"},
-		firstchild(),
+		alias("admin", "docker", "config"),
 		_("Docker"),
 		40).acl_depends = { "luci-app-dockerman" }
 
@@ -183,7 +183,7 @@ end
 function action_confirm()
 	local data = docker:read_status()
 	if data then
-		data = data:gsub("\n","<br />"):gsub(" ","&#160;")
+		data = data:gsub("\n","<br>"):gsub(" ","&nbsp;")
 		code = 202
 		msg = data
 	else

@@ -1,273 +1,192 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-05 01:41+0000\n"
-"Last-Translator: Rose <darkrose@privatemail.com>\n"
+"PO-Revision-Date: 2021-02-21 14:50+0000\n"
+"Last-Translator: robin98 <eh.cyber@yahoo.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsattendedsysupgrade/fa/>\n"
 "Language: fa\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:63
-msgid "10% Received build request"
-msgstr "10% درخواست ساخت پکیج دریافت شد"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:64
-msgid "20% Downloading ImageBuilder archive"
-msgstr "20% سازنده ایمیج که دانلود شده آرشیو شده است"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:65
-msgid "40% Setup ImageBuilder"
-msgstr "40% تنظیم سازنده ایمیج"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:66
-msgid "60% Validate package selection"
-msgstr "60% اعتبار سنجی پکیج های انتخابی"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:67
-msgid "80% Generating firmware image"
-msgstr "80% تولید ایمیج فرم ور"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:15
-msgid "Address"
-msgstr "آدرس"
+"X-Generator: Weblate 4.5\n"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:16
-msgid "Address of the sysupgrade server"
-msgstr "آدرس سرور sysupgrade"
+msgid "Address"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:26
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:17
+msgid "Address of the sysupgrade server"
+msgstr ""
+
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:27
 msgid "Advanced Mode"
-msgstr "حالت پیشرفته"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:9
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:437
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:371
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:3
 msgid "Attended Sysupgrade"
 msgstr "در Sysupgrade ثبت شد"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:10
 msgid "Attendedsysupgrade Configuration."
-msgstr "تنظیمات sysupgrade ثبت شد"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:374
-msgid "Board Name / Profile"
-msgstr "نام /پروفایل بورد"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:117
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:120
 msgid "Build Date"
-msgstr "تاریخ ساخت"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:165
-msgid "Building Firmware..."
-msgstr "در حال ساخت سیستم عامل ..."
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:177
+msgid "Building firmware sysupgrade image"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:142
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:384
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:155
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:295
 msgid "Cancel"
-msgstr "لغو"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:18
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:19
 msgid "Client"
-msgstr "کاربر"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:192
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:267
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:309
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:403
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:65
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:214
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:319
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:334
 msgid "Close"
-msgstr "بستن"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:24
 msgid "Configuration"
-msgstr "پیکربندی"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:306
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:326
 msgid "Could not reach API at \"%s\". Please try again later."
-msgstr "دسترسی به API در \"%s\" ممکن نیست. لطفا بعدا دوباره امتحان کنید."
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:381
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:440
-msgid "Currently running: %s - %s"
-msgstr "در حال اجرا : %s - %s"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:123
-msgid "Download firmware image"
-msgstr "دانلود تصویر سیستم عامل"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:236
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:37
 msgid "Downloading firmware from server to browser"
-msgstr "درحال دانلود سیستم عامل از سرور به مرورگر"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:235
-msgid "Downloading..."
-msgstr "در حال دانلود..."
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:217
+msgid "Error building the sysupgrade"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:196
-msgid "Error building the firmware image"
-msgstr "خطا در ساخت تصویر سیستم عامل"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:305
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:325
 msgid "Error connecting to upgrade server"
-msgstr "خطای اتصال برای ارتقا سرور"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:266
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:61
 msgid "Error during download of firmware. Please try again"
-msgstr "خطا در هنگام دانلود کردن سیستم عامل. لطفا مجدد تلاش کنید"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:118
-msgid "Filename"
-msgstr "نام فایل"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:119
-msgid "Filesystem"
-msgstr "سیستم فایل"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:116
+msgid "File"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/root/usr/share/rpcd/acl.d/luci-app-attendedsysupgrade.json:3
 msgid "Grant UCI access to LuCI app attendedsysupgrade"
-msgstr "به UCI اجازه دسترسی به برنامه LuCI اعطا کنید تا در حال ارتقاء باشد"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:148
-msgid "Install firmware image"
-msgstr "نصب تصویر سیستم عامل"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:162
+msgid "Install Sysupgrade"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:271
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:68
 msgid "Installing the sysupgrade. Do not unpower device!"
-msgstr "در حال نصب کردن ارتقا سیستم. دستگاه را خاموش نکنید!"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:270
-msgid "Installing..."
-msgstr "در حال نصب..."
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:139
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:147
 msgid "Keep settings and retain the current configuration"
-msgstr "تنظیمات را نگه دارید و پیکربندی فعلی را حفظ کنید"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:380
-msgid "New firmware upgrade available"
-msgstr "ارتقاء سیستم عامل جدید در دسترس است"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:287
+msgid "New upgrade available"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:400
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:311
 msgid "No upgrade available"
-msgstr "هیچ ارتقایی در دسترس نیست"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:15
 msgid "Overview"
-msgstr "مرور کلی"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:375
-msgid "Packages"
-msgstr "بسته ها"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:189
+msgid "Please report the error message and request"
+msgstr ""
+
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:306
+msgid "Request Sysupgrade"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:175
-msgid "Please report the error message and request"
-msgstr "لطفا پیام خطا را گزارش دهید و درخواست کنید"
+msgid "Request in build queue position %d"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:115
-msgid "Profile"
-msgstr "مشخصات"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:190
+msgid "Request to server:"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:166
-msgid "Progress: %s"
-msgstr "پیشرفت: %s"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:161
-msgid "Queued..."
-msgstr "در صف..."
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:176
-msgid "Request Data:"
-msgstr "درخواست داده ها:"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:395
-msgid "Request firmware image"
-msgstr "درخواست تصویر سیستم عامل"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:162
-msgid "Request in build queue position %s"
-msgstr "درخواست ایجاد در موقعیت صف ساخت %s"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:110
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:119
 msgid "SHA256"
-msgstr "SHA256"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:444
-msgid "Search for firmware upgrade"
-msgstr "جستجو برای ارتقاء سیستم عامل"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:23
+msgid "Search for new sysupgrades on opening the tab"
+msgstr ""
+
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:385
+msgid "Search for sysupgrade"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:22
-msgid "Search for new sysupgrades on opening the tab"
-msgstr "با باز کردن برگه، سیستم ارتقای جدید را جستجو کنید"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:21
 msgid "Search on opening"
-msgstr "جستجو در باز کردن"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:299
-msgid "Searching for an available sysupgrade of %s - %s"
-msgstr "جستجو برای ارتقاء سیستم موجود %s - %s"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:224
+msgid "Searching for an available sysupgrade"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:297
-msgid "Searching..."
-msgstr "درحال جستجو..."
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:12
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:13
 msgid "Server"
-msgstr "سرور"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:174
-msgid "Server response: %s"
-msgstr "پاسخ سرور: %s"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:27
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:28
 msgid "Show advanced options like packge list modification"
 msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:152
-msgid "Successfully created firmware image"
-msgstr "تصویر سیستم عامل با موفقیت ایجاد شد"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:166
+msgid "Successfully created sysupgrade image"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:116
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:121
 msgid "Target"
-msgstr "هدف"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:438
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:372
 msgid ""
 "The attended sysupgrade service allows to easily upgrade vanilla and custom "
 "firmware images."
 msgstr ""
-"این سرویس با حضور در سیستم ارتقا اجازه می دهد تا به راحتی وانیل و تصاویر "
-"سیستم عامل سفارشی ارتقا دهید."
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:401
-msgid "The device runs the latest firmware version %s - %s"
-msgstr "دستگاه جدیدترین نسخه سیستم عامل را اجرا می کند %s - %s"
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:312
+msgid "The device runs the latest firmware version"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:439
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:373
 msgid ""
 "This is done by building a new firmware on demand via an online service."
 msgstr ""
-"این کار با ایجاد یک سیستم عامل جدید در صورت تقاضا از طریق یک سرویس اینترنتی "
-"انجام می شود."
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:253
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:51
 msgid "Uploading firmware from browser to device"
-msgstr "آپلود سیستم عامل از مرورگر به دستگاه"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:252
-msgid "Uploading..."
-msgstr "در حال آپلود..."
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:109
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:115
 msgid "Version"
-msgstr "نسخه"
+msgstr ""
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:265
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:60
 msgid "Wrong checksum"
-msgstr "اشتباه در checksum"
-
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:366
-msgid "[installed] %s"
-msgstr "نصب شده %s"
+msgstr ""

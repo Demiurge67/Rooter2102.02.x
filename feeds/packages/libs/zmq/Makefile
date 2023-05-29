@@ -11,7 +11,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zeromq
 PKG_VERSION:=4.3.4
-PKG_RELEASE:=2
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/zeromq/libzmq/releases/download/v$(PKG_VERSION)
@@ -22,6 +22,7 @@ PKG_LICENSE:=GPL-3.0-or-later
 PKG_LICENSE_FILES:=LICENCE.txt
 PKG_CPE_ID:=cpe:/a:zeromq:libzmq
 
+PKG_BUILD_PARALLEL:=1
 CMAKE_BINARY_SUBDIR:=openwrt-build
 
 include $(INCLUDE_DIR)/package.mk
@@ -36,24 +37,16 @@ define Package/libzmq/default
   PROVIDES:=libzmq
 endef
 
-define Package/libzmq/default-config
-config LIBZMQ_$(2)_WITH_OPENPGM
-	depends on PACKAGE_libzmq-$(1)
-	bool "enable openpgm support for libzmq-$(1)"
-	default n
-endef
-
 define Package/libzmq-nc
   $(call Package/libzmq/default)
   VARIANT:=nc
-  DEPENDS+=+LIBZMQ_NC_WITH_OPENPGM:openpgm
 endef
 
 define Package/libzmq-curve
   $(call Package/libzmq/default)
   VARIANT:=curve
   TITLE+= (CurveZMQ)
-  DEPENDS+=+libsodium +LIBZMQ_CURVE_WITH_OPENPGM:openpgm
+  DEPENDS+=+libsodium
 endef
 
 define Package/libzmq-nc/description
@@ -65,18 +58,11 @@ define Package/libzmq-curve/description
  Includes CurveZMQ security by libsodium.
 endef
 
-define Package/libzmq-nc/config
-	$(call Package/libzmq/default-config,nc,NC)
-endef
-
-define Package/libzmq-curve/config
-	$(call Package/libzmq/default-config,curve,CURVE)
-endef
-
 CMAKE_OPTIONS += \
 	-DA2X_EXECUTABLE=OFF \
 	-DASCIIDOC_EXECUTABLE=OFF \
 	-DBUILD_STATIC=OFF \
+	-DCMAKE_SKIP_INSTALL_RPATH=ON \
 	-DZMQ_HAVE_SOCK_CLOEXEC=ON \
 	-DZMQ_HAVE_SO_KEEPALIVE=ON \
 	-DZMQ_HAVE_TCP_KEEPCNT=ON \
@@ -87,6 +73,7 @@ CMAKE_OPTIONS += \
 	-DENABLE_EVENTFD=ON \
 	-DPOLLER=epoll \
 	-DRT_LIBRARY=OFF \
+	-DWITH_OPENPGM=OFF \
 	-DZMQ_BUILD_TESTS=OFF \
 	-DWITH_LIBBSD=O$(if $(CONFIG_USE_GLIBC),N,FF)
 
@@ -94,14 +81,6 @@ ifeq ($(BUILD_VARIANT),curve)
 	CMAKE_OPTIONS += -DWITH_LIBSODIUM=ON
 else
   	CMAKE_OPTIONS += -DWITH_LIBSODIUM=OFF
-endif
-
-ifeq ($(CONFIG_LIBZMQ_NC_WITH_OPENPGM),y)
-	CMAKE_OPTIONS += -DWITH_OPENPGM=ON
-else ifeq ($(CONFIG_LIBZMQ_CURVE_WITH_OPENPGM),y)
-	CMAKE_OPTIONS += -DWITH_OPENPGM=ON
-else
-	CMAKE_OPTIONS += -DWITH_OPENPGM=OFF
 endif
 
 define Build/InstallDev

@@ -16,42 +16,38 @@ A lot of people already use adblocker plugins within their desktop browsers, but
 | android_tracking    |         | S    | tracking         | [Link](https://github.com/Perflyst/PiHoleBlocklist)                               |
 | andryou             |         | L    | compilation      | [Link](https://gitlab.com/andryou/block/-/blob/master/readme.md)                  |
 | anti_ad             |         | L    | compilation      | [Link](https://github.com/privacy-protection-tools/anti-AD/blob/master/README.md) |
-| antipopads          |         | L    | compilation      | [Link](https://github.com/AdroitAdorKhan/antipopads-re)                           |
 | anudeep             |         | M    | compilation      | [Link](https://github.com/anudeepND/blacklist)                                    |
 | bitcoin             |         | S    | mining           | [Link](https://github.com/hoshsadiq/adblock-nocoin-list)                          |
-| cpbl                |         | XL   | compilation      | [Link](https://github.com/bongochong/CombinedPrivacyBlockLists)                   |
 | disconnect          | x       | S    | general          | [Link](https://disconnect.me)                                                     |
-| doh_blocklist       |         | S    | doh_server       | [Link](https://github.com/dibdot/DoH-IP-blocklists)                               |
-| easylist            |         | M    | compilation      | [Link](https://easylist.to)                                                       |
-| easyprivacy         |         | M    | tracking         | [Link](https://easylist.to)                                                       |
+| energized           |         | VAR  | compilation      | [Link](https://energized.pro)                                                     |
 | firetv_tracking     |         | S    | tracking         | [Link](https://github.com/Perflyst/PiHoleBlocklist)                               |
 | games_tracking      |         | S    | tracking         | [Link](https://www.gameindustry.eu)                                               |
-| hblock              |         | XL   | compilation      | [Link](https://hblock.molinero.dev)                                               |
-| lightswitch05       |         | XL   | compilation      | [Link](https://github.com/lightswitch05/hosts)                                    |
+| gaming              |         | S    | gaming           | [Link](https://github.com/abyssin/pihole-blocklist)                               |
 | notracking          |         | XL   | tracking         | [Link](https://github.com/notracking/hosts-blocklists)                            |
-| oisd_big            |         | XXL  | general          | [Link](https://oisd.nl)                                                           |
-| oisd_nsfw           |         | XXL  | porn             | [Link](https://oisd.nl)                                                           |
-| oisd_small          |         | L    | general          | [Link](https://oisd.nl)                                                           |
+| oisd_basic          |         | L    | general          | [Link](https://oisd.nl)                                                           |
+| oisd_full           |         | XXL  | general          | [Link](https://oisd.nl)                                                           |
 | openphish           |         | S    | phishing         | [Link](https://openphish.com)                                                     |
 | phishing_army       |         | S    | phishing         | [Link](https://phishing.army)                                                     |
-| reg_cn              |         | S    | reg_china        | [Link](https://easylist.to)                                                       |
-| reg_cz              |         | S    | reg_czech+slovak | [Link](https://easylist.to)                                                       |
-| reg_de              |         | S    | reg_germany      | [Link](https://easylist.to)                                                       |
-| reg_es              |         | S    | reg_espania      | [Link](https://easylist.to)                                                       |
+| reg_cn              |         | M    | reg_china        | [Link](https://easylist.to)                                                       |
+| reg_cz              |         | M    | reg_czech+slovak | [Link](https://easylist.to)                                                       |
+| reg_de              |         | M    | reg_germany      | [Link](https://easylist.to)                                                       |
+| reg_es              |         | M    | reg_espania      | [Link](https://easylist.to)                                                       |
 | reg_fi              |         | S    | reg_finland      | [Link](https://github.com/finnish-easylist-addition)                              |
-| reg_fr              |         | M    | reg_france       | [Link](https://forums.lanik.us/viewforum.php?f=91)                                |
-| reg_id              |         | S    | reg_indonesia    | [Link](https://easylist.to)                                                       |
-| reg_it              |         | S    | reg_italy        | [Link](https://easylist.to)                                                       |
-| reg_jp              |         | S    | reg_japan        | [Link](https://github.com/k2jp/abp-japanese-filters)                              |
-| reg_kr              |         | S    | reg_korea        | [Link](https://github.com/List-KR/List-KR)                                        |
-| reg_nl              |         | S    | reg_netherlands  | [Link](https://easylist.to)                                                       |
-| reg_pl              |         | M    | reg_poland       | [Link](https://kadantiscam.netlify.com)                                           |
-| reg_ro              |         | S    | reg_romania      | [Link](https://easylist.to)                                                       |
-| reg_ru              |         | S    | reg_russia       | [Link](https://easylist.to)                                                       |
-| reg_se              |         | S    | reg_sweden       | [Link](https://github.com/lassekongo83/Frellwits-filter-lists)                    |
+| reg_fr              |         | S    | reg_france       | [Link](https://forums.lanik.us/viewforum.php?f=91)                                |
+| reg_id              |         | M    | reg_indonesia    | [Link](https://easylist.to)                                                       |
+| reg_it              |         | M    | reg_italy        | [Link](https://easylist.to)                                                       |
+| reg_kr              |         | S    | reg_korea        | [Link](https://list-kr.github.io)                                                 |
+| reg_nl              |         | M    | reg_netherlands  | [Link](https://easylist.to)                                                       |
+| reg_pl1             |         | S    | reg_poland       | [Link](https://kadantiscam.netlify.com)                                           |
+| reg_pl2             |         | S    | reg_poland       | [Link](https://www.certyficate.it)                                                |
+| reg_ro              |         | M    | reg_romania      | [Link](https://easylist.to)                                                       |
+| reg_ru              |         | M    | reg_russia       | [Link](https://easylist.to)                                                       |
+| reg_se              |         | M    | reg_sweden       | [Link](https://github.com/lassekongo83/Frellwits-filter-lists)                    |
 | reg_vn              |         | S    | reg_vietnam      | [Link](https://bigdargon.github.io/hostsVN)                                       |
+| shallalist          |         | VAR  | general          | [Link](https://www.shallalist.de)                                                 |
 | smarttv_tracking    |         | S    | tracking         | [Link](https://github.com/Perflyst/PiHoleBlocklist)                               |
 | spam404             |         | S    | general          | [Link](https://github.com/Dawsey21)                                               |
+| stalkerware         |         | S    | tracking         | [Link](https://github.com/astryzia/stalkerware-urls)                              |
 | stevenblack         |         | VAR  | compilation      | [Link](https://github.com/StevenBlack/hosts)                                      |
 | stopforumspam       |         | S    | spam             | [Link](https://www.stopforumspam.com)                                             |
 | utcapitole          |         | VAR  | general          | [Link](https://dsi.ut-capitole.fr/blacklists/index_en.php)                        |
@@ -79,7 +75,7 @@ A lot of people already use adblocker plugins within their desktop browsers, but
 * Full IPv4 and IPv6 support
 * Provides top level domain compression ('tld compression'), this feature removes thousands of needless host entries from the blocklist and lowers the memory footprint for the DNS backend
 * Provides a 'DNS File Reset', where the generated DNS blocklist file will be purged after DNS backend loading to save storage space
-* Source parsing by fast & flexible regex rulesets, all rules and source information are placed in an external/compredd JSON file ('/etc/adblock/adblock.sources.gz')
+* Source parsing by fast & flexible regex rulesets, all rules and source information are placed in an external/compredd JSON file ('/etc/adblock/adblock.sources.gz') 
 * Overall duplicate removal in generated blocklist file 'adb_list.overall'
 * Additional local blacklist for manual overrides, located in '/etc/adblock/adblock.blacklist'
 * Additional local whitelist for manual overrides, located in '/etc/adblock/adblock.whitelist'
@@ -100,9 +96,10 @@ A lot of people already use adblocker plugins within their desktop browsers, but
 * Strong LuCI support, all relevant options are exposed to the web frontend
 
 ## Prerequisites
-* [OpenWrt](https://openwrt.org), tested with the stable release series and with the latest rolling snapshot releases.  
+* [OpenWrt](https://openwrt.org), tested with the stable release series (19.07.x) and with the latest rolling snapshot releases. On turris devices it has been successfully tested with TurrisOS 5.1.x  
+  <b>Please note:</b> Older OpenWrt releases like 18.06.x or 17.01.x are _not_ supported!  
   <b>Please note:</b> Devices with less than 128 MByte RAM are _not_ supported!  
-* A usual setup with an enabled DNS backend at minimum - dumb AP modes without a working DNS backend are _not_ supported
+* A usual setup with an enabled DNS backend at minimum - dump AP modes without a working DNS backend are _not_ supported
 * A download utility with SSL support: 'wget', 'uclient-fetch' with one of the 'libustream-*' ssl libraries, 'aria2c' or 'curl' is required
 * A certificate store such as 'ca-bundle' or 'ca-certificates', as adblock checks the validity of the SSL certificates of all download sites by default
 * Optional E-Mail notification support: for E-Mail notifications you need to install the additional 'msmtp' package
@@ -134,7 +131,7 @@ Available commands:
 	resume          Resume adblock processing
 	query           &lt;domain&gt; Query active blocklists and backups for a specific domain
 	report          [&lt;search&gt;] Print DNS statistics with an optional search parameter
-	list            [&lt;add&gt;|&lt;add_utc&gt;|&lt;add_eng&gt;|&lt;add_stb&gt;|&lt;remove&gt;|&lt;remove_utc&gt;|&lt;remove_eng&gt;|&lt;remove_stb&gt;] &lt;source(s)&gt; List/Edit available sources
+	list            [&lt;add&gt;|&lt;add_sha&gt;|&lt;add_utc&gt;|&lt;add_eng&gt;|&lt;add_stb&gt;|&lt;remove&gt;|&lt;remove_sha&gt;|&lt;remove_utc&gt;|&lt;remove_eng&gt;|&lt;remove_stb&gt;] &lt;source(s)&gt; List/Edit available sources
 	timer           [&lt;add&gt; &lt;tasks&gt; &lt;hour&gt; [&lt;minute&gt;] [&lt;weekday&gt;]]|[&lt;remove&gt; &lt;line no.&gt;] List/Edit cron update intervals
 	version         Print version information
 	running         Check if service is running
@@ -159,10 +156,12 @@ Available commands:
 | adb_debug          | 0, disabled                        | set to 1 to enable the debug output                                                            |
 | adb_nice           | 0, standard prio.                  | valid nice level range 0-19 of the adblock processes                                           |
 | adb_forcedns       | 0, disabled                        | set to 1 to force DNS requests to the local resolver                                           |
+| adb_maxqueue       | 4                                  | size of the download queue to handle downloads & list processing in parallel                   |
 | adb_dnsdir         | -, auto-detected                   | path for the generated blocklist file 'adb_list.overall'                                       |
 | adb_dnstimeout     | 10                                 | timeout in seconds to wait for a successful DNS backend restart                                |
 | adb_dnsinstance    | 0, first instance                  | set to the relevant dns backend instance used by adblock (dnsmasq only)                        |
 | adb_dnsflush       | 0, disabled                        | set to 1 to flush the DNS Cache before & after adblock processing                              |
+| adb_dnsinotify     | -, not set                         | set to 1 to prevent adblock triggered restarts for DNS backends with autoload functions        |
 | adb_dnsallow       | -, not set                         | set to 1 to disable selective DNS whitelisting (RPZ-PASSTHRU)                                  |
 | adb_lookupdomain   | example.com                        | external domain to check for a successful DNS backend restart or 'false' to disable this check |
 | adb_portlist       | 53 853 5353                        | space separated list of firewall ports which should be redirected locally                      |
@@ -249,22 +248,21 @@ Finally enable E-Mail support and add a valid E-Mail receiver address in LuCI.
 
 **Service status output:**  
 In LuCI you'll see the realtime status in the 'Runtime' section on the overview page.  
-To get the status in the CLI, just call _/etc/init.d/adblock status_ or _/etc/init.d/adblock status\_service_:
+To get the status in the CLI, just call _/etc/init.d/adblock status_ or _/etc/init.d/adblock status\_service_ (in 19.07 and TurrisOS):
 <pre><code>
-~#@blackhole:~# /etc/init.d/adblock status
+~# /etc/init.d/adblock status
 ::: adblock runtime information
   + adblock_status  : enabled
-  + adblock_version : 4.1.4
-  + blocked_domains : 268355
-  + active_sources  : adaway, adguard, adguard_tracking, android_tracking, bitcoin, disconnect, firetv_tracking, games_t
-                      racking, hblock, oisd_basic, phishing_army, smarttv_tracking, stopforumspam, wally3k, winspy, yoyo
-  + dns_backend     : unbound (unbound-control), /var/lib/unbound
-  + run_utils       : download: /usr/bin/curl, sort: /usr/libexec/sort-coreutils, awk: /bin/busybox
-  + run_ifaces      : trigger: wan, report: br-lan
-  + run_directories : base: /tmp, backup: /mnt/data/adblock-Backup, report: /mnt/data/adblock-Report, jail: /tmp
-  + run_flags       : backup: ✔, flush: ✘, force: ✔, search: ✘, report: ✔, mail: ✔, jail: ✘
-  + last_run        : restart, 3m 17s, 249/73/68, 2022-09-10T13:43:07+02:00
-  + system          : ASUS RT-AX53U, OpenWrt SNAPSHOT r20535-2ca5602864
+  + adblock_version : 4.1.0
+  + blocked_domains : 32658
+  + active_sources  : android_tracking, disconnect, shallalist
+  + dns_backend     : dnsmasq, /tmp/dnsmasq.d
+  + run_utils       : /usr/bin/curl, /usr/bin/gawk
+  + run_ifaces      : trigger: trm_wwan, report: br-lan
+  + run_directories : base: /tmp, backup: /tmp/adblock-Backup, report: /tmp/adblock-Report, jail: /tmp
+  + run_flags       : backup: 1, flush: 0, force: 1, search: 1, report: 1, mail: 0, jail: 0
+  + last_run        : reload, 0m 25s, 252/177/167, 26.02.2021 18:31:41
+  + system          : GL.iNet GL-MT1300, OpenWrt SNAPSHOT r15875-1bf6d70e60
 </code></pre>
 The 'last\_run' line includes the used start type, the run duration, the memory footprint after DNS backend loading (total/free/available) and the date/time of the last run.  
 
@@ -302,7 +300,7 @@ A valid JSON source object contains the following required information, e.g.:
 	},
 	[...]
 </code></pre>
-Add an unique object name, make the required changes to 'url', 'rule', 'size' and 'descurl' and finally compress the changed JSON file _gzip /etc/adblock/adblock.sources_ to use the new source object in adblock.  
+Add an unique object name, make the required changes to 'url', 'rule', 'size' and 'descurl' and finally compress the changed JSON file _gzip /etc/adblock/adblock.sources.gz_ to use the new source object in adblock.  
 <b>Please note:</b> if you're going to add new sources on your own, please make a copy of the default file and work with that copy further on, cause the default will be overwritten with every adblock update. To reference your copy set the option 'adb\_srcarc' which points by default to '/etc/adblock/adblock.sources.gz'  
 <b>Please note:</b> when adblock starts, it looks for the uncompressed 'adb\_srcfile', only if this file is not found the archive 'adb\_srcarc' is unpacked once and then the uncompressed file is used
 

@@ -1,9 +1,9 @@
 Source-Makefile: feeds/packages/lang/lyaml/Makefile
-Build-Depends: lua/host luarocks/host HOST_OS_MACOS:fakeuname/host
+Build-Depends: lua/host luarocks/host
 
 Package: lyaml
 Submenu: Lua
-Version: 6.2.7-2
+Version: 6.2.7-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +lua +libyaml
 Conflicts: 
 Menu-Depends: 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2022-07-31 13:17+0000\n"
-"Last-Translator: Christophe Blancon <christophe.blancon@gmail.com>\n"
+"PO-Revision-Date: 2021-06-28 11:33+0000\n"
+"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationssplash/fr/>\n"
 "Language: fr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.7.1-dev\n"
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:53
 msgid "%s with the operator of this access point."
@@ -78,12 +78,13 @@ msgid "Blocked"
 msgstr "Bloqué"
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:56
+#, fuzzy
 msgid ""
 "By accepting these rules you can use this network for %s hour(s). After this "
 "time you need to accept these rules again."
 msgstr ""
 "En acceptant ces règles, vous pouvez utiliser ce réseau pendant %s heure(s). "
-"Après cette période, vous devrez accepter à nouveau ces règles."
+"Après cette période, vous devez accepter à nouveau ces règles."
 
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splash.lua:10
 msgid "Clearance time"
@@ -189,7 +190,6 @@ msgstr ""
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:93
 msgid "If you use this network on a regular basis we ask for your support:"
 msgstr ""
-"Si vous utilisez régulièrement ce réseau, nous vous demandons votre soutien :"
 
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splashtext.lua:35
 msgid "Include your own text in the default splash"
@@ -215,11 +215,11 @@ msgstr ""
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:115
 msgid "Legally Prohibited Activities"
-msgstr "Activités légalement interdites"
+msgstr ""
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:118
 msgid "Legally Prohibited content"
-msgstr "Contenu légalement interdit"
+msgstr ""
 
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splash.lua:59
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splash.lua:68
@@ -273,7 +273,7 @@ msgstr ""
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:182
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:248
 msgid "Save"
-msgstr "Sauvegarder"
+msgstr "Enregistrer"
 
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splash.lua:30
 msgid "Splash rules are integrated in this firewall zone"
@@ -336,9 +336,6 @@ msgid ""
 "To ask for the reason why you have been blocked or ask for access again you "
 "can try to contact the owner of this access point:"
 msgstr ""
-"Pour demander la raison pour laquelle vous avez été bloqué ou pour demander "
-"un nouvel accès, vous pouvez essayer de contacter le propriétaire de ce "
-"point d’accès :"
 
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:209
 msgid "Traffic in/out"
@@ -354,7 +351,7 @@ msgstr ""
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:75
 msgid "Welcome"
-msgstr "Bienvenue"
+msgstr ""
 
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splash.lua:53
 msgid "Whitelist"
@@ -362,7 +359,7 @@ msgstr "Liste blanche"
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:77
 msgid "You are now connected to the free wireless mesh network"
-msgstr "Vous êtes maintenant connecté au réseau maillé sans fil gratuit"
+msgstr ""
 
 #: applications/luci-app-splash/luasrc/model/cbi/splash/splashtext.lua:13
 msgid ""
@@ -379,7 +376,7 @@ msgstr ""
 
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:48
 msgid "Your bandwidth is limited to"
-msgstr "Votre bande passante est limitée à"
+msgstr ""
 
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:176
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:178

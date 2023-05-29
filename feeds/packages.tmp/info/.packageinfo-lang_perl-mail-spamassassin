@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/lang/perl-mail-spamassassin/Makefile
 Build-Depends: perl-dbi/host perl-html-parser/host perl-net-dns/host perl-netaddr-ip/host
 
 Package: spamassassin
-Version: 3.4.6+perl5.28-0
+Version: 3.4.4+perl5.28-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread perl +perlbase-autoloader +perlbase-config +perlbase-data +perlbase-digest +perlbase-encode +perlbase-essential +perlbase-file +perlbase-getopt +perlbase-hash +perlbase-mime +perlbase-net +perlbase-socket +perl-dbi +perl-html-parser +perl-net-dns +perl-netaddr-ip
 Conflicts: 
 Menu-Depends: 
@@ -13,7 +13,7 @@ Category: Mail
 Repository: base
 Title: SpamAssassin
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: Mail-SpamAssassin-3.4.6.tar.gz
+Source: Mail-SpamAssassin-3.4.4.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 Type: ipkg
@@ -23,7 +23,7 @@ Daniel Golle <daniel@makrotopia.org>
 @@
 
 Package: spamc
-Version: 3.4.6+perl5.28-0
+Version: 3.4.4+perl5.28-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +zlib
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +34,7 @@ Category: Mail
 Repository: base
 Title: SpamAssassin client binary
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: Mail-SpamAssassin-3.4.6.tar.gz
+Source: Mail-SpamAssassin-3.4.4.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 Type: ipkg
@@ -44,7 +44,7 @@ Daniel Golle <daniel@makrotopia.org>
 @@
 
 Package: spamc-ssl
-Version: 3.4.6+perl5.28-0
+Version: 3.4.4+perl5.28-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +zlib +libopenssl
 Conflicts: 
 Menu-Depends: 
@@ -55,7 +55,7 @@ Category: Mail
 Repository: base
 Title: SpamAssassin client binary (with SSL)
 Maintainer: Daniel Golle <daniel@makrotopia.org>
-Source: Mail-SpamAssassin-3.4.6.tar.gz
+Source: Mail-SpamAssassin-3.4.4.tar.gz
 License: Apache-2.0
 LicenseFiles: LICENSE
 Type: ipkg

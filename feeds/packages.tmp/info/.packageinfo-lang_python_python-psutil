@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/lang/python/python-psutil/Makefile
 
 Package: python3-psutil
 Submenu: Python
-Version: 5.9.0-1
+Version: 5.8.0-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3-light
 Conflicts: 
 Menu-Depends: 
@@ -11,20 +11,20 @@ Section: lang
 Category: Languages
 Repository: base
 Title: psutil (process and system utilities)
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: psutil-5.9.0.tar.gz
+Maintainer: Jan Pavlinec <jan.pavlinec@nic.cz>
+Source: psutil-5.8.0.tar.gz
 License: BSD 3-Clause
 LicenseFiles: LICENSE
 Type: ipkg
 Description:   psutil is a cross-platform library for retrieving information
   on running processes and system utilization.
 https://github.com/giampaolo/psutil
-Jan Pavlinec <jan.pavlinec1@gmail.com>
+Jan Pavlinec <jan.pavlinec@nic.cz>
 @@
 
 Package: python3-psutil-src
 Submenu: Python
-Version: 5.9.0-1
+Version: 5.8.0-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -33,8 +33,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: psutil (process and system utilities) (sources)
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: psutil-5.9.0.tar.gz
+Maintainer: Jan Pavlinec <jan.pavlinec@nic.cz>
+Source: psutil-5.8.0.tar.gz
 License: BSD 3-Clause
 LicenseFiles: LICENSE
 Type: ipkg
@@ -43,7 +43,7 @@ Description:       psutil is a cross-platform library for retrieving information
 
     This package contains the Python source files for python3-psutil.
 https://github.com/giampaolo/psutil
-Jan Pavlinec <jan.pavlinec1@gmail.com>
+Jan Pavlinec <jan.pavlinec@nic.cz>
 @@
 Config:
     depends on PACKAGE_python3-psutil

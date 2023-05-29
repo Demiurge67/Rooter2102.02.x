@@ -10,7 +10,7 @@ Provides:
 Section: lang
 Category: Languages
 Repository: base
-Title: LuaExpat
+Title: LuaExpat 
 Maintainer: W. Michael Petullo <mike@flyn.org>
 Source: luaexpat-1.3.0.tar.gz
 Type: ipkg

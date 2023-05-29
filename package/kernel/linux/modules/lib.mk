@@ -109,10 +109,9 @@ define KernelPackage/lib-lzo
   HIDDEN:=1
   FILES:= \
 	$(LINUX_DIR)/crypto/lzo.ko \
-	$(LINUX_DIR)/crypto/lzo-rle.ko \
 	$(LINUX_DIR)/lib/lzo/lzo_compress.ko \
 	$(LINUX_DIR)/lib/lzo/lzo_decompress.ko
-  AUTOLOAD:=$(call AutoProbe,lzo lzo-rle lzo_compress lzo_decompress)
+  AUTOLOAD:=$(call AutoProbe,lzo lzo_compress lzo_decompress)
 endef
 
 define KernelPackage/lib-lzo/description
@@ -273,13 +272,3 @@ define KernelPackage/asn1-decoder
 endef
 
 $(eval $(call KernelPackage,asn1-decoder))
-
-define KernelPackage/oid-registry
-  SUBMENU:=$(LIB_MENU)
-  TITLE:=Object identifier registry
-  KCONFIG:= CONFIG_OID_REGISTRY
-  FILES:=$(LINUX_DIR)/lib/oid_registry.ko
-  AUTOLOAD:=$(call AutoLoad,31,oid_registry)
-endef
-
-$(eval $(call KernelPackage,oid-registry))

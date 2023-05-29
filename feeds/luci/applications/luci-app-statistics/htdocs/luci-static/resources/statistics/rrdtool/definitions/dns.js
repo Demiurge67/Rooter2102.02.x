@@ -11,8 +11,7 @@ return baseclass.extend({
 
 	rrdargs: function(graph, host, plugin, plugin_instance, dtype) {
 		var traffic = {
-			title: "%H: DNS traffic",
-			vlabel: "Bit/s",
+			title: "%H: DNS traffic", vlabel: "Bit/s",
 
 			data: {
 				sources: {
@@ -36,8 +35,7 @@ return baseclass.extend({
 		};
 
 		var opcode_query = {
-			title: "%H: DNS Opcode Query",
-			vlabel: "Queries/s",
+			title: "%H: DNS Opcode Query", vlabel: "Queries/s",
 			data: {
 				instances: {
 					dns_opcode: [ "Query" ]
@@ -54,8 +52,7 @@ return baseclass.extend({
 		};
 
 		var qtype = {
-			title: "%H: DNS QType",
-			vlabel: "Queries/s",
+			title: "%H: DNS QType", vlabel: "Queries/s",
 			data: {
 				sources: { dns_qtype: [ "" ] },
 				options: {

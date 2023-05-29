@@ -115,25 +115,6 @@ Description:     Translation for luci-app-statistics - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-statistics-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-statistics
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-statistics - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-statistics - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-statistics-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x
@@ -416,25 +397,6 @@ Source:
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-statistics - Norsk (Norwegian)
-
-@@
-
-Package: luci-i18n-statistics-nl
-Default: LUCI_LANG_nl||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-statistics
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-statistics - nl translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-statistics - Nederlands (Dutch)
 
 @@
 

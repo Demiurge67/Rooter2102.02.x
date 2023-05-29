@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-19 19:36+0200\n"
-"PO-Revision-Date: 2021-09-27 22:36+0000\n"
+"PO-Revision-Date: 2021-08-01 21:34+0000\n"
 "Last-Translator: Iskren Mihaylov <iskren.mihaylov91@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsupnp/bg/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:182
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:119
 msgid "Advanced Settings"
-msgstr "Разширени настройки"
+msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:131
 msgid "Advertise as IGDv1 device instead of IGDv2"
@@ -69,13 +69,13 @@ msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:188
 msgid "Comment"
-msgstr "Коментар"
+msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/status/include/80_upnp.js:66
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:62
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:106
 msgid "Delete"
-msgstr "Изтрий"
+msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/status/include/80_upnp.js:48
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:88
@@ -121,7 +121,7 @@ msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:118
 msgid "General Settings"
-msgstr "Основни настройки"
+msgstr ""
 
 #: applications/luci-app-upnp/root/usr/share/rpcd/acl.d/luci-app-upnp.json:3
 msgid "Grant access to upnp procedures"
@@ -163,7 +163,7 @@ msgstr ""
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/status/include/80_upnp.js:43
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:83
 msgid "Protocol"
-msgstr "Протокол"
+msgstr ""
 
 #: applications/luci-app-upnp/htdocs/luci-static/resources/view/upnp/upnp.js:134
 msgid "Puts extra debugging information into the system log"

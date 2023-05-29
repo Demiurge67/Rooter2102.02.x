@@ -4,7 +4,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-aria2
 Submenu: 3. Applications
 Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +aria2
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-compat +aria2 +luci-lib-ipkg
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -118,26 +118,6 @@ License: MIT
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-aria2 - Čeština (Czech)
-Xingwang Liao <kuoruan@gmail.com>
-@@
-
-Package: luci-i18n-aria2-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-aria2
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-aria2 - da translation
-Maintainer: Xingwang Liao <kuoruan@gmail.com>
-Source: 
-License: MIT
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-aria2 - Dansk (Danish)
 Xingwang Liao <kuoruan@gmail.com>
 @@
 

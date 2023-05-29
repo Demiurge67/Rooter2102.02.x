@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=rsync
-PKG_VERSION:=3.2.7
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=3.2.3
+PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://download.samba.org/pub/$(PKG_NAME)/src
-PKG_HASH:=4e7d9d3f6ed10878c58c5fb724a67dacf4b6aac7340b13e488fb2dc41346f2bb
+PKG_SOURCE_URL:=https://download.samba.org/pub/rsync/src
+PKG_HASH:=becc3c504ceea499f4167a260040ccf4d9f2ef9499ad5683c179a697146ce50e
 
 PKG_MAINTAINER:=Maxim Storchak <m.storchak@gmail.com>
 PKG_LICENSE:=GPL-3.0-or-later
@@ -52,7 +52,6 @@ CONFIGURE_ARGS += \
 	--disable-md2man \
 	--disable-openssl \
 	--disable-simd \
-	--disable-roll-simd \
 	--disable-xxhash \
 	--$(if $(CONFIG_BUILD_NLS),en,dis)able-iconv \
 	--$(if $(CONFIG_BUILD_NLS),en,dis)able-iconv-open \

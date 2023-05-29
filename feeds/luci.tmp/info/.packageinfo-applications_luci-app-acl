@@ -115,6 +115,25 @@ Description:     Translation for luci-app-acl - Čeština (Czech)
 
 @@
 
+Package: luci-i18n-acl-cy
+Default: LUCI_LANG_cy||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-acl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acl - cy translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acl - 
+
+@@
+
 Package: luci-i18n-acl-da
 Default: LUCI_LANG_da||(ALL&&m)
 Version: x
@@ -130,7 +149,7 @@ Maintainer:
 Source: 
 Type: ipkg
 Hidden: 1
-Description:     Translation for luci-app-acl - Dansk (Danish)
+Description:     Translation for luci-app-acl - 
 
 @@
 
@@ -305,6 +324,25 @@ Description:     Translation for luci-app-acl - Magyar (Hungarian)
 
 @@
 
+Package: luci-i18n-acl-id
+Default: LUCI_LANG_id||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-acl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-acl - id translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-acl - 
+
+@@
+
 Package: luci-i18n-acl-it
 Default: LUCI_LANG_it||(ALL&&m)
 Version: x
@@ -416,25 +454,6 @@ Source:
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-acl - Norsk (Norwegian)
-
-@@
-
-Package: luci-i18n-acl-nl
-Default: LUCI_LANG_nl||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-acl
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-acl - nl translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-acl - Nederlands (Dutch)
 
 @@
 

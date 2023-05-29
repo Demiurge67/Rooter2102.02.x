@@ -1,9 +1,10 @@
 Source-Makefile: feeds/packages/utils/vim/Makefile
+Build-Depends/host: libiconv/host
 Build-Types: host
 
 Package: vim
 Submenu: Editors
-Version: 8.2-5
+Version: 8.2-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -23,11 +24,11 @@ Marko Ratkaj <marko.ratkaj@sartura.hr>
 
 Package: vim-full
 Submenu: Editors
-Version: 8.2-5
+Version: 8.2-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libncurses
-Conflicts: vim
+Conflicts: 
 Menu-Depends: 
-Provides: vim
+Provides: 
 Section: utils
 Category: Utilities
 Repository: base
@@ -43,11 +44,11 @@ Marko Ratkaj <marko.ratkaj@sartura.hr>
 
 Package: vim-fuller
 Submenu: Editors
-Version: 8.2-5
+Version: 8.2-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libncurses
-Conflicts: vim vim-full
+Conflicts: 
 Menu-Depends: 
-Provides: vim vim-full
+Provides: 
 Section: utils
 Category: Utilities
 Repository: base
@@ -63,7 +64,7 @@ Marko Ratkaj <marko.ratkaj@sartura.hr>
 
 Package: vim-runtime
 Submenu: Editors
-Version: 8.2-5
+Version: 8.2-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -83,7 +84,7 @@ Marko Ratkaj <marko.ratkaj@sartura.hr>
 
 Package: vim-help
 Submenu: Editors
-Version: 8.2-5
+Version: 8.2-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -102,7 +103,7 @@ Marko Ratkaj <marko.ratkaj@sartura.hr>
 @@
 
 Package: xxd
-Version: 8.2-5
+Version: 8.2-3
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 

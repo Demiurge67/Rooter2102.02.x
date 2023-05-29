@@ -16,11 +16,11 @@ return view.extend({
 		]);
 
 		ifaces.forEach(function(iface) {
-			tab.appendChild(E('span', {}, E('img', { 'data-iface': iface, 'style': 'visibility:hidden; margin:5px 10px' })));
+			tab.appendChild(E('p', {}, E('img', { 'data-iface': iface, 'style': 'display:none' })));
 			fs.exec_direct('/usr/bin/vnstati', [ '-'+style, '-i', iface, '-o', '-' ], 'blob').then(function(res) {
 				var img = tab.querySelector('img[data-iface="%s"]'.format(iface));
 				img.src = URL.createObjectURL(res);
-				img.style.visibility = 'visible';
+				img.style.display = '';
 				tab.firstElementChild.style.display = 'none';
 			});
 		});

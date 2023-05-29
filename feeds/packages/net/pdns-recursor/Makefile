@@ -1,14 +1,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pdns-recursor
-PKG_VERSION:=4.7.4
+PKG_VERSION:=4.4.2
 PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://downloads.powerdns.com/releases/
-PKG_HASH:=17b5c7c881e3f400bb3b527dd866e5cf2cd62d5d33566b1b70b58c608d9968d5
+PKG_HASH:=b0b97f49848a1758b64bc0b99a596c1583ea525477193f3c01905f5163a4f5cf
 
-PKG_MAINTAINER:=Peter van Dijk <peter.van.dijk@powerdns.com>
+PKG_MAINTAINER:=James Taylor <james@jtaylor.id.au>
 PKG_LICENCE:=GPL-2.0-only
 PKG_LICENCE_FILES:=COPYING
 PKG_CPE_ID:=cpe:/a:powerdns:recursor
@@ -16,6 +16,7 @@ PKG_CPE_ID:=cpe:/a:powerdns:recursor
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
+PKG_BUILD_DEPENDS:=protobuf/host
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -25,7 +26,7 @@ define Package/pdns-recursor
   SUBMENU:=IP Addresses and Names
   USERID:=pdns:pdns
   TITLE:=PowerDNS Recursor
-  DEPENDS:=+boost +boost-context +boost-filesystem +libatomic +liblua +libopenssl +libfstrm +libcurl
+  DEPENDS:=+boost +boost-context +boost-filesystem +libatomic +liblua +libopenssl +protobuf +libfstrm
   URL:=https://www.powerdns.com/recursor.html
 endef
 
@@ -39,18 +40,19 @@ define Package/pdns-recursor/conffiles
 /etc/init.d/pdns-recursor
 endef
 
-# not everything groks --disable-nls
-DISABLE_NLS:=
-
 CONFIGURE_ARGS += \
 	--sysconfdir=/etc/powerdns \
 	--with-lua=lua \
 	--without-libcap \
 	--without-libsodium \
+	--with-protobuf \
 	--without-net-snmp \
-	--enable-dns-over-tls \
 	--enable-reproducible \
 	--disable-silent-rules
+
+CONFIGURE_VARS += \
+	boost_cv_lib_context=yes \
+	boost_cv_lib_context_LIBS=-lboost_context
 
 define Package/pdns-recursor/install
 	$(INSTALL_DIR) $(1)/etc/powerdns

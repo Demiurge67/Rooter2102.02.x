@@ -11,13 +11,9 @@ function action_logout()
 	if sid then
 		utl.ubus("session", "destroy", { ubus_rpc_session = sid })
 
-		local url = dsp.build_url()
-
-		if luci.http.getenv('HTTPS') == 'on' then
-			luci.http.header("Set-Cookie", "sysauth_https=; expires=Thu, 01 Jan 1970 01:00:00 GMT; path=%s" % url)
-		end
-
-		luci.http.header("Set-Cookie", "sysauth_http=; expires=Thu, 01 Jan 1970 01:00:00 GMT; path=%s" % url)
+		luci.http.header("Set-Cookie", "sysauth=%s; expires=%s; path=%s" %{
+			'', 'Thu, 01 Jan 1970 01:00:00 GMT', dsp.build_url()
+		})
 	end
 
 	luci.http.redirect(dsp.build_url())
@@ -189,9 +185,10 @@ end
 
 function action_menu()
 	local dsp = require "luci.dispatcher"
+	local utl = require "luci.util"
 	local http = require "luci.http"
 
-	local _, _, acls = dsp.is_authenticated({ methods = { "cookie:sysauth_https", "cookie:sysauth_http" } })
+	local acls = utl.ubus("session", "access", { ubus_rpc_session = http.getcookie("sysauth") })
 	local menu = dsp.menu_json(acls or {}) or {}
 
 	http.prepare_content("application/json")

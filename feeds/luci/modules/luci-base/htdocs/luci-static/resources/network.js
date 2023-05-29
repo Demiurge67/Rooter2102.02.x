@@ -101,6 +101,15 @@ var _init = null,
     _protocols = {},
     _protospecs = {};
 
+function strcmp(a, b) {
+	if (a > b)
+		return 1;
+	else if (a < b)
+		return -1;
+	else
+		return 0;
+}
+
 function getProtocolHandlers(cache) {
 	return callNetworkProtoHandlers().then(function(protos) {
 		/* Register "none" protocol */
@@ -476,7 +485,10 @@ function initNetworkState(refresh) {
 						}
 
 						ports.sort(function(a, b) {
-							return L.naturalCompare(a.role, b.role) || L.naturalCompare(a.index, b.index);
+							if (a.role != b.role)
+								return (a.role < b.role) ? -1 : 1;
+
+							return (a.index - b.index);
 						});
 
 						for (var i = 0, port; (port = ports[i]) != null; i++) {
@@ -550,14 +562,18 @@ function ifnameOf(obj) {
 }
 
 function networkSort(a, b) {
-	return L.naturalCompare(a.getName(), b.getName());
+	return strcmp(a.getName(), b.getName());
 }
 
 function deviceSort(a, b) {
-	var typeWeigth = { wifi: 2, alias: 3 };
+	var typeWeigth = { wifi: 2, alias: 3 },
+        weightA = typeWeigth[a.getType()] || 1,
+        weightB = typeWeigth[b.getType()] || 1;
 
-	return L.naturalCompare(typeWeigth[a.getType()] || 1, typeWeigth[b.getType()] || 1) ||
-	       L.naturalCompare(a.getName(), b.getName());
+    if (weightA != weightB)
+    	return weightA - weightB;
+
+	return strcmp(a.getName(), b.getName());
 }
 
 function formatWifiEncryption(enc) {
@@ -989,10 +1005,9 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 	 */
 	deleteNetwork: function(name) {
 		var requireFirewall = Promise.resolve(L.require('firewall')).catch(function() {}),
-		    loadDHCP = L.resolveDefault(uci.load('dhcp')),
 		    network = this.instantiateNetwork(name);
 
-		return Promise.all([ requireFirewall, loadDHCP, initNetworkState() ]).then(function(res) {
+		return Promise.all([ requireFirewall, initNetworkState() ]).then(function(res) {
 			var uciInterface = uci.get('network', name),
 			    firewall = res[0];
 
@@ -1005,23 +1020,19 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 							uci.remove('luci', s['.name']);
 					});
 
-					uci.sections('network', null, function(s) {
-						switch (s['.type']) {
-						case 'alias':
-						case 'route':
-						case 'route6':
-							if (s.interface == name)
-								uci.remove('network', s['.name']);
+					uci.sections('network', 'alias', function(s) {
+						if (s.interface == name)
+							uci.remove('network', s['.name']);
+					});
 
-							break;
+					uci.sections('network', 'route', function(s) {
+						if (s.interface == name)
+							uci.remove('network', s['.name']);
+					});
 
-						case 'rule':
-						case 'rule6':
-							if (s.in == name || s.out == name)
-								uci.remove('network', s['.name']);
-
-							break;
-						}
+					uci.sections('network', 'route6', function(s) {
+						if (s.interface == name)
+							uci.remove('network', s['.name']);
 					});
 
 					uci.sections('wireless', 'wifi-iface', function(s) {
@@ -1031,11 +1042,6 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 							uci.set('wireless', s['.name'], 'network', networks.join(' '));
 						else
 							uci.unset('wireless', s['.name'], 'network');
-					});
-
-					uci.sections('dhcp', 'dhcp', function(s) {
-						if (s.interface == name)
-							uci.remove('dhcp', s['.name']);
 					});
 
 					if (firewall)
@@ -1133,7 +1139,7 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 			if (name == null)
 				return null;
 
-			if (_state.netdevs.hasOwnProperty(name))
+			if (_state.netdevs.hasOwnProperty(name) || isWifiIfname(name))
 				return this.instantiateDevice(name);
 
 			var netid = getWifiNetidBySid(name);
@@ -1425,7 +1431,7 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 				rv.push(this.lookupWifiNetwork(wifiIfaces[i]['.name']));
 
 			rv.sort(function(a, b) {
-				return L.naturalCompare(a.getID(), b.getID());
+				return strcmp(a.getID(), b.getID());
 			});
 
 			return rv;
@@ -1523,7 +1529,10 @@ Network = baseclass.extend(/** @lends LuCI.network.prototype */ {
 			}
 
 			rv.sort(function(a, b) {
-				return L.naturalCompare(a.metric, b.metric) || L.naturalCompare(a.interface, b.interface);
+				if (a.metric != b.metric)
+					return (a.metric - b.metric);
+
+				return strcmp(a.interface, b.interface);
 			});
 
 			return rv;
@@ -1971,7 +1980,7 @@ Hosts = baseclass.extend(/** @lends LuCI.network.Hosts.prototype */ {
 		}
 
 		return rv.sort(function(a, b) {
-			return L.naturalCompare(a[0], b[0]);
+			return strcmp(a[0], b[0]);
 		});
 	}
 });
@@ -2833,15 +2842,6 @@ Device = baseclass.extend(/** @lends LuCI.network.Device.prototype */ {
 		this.device  = this.device || device;
 		this.dev     = Object.assign({}, _state.netdevs[this.device]);
 		this.network = network;
-
-		var conf;
-
-		uci.sections('network', 'device', function(s) {
-			if (s.name == device)
-				conf = s;
-		});
-
-		this.config  = Object.assign({}, conf);
 	},
 
 	_devstate: function(/* ... */) {
@@ -2936,10 +2936,6 @@ Device = baseclass.extend(/** @lends LuCI.network.Device.prototype */ {
 			return 'vlan';
 		else if (this.dev.devtype == 'dsa' || _state.isSwitch[this.device])
 			return 'switch';
-		else if (this.config.type == '8021q' || this.config.type == '8021ad')
-			return 'vlan';
-		else if (this.config.type == 'bridge')
-			return 'bridge';
 		else
 			return 'ethernet';
 	},
@@ -3239,13 +3235,7 @@ Device = baseclass.extend(/** @lends LuCI.network.Device.prototype */ {
 	 * ordinary ethernet interfaces.
 	 */
 	getParent: function() {
-		if (this.dev.parent)
-			return Network.prototype.instantiateDevice(this.dev.parent);
-
-		if ((this.config.type == '8021q' || this.config.type == '802ad') && typeof(this.config.ifname) == 'string')
-			return Network.prototype.instantiateDevice(this.config.ifname);
-
-		return null;
+		return this.dev.parent ? Network.prototype.instantiateDevice(this.dev.parent) : null;
 	}
 });
 
@@ -3400,10 +3390,19 @@ WifiDevice = baseclass.extend(/** @lends LuCI.network.WifiDevice.prototype */ {
 		if (this.ubus('dev', 'iwinfo', 'type') == 'wl')
 			type = 'Broadcom';
 
-		return '%s 802.11%s Wireless Controller (%s)'.format(
-			type || 'Generic',
-			this.getHWModes().sort(L.naturalCompare).join(''),
-			this.getName());
+		var hwmodes = this.getHWModes(),
+		    modestr = '';
+
+		hwmodes.sort(function(a, b) {
+			if (a.length != b.length)
+				return a.length - b.length;
+
+			return strcmp(a, b);
+		});
+
+		modestr = hwmodes.join('');
+
+		return '%s 802.11%s Wireless Controller (%s)'.format(type || 'Generic', modestr, this.getName());
 	},
 
 	/**

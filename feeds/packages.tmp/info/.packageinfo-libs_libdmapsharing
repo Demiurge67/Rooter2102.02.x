@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/libs/libdmapsharing/Makefile
-Build-Depends: glib2/host !BUILD_NLS:libiconv
+Build-Depends: glib2/host !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: libdmapsharing
 Version: 3.9.10-1

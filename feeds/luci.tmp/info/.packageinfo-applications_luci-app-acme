@@ -121,26 +121,6 @@ Description:     Translation for luci-app-acme - Čeština (Czech)
 Toke Høiland-Jørgensen <toke@toke.dk>
 @@
 
-Package: luci-i18n-acme-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-acme
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-acme - da translation
-Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
-Source: 
-License: GPL-3.0-or-later
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-acme - Dansk (Danish)
-Toke Høiland-Jørgensen <toke@toke.dk>
-@@
-
 Package: luci-i18n-acme-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

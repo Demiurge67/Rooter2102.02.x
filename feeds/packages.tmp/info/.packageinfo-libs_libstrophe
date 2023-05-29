@@ -1,5 +1,4 @@
 Source-Makefile: feeds/packages/libs/libstrophe/Makefile
-Build-Depends: !BUILD_NLS:libiconv
 
 Package: libstrophe
 Menu: 1

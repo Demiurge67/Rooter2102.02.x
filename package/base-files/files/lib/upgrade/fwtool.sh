@@ -71,7 +71,6 @@ fwtool_check_image() {
 
 			# minor compat version -> sysupgrade with -n required
 			if [ "${devicecompat#.*}" != "${imagecompat#.*}" ] && [ "$SAVE_CONFIG" = "1" ]; then
-				[ "$IGNORE_MINOR_COMPAT" = 1 ] && return 0
 				v "The device is supported, but the config is incompatible to the new image ($devicecompat->$imagecompat). Please upgrade without keeping config (sysupgrade -n)."
 				[ -n "$compatmessage" ] && v "$compatmessage"
 				return 1
@@ -82,12 +81,12 @@ fwtool_check_image() {
 	done
 
 	v "Device $device not supported by this image"
-	local devices="Supported devices:"
+	vn "Supported devices:"
 	for k in $dev_keys; do
 		json_get_var dev "$k"
-		devices="$devices $dev"
+		_vn " $dev"
 	done
-	v "$devices"
+	_v
 
 	return 1
 }

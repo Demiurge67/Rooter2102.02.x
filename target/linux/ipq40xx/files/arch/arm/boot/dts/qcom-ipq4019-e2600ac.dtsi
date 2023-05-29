@@ -254,3 +254,13 @@
 &usb2_hs_phy {
 	status = "okay";
 };
+
+&wifi0 {
+	status = "okay";
+	qcom,ath10k-calibration-variant = "Qxwlan-E2600AC";
+};
+
+&wifi1 {
+	status = "okay";
+	qcom,ath10k-calibration-variant = "Qxwlan-E2600AC";
+};

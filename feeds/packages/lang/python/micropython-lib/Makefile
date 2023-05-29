@@ -8,16 +8,15 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=micropython-lib
+PKG_VERSION:=1.9.3
 PKG_RELEASE:=1
 
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/micropython/micropython-lib.git
-PKG_SOURCE_VERSION:=0c31e0b3d712fcd21982daec8bfca48ad5527a72
-PKG_SOURCE_DATE:=20220324
-PKG_MIRROR_HASH:=fb796c6d648e555e3e5233a3aec84be1692199b2cbae1efd7c22caf2a8c3f8f7
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://codeload.github.com/micropython/micropython-lib/tar.gz/v$(PKG_VERSION)?
+PKG_HASH:=66e15380eb109613263beb6825b8eecb9191088270c1a59e8c7d922dd57183c7
 
-PKG_MAINTAINER:=Jeffery To <jeffery.to@gmail.com>
-PKG_LICENSE:=MIT PSF-2.0
+PKG_MAINTAINER:=Roger D <rogerdammit@gmail.com>
+PKG_LICENSE:=MIT, PSFL
 PKG_LICENSE_FILES:=LICENSE
 
 PKG_BUILD_PARALLEL:=1
@@ -25,29 +24,28 @@ PKG_BUILD_PARALLEL:=1
 include $(INCLUDE_DIR)/package.mk
 
 define Package/micropython-lib
-  SUBMENU:=Python
-  SECTION:=lang
-  CATEGORY:=Languages
-  TITLE:=micropython-lib
-  URL:=https://github.com/micropython/micropython-lib
-  DEPENDS:=+micropython
+    SUBMENU:=Python
+    SECTION:=lang
+    CATEGORY:=Languages
+    TITLE:=micropython-lib
+    URL:=https://github.com/micropython/micropython-lib
+    DEPENDS:=+micropython
 endef
 
 define Package/micropython-lib/description
-  This is a repository of libraries designed to be useful for writing
-  MicroPython applications.
+    This package contains micropython-lib, a project to develop a non-monolothic
+    standard library for Micro Python. Note that this is a work in progress and
+    several libraries may be missing, incomplete or buggy.
 endef
 
-Build/Compile:=:
+MAKE_FLAGS:=\
+	PREFIX=$(PKG_BUILD_DIR)/_install_tmp/dist \
+	install
 
 define Package/micropython-lib/install
-	for dir in micropython python-ecosys python-stdlib unix-ffi; do \
-		$(INSTALL_DIR) $(1)/usr/lib/micropython/$$$$dir ; \
-		$(CP) $(PKG_BUILD_DIR)/$$$$dir/* $(1)/usr/lib/micropython/$$$$dir/ ; \
-	done
-	$(FIND) $(1)/usr/lib/micropython \
-		-not -type d \( -not -name '*.py' -o -name 'test_*' -o -name 'setup.py' \) -delete
-	$(FIND) $(1)/usr/lib/micropython -mindepth 1 -empty -type d -delete
+	$(INSTALL_DIR) $(1)/usr/lib/micropython
+	$(CP) $(PKG_BUILD_DIR)/_install_tmp/dist/* $(1)/usr/lib/micropython
 endef
 
 $(eval $(call BuildPackage,micropython-lib))
+

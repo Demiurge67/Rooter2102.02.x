@@ -115,25 +115,6 @@ Description:     Translation for luci-app-lxc - Čeština (Czech)
 Petar Koretic <petar.koretic@sartura.hr>
 @@
 
-Package: luci-i18n-lxc-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-lxc
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-lxc - da translation
-Maintainer: Petar Koretic <petar.koretic@sartura.hr>
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-lxc - Dansk (Danish)
-Petar Koretic <petar.koretic@sartura.hr>
-@@
-
 Package: luci-i18n-lxc-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

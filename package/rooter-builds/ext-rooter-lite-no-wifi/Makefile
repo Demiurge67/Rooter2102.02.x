@@ -15,9 +15,8 @@ define Package/ext-rooter-lite-no-wifi
  DEPENDS:=+luci +ext-rooter-basic +ext-extra \
 		+luci-app-ddns +ddns-scripts \
 		+luci-app-rootervpn +ext-wireguard \
-		+bwmon +464xlat +iperf \
-		+ext-theme +luci-theme-materialgrey +ext-login \
-		+ca-bundle +ca-certificates +libustream-wolfssl \
+		+bwmon +464xlat +iperf +ext-theme +ext-login +luci-theme-argondark \
+		+ca-bundle +ca-certificates +libustream-wolfssl +openssl-util \
 		+luci-app-ksmbd +usb-storage +kmod-mtd-rw \
 		+ext-p910nd +luci-app-sqm \
 		+kmod-sched-cake +luci-app-nft-qos \
@@ -25,7 +24,6 @@ define Package/ext-rooter-lite-no-wifi
 		+usbmuxd +libusbmuxd-utils \
 		+libimobiledevice-utils +kmod-usb-net-ipheth \
 		+qlog +luci-ssl +usbutils \
-		+openssl-util \
 		+nano +picocom +webconsole \
 		+wget +qfirehose +luci-app-vpnbypass 
   TITLE:=ROOter support w/o WiFi routers

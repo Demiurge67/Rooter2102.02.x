@@ -347,7 +347,7 @@ function handlePage(ev)
 	if (filter.value)
 		placeholder = [
 			E('span', {}, _('No packages matching "<strong>%h</strong>".').format(filter.value)), ' (',
-			E('a', { href: '#', click: handleReset }, _('Reset')), ')'
+			E('a', { href: '#', onclick: 'handleReset(event)' }, _('Reset')), ')'
 		];
 
 	cbi_update_table('#packages', currentDisplayRows.slice(offset, offset + 100),
@@ -571,7 +571,7 @@ function renderDependencies(depends, info)
 		if (deps[i] === 'libc')
 			continue;
 
-		if (deps[i].match(/^(.+?)\s+\((<=|>=|<<|>>|<|>|=)(.+?)\)/)) {
+		if (deps[i].match(/^(.+)\s+\((<=|<|>|>=|=|<<|>>)(.+)\)$/)) {
 			dep = RegExp.$1.trim();
 			vop = RegExp.$2.trim();
 			ver = RegExp.$3.trim();
@@ -994,13 +994,13 @@ function updateLists(data)
 	});
 }
 
-var inputTimeout = null;
+var keyTimeout = null;
 
-function handleInput(ev) {
-	if (inputTimeout !== null)
-		window.clearTimeout(inputTimeout);
+function handleKeyUp(ev) {
+	if (keyTimeout !== null)
+		window.clearTimeout(keyTimeout);
 
-	inputTimeout = window.setTimeout(function() {
+	keyTimeout = window.setTimeout(function() {
 		display(ev.target.value);
 	}, 250);
 }
@@ -1027,7 +1027,7 @@ return view.extend({
 				E('div', {}, [
 					E('label', {}, _('Filter') + ':'),
 					E('span', { 'class': 'control-group' }, [
-						E('input', { 'type': 'text', 'name': 'filter', 'placeholder': _('Type to filter…'), 'value': query, 'input': handleInput }),
+						E('input', { 'type': 'text', 'name': 'filter', 'placeholder': _('Type to filter…'), 'value': query, 'keyup': handleKeyUp }),
 						E('button', { 'class': 'btn cbi-button', 'click': handleReset }, [ _('Clear') ])
 					])
 				]),

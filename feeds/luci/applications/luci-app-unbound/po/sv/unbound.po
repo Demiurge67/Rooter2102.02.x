@@ -1,43 +1,43 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-10-05 06:41+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"PO-Revision-Date: 2019-10-17 20:23+0000\n"
+"Last-Translator: Mattias Münster <mattiasmun@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsunbound/sv/>\n"
 "Language: sv\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 3.9.1-dev\n"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:160
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:53
 msgid "(none)"
-msgstr "(inga)"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:96
 msgid "(root)"
-msgstr "(root)"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:202
 msgid ", and <var>%s</var> entries"
-msgstr ", och <var>%s</var> poster"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:172
 msgid ", and try <var>%s</var>"
-msgstr ", och prova <var>%s</var>"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:78
 msgid "AXFR"
-msgstr "AXFR"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:68
 msgid "Accept queries only from local subnets"
-msgstr "Acceptera enbart förfrågningar från lokala undernät"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:216
 msgid "Adblock domain list is too large to display in LuCI."
-msgstr "Adblock-domänlistan är för stor för att visa i LuCI."
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:47
 msgid "Advanced"
@@ -45,32 +45,31 @@ msgstr "Avancerat"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:262
 msgid "Aggressive"
-msgstr "Aggressiv"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:34
 msgid "Allow open recursion when record not in zone"
-msgstr "Tillåt öppen rekursion när samlingen inte är i zon"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:38
 msgid "Authoritative (zone file)"
-msgstr "Auktorativ (zon-fil)"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:42
 msgid "Basic"
-msgstr "Grundläggande"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:267
 msgid "Break down query components for limited added privacy"
-msgstr "Dela upp frågekomponenterna för begränsad extra sekretess"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:78
 msgid "Break the loop where DNSSEC needs NTP and NTP needs DNS"
-msgstr "Bryt slingan där DNSSEC behöver NTP och NTP behöver DNS"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:52
 msgid "Check for local program to allow forward to localhost"
 msgstr ""
-"Leta för om det lokala programmet ska tillåta vidarebefordran till localhost"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:84
 msgid "Choose Unbounds listening port"
@@ -82,39 +81,39 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:64
 msgid "Connect to servers using TLS"
-msgstr "Anslut till servrar genom att använda TLS"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:48
 msgid "DHCP"
-msgstr "DHCP"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:158
 msgid "DHCP Link"
-msgstr "DHCP-länk"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:166
 msgid "DHCPv4 to SLAAC"
-msgstr "DHCPv4 till SLAAC"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:57
 msgid "DNS Cache"
-msgstr "DNS-cache"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:51
 msgid "DNS Plugin"
-msgstr "Insticksprogram för DNS"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:63
 msgid "DNS over TLS"
-msgstr "DNS över TLS"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:107
 msgid "DNS64 Prefix"
-msgstr "DNS64-prefix"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:77
 msgid "DNSSEC NTP Fix"
-msgstr "NTP-fix för DNSSEC"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:239
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:250
@@ -124,11 +123,11 @@ msgstr "Standard"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:181
 msgid "Denied (nxdomain)"
-msgstr "Nekades (nxdomain)"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:22
 msgid "Directed Zone"
-msgstr "Riktad zon"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:85
 msgid "Directory only part of URL"
@@ -136,24 +135,24 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:115
 msgid "Domain Insecure"
-msgstr "Osäker domän"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:80
 msgid "Domain name to verify TLS certificate"
-msgstr "Namn på domänen för att bekräfta TLS-certifikat"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:173
 msgid "Domain suffix for this router and DHCP clients"
-msgstr "Domänsuffix för den här routern och DHCP-klienter"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:279
 msgid "EDNS Size"
-msgstr "EDNS-storlek"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/manual.lua:15
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/uciedit.lua:14
 msgid "Edit '"
-msgstr "Redigera"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/server.lua:15
 msgid "Edit 'server:' clause options for 'include:"
@@ -171,19 +170,19 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:86
 msgid "Edit: Extended"
-msgstr "Redigera: Förlängd"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:83
 msgid "Edit: Server"
-msgstr "Redigera: Server"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:71
 msgid "Edit: UCI"
-msgstr "Redigera: UCI"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:78
 msgid "Edit: Unbound"
-msgstr "Redigera: Utgående"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:39
 msgid "Enable"
@@ -191,15 +190,15 @@ msgstr "Aktivera"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:102
 msgid "Enable DNS64"
-msgstr "Aktivera DNS64"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:72
 msgid "Enable DNSSEC"
-msgstr "Aktivera DNSSEC"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:54
 msgid "Enable Unbound"
-msgstr "Aktivera Utgående"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:228
 msgid "Enable access for unbound-control"
@@ -207,19 +206,19 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:103
 msgid "Enable the DNS64 module"
-msgstr "Aktivera DNS64-modulen"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:73
 msgid "Enable the DNSSEC validator module"
-msgstr "Aktivera DNSSEC-valideringsmodulen"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:55
 msgid "Enable the initialization scripts for Unbound"
-msgstr "Aktivera initialiseringsskript för Utgående"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:30
 msgid "Enable this directed zone"
-msgstr "Aktivera den här riktade zonen"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:29
 msgid "Enabled"
@@ -227,7 +226,7 @@ msgstr "Aktiverad"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:297
 msgid "Extended Statistics"
-msgstr "Förlängd statistik"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:298
 msgid "Extended statistics are printed from unbound-control"
@@ -235,7 +234,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:213
 msgid "Extra DNS"
-msgstr "Extra DNS"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:33
 msgid "Fall Back"
@@ -247,7 +246,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:66
 msgid "Files"
-msgstr "Filer"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:99
 msgid "Filter Entire Subnet"
@@ -259,7 +258,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:98
 msgid "Filter Private Address"
-msgstr "Filtrera privat adress"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:95
 msgid "Filter Private Rebind"
@@ -275,7 +274,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:68
 msgid "Forward TLS"
-msgstr "Vidarebefordra TLS"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:60
 msgid "Forward to upstream nameservers (ISP)"
@@ -300,17 +299,17 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:219
 msgid "Host/MX/SRV/CNAME RR"
-msgstr "Värd/MX/SRV/CNAME RR"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:194
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:206
 msgid "Hostname, All Addresses"
-msgstr "Värdnamn, Alla adresser"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:193
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:205
 msgid "Hostname, Primary Address"
-msgstr "Värdnamn, Primär adress"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:190
 msgid "How to enter the LAN or local network router in DNS"
@@ -342,7 +341,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:216
 msgid "Ignore"
-msgstr "Ignorera"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:196
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:208

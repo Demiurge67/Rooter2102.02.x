@@ -19,10 +19,11 @@ PKG_MAINTAINER:=Darik Horn <dajhorn@vanadac.com>
 
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
+PKG_BUILD_DEPENDS:=meson/host
 PKG_CONFIG_DEPENDS:=CONFIG_PACKAGE_lz4
 
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/meson.mk
+include ../../devel/meson/meson.mk
 
 MESON_BUILD_DIR:=$(PKG_BUILD_DIR)/contrib/meson/openwrt-build
 

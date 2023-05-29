@@ -4,7 +4,7 @@ ROOTER=/usr/lib/rooter
 ROOTER_LINK="/tmp/links"
 
 log() {
-	modlog "Lock Band $CURRMODEM" "$@"
+	logger -t "Lock Band" "$@"
 }
 
 RESTART="1"
@@ -119,27 +119,22 @@ encode() {
 maskx=$1
 mask64=$(echo "$maskx""," | cut -c1-64 | cut -d, -f1)
 maskl2=$(echo ${maskx:64}"," | cut -d, -f1)
-maskc=$(echo "$maskx" | grep ",")
-if [ ! -z "$maskc" ]; then
+maskc=$(echo $maskx | grep -o ",")
+if [ ! -z $maskc ]; then
 	mask=$(echo $maskx"," | cut -d, -f1)
 	mask5g=$(echo $maskx"," | cut -d, -f2)
-	mask5gsa=$(echo $maskx"," | cut -d, -f3)
 else
 	mask=$maskx
 	mask5g=""
-	mask5gsa=""
 fi
 
-#log "$mask"
-#log "$mask5g"
-#log "$mask5gsa"
+log "$mask"
+log "$mask5g"
 
 encode $mask
 mask=$maskz
 encode $mask5g
 mask5g=$maskz
-encode $mask5gsa
-mask5gsa=$maskz
 encode $mask64
 mask64=$maskz
 encode $maskl2
@@ -169,10 +164,10 @@ case $uVid in
 	"2c7c" )
 		MODT="1"
 		if [ -z "$2" ]; then
-			RESTART="1"
+			RESTART="0"
 		fi
 		M5=""
-		M2='AT+QCFG="band",0,'$mask',0'
+		M2='AT+QCFG="band",0,'$mask',0,1'
 		if [ $uPid = 0620 ]; then
 			EM20=$(echo $model | grep "EM20")
 			if [ -z "$EM20" ]; then #EM160
@@ -217,54 +212,40 @@ case $uVid in
 			fi
 			M2='AT+QNWPREFCFG="lte_band",'$lst
 		fi
-		if [ $uPid = 6005 ]; then
-			M2='AT+QCFG="band",0,'$mask
-		fi
-		if [ $uPid = 0306 ]; then
-			RESTART="1"
-		fi
-		if [ $uPid = 0800 -o $uPid = 0900 -o $uPid = 0801 ]; then
-			if [ ! -z "$mask" ]; then
+		if [ $uPid = 0800 -o $uPid = 0900 ]; then
+			if [ ! -z $mask ]; then
 				fibdecode $mask 1 1
 			else
 				lst="0"
 			fi
 			M2='AT+QNWPREFCFG="lte_band",'$lst
-			if [ ! -z "$mask5g" ]; then
+			if [ ! -z $mask5g ]; then
 				fibdecode $mask5g 1 1
 			else
 				lst="0"
 			fi
 			M5='AT+QNWPREFCFG="nsa_nr5g_band",'$lst
-			if [ ! -z "$mask5gsa" ]; then
-				fibdecode $mask5gsa 1 1
-			else
-				lst="0"
+			NET=$(uci -q get modem.modem$CURRMODEM.netmode)
+			if [ $NET = "9" ]; then
+				M5='AT+QNWPREFCFG="nr5g_band",'$lst
 			fi
-			M6='AT+QNWPREFCFG="nr5g_band",'$lst
 		fi
 		log " "
 		log "Locking Cmd : $M2"
 		log "Locking Cmd : $M5"
-		log "Locking Cmd : $M6"
 		log " "
-		
-		ATCMDD="AT"
+		ATCMDD="AT+CFUN=1,1"
 		NOCFUN=$uVid
 		OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M2")
-		if [ ! -z "$M5" ]; then
+		if [ ! -z $M5 ]; then
 			OX5=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M5")
-		fi
-		if [ ! -z "$M6" ]; then
-			OX6=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$M6")
 		fi
 		log "Locking Cmd Response : $OX"
 		log "Locking Cmd Response : $OX5"
-		log "Locking Cmd Response : $OX6"
 		log " "
 		if [ $RESTART = "1" ]; then
 			OX=$($ROOTER/gcom/gcom-locked "$COMMPORT" "run-at.gcom" "$CURRMODEM" "$ATCMDD")
-			#sleep 10
+			sleep 10
 		fi
 	;;
 	"1199" )
@@ -383,6 +364,38 @@ case $uVid in
 			;;
 		esac
 	;;
+	"1bc7" )
+		case $uPid in
+			"1040"|"1041")
+				MODT="4"
+				RESTART="1"
+				ext=""
+				extt=$(uci -q get modem.modem$CURRMODEM.LEXT)
+				strlen=${#mask}
+				if [ "$strlen" -lt 17 ]; then
+					if [ ! -z $extt ]; then
+						mask=$mask",00"
+					fi
+				fi
+				if [ "$strlen" -eq 17 ]; then
+					ext="0"${mask:0:1}
+					mask=${mask:5:17}",$ext"
+				fi
+				if [ "$strlen" -eq 18 ]; then
+					ext=${mask:0:2}
+					mask=${mask:6:18}",$ext"
+				fi
+				
+				ATCMDD="AT#BND=0,11,""$mask"
+				OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "$ATCMDD")
+				log "Response $OX"
+				if [ $RESTART = "1" ]; then
+					ATCMDD="AT+CFUN=1,1"
+					OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "$ATCMDD")
+				fi
+			;;
+		esac
+	;;
 	* )
 		exit 0
 	;;
@@ -393,11 +406,58 @@ if [ $RESTART = "0" ]; then
 	exit 0
 fi
 rm -f /tmp/bmask
-if [ $3 = "12" ]; then
-	/usr/lib/rooter/luci/restart.sh $CURRMODEM 11
-else
-	/usr/lib/rooter/luci/restart.sh $CURRMODEM 11
-fi
-sleep 10
-#/usr/lib/rooter/connect/bandmask $CURRMODEM $MODT
+/usr/lib/rooter/luci/restart.sh $CURRMODEM
 exit 0
+
+uci set modem.modem$CURRMODEM.connected=0
+uci commit modem
+
+CFUNDONE=false
+if `echo ${OX} | grep "OK" 1>/dev/null 2>&1` && \
+[[ ! `echo $NOCFUN | grep -o "$uVid"` ]]; then
+	CFUNDONE=true
+	log "Hard modem reset done on /dev/ttyUSB$CPORT to reload drivers"
+	ifdown wan$CURRMODEM
+	uci delete network.wan$CURRMODEM
+	uci set network.wan$CURRMODEM=interface
+	uci set network.wan$CURRMODEM.proto=dhcp
+	uci set network.wan$CURRMODEM.${ifname1}="wan"$CURRMODEM
+	uci set network.wan$CURRMODEM.metric=$CURRMODEM"0"
+	uci commit network
+	/etc/init.d/network reload
+	ifdown wan$CURRMODEM
+	echo "1" > /tmp/modgone
+	log "Setting Modem Removal flag (1)"
+fi
+if ! $CFUNDONE; then
+		PORT="usb1"
+		log "Re-binding USB driver on $PORT to reset modem"
+		echo $PORT > /sys/bus/usb/drivers/usb/unbind
+		sleep 15
+		echo $PORT > /sys/bus/usb/drivers/usb/bind
+		sleep 10
+		PORT="usb2"
+		log "Re-binding USB driver on $PORT to reset modem"
+		echo $PORT > /sys/bus/usb/drivers/usb/unbind
+		sleep 15
+		echo $PORT > /sys/bus/usb/drivers/usb/bind
+		sleep 10
+		ifdown wan$CURRMODEM
+		uci delete network.wan$CURRMODEM
+		uci set network.wan$CURRMODEM=interface
+		uci set network.wan$CURRMODEM.proto=dhcp
+		uci set network.wan$CURRMODEM.${ifname1}="wan"$CURRMODEM
+		uci set network.wan$CURRMODEM.metric=$CURRMODEM"0"
+		uci commit network
+		/etc/init.d/network reload
+		ifdown wan$CURRMODEM
+		exit 0
+		if [[ -n "$CPORT" ]] && [[ ! `echo $NOCFUN | grep -o "$uVid"` ]]; then
+			OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "$ATCMDD")
+			sleep 30
+		else
+			if [ -f $ROOTER_LINK/reconnect$CURRMODEM ]; then
+				$ROOTER_LINK/reconnect$CURRMODEM $CURRMODEM &
+			fi
+		fi
+	fi

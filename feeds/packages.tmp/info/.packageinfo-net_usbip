@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/net/usbip/Makefile
-Build-Depends: !BUILD_NLS:libiconv
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: usbip
-Version: 14
+Version: 13
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @USB_SUPPORT +libwrap +kmod-usbip +libudev +USE_GLIBC:libbsd +usbids
 Conflicts: 
 Menu-Depends: 
@@ -21,7 +21,7 @@ Nuno Goncalves <nunojpg@gmail.com>
 @@
 
 Package: usbip-client
-Version: 14
+Version: 13
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @USB_SUPPORT usbip +kmod-usbip-client
 Conflicts: 
 Menu-Depends: 
@@ -40,7 +40,7 @@ Nuno Goncalves <nunojpg@gmail.com>
 @@
 
 Package: usbip-server
-Version: 14
+Version: 13
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @USB_SUPPORT usbip +kmod-usbip-server
 Conflicts: 
 Menu-Depends: 

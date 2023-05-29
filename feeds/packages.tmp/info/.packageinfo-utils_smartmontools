@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/utils/smartmontools/Makefile
 
 Package: smartmontools
-Version: 7.2-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Version: 7.2-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -24,8 +24,8 @@ Maxim Storchak <m.storchak@gmail.com>
 @@
 
 Package: smartd
-Version: 7.2-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Version: 7.2-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -47,7 +47,7 @@ Maxim Storchak <m.storchak@gmail.com>
 @@
 
 Package: smartmontools-drivedb
-Version: 7.2-2
+Version: 7.2-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -67,7 +67,7 @@ Maxim Storchak <m.storchak@gmail.com>
 @@
 
 Package: smartd-mail
-Version: 7.2-2
+Version: 7.2-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +smartd +nail +msmtp-mta
 Conflicts: 
 Menu-Depends: 

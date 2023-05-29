@@ -1,6 +1,6 @@
 --- a/configure
 +++ b/configure
-@@ -249,9 +249,9 @@ while [ $# -ge 1 ]; do
+@@ -237,9 +237,9 @@ while [ $# -ge 1 ]; do
  		;;
  
  	*)

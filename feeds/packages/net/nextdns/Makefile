@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=nextdns
-PKG_VERSION:=1.39.4
+PKG_VERSION:=1.36.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=nextdns-$(PKG_VERSION).tar.gz
 PKG_SOURCE_VERSION:=v$(PKG_VERSION)
 PKG_SOURCE_URL:=https://codeload.github.com/nextdns/nextdns/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=e24db909fbd732e064be465b74f4004a6f4fc0f422ef7c10e86ff707a016ccac
+PKG_HASH:=7d29146eea9c99017bcd48b0fc17b873e87097c64b1cc45587cd7b0cab1194e0
 
 PKG_MAINTAINER:=Olivier Poitrey <rs@nextdns.io>
 PKG_LICENSE:=MIT
@@ -25,6 +25,7 @@ PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
 GO_PKG:=github.com/nextdns/nextdns
+GO_PKG_LDFLAGS:=-s -w
 GO_PKG_LDFLAGS_X:=main.version=$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
@@ -50,9 +51,13 @@ define Package/nextdns/install
 
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) ./files/nextdns.config $(1)/etc/config/nextdns
+endef
 
-	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/nextdns.defaults $(1)/etc/uci-defaults/nextdns
+define Package/nextdns/postinst
+#!/bin/sh
+if [ -z "$${IPKG_INSTROOT}" ]; then
+  nextdns install
+fi
 endef
 
 define Package/nextdns/prerm

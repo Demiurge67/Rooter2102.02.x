@@ -51,9 +51,6 @@ Config:
      config LUCI_LANG_cs
 	   tristate "Czech (cs)" 
 
-     config LUCI_LANG_da
-	   tristate "Danish (da)" 
-
      config LUCI_LANG_de
 	   tristate "German (de)" 
 
@@ -88,7 +85,7 @@ Config:
 	   tristate "Japanese (ja)" 
 
      config LUCI_LANG_ko
-	   tristate "한국어 (Korean) (ko)" 
+	   tristate "Korean (ko)" 
 
      config LUCI_LANG_mr
 	   tristate "Marathi (mr)" 
@@ -238,26 +235,6 @@ License: MIT
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-base - Čeština (Czech)
-
-@@
-
-Package: luci-i18n-base-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-base
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-base - da translation
-Maintainer: 
-Source: 
-License: MIT
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-base - Dansk (Danish)
 
 @@
 

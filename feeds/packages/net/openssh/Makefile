@@ -8,19 +8,18 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openssh
-PKG_VERSION:=8.9p1
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=8.4p1
+PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		https://ftp.spline.de/pub/OpenBSD/OpenSSH/portable/
-PKG_HASH:=fd497654b7ab1686dac672fb83dfb4ba4096e8b5ffcdaccd262380ae58bec5e7
+PKG_HASH:=5a01d22e407eb1c05ba8a8f7c654d388a13e9f226e4ed33bd38748dafa1d2b24
 
 PKG_LICENSE:=BSD ISC
 PKG_LICENSE_FILES:=LICENCE
 PKG_CPE_ID:=cpe:/a:openssh:openssh
 
-PKG_FIXUP:=autoreconf
 PKG_REMOVE_FILES:=
 PKG_CONFIG_DEPENDS := \
 	CONFIG_OPENSSH_LIBFIDO2
@@ -123,7 +122,7 @@ endef
 define Package/openssh-server-pam/conffiles
 /etc/pam.d/sshd
 /etc/security/access-sshd-local.conf
-$(Package/openssh-server/conffiles)
+/etc/ssh/sshd_config
 endef
 
 define Package/openssh-sftp-client
@@ -184,7 +183,7 @@ CONFIGURE_ARGS += \
 	--without-pam
 endif
 
-CONFIGURE_VARS += LD="$(TARGET_CC)" PATH_PASSWD_PROG="/bin/passwd"
+CONFIGURE_VARS += LD="$(TARGET_CC)"
 
 ifeq ($(BUILD_VARIANT),with-pam)
 TARGET_LDFLAGS += -lpthread
@@ -198,12 +197,13 @@ define Build/Compile
 endef
 
 define Package/openssh-moduli/install
-	install -d -m0700 $(1)/etc/ssh
+	$(INSTALL_DIR) $(1)/etc/ssh
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/etc/ssh/moduli $(1)/etc/ssh/
 endef
 
 define Package/openssh-client/install
-	install -d -m0700 $(1)/etc/ssh
+	$(INSTALL_DIR) $(1)/etc/ssh
+	chmod 0700 $(1)/etc/ssh
 	$(CP) $(PKG_INSTALL_DIR)/etc/ssh/ssh_config $(1)/etc/ssh/
 	$(INSTALL_DIR) $(1)/usr/libexec
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/ssh $(1)/usr/libexec/ssh-openssh
@@ -221,7 +221,8 @@ define Package/openssh-keygen/install
 endef
 
 define Package/openssh-server/install
-	install -d -m0700 $(1)/etc/ssh
+	$(INSTALL_DIR) $(1)/etc/ssh
+	chmod 0700 $(1)/etc/ssh
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/etc/ssh/sshd_config $(1)/etc/ssh/
 	sed -r -i 's,^#(HostKey /etc/ssh/ssh_host_(rsa|ed25519)_key)$$$$,\1,' $(1)/etc/ssh/sshd_config
 	$(INSTALL_DIR) $(1)/etc/init.d

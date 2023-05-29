@@ -121,26 +121,6 @@ Description:     Translation for luci-app-frpc - Čeština (Czech)
 Richard Yu <yurichard3839@gmail.com>
 @@
 
-Package: luci-i18n-frpc-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-frpc
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-frpc - da translation
-Maintainer: Richard Yu <yurichard3839@gmail.com>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-frpc - Dansk (Danish)
-Richard Yu <yurichard3839@gmail.com>
-@@
-
 Package: luci-i18n-frpc-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

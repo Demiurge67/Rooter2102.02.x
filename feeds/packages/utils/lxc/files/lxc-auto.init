@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 
-. "${IPKG_INSTROOT}"/lib/functions.sh
+. /lib/functions.sh
 
 START=99
 STOP=00
@@ -35,9 +35,11 @@ stop_container() {
 	fi
 
 	if [ -n "$name" ]; then
-		[ "$timeout" = "0" ] && postargs=" -t $max_timeout"
-		/usr/bin/lxc-stop -n "$name" "$postargs" &
-		export STOPPID=$!
+		if [ "$timeout" = "0" ]; then
+			/usr/bin/lxc-stop -n "$name" &
+		else
+			/usr/bin/lxc-stop -n "$name" -t $timeout &
+		fi
 	fi
 }
 
@@ -52,13 +54,7 @@ stop() {
 	# ensure e.g. shutdown doesn't occur before maximum timeout on
 	# containers that are shutting down
 	if [ $max_timeout -gt 0 ]; then
-		for i in $(seq 1 $max_timeout); do
-			if [ -d /proc/"$STOPPID" ]; then
-				sleep 1s
-			else
-				return 0
-			fi
-		done
+		sleep $max_timeout
 	fi
 }
 

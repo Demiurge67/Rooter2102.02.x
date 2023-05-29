@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=vncrepeater
 PKG_VERSION:=0.14
-PKG_RELEASE:=2
+PKG_RELEASE:=1
 PKG_MAINTAINER:=Jirka Spicak <robutek@gmail.com> 
 PKG_LICENSE:=GPL-2.0
 
@@ -20,12 +20,13 @@ PKG_HASH:=79178e9baa9cac05f26e43f742933958707cb5c0632c51a5706b13922f3bb5b0
 
 PKG_BUILD_PARALLEL:=1
 
+include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 
 define Package/vncrepeater
   SECTION:=net
   CATEGORY:=Network
-  DEPENDS:=+libstdcpp
+  DEPENDS:=$(CXX_DEPENDS)
   TITLE:=UltraVNC repeater for Linux
   URL:=http://www.uvnc.com/addons/repeater.html
 endef

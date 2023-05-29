@@ -1,10 +1,10 @@
 Source-Makefile: feeds/packages/net/clamav/Makefile
-Build-Depends: ncurses !BUILD_NLS:libiconv
+Build-Depends: ncurses !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: clamav
 Submenu: Web Servers/Proxies
-Version: 0.104.2-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +check +libstdcpp +libpthread +zlib +libbz2 +libxml2 +libcurl +libjson-c +libmilter-sendmail +libopenssl +libltdl +libpcre2 +BUILD_NLS:libiconv-full
+Version: 0.103.3-0
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libpthread +zlib +libbz2 +libxml2 +libcurl +libjson-c +libmilter-sendmail +libopenssl +libltdl +libpcre2 +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -13,7 +13,7 @@ Category: Network
 Repository: base
 Title: ClamAV
 Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr> Lucian Cristian <lucian.cristian@gmail.com>
-Source: clamav-0.104.2.tar.gz
+Source: clamav-0.103.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING*
 Type: ipkg
@@ -25,8 +25,8 @@ Marko Ratkaj <marko.ratkaj@sartura.hr> Lucian Cristian <lucian.cristian@gmail.co
 
 Package: freshclam
 Submenu: Web Servers/Proxies
-Version: 0.104.2-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +check +libstdcpp +libpthread +zlib +libbz2 +libxml2 +libcurl +libjson-c +libmilter-sendmail +libopenssl +libltdl +libpcre2 +BUILD_NLS:libiconv-full +clamav
+Version: 0.103.3-0
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libpthread +zlib +libbz2 +libxml2 +libcurl +libjson-c +libmilter-sendmail +libopenssl +libltdl +libpcre2 +BUILD_NLS:libiconv-full +clamav
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -35,7 +35,7 @@ Category: Network
 Repository: base
 Title: ClamAV database updater
 Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr> Lucian Cristian <lucian.cristian@gmail.com>
-Source: clamav-0.104.2.tar.gz
+Source: clamav-0.103.3.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING*
 Type: ipkg

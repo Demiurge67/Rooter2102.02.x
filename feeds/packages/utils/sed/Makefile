@@ -29,6 +29,7 @@ define Package/sed
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=sed stream editor utility - full version
+  DEPENDS:=+libpcre
   URL:=https://www.gnu.org/software/sed/
   ALTERNATIVES:=300:/bin/sed:/usr/libexec/sed-gnu
 endef

@@ -9,7 +9,7 @@ ROOTER_LINK="/tmp/links"
 modeswitch="/usr/bin/usb_modeswitch"
 
 log() {
-	modlog "usb-modeswitch $CURRMODEM" "$@"
+	logger -t "usb-modeswitch" "$@"
 }
 
 sanitize() {
@@ -203,12 +203,9 @@ if [ "$ACTION" = add ]; then
 	# Uncomment the next line to ignore USB-Serial adapters and similar single-port devices
 	# if [ $bNumConfs = 1 -a $bNumIfs = 1 ] && exit 0		
 
-	$ROOTER/proto.sh $uVid $uPid $DEVICENAME 0
-	source /tmp/proto
-	rm -f /tmp/proto
-	#cat /sys/kernel/debug/usb/devices > /tmp/wdrv
-	#lua $ROOTER/protofind.lua $uVid $uPid 0
-	#retval=$?
+	cat /sys/kernel/debug/usb/devices > /tmp/wdrv
+	lua $ROOTER/protofind.lua $uVid $uPid 0
+	retval=$?
 
 	if [ -e /etc/config/mjpg-streamer ]; then
 		if [ $retval -eq 99 ]; then
@@ -242,19 +239,14 @@ if [ "$ACTION" = add ]; then
 		fi
 	fi
 
-	DELAY=1
 	if [ -f /tmp/usbwait ]; then
 		log "Delay for previous modem"
 		while [ -f /tmp/usbwait ]; do
 			sleep 1
-			let DELAY=$DELAY+1
-			if [ $DELAY -gt 15 ]; then
-				break
-			fi
 		done
 	fi
 	echo "1" > /tmp/usbwait
-	
+
 	source /tmp/variable.file
 	source /tmp/modcnt
 	MODCNT=$MODCNTX
@@ -379,12 +371,9 @@ if [ "$ACTION" = add ]; then
 		sleep 10
 	fi
 
-	#cat /sys/kernel/debug/usb/devices > /tmp/wdrv
-	#lua $ROOTER/protofind.lua $idV $idP 1
-	$ROOTER/proto.sh $uVid $uPid $DEVICENAME 1
-	source /tmp/proto
-	rm -f /tmp/proto
-	#retval=$?
+	cat /sys/kernel/debug/usb/devices > /tmp/wdrv
+	lua $ROOTER/protofind.lua $idV $idP 1
+	retval=$?
 	if [ $idV = 8087 -a $idP = 095a ]; then
 		retval=28
 	fi
@@ -571,9 +560,6 @@ if [ "$ACTION" = remove ]; then
 			rm -f $ROOTER_LINK/mbim_monitor$retresult
 			if [ -e /usr/lib/gps/gpskill.sh ]; then
 				/usr/lib/gps/gpskill.sh $retresult
-			fi
-			if [ -e $ROOTER/connect/chkconn.sh ]; then
-				jkillall chkconn.sh
 			fi
 			$ROOTER/signal/status.sh $retresult "No Modem Present"
 			$ROOTER/log/logger "Disconnect (Removed) Modem #$retresult"

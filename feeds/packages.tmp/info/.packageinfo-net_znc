@@ -1,4 +1,6 @@
 Source-Makefile: feeds/packages/net/znc/Makefile
+Build-Depends: ninja/host
+Build-Depends/host: ninja/host
 
 Package: znc
 Menu: 1

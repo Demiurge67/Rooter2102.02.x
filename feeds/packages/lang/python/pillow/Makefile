@@ -7,11 +7,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pillow
-PKG_VERSION:=9.2.0
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=8.1.2
+PKG_RELEASE:=1
 
 PYPI_NAME:=Pillow
-PKG_HASH:=75e636fd3e0fb872693f23ccb8a5ff2cd578801251f3a4f6854c6a5d437d3c04
+PKG_HASH:=b07c660e014852d98a00a91adfbe25033898a9d90a8f39beb2437d22a203fc44
 
 PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=HPND
@@ -28,8 +28,7 @@ define Package/python3-pillow
   CATEGORY:=Languages
   TITLE:=The friendly PIL fork
   URL:=https://python-pillow.org/
-  DEPENDS:=+libfreetype +libjpeg +libtiff +zlib \
-	   +libwebp +python3
+  DEPENDS:=+libfreetype +libjpeg +libtiff +zlib +python3
 endef
 
 define Package/python3-pillow/description
@@ -39,11 +38,11 @@ endef
 PYTHON3_PKG_SETUP_GLOBAL_ARGS += build_ext \
 	--enable-zlib \
 	--enable-jpeg \
-	--enable-webp \
-	--enable-webpmux \
 	--enable-tiff \
 	--enable-freetype \
 	--disable-lcms \
+	--disable-webp \
+	--disable-webpmux \
 	--disable-jpeg2000 \
 	--disable-imagequant \
 	--disable-platform-guessing

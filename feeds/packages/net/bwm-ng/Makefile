@@ -5,18 +5,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bwm-ng
-PKG_VERSION:=0.6.3
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=0.6.1
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.gropp.org/bwm-ng
-PKG_HASH:=c1a552b6ff48ea3e4e10110a7c188861abc4750befc67c6caaba8eb3ecf67f46
-
+PKG_HASH:=027cf3c960cd96fc9ffacdf7713df62d0fc55eeef4a1388289f8a62ae5e50df0
 PKG_MAINTAINER:=Julen Landa Alustiza <julen@zokormazo.info>
 PKG_LICENSE:=GPL2-2.0
 PKG_LICENSE_FILES:=COPYING
 
-PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
 PKG_BUILD_PARALLEL:=1
 
@@ -40,7 +38,8 @@ define Package/bwm-ng/config
   source "$(SOURCE)/Config.in"
 endef
 
-CONFIGURE_ARGS += \
+define Build/Configure
+	$(call Build/Configure/Default, \
 	$(if $(CONFIG_BWMNG_CONFIGFILE),--enable,--disable)-configfile \
 	$(if $(CONFIG_BWMNG_HTML),--enable,--disable)-html \
 	$(if $(CONFIG_BWMNG_CSV),--enable,--disable)-csv \
@@ -50,7 +49,9 @@ CONFIGURE_ARGS += \
 	$(if $(CONFIG_BWMNG_GETOPT_LONG),--with,--without)-getopt_long \
 	--with-strip \
 	--with-procnetdev \
-	--with-diskstats
+	--with-diskstats \
+	)
+endef
 
 define Package/bwm-ng/install
 	$(INSTALL_DIR) $(1)/usr/bin

@@ -1,30 +1,30 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-10-09 16:44+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2021-02-08 04:46+0000\n"
+"Last-Translator: Zocker1012 <julian.schoemer.1997@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsudpxy/de/>\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:23
 msgid "Bind IP/Interface"
-msgstr "IP/Schnittstelle anbinden"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:47
 msgid "Buffer messages"
-msgstr "Nachrichten zwischenpuffern"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:43
 msgid "Buffer size"
-msgstr "Puffergröße"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:51
 msgid "Buffer time"
-msgstr "Pufferdauer"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:10
 msgid "Enabled"
@@ -44,11 +44,11 @@ msgstr "Maximale Clients"
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:59
 msgid "Multicast subscription renew"
-msgstr "Multicast-Abonnement erneuern"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:55
 msgid "Nice increment"
-msgstr "Nettes Inkrement"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:27
 msgid "Port"
@@ -60,7 +60,7 @@ msgstr "Erneut starten"
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:31
 msgid "Source IP/Interface"
-msgstr "Quell-IP/Schnittstelle"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:21
 msgid "Status"
@@ -72,12 +72,10 @@ msgstr "Ausührlich"
 
 #: applications/luci-app-udpxy/root/usr/share/luci/menu.d/luci-app-udpxy.json:3
 msgid "udpxy"
-msgstr "udpxy"
+msgstr ""
 
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:4
 msgid ""
 "udpxy is a UDP-to-HTTP multicast traffic relay daemon, here you can "
 "configure the settings."
 msgstr ""
-"udpxy ist ein UDP-zu-HTTP-Multicast-Traffic-Relay-Daemon, hier können Sie "
-"die Einstellungen konfigurieren."

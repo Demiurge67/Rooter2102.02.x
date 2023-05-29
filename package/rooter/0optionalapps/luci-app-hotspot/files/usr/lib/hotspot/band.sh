@@ -1,25 +1,30 @@
 #!/bin/sh 
 
+log() {
+	logger -t "band change" "$@"
+}
+
 BAND=$1
-if [ $BAND = "1" ]; then
-	BAND=2
-else
-	BAND=5
-fi
+let BAND=BAND-1
 
-/usr/lib/hotspot/enable.sh 0
+WW="radio"$BAND
 
-uci set travelmate.global.freq=$BAND
+wifi up
+uci set wireless.wwan.device=$WW
+uci set wireless.wwan.encryption="none"
+uci set wireless.wwan.disabled="1"
+uci commit wireless
 uci set travelmate.global.ssid="6"
 uci commit travelmate
-
+wifi up
 result=`ps | grep -i "travelmate.sh" | grep -v "grep" | wc -l`
 if [ $result -ge 1 ]
 then
-	wifilog "Band Change" "Travelmate already running"
+	logger -t TRAVELMATE-DEBUG "Travelmate already running"
 else
 	/usr/lib/hotspot/travelmate.sh &
 fi
-uci set travelmate.global.ssid="Hotspot Manager Interface"
+sleep 10
+uci set travelmate.global.ssid="Wifi Radio finished changing"
 uci commit travelmate
 exit 0

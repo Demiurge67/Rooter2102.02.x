@@ -655,7 +655,7 @@
 		 * Provides a password for HTTP basic authentication.
 		 *
 		 * @property {number} [timeout]
-		 * Specifies the request timeout in milliseconds.
+		 * Specifies the request timeout in seconds.
 		 *
 		 * @property {boolean} [credentials=false]
 		 * Whether to include credentials such as cookies in the request.
@@ -695,117 +695,115 @@
 		 * The resulting HTTP response.
 		 */
 		request: function(target, options) {
-			return Promise.resolve(target).then((function(url) {
-				var state = { xhr: new XMLHttpRequest(), url: this.expandURL(url), start: Date.now() },
-				    opt = Object.assign({}, options, state),
-				    content = null,
-				    contenttype = null,
-				    callback = this.handleReadyStateChange;
+			var state = { xhr: new XMLHttpRequest(), url: this.expandURL(target), start: Date.now() },
+			    opt = Object.assign({}, options, state),
+			    content = null,
+			    contenttype = null,
+			    callback = this.handleReadyStateChange;
 
-				return new Promise(function(resolveFn, rejectFn) {
-					opt.xhr.onreadystatechange = callback.bind(opt, resolveFn, rejectFn);
-					opt.method = String(opt.method || 'GET').toUpperCase();
+			return new Promise(function(resolveFn, rejectFn) {
+				opt.xhr.onreadystatechange = callback.bind(opt, resolveFn, rejectFn);
+				opt.method = String(opt.method || 'GET').toUpperCase();
 
-					if ('query' in opt) {
-						var q = (opt.query != null) ? Object.keys(opt.query).map(function(k) {
-							if (opt.query[k] != null) {
-								var v = (typeof(opt.query[k]) == 'object')
-									? JSON.stringify(opt.query[k])
-									: String(opt.query[k]);
+				if ('query' in opt) {
+					var q = (opt.query != null) ? Object.keys(opt.query).map(function(k) {
+						if (opt.query[k] != null) {
+							var v = (typeof(opt.query[k]) == 'object')
+								? JSON.stringify(opt.query[k])
+								: String(opt.query[k]);
 
-								return '%s=%s'.format(encodeURIComponent(k), encodeURIComponent(v));
-							}
-							else {
-								return encodeURIComponent(k);
-							}
-						}).join('&') : '';
-
-						if (q !== '') {
-							switch (opt.method) {
-							case 'GET':
-							case 'HEAD':
-							case 'OPTIONS':
-								opt.url += ((/\?/).test(opt.url) ? '&' : '?') + q;
-								break;
-
-							default:
-								if (content == null) {
-									content = q;
-									contenttype = 'application/x-www-form-urlencoded';
-								}
-							}
+							return '%s=%s'.format(encodeURIComponent(k), encodeURIComponent(v));
 						}
-					}
+						else {
+							return encodeURIComponent(k);
+						}
+					}).join('&') : '';
 
-					if (!opt.cache)
-						opt.url += ((/\?/).test(opt.url) ? '&' : '?') + (new Date()).getTime();
-
-					if (isQueueableRequest(opt)) {
-						requestQueue.push([opt, rejectFn, resolveFn]);
-						requestAnimationFrame(flushRequestQueue);
-						return;
-					}
-
-					if ('username' in opt && 'password' in opt)
-						opt.xhr.open(opt.method, opt.url, true, opt.username, opt.password);
-					else
-						opt.xhr.open(opt.method, opt.url, true);
-
-					opt.xhr.responseType = opt.responseType || 'text';
-
-					if ('overrideMimeType' in opt.xhr)
-						opt.xhr.overrideMimeType('application/octet-stream');
-
-					if ('timeout' in opt)
-						opt.xhr.timeout = +opt.timeout;
-
-					if ('credentials' in opt)
-						opt.xhr.withCredentials = !!opt.credentials;
-
-					if (opt.content != null) {
-						switch (typeof(opt.content)) {
-						case 'function':
-							content = opt.content(opt.xhr);
-							break;
-
-						case 'object':
-							if (!(opt.content instanceof FormData)) {
-								content = JSON.stringify(opt.content);
-								contenttype = 'application/json';
-							}
-							else {
-								content = opt.content;
-							}
+					if (q !== '') {
+						switch (opt.method) {
+						case 'GET':
+						case 'HEAD':
+						case 'OPTIONS':
+							opt.url += ((/\?/).test(opt.url) ? '&' : '?') + q;
 							break;
 
 						default:
-							content = String(opt.content);
+							if (content == null) {
+								content = q;
+								contenttype = 'application/x-www-form-urlencoded';
+							}
 						}
 					}
+				}
 
-					if ('headers' in opt)
-						for (var header in opt.headers)
-							if (opt.headers.hasOwnProperty(header)) {
-								if (header.toLowerCase() != 'content-type')
-									opt.xhr.setRequestHeader(header, opt.headers[header]);
-								else
-									contenttype = opt.headers[header];
-							}
+				if (!opt.cache)
+					opt.url += ((/\?/).test(opt.url) ? '&' : '?') + (new Date()).getTime();
 
-					if ('progress' in opt && 'upload' in opt.xhr)
-						opt.xhr.upload.addEventListener('progress', opt.progress);
+				if (isQueueableRequest(opt)) {
+					requestQueue.push([opt, rejectFn, resolveFn]);
+					requestAnimationFrame(flushRequestQueue);
+					return;
+				}
 
-					if (contenttype != null)
-						opt.xhr.setRequestHeader('Content-Type', contenttype);
+				if ('username' in opt && 'password' in opt)
+					opt.xhr.open(opt.method, opt.url, true, opt.username, opt.password);
+				else
+					opt.xhr.open(opt.method, opt.url, true);
 
-					try {
-						opt.xhr.send(content);
+				opt.xhr.responseType = opt.responseType || 'text';
+
+				if ('overrideMimeType' in opt.xhr)
+					opt.xhr.overrideMimeType('application/octet-stream');
+
+				if ('timeout' in opt)
+					opt.xhr.timeout = +opt.timeout;
+
+				if ('credentials' in opt)
+					opt.xhr.withCredentials = !!opt.credentials;
+
+				if (opt.content != null) {
+					switch (typeof(opt.content)) {
+					case 'function':
+						content = opt.content(xhr);
+						break;
+
+					case 'object':
+						if (!(opt.content instanceof FormData)) {
+							content = JSON.stringify(opt.content);
+							contenttype = 'application/json';
+						}
+						else {
+							content = opt.content;
+						}
+						break;
+
+					default:
+						content = String(opt.content);
 					}
-					catch (e) {
-						rejectFn.call(opt, e);
-					}
-				});
-			}).bind(this));
+				}
+
+				if ('headers' in opt)
+					for (var header in opt.headers)
+						if (opt.headers.hasOwnProperty(header)) {
+							if (header.toLowerCase() != 'content-type')
+								opt.xhr.setRequestHeader(header, opt.headers[header]);
+							else
+								contenttype = opt.headers[header];
+						}
+
+				if ('progress' in opt && 'upload' in opt.xhr)
+					opt.xhr.upload.addEventListener('progress', opt.progress);
+
+				if (contenttype != null)
+					opt.xhr.setRequestHeader('Content-Type', contenttype);
+
+				try {
+					opt.xhr.send(content);
+				}
+				catch (e) {
+					rejectFn.call(opt, e);
+				}
+			});
 		},
 
 		handleReadyStateChange: function(resolveFn, rejectFn, ev) {
@@ -1250,7 +1248,7 @@
 		 * `null` on parsing failures or if no element could be found.
 		 */
 		parse: function(s) {
-			var elem = null;
+			var elem;
 
 			try {
 				domParser = domParser || new DOMParser();
@@ -1258,7 +1256,16 @@
 			}
 			catch(e) {}
 
-			return elem;
+			if (!elem) {
+				try {
+					dummyElem = dummyElem || document.createElement('div');
+					dummyElem.innerHTML = s;
+					elem = dummyElem.firstChild;
+				}
+				catch (e) {}
+			}
+
+			return elem || null;
 		},
 
 		/**
@@ -2183,7 +2190,7 @@
 			}).render() : E([]);
 
 			if (this.handleSaveApply || this.handleSave || this.handleReset) {
-				footer.appendChild(E('div', { 'class': 'cbi-page-actions' }, [
+				footer.appendChild(E('div', { 'class': 'cbi-page-actions control-group' }, [
 					saveApplyBtn, ' ',
 					this.handleSave ? E('button', {
 						'class': 'cbi-button cbi-button-save',
@@ -2219,8 +2226,6 @@
 		session: Session,
 		view: View
 	};
-
-	var naturalCompare = new Intl.Collator(undefined, { numeric: true }).compare;
 
 	var LuCI = Class.extend(/** @lends LuCI.prototype */ {
 		__name__: 'LuCI',
@@ -2967,52 +2972,15 @@
 			}).filter(function(e) {
 				return (e[1] != null);
 			}).sort(function(a, b) {
-				return naturalCompare(a[1], b[1]);
+				if (a[1] < b[1])
+					return -1;
+				else if (a[1] > b[1])
+					return 1;
+				else
+					return 0;
 			}).map(function(e) {
 				return e[0];
 			});
-		},
-
-		/**
-		 * Compares two values numerically and returns -1, 0 or 1 depending
-		 * on whether the first value is smaller, equal to or larger than the
-		 * second one respectively.
-		 *
-		 * This function is meant to be used as comparator function for
-		 * Array.sort().
-		 *
-		 * @type {function}
-		 *
-		 * @param {*} a
-		 * The first value
-		 *
-		 * @param {*} b
-		 * The second value.
-		 *
-		 * @return {number}
-		 * Returns -1 if the first value is smaller than the second one.
-		 * Returns 0 if both values are equal.
-		 * Returns 1 if the first value is larger than the second one.
-		 */
-		naturalCompare: naturalCompare,
-
-		/**
-		 * Converts the given value to an array using toArray() if needed,
-		 * performs a numerical sort using naturalCompare() and returns the
-		 * result. If the input already is an array, no copy is being made
-		 * and the sorting is performed in-place.
-		 *
-		 * @see toArray
-		 * @see naturalCompare
-		 *
-		 * @param {*} val
-		 * The input value to sort (and convert to an array if needed).
-		 *
-		 * @return {Array<*>}
-		 * Returns the resulting, numerically sorted array.
-		 */
-		sortedArray: function(val) {
-			return this.toArray(val).sort(naturalCompare);
 		},
 
 		/**

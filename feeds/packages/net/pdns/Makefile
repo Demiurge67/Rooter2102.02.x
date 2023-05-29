@@ -1,14 +1,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pdns
-PKG_VERSION:=4.6.3
+PKG_VERSION:=4.4.0
 PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://downloads.powerdns.com/releases/
-PKG_HASH:=acd06b89ca01d1adf61b906604614f0e1d77a1e94eeecade8ff5d53a16db7389
+PKG_HASH:=40cb81d9e0d34edcc7c95435a06125bde0bd1a51692e1db52413e31d7ede0b39
 
-PKG_MAINTAINER:=Peter van Dijk <peter.van.dijk@powerdns.com>
+PKG_MAINTAINER:=James Taylor <james@jtaylor.id.au>
 PKG_LICENCE:=GPL-2.0-only
 PKG_LICENCE_FILES:=COPYING
 PKG_CPE_ID:=cpe:/a:powerdns:authoritative
@@ -171,14 +171,12 @@ define Package/pdns/conffiles
 /etc/init.d/pdns
 endef
 
-TARGET_CXX+=-std=c++17
-
 CONFIGURE_ARGS+= \
 	--sysconfdir=/etc/powerdns \
 	--libdir=/usr/lib/powerdns  \
 	--with-dynmodules="$(foreach backend,$(PDNS_BACKENDS),$(if $(CONFIG_PACKAGE_pdns-backend-$(backend)),$(PDNS_BACKEND_$(backend)_LIB),))" \
 	--with-lua="lua" \
-	--with-modules="bind" \
+	--with-modules="bind random" \
 	--with-mysql-lib=$(STAGING_DIR)/usr \
 	--with-mysql-includes=$(STAGING_DIR)/usr \
 	$(if $(CONFIG_PACKAGE_pdns-tools),--enable-tools,) \
@@ -188,6 +186,10 @@ CONFIGURE_ARGS+= \
 	--enable-lua-records \
 	--enable-reproducible \
 	$(if $(CONFIG_PACKAGE_pdns-ixfrdist),--enable-ixfrdist,)
+
+CONFIGURE_VARS += \
+	boost_cv_lib_program_options=yes \
+	boost_cv_lib_program_options_LIBS=-lboost_program_options
 
 define Package/pdns/install
 	$(INSTALL_DIR) $(1)/etc/powerdns

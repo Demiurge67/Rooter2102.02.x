@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=tor
-PKG_VERSION:=0.4.7.10
+PKG_VERSION:=0.4.5.7
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://dist.torproject.org/ \
 	https://archive.torproject.org/tor-package-archive
-PKG_HASH:=647e56dfa59ea36dab052027fcfc7663905c826c03509363c456900ecd435a5b
+PKG_HASH:=447fcaaa133e2ef22427e98098a60a9c495edf9ff3e0dd13f484b9ad0185f074
 PKG_MAINTAINER:=Hauke Mehrtens <hauke@hauke-m.de> \
 		Peter Wagner <tripolar@gmx.at>
 PKG_LICENSE_FILES:=LICENSE
@@ -139,10 +139,7 @@ ifeq ($(BUILD_VARIANT),basic)
   CONFIGURE_ARGS += --disable-module-relay
 endif
 
-
-TARGET_CFLAGS += -ffunction-sections -fdata-sections -flto \
-	$(if $(CONFIG_OPENSSL_ENGINE),,-DDISABLE_ENGINES)
-
+TARGET_CFLAGS += -ffunction-sections -fdata-sections -flto
 TARGET_LDFLAGS += -Wl,--gc-sections -flto
 
 CONFIGURE_VARS += \

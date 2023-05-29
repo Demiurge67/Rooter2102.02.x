@@ -90,6 +90,21 @@ endef
 $(eval $(call KernelPackage,ata-artop))
 
 
+define KernelPackage/ata-marvell-sata
+  TITLE:=Marvell Serial ATA support
+  KCONFIG:=CONFIG_SATA_MV
+  FILES:=$(LINUX_DIR)/drivers/ata/sata_mv.ko
+  AUTOLOAD:=$(call AutoLoad,41,sata_mv,1)
+  $(call AddDepends/ata)
+endef
+
+define KernelPackage/ata-marvell-sata/description
+ SATA support for marvell chipsets
+endef
+
+$(eval $(call KernelPackage,ata-marvell-sata))
+
+
 define KernelPackage/ata-nvidia-sata
   TITLE:=Nvidia Serial ATA support
   KCONFIG:=CONFIG_SATA_NV
@@ -203,7 +218,7 @@ $(eval $(call KernelPackage,dax))
 define KernelPackage/dm
   SUBMENU:=$(BLOCK_MENU)
   TITLE:=Device Mapper
-  DEPENDS:=+kmod-crypto-manager +kmod-dax +KERNEL_KEYS:kmod-keys-encrypted
+  DEPENDS:=+kmod-crypto-manager +kmod-dax
   # All the "=n" are unnecessary, they're only there
   # to stop the config from asking the question.
   # MIRROR is M because I've needed it for pvmove.
@@ -228,7 +243,7 @@ define KernelPackage/dm
     $(LINUX_DIR)/drivers/md/dm-log.ko \
     $(LINUX_DIR)/drivers/md/dm-mirror.ko \
     $(LINUX_DIR)/drivers/md/dm-region-hash.ko
-  AUTOLOAD:=$(call AutoLoad,30,dm-mod dm-log dm-region-hash dm-mirror dm-crypt,1)
+  AUTOLOAD:=$(call AutoLoad,30,dm-mod dm-log dm-region-hash dm-mirror dm-crypt)
 endef
 
 define KernelPackage/dm/description
@@ -493,29 +508,6 @@ endef
 $(eval $(call KernelPackage,nbd))
 
 
-define KernelPackage/nvme
-  SUBMENU:=$(BLOCK_MENU)
-  TITLE:=NVM Express block device
-  DEPENDS:=@PCI_SUPPORT
-  KCONFIG:= \
-	CONFIG_NVME_CORE \
-	CONFIG_BLK_DEV_NVME \
-	CONFIG_NVME_MULTIPATH=n \
-	CONFIG_NVME_HWMON=n
-  FILES:= \
-	$(LINUX_DIR)/drivers/nvme/host/nvme-core.ko \
-	$(LINUX_DIR)/drivers/nvme/host/nvme.ko
-  AUTOLOAD:=$(call AutoLoad,30,nvme-core nvme)
-endef
-
-define KernelPackage/nvme/description
- Kernel module for NVM Express solid state drives directly
- connected to the PCI or PCI Express bus.
-endef
-
-$(eval $(call KernelPackage,nvme))
-
-
 define KernelPackage/scsi-core
   SUBMENU:=$(BLOCK_MENU)
   TITLE:=SCSI device support
@@ -545,24 +537,16 @@ endef
 $(eval $(call KernelPackage,scsi-generic))
 
 
-define KernelPackage/cdrom
-  TITLE:=Kernel library module for CD / DVD drives
-  KCONFIG:=CONFIG_CDROM
-  HIDDEN:=1
-  FILES:=$(LINUX_DIR)/drivers/cdrom/cdrom.ko
-endef
-
-$(eval $(call KernelPackage,cdrom))
-
-
 define KernelPackage/scsi-cdrom
   SUBMENU:=$(BLOCK_MENU)
   TITLE:=Kernel support for CD / DVD drives
-  DEPENDS:=+kmod-scsi-core +kmod-cdrom
+  DEPENDS:=+kmod-scsi-core
   KCONFIG:= \
     CONFIG_BLK_DEV_SR \
     CONFIG_BLK_DEV_SR_VENDOR=n
-  FILES:=$(LINUX_DIR)/drivers/scsi/sr_mod.ko
+  FILES:= \
+    $(LINUX_DIR)/drivers/cdrom/cdrom.ko \
+    $(LINUX_DIR)/drivers/scsi/sr_mod.ko
   AUTOLOAD:=$(call AutoLoad,45,sr_mod)
 endef
 

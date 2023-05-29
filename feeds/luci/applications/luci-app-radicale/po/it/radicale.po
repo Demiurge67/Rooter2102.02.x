@@ -1,36 +1,32 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-26 08:48+0000\n"
-"Last-Translator: Daniele Luisetto <daniele.luisetto1@gmail.com>\n"
+"PO-Revision-Date: 2021-04-23 07:01+0000\n"
+"Last-Translator: Diego Depaoli <trebestie@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsradicale/it/>\n"
 "Language: it\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:268
 msgid ""
 "'AUTO' selects the highest protocol version that client and server support."
 msgstr ""
-"'AUTO' seleziona la versione del protocollo più alta supportata dal client e "
-"dal server."
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:223
 msgid ""
 "'Hostname:Port' or 'IPv4:Port' or '[IPv6]:Port' Radicale should listen on"
 msgstr ""
-"'Hostname:Porta' o 'IPv4:Porta' o '[IPv6]:Porta' a cui Radicale dovrebbe "
-"ascoltare"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:272
 msgid "AUTO"
-msgstr "AUTO"
+msgstr ""
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:706
 msgid "Additional HTTP headers"
-msgstr "Header HTTP aggiuntive"
+msgstr ""
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:222
 msgid "Address:Port"
@@ -61,7 +57,7 @@ msgstr ""
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:190
 msgid "Boot delay"
-msgstr "Ritardo all'avvio"
+msgstr ""
 
 #: applications/luci-app-radicale/luasrc/controller/radicale.lua:23
 msgid "CalDAV/CardDAV"
@@ -244,7 +240,7 @@ msgstr ""
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:533
 msgid "Logging"
-msgstr "Registrazione (log)"
+msgstr "Registrazione"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:235
 msgid "Logon message"
@@ -332,7 +328,7 @@ msgstr ""
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:56
 msgid "Reload"
-msgstr "Ricarica"
+msgstr "Aggiorna"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:688
 msgid "Response Encoding"
@@ -392,7 +388,7 @@ msgstr ""
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:164
 #: applications/luci-app-radicale/luasrc/view/radicale/btn_startstop.htm:10
 msgid "Start"
-msgstr "Avvia"
+msgstr ""
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:155
 msgid "Start / Stop"

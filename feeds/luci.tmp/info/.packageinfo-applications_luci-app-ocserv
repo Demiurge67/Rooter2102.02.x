@@ -115,25 +115,6 @@ Description:     Translation for luci-app-ocserv - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-ocserv-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-ocserv
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-ocserv - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-ocserv - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-ocserv-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

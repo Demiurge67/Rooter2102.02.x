@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-06 15:41+0000\n"
+"PO-Revision-Date: 2021-03-19 04:16+0000\n"
 "Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdnscrypt-proxy/sv/>\n"
@@ -8,12 +8,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:139
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:161
 msgid "-------"
-msgstr "-------"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:21
 msgid "Advanced"
@@ -27,8 +27,6 @@ msgstr ""
 msgid ""
 "Apply DNSCrypt-Proxy specific settings to the Dnsmasq configuration.<br />"
 msgstr ""
-"Verkställ DNSCrypt-proxyspecifika inställningar till Dnsmasq-konfigurationen."
-"<br />"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:228
 msgid "Blacklist"
@@ -36,7 +34,7 @@ msgstr "Svartlista"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:233
 msgid "Block IPv6"
-msgstr "Blockera IPv6"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:169
 msgid ""
@@ -56,12 +54,12 @@ msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:150
 msgid "Create Config File"
-msgstr "Skapa konfigurationsfil"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:145
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:158
 msgid "Create Custom Config File"
-msgstr "Skapa anpassad konfigurationsfil"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:245
 msgid "DNS Query Logfile"
@@ -70,11 +68,11 @@ msgstr ""
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:15
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:58
 msgid "DNSCrypt-Proxy"
-msgstr "DNSCrypt-Proxy"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:39
 msgid "DNSCrypt-Proxy Logfile"
-msgstr "Loggfil för DNSCrypt-Proxy"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:30
 msgid "DNSCrypt-Proxy Resolver List"
@@ -86,11 +84,11 @@ msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:234
 msgid "Disable IPv6 to speed up DNSCrypt-Proxy."
-msgstr "Inaktivera IPv6 för att snabba upp DNSCrypt-Proxy."
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:254
 msgid "Dnsmasq Options"
-msgstr "Alternativ för Dnsmasq"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:124
 msgid ""
@@ -99,11 +97,11 @@ msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:22
 msgid "Edit DNSCrypt-Proxy Configuration"
-msgstr "Redigera konfigurationen för DNSCrypt-Proxy"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:23
 msgid "Edit Dnsmasq Configuration"
-msgstr "Redigera Dnsmasq-konfigurationen"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/controller/dnscrypt-proxy.lua:24
 msgid "Edit Resolvcrypt Configuration"
@@ -115,11 +113,11 @@ msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:220
 msgid "Ephemeral Keys"
-msgstr "Kortlivade nycklar"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:114
 msgid "File Checksum"
-msgstr "Kontrollsumma för filen"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:106
 msgid "File Date"
@@ -131,15 +129,14 @@ msgid ""
 "For further information <a href=\"%s\" target=\"_blank\">see the wiki "
 "online</a>"
 msgstr ""
-"Besök <a href=\"%s\" target=\"_blank\">wikin på nätet</a> för mer information"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:97
 msgid "General Options"
-msgstr "Generella alternativ"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/root/usr/share/rpcd/acl.d/luci-app-dnscrypt-proxy.json:3
 msgid "Grant UCI access for luci-app-dnscrypt-proxy"
-msgstr "Ge UCI åtkomst för luci-app-dnscrypt-proxy"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:189
 msgid "IP Address"
@@ -158,11 +155,11 @@ msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:185
 msgid "Instance Options"
-msgstr "Alternativ för instans"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:239
 msgid "Local Cache"
-msgstr "Lokal cache"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:229
 msgid ""
@@ -174,8 +171,6 @@ msgid ""
 "Log the received DNS queries to a file, so you can watch in real-time what "
 "is happening on the network."
 msgstr ""
-"Logga de mottagna DNS-förfrågningarna till en fil så att du kan se i realtid "
-"vad som händer på nätverket."
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:201
 msgid ""
@@ -185,7 +180,7 @@ msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:137
 msgid "No SSL support available.<br />"
-msgstr "Inget SSL-stöd tillgängligt.<br />"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:21
 msgid "No default resolver list and no SSL support available.<br />"
@@ -197,15 +192,13 @@ msgstr "Överblick"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:160
 msgid "Please edit the file manually in the 'Advanced' section."
-msgstr "Vänligen redigera filen manuellt i 'Avancerat'-sektionen."
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:138
 msgid ""
 "Please install a 'libustream-ssl' library to download the current resolver "
 "list from 'github.com/dyne/dnscrypt-proxy'."
 msgstr ""
-"Vänligen installera ett 'libustream-ssl'-bibliotek för att hämta "
-"upplösningslistan från 'github.com/dyne/dnscrypt-proxy'."
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:22
 msgid ""
@@ -225,12 +218,12 @@ msgstr "Port"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:125
 msgid "Refresh List"
-msgstr "Uppdatera listan"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:123
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:136
 msgid "Refresh Resolver List"
-msgstr "Uppdatera lösningslistan"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:200
 msgid "Resolver (LOC/SEC/NOLOG)"
@@ -252,19 +245,17 @@ msgstr "Uppstartslösare"
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:159
 msgid "The config file '/etc/resolv-crypt.conf' already exist.<br />"
-msgstr "Konfig-filen '/etc/resolv-crypt.conf' finns redan.<br />"
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:195
 msgid "The listening port for DNS queries."
-msgstr "Lyssningsporten för DNS-förfrågningar."
+msgstr ""
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:190
 msgid ""
 "The local IPv4 or IPv6 address. The latter one should be specified within "
 "brackets, e.g. '[::1]'."
 msgstr ""
-"De lokala IPv4 eller IPv6-adresserna. Den senare bör specificeras inom "
-"parenteser, t.ex. '[::1]'."
 
 #: applications/luci-app-dnscrypt-proxy/luasrc/model/cbi/dnscrypt-proxy/overview_tab.lua:230
 msgid ""

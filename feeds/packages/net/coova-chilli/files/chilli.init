@@ -6,7 +6,6 @@ USE_PROCD=1
 
 service_triggers() {
 	procd_add_reload_trigger "chilli"
-	procd_add_interface_trigger "interface.*.up" "wan" /etc/init.d/chilli restart
 }
 
 config_cb() {
@@ -53,24 +52,19 @@ start_chilli() {
 	config_get_bool disabled "$1" 'disabled' 0
 	[ $disabled = 1 ] && return
 
-	. /lib/functions/network.sh
-
-	local wanif ipaddr
-	if network_find_wan wanif && network_get_ipaddr ipaddr "$wanif"; then
-		procd_open_instance "$cfg"
-		procd_set_param command /usr/sbin/chilli
-		procd_set_param file "$chilli_conf"
-		procd_append_param command \
-			--fg \
-			--conf "${base}.conf" \
-			--pidfile "${base}.pid" \
-			--cmdsocket "${base}.sock" \
-			--unixipc "${base}.ipc"
-		procd_set_param respawn
-		procd_set_param stdout 1
-		procd_set_param stderr 1
-		procd_close_instance
-	fi
+	procd_open_instance "$cfg"
+	procd_set_param command /usr/sbin/chilli
+	procd_set_param file "$chilli_conf"
+	procd_append_param command \
+		--fg \
+		--conf "${base}.conf" \
+		--pidfile "${base}.pid" \
+		--cmdsocket "${base}.sock" \
+		--unixipc "${base}.ipc"
+	procd_set_param respawn
+	procd_set_param stdout 1
+	procd_set_param stderr 1
+	procd_close_instance
 }
 
 start_service() {
@@ -79,9 +73,6 @@ start_service() {
 }
 
 stop_service() {
-	for undofile in /var/run/chilli.tun*.sh; do
-		sh $undofile >& /dev/null
-	done
 	rm -f /var/run/chilli_*
 }
 

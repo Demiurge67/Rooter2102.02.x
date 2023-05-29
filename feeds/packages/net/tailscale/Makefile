@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=tailscale
-PKG_VERSION:=1.32.3
+PKG_VERSION:=1.12.3
 PKG_RELEASE:=1
 
 PKG_SOURCE:=tailscale-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/tailscale/tailscale/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=4cf88a1d754240ce71b29d3a65ca480091ad9c614ac99c541cef6fdaf0585dd4
+PKG_HASH:=05e5b1d382cad7ac5737d87d0b61277791c75938468c2c662f21665998d431e9
 
-PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec1@gmail.com>
+PKG_MAINTAINER:=Jan Pavlinec <jan.pavlinec@nic.cz>
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
 
@@ -27,8 +27,6 @@ PKG_USE_MIPS16:=0
 GO_PKG:=\
 	tailscale.com/cmd/tailscale \
 	tailscale.com/cmd/tailscaled
-GO_PKG_LDFLAGS:=-X 'tailscale.com/version.Long=$(PKG_VERSION)-$(PKG_RELEASE) (OpenWrt)'
-GO_PKG_LDFLAGS_X:=tailscale.com/version.Short=$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 include ../../lang/golang/golang-package.mk
@@ -73,11 +71,6 @@ define Package/tailscaled/install
 	$(INSTALL_BIN) ./files//tailscale.init $(1)/etc/init.d/tailscale
 	$(INSTALL_DIR) $(1)/etc/config/
 	$(INSTALL_DATA) ./files//tailscale.conf $(1)/etc/config/tailscale
-endef
-
-define Package/tailscaled/conffiles
-/etc/config/tailscale
-/etc/tailscale/tailscaled.state
 endef
 
 $(eval $(call BuildPackage,tailscale))

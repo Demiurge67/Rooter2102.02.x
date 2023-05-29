@@ -6,39 +6,38 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=opennds
-PKG_VERSION:=9.10.0
+PKG_FIXUP:=autoreconf
+PKG_VERSION:=9.3.0
 PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/opennds/opennds/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=0508a52ea6b2a18365ae071c623f923680bb926605f7b0678f14ea58bbfb2aba
+PKG_SOURCE:=opennds-$(PKG_VERSION).tar.gz
+PKG_HASH:=719e128c4f08af4ad1924f8f1b1b63262c16e10f63b390a4c5c394cfc232aa20
 PKG_BUILD_DIR:=$(BUILD_DIR)/openNDS-$(PKG_VERSION)
 
 PKG_MAINTAINER:=Rob White <rob@blue-wave.net>
-PKG_LICENSE:=GPL-2.0-or-later
-PKG_LICENSE_FILES:=COPYING
-
-PKG_FIXUP:=autoreconf
 PKG_BUILD_PARALLEL:=1
+PKG_LICENSE:=GPL-2.0+
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/opennds
-  SUBMENU:=Captive Portals
-  SECTION:=net
-  CATEGORY:=Network
-  DEPENDS:=+iptables-nft +kmod-ipt-conntrack +kmod-ipt-nat +libmicrohttpd-no-ssl
-  TITLE:=Open public network gateway daemon
-  URL:=https://github.com/opennds/opennds
-  CONFLICTS:=nodogsplash
+	SUBMENU:=Captive Portals
+	SECTION:=net
+	CATEGORY:=Network
+	DEPENDS:=+libpthread +iptables-mod-ipopt +libmicrohttpd-no-ssl
+	TITLE:=Open public network gateway daemon
+	URL:=https://github.com/opennds/opennds
+	CONFLICTS:=nodogsplash nodogsplash2
 endef
 
 define Package/opennds/description
-  openNDS (open Network Demarcation Service) is a high performance, small footprint, Captive Portal.
-  It provides a border control gateway between a public local area network and the Internet.
-  It supports all scenarios ranging from small stand alone venues through to large mesh networks with multiple portal entry points.
-  Both the client driven Captive Portal Detection method (CPD) and gateway driven Captive Portal Identification method (CPI - RFC 8910 and RFC 8908) are supported.
-  This version requires iptables-nft.
+	openNDS is a Captive Portal solution that offers an instant way to provide restricted access to the Internet.
+	With little or no configuration, a dynamically generated and adaptive splash page sequence is automatically served.
+	Internet access is granted by either a click to continue button, or after credential verification.
+	The package incorporates the FAS API allowing many flexible customisation options.
+	The creation of sophisticated third party authentication applications is fully supported.
+	Internet hosted https portals can be utilised to inspire maximum user confidence.
 endef
 
 define Package/opennds/install
@@ -64,11 +63,11 @@ define Package/opennds/install
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/PreAuth/theme_user-email-login-basic.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/PreAuth/theme_user-email-login-custom-placeholders.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/get_client_interface.sh $(1)/usr/lib/opennds/
+	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/get_client_token.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/client_params.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/unescape.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/authmon.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/dnsconfig.sh $(1)/usr/lib/opennds/
-	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/download_resources.sh $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/libs/post-request.php $(1)/usr/lib/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/fas-aes/fas-aes.php $(1)/etc/opennds/
 	$(CP) $(PKG_BUILD_DIR)/forward_authentication_service/fas-hid/fas-hid.php $(1)/etc/opennds/

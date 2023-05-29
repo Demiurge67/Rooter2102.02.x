@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-dockerman
 Submenu: 3. Applications
-Version: v0.5.13-20230114
+Version: v0.5.13
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||x86_64) +luci-compat +luci-lib-docker +docker +ttyd
 Conflicts: 
 Menu-Depends: 
@@ -121,26 +121,6 @@ Description:     Translation for luci-app-dockerman - Čeština (Czech)
 lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
 @@
 
-Package: luci-i18n-dockerman-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-dockerman
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-dockerman - da translation
-Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
-Source: 
-License: AGPL-3.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-dockerman - Dansk (Danish)
-lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
-@@
-
 Package: luci-i18n-dockerman-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x
@@ -218,6 +198,26 @@ License: AGPL-3.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dockerman - Español (Spanish)
+lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+@@
+
+Package: luci-i18n-dockerman-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-dockerman
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dockerman - fa translation
+Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Source: 
+License: AGPL-3.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dockerman - 
 lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
 @@
 
@@ -321,6 +321,26 @@ Description:     Translation for luci-app-dockerman - Magyar (Hungarian)
 lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
 @@
 
+Package: luci-i18n-dockerman-id
+Default: LUCI_LANG_id||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-dockerman
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dockerman - id translation
+Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Source: 
+License: AGPL-3.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dockerman - 
+lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+@@
+
 Package: luci-i18n-dockerman-it
 Default: LUCI_LANG_it||(ALL&&m)
 Version: x
@@ -378,6 +398,26 @@ License: AGPL-3.0
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-dockerman - 한국어 (Korean)
+lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+@@
+
+Package: luci-i18n-dockerman-lt
+Default: LUCI_LANG_lt||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-dockerman
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-dockerman - lt translation
+Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Source: 
+License: AGPL-3.0
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-dockerman - 
 lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
 @@
 

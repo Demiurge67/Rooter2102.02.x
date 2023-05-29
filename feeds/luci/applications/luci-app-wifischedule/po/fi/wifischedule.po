@@ -1,50 +1,50 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-03-25 14:09+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"PO-Revision-Date: 2020-06-24 17:42+0000\n"
+"Last-Translator: Petri Asikainen <uniluodossa@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationswifischedule/fi/>\n"
 "Language: fi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:81
 msgid "Activate wifi"
-msgstr "Aktivoi wifi"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:65
 msgid "Could not find required /usr/bin/wifi_schedule.sh or /sbin/wifi"
-msgstr "Vaadittua tiedostoa /usr/bin/wifi_schedule.sh tai /sbin/wifi ei löydy"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:244
 msgid "Could not find required program /usr/bin/iwinfo"
-msgstr "Vaadittua ohjelmaa /usr/bin/iwinfo ei löydy"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:45
 msgid "Cron Jobs"
-msgstr "Cron-työt"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:154
 msgid "Day(s) of Week"
-msgstr "Viikonpäivät"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:39
 msgid "Defines a schedule when to turn on and off wifi."
-msgstr "Määrittää aikataulun, milloin wifi käynnistetään ja sammutetaan."
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:133
 msgid "Determine Modules Automatically"
-msgstr "Määritä moduulit automaattisesti"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:88
 msgid "Disable wifi gracefully"
-msgstr "Sammuta wifi nätisti"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:95
 msgid "Disabled wifi forced"
-msgstr "Sammuta wifi pakottaen"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:148
 msgid "Enable"
@@ -52,11 +52,11 @@ msgstr "Ota käyttöön"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:55
 msgid "Enable Wifi Schedule"
-msgstr "Käytä wifi-aikataulutusta"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:74
 msgid "Enable logging"
-msgstr "Käytä lokitusta"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:235
 msgid "Force disabling wifi even if stations associated"
@@ -84,27 +84,27 @@ msgstr "Lauantai"
 
 #: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:31
 msgid "Schedule"
-msgstr "Aikataulu"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:142
 msgid "Schedule events"
-msgstr "Ajastetut tapahtumat"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:196
 msgid "Start Time"
-msgstr "Käynnistysaika"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:167
 msgid "Start WiFi"
-msgstr "Käynnistä wifi"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:230
 msgid "Stop Time"
-msgstr "Lopetusaika"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:201
 msgid "Stop WiFi"
-msgstr "Pysäytä wifi"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:163
 msgid "Sunday"
@@ -112,7 +112,7 @@ msgstr "Sunnuntai"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:33
 msgid "The value %s is invalid"
-msgstr "Arvo %s on virheellinen"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:160
 msgid "Thursday"
@@ -128,11 +128,11 @@ msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:33
 msgid "View Cron Jobs"
-msgstr "Näytä cron-työt"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:32
 msgid "View Logfile"
-msgstr "Näytä lokitiedosto"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:159
 msgid "Wednesday"
@@ -141,8 +141,8 @@ msgstr "Keskiviikko"
 #: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:27
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:39
 msgid "Wifi Schedule"
-msgstr "Wifi-aikataulu"
+msgstr ""
 
 #: applications/luci-app-wifischedule/luasrc/controller/wifischedule/wifi_schedule.lua:39
 msgid "Wifi Schedule Logfile"
-msgstr "Wifi-aikataulun lokitiedosto"
+msgstr ""

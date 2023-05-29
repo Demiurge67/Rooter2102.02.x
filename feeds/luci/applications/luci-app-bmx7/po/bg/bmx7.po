@@ -1,18 +1,12 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-03-18 11:40+0000\n"
-"Last-Translator: Zi <znlambov@gmail.com>\n"
-"Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
-"luciapplicationsbmx7/bg/>\n"
 "Language: bg\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/tunnels_j.htm:33
 msgid "Announcements"
-msgstr "Известия"
+msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:27
 msgid "BMX7 revision"
@@ -33,11 +27,11 @@ msgstr ""
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/admin_status/index/bmx7_nodes.htm:12
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:79
 msgid "Device"
-msgstr "Устройство"
+msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:57
 msgid "Interface"
-msgstr "Интерфейс"
+msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/nodes_j.htm:81
 msgid "Last Desc"
@@ -179,7 +173,7 @@ msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/tunnels_j.htm:37
 msgid "Status"
-msgstr "Статус"
+msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:63
 msgid "TX BpP"
@@ -211,7 +205,7 @@ msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:43
 msgid "Uptime"
-msgstr "Ъптайм"
+msgstr ""
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/admin_status/index/bmx7_nodes.htm:11
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/nodes_j.htm:79

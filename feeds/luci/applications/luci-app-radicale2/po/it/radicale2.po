@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-radicale 2\n"
-"PO-Revision-Date: 2022-12-26 08:48+0000\n"
-"Last-Translator: Daniele Luisetto <daniele.luisetto1@gmail.com>\n"
+"PO-Revision-Date: 2021-05-15 14:32+0000\n"
+"Last-Translator: Marco Mihai Condrache <marcomihaicondrache@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsradicale2/it/>\n"
 "Language: it\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/auth.lua:8
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/logging.lua:4
@@ -25,7 +25,7 @@ msgstr "Impostazioni Avanzate"
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/server.lua:74
 msgid "Allowed Ciphers"
-msgstr "Cifrari consentiti"
+msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/auth.lua:10
 msgid "Authentication"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/server.lua:62
 msgid "Certificate"
-msgstr "Certificato"
+msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/server.lua:70
 msgid "Client Certificate Authority"
@@ -122,11 +122,11 @@ msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/auth.lua:29
 msgid "Encryption"
-msgstr "Crittografia"
+msgstr "Criptazione"
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/auth.lua:23
 msgid "Filename"
-msgstr "Nome file"
+msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/storage.lua:19
 msgid "Folder"
@@ -222,7 +222,7 @@ msgstr ""
 #: applications/luci-app-radicale2/luasrc/controller/radicale2.lua:29
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/logging.lua:6
 msgid "Logging"
-msgstr "Registrazione (log)"
+msgstr "Registrazione"
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/logging.lua:12
 msgid "Logging File"
@@ -324,7 +324,7 @@ msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/server.lua:109
 msgid "Realm"
-msgstr "Dominio di protezione"
+msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/logging.lua:34
 msgid "Redact passwords in logs"
@@ -424,8 +424,6 @@ msgstr ""
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/server.lua:85
 msgid "This permanently deletes the cert, key, and configuration to use same."
 msgstr ""
-"In questo modo vengono eliminati in modo permanente il certificato, la "
-"chiave e la configurazione."
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/auth.lua:182
 msgid "This permanently deletes the rights file and configuration to use same."
@@ -433,7 +431,7 @@ msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/server.lua:47
 msgid "Timeout"
-msgstr "Tempo scaduto"
+msgstr ""
 
 #: applications/luci-app-radicale2/luasrc/model/cbi/radicale2/storage.lua:25
 msgid "Use File Locks"

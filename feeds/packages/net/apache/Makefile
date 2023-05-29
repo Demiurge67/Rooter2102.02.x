@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=apache
-PKG_VERSION:=2.4.52
+PKG_VERSION:=2.4.48
 PKG_RELEASE:=1
 PKG_SOURCE_NAME:=httpd
 
 PKG_SOURCE:=$(PKG_SOURCE_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=@APACHE/httpd/
-PKG_HASH:=0127f7dc497e9983e9c51474bed75e45607f2f870a7675a86dc90af6d572f5c9
+PKG_HASH:=1bc826e7b2e88108c7e4bf43c026636f77a41d849cfb667aa7b5c0b86dbf966c
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_NAME)-$(PKG_VERSION)
 
@@ -282,9 +282,6 @@ define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/share/apache2/build
 	$(CP) $(PKG_INSTALL_DIR)/usr/share/apache2/build/* \
 				$(1)/usr/share/apache2/build
-	$(SED) 's%"/usr/bin"%"$(STAGING_DIR)/usr/bin"%' $(1)/usr/bin/apxs
-	$(SED) 's%/usr/share/apache2/build%$(STAGING_DIR)/usr/share/apache2/build%' \
-		$(1)/usr/bin/apxs
 	$(SED) 's%^prefix =.*%prefix = $(STAGING_DIR)/usr%' \
 		$(1)/usr/share/apache2/build/config_vars.mk
 endef

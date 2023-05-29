@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-10-30 16:50+0000\n"
-"Last-Translator: MaycoH <hudec.marian@hotmail.com>\n"
+"PO-Revision-Date: 2021-08-03 19:09+0000\n"
+"Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationssamba4/sk/>\n"
 "Language: sk\n"
@@ -10,42 +10,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:120
 msgid "Allow guests"
 msgstr "Povoliť hostí"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:67
-#, fuzzy
 msgid "Allow legacy (insecure) protocols/authentication."
-msgstr "Povoliť staršie (nezabezpečené) protokoly/overovanie."
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:68
-#, fuzzy
 msgid ""
 "Allow legacy smb(v1)/Lanman connections, needed for older devices without "
 "smb(v2.1/3) support."
 msgstr ""
-"Povoliť staršie pripojenia smb(v1)/Lanman, potrebné pre staršie zariadenia "
-"bez podpory smb(v2.1/3)."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:117
 msgid "Allowed users"
-msgstr "Povolení užívatelia"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:151
 msgid "Apple Time-machine share"
-msgstr "Zdieľanie Apple Time-machine"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:104
-#, fuzzy
 msgid "Browse-able"
-msgstr "Možnosť prehliadania"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:136
 msgid "Create mask"
-msgstr "Vytvoriť masku"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:54
 msgid "Description"
@@ -53,7 +48,7 @@ msgstr "Popis"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:142
 msgid "Directory mask"
-msgstr "Maska adresára"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:74
 msgid "Disable Active Directory Domain Controller"
@@ -61,17 +56,17 @@ msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:71
 msgid "Disable Netbios"
-msgstr "Zakázať NetBIOS"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:77
 msgid "Disable Winbind"
-msgstr "Zakázať Winbind"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:32
 msgid "Edit Template"
-msgstr "Upraviť šablónu"
+msgstr ""
 
-#: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:32
+#: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:81
 msgid "Edit the template that is used for generating the samba configuration."
 msgstr ""
 
@@ -81,7 +76,7 @@ msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:64
 msgid "Enable macOS compatible shares"
-msgstr "Povoliť zdieľania kompatibilné so systémom macOS"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:58
 msgid ""
@@ -97,9 +92,8 @@ msgid ""
 msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:115
-#, fuzzy
 msgid "Force Root"
-msgstr "Vynútiť Root-a"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:61
 msgid "Force synchronous I/O"
@@ -115,11 +109,11 @@ msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:126
 msgid "Guests only"
-msgstr "Len pre hostí"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:131
 msgid "Inherit owner"
-msgstr "Zdediť vlastníka"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:34
 msgid "Interface"
@@ -127,7 +121,7 @@ msgstr "Rozhranie"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:35
 msgid "Listen only on the given interface or, if unspecified, on lan"
-msgstr "Načúvať iba na danom rozhraní alebo, ak nie je definované, na lan"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:98
 msgid "Name"
@@ -135,9 +129,8 @@ msgstr "Názov"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:23
 #: applications/luci-app-samba4/root/usr/share/luci/menu.d/luci-app-samba4.json:3
-#, fuzzy
 msgid "Network Shares"
-msgstr "Sieťové zdieľania"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:62
 msgid ""
@@ -147,23 +140,21 @@ msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:99
 msgid "Path"
-msgstr "Cesta"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:94
 msgid ""
 "Please add directories to share. Each directory refers to a folder on a "
 "mounted device."
 msgstr ""
-"Prosím pridajte adresáre, ktoré chcete zdieľať. Každý adresár odkazuje na "
-"priečinok na pripojenom zariadení."
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:109
 msgid "Read-only"
-msgstr "Len na čítanie"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:93
 msgid "Shared Directories"
-msgstr "Zdieľané adresáre"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:82
 msgid ""
@@ -175,12 +166,12 @@ msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:153
 msgid "Time-machine size in GB"
-msgstr "Veľkosť Time-machine v GB"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:148
 msgid "Vfs objects"
-msgstr "VFS objekty"
+msgstr ""
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:51
 msgid "Workgroup"
-msgstr "Pracovná skupina"
+msgstr ""

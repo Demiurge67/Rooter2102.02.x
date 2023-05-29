@@ -1,9 +1,10 @@
 Source-Makefile: feeds/packages/multimedia/grilo-plugins/Makefile
-Build-Depends: !BUILD_NLS:libiconv
+Build-Depends: meson/host !BUILD_NLS:libiconv !BUILD_NLS:gettext ninja/host
+Build-Depends/host: ninja/host
 
 Package: grilo-plugins
 Menu: 1
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +grilo +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full
 Conflicts: 
 Menu-Depends: 
@@ -13,8 +14,8 @@ Category: Multimedia
 Repository: base
 Title: Plugins for the Grilo framework
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Plugins for the Grilo framework
@@ -23,7 +24,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-chromaprint
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins +libgstreamer1
 Conflicts: 
 Menu-Depends: 
@@ -33,8 +34,8 @@ Category: Multimedia
 Repository: base
 Title: Chromaprint plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Chromaprint plugin
@@ -43,7 +44,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-dleyna
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -53,8 +54,8 @@ Category: Multimedia
 Repository: base
 Title: DLNA sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: DLNA sharing plugin
@@ -63,7 +64,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-dmap
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins libdmapsharing
 Conflicts: 
 Menu-Depends: 
@@ -73,8 +74,8 @@ Category: Multimedia
 Repository: base
 Title: DAAP and DPAP sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: DAAP and DPAP sharing plugin
@@ -83,7 +84,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-gravatar
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -93,8 +94,8 @@ Category: Multimedia
 Repository: base
 Title: Gravatar provider plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Gravatar provider plugin
@@ -102,8 +103,28 @@ https://wiki.gnome.org/Projects/Grilo
 W. Michael Petullo <mike@flyn.org>
 @@
 
+Package: grilo-plugins-jamendo
+Version: 0.3.12-2
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: multimedia
+Category: Multimedia
+Repository: base
+Title: Jamendo sharing plugin
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
+LicenseFiles: COPYING
+Type: ipkg
+Description: Jamendo sharing plugin
+https://wiki.gnome.org/Projects/Grilo
+W. Michael Petullo <mike@flyn.org>
+@@
+
 Package: grilo-plugins-magnatune
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -113,8 +134,8 @@ Category: Multimedia
 Repository: base
 Title: Magnatune sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Magnatune sharing plugin
@@ -123,7 +144,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-metadata-store
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -133,8 +154,8 @@ Category: Multimedia
 Repository: base
 Title: Metadata Store plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Metadata Store plugin
@@ -143,7 +164,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-opensubtitles
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -153,8 +174,8 @@ Category: Multimedia
 Repository: base
 Title: Open subtitles provider plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Open subtitles provider plugin
@@ -163,7 +184,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-raitv
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -173,8 +194,8 @@ Category: Multimedia
 Repository: base
 Title: Rai.tv sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: Rai.tv sharing plugin
@@ -183,7 +204,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-shoutcast
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins
 Conflicts: 
 Menu-Depends: 
@@ -193,8 +214,8 @@ Category: Multimedia
 Repository: base
 Title: SHOUTcast sharing plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: SHOUTcast sharing plugin
@@ -203,7 +224,7 @@ W. Michael Petullo <mike@flyn.org>
 @@
 
 Package: grilo-plugins-tmdb
-Version: 0.3.14-0
+Version: 0.3.12-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread grilo-plugins +json-glib
 Conflicts: 
 Menu-Depends: 
@@ -213,8 +234,8 @@ Category: Multimedia
 Repository: base
 Title: TMDb plugin
 Maintainer: W. Michael Petullo <mike@flyn.org>
-Source: grilo-plugins-0.3.14.tar.xz
-License: LGPL-2.1-or-later
+Source: grilo-plugins-0.3.12.tar.xz
+License: LGPLv2.1
 LicenseFiles: COPYING
 Type: ipkg
 Description: TMDb plugin

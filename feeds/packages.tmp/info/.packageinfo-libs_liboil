@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/libs/liboil/Makefile
-Build-Depends: !BUILD_NLS:libiconv
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: liboil
 Version: 0.3.17-2

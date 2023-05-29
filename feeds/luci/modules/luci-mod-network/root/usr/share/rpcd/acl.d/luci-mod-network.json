@@ -58,8 +58,7 @@
 				"/usr/bin/ping": [ "exec" ],
 				"/usr/bin/ping6": [ "exec", "list" ],
 				"/usr/bin/traceroute": [ "exec" ],
-				"/usr/bin/traceroute6": [ "exec", "list" ],
-				"/usr/bin/arp-scan": [ "exec", "list" ]
+				"/usr/bin/traceroute6": [ "exec", "list" ]
 			},
 			"ubus": {
 				"file": [ "exec", "stat" ]

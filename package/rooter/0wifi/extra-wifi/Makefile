@@ -20,7 +20,7 @@ define Package/extra-wifi
   CATEGORY:=ROOter
   SUBMENU:=Wifi
   DEPENDS:=+kmod-ath9k +kmod-rt2500-usb +kmod-rt73-usb +kmod-rtl8187 \
-		 +kmod-rtl8192cu +kmod-rtl8xxxu \
+		 +kmod-rtl8192cu +kmod-rtl8xxxu +kmod-net-rtl8192su \
 		+kmod-mt76 +kmod-mt7601u
   TITLE:=support for wifi
   PKGARCH:=all

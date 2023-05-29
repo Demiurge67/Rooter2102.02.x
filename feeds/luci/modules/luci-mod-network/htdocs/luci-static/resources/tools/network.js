@@ -627,8 +627,8 @@ return baseclass.extend({
 		o.value('', _('disabled'));
 		o.value('loose', _('Loose filtering'));
 		o.value('strict', _('Strict filtering'));
-		o.cfgvalue = function(/* ... */) {
-			var val = form.ListValue.prototype.cfgvalue.apply(this, arguments);
+		o.cfgvalue = function(section_id) {
+			var val = form.ListValue.prototype.cfgvalue.apply(this, [section_id]);
 
 			switch (val || '') {
 			case 'loose':
@@ -699,7 +699,7 @@ return baseclass.extend({
 			o = this.replaceOption(s, 'brport', form.Flag, 'unicast_flood', _('Enable unicast flooding'));
 			o.default = o.enabled;
 
-			o = this.replaceOption(s, 'brport', form.Flag, 'isolate', _('Port isolation'), _('Only allow communication with non-isolated bridge ports when enabled'));
+			o = this.replaceOption(s, 'brport', form.Flag, 'isolated', _('Port isolation'), _('Only allow communication with non-isolated bridge ports when enabled'));
 			o.default = o.disabled;
 
 			o = this.replaceOption(s, 'brport', form.ListValue, 'multicast_router', _('Multicast routing'));

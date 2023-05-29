@@ -6,12 +6,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=vips
-PKG_VERSION:=8.12.1
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=8.10.5
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/libvips/libvips/releases/download/v$(PKG_VERSION)
-PKG_HASH:=474d8439244cd26c504812fd623259f806c32553b38d2a54798c9766135f5a5c
+PKG_HASH:=a4eef2f5334ab6dbf133cd3c6d6394d5bdb3e76d5ea4d578b02e1bc3d9e1cfd8
 
 PKG_MAINTAINER:=W. Michael Petullo <mike@flyn.org>
 PKG_LICENSE:=LGPL-2.1-or-later
@@ -22,6 +22,7 @@ PKG_FIXUP:=autoreconf
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
 
+include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
 
@@ -31,7 +32,7 @@ define Package/vips
   CATEGORY:=Multimedia
   TITLE:=An image manipulation library
   URL:=https://libvips.github.io/libvips/
-  DEPENDS:=+glib2 +libexif +libexpat +libjpeg +libpng +giflib +libxml2 +libstdcpp $(INTL_DEPENDS)
+  DEPENDS:=+glib2 +libexif +libexpat +libjpeg +libpng +giflib +libxml2 $(CXX_DEPENDS) $(INTL_DEPENDS)
 endef
 
 CONFIGURE_ARGS += \

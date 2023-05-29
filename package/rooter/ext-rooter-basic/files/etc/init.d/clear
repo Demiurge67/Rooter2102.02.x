@@ -18,12 +18,4 @@ start() {
 	uci delete network.wg0
 	uci delete network.wg1
 	uci commit network
-	
-	id=$(uci -q get zerotier.zerotier)
-	if [ -z "$id" ]; then
-		uci set zerotier.zerotier=zerotier
-		uci set zerotier.zerotier.enabled='0'
-		uci set zerotier.zerotier.join='xxxxxxxxxxxx'
-		uci commit zerotier
-	fi
 }

@@ -16,7 +16,7 @@ MAX_MODEMS=2
 MODCNT=$MAX_MODEMS
 
 log() {
-	modlog "ROOter Initialize" "$@"
+	logger -t "ROOter Initialize" "$@"
 }
 
 do_zone() {
@@ -113,8 +113,6 @@ echo 'DISTRIB_REVISION="'"$DISTRIB_REVISION"'"' >> /etc/openwrt_release
 echo 'DISTRIB_CODENAME="'"$DISTRIB_CODENAME"'"' >> /etc/openwrt_release
 echo 'DISTRIB_TARGET="'"$DISTRIB_TARGET"'"' >> /etc/openwrt_release
 echo 'DISTRIB_DESCRIPTION="'"$DISTRIB_DESCRIPTION"'"' >> /etc/openwrt_release
-
-/usr/lib/rooter/luci/external.sh &
 
 MODSTART=1
 WWAN=0
@@ -295,4 +293,3 @@ if [ ! -z $tone ]; then
 	[ -e /etc/newstyle ] || touch /etc/newstyle
 	#reboot -f
 fi
-

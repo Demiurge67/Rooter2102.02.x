@@ -223,41 +223,6 @@ define Device/tplink_tl-wa901nd-v5
 endef
 TARGET_DEVICES += tplink_tl-wa901nd-v5
 
-define Device/tplink_tl-wpa8630p-v2
-  $(Device/tplink-safeloader)
-  SOC := qca9563
-  DEVICE_MODEL := TL-WPA8630P
-  IMAGE_SIZE := 6016k
-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-  DEVICE_COMPAT_VERSION := 2.0
-  DEVICE_COMPAT_MESSAGE := The flash erase blocksize has changed to 4k from the 64k in previous versions, \
-    so the JFFS2 settings partition MUST be reformatted to avoid data corruption. \
-    Backup your settings before upgrading, then during sysupgrade, \
-    de-select "Keep settings" and select "Force" to continue (equivilant to "sysupgrade -n -F").
-endef
-
-define Device/tplink_tl-wpa8630p-v2-int
-  $(Device/tplink_tl-wpa8630p-v2)
-  DEVICE_VARIANT := v2 (Int.)
-  TPLINK_BOARD_ID := TL-WPA8630P-V2-INT
-endef
-TARGET_DEVICES += tplink_tl-wpa8630p-v2-int
-
-define Device/tplink_tl-wpa8630p-v2.0-eu
-  $(Device/tplink_tl-wpa8630p-v2)
-  DEVICE_VARIANT := v2.0 (EU)
-  TPLINK_BOARD_ID := TL-WPA8630P-V2.0-EU
-  SUPPORTED_DEVICES += tplink,tl-wpa8630p-v2-eu
-endef
-TARGET_DEVICES += tplink_tl-wpa8630p-v2.0-eu
-
-define Device/tplink_tl-wpa8630p-v2.1-eu
-  $(Device/tplink_tl-wpa8630p-v2)
-  DEVICE_VARIANT := v2.1 (EU)
-  TPLINK_BOARD_ID := TL-WPA8630P-V2.1-EU
-endef
-TARGET_DEVICES += tplink_tl-wpa8630p-v2.1-eu
-
 define Device/tplink_tl-wr703n
   $(Device/tplink-4mlzma)
   SOC := ar9331
@@ -309,7 +274,7 @@ endef
 TARGET_DEVICES += tplink_tl-wr740n-v5
 
 define Device/tplink_tl-wr741-v1
-  $(Device/tplink-4m)
+  $(Device/tplink-8m)
   SOC := ar7240
   DEVICE_MODEL := TL-WR741N/ND
   DEVICE_VARIANT := v1/v2
@@ -319,7 +284,7 @@ endef
 TARGET_DEVICES += tplink_tl-wr741-v1
 
 define Device/tplink_tl-wr741nd-v4
-  $(Device/tplink-4mlzma)
+  $(Device/tplink-8mlzma)
   SOC := ar9331
   DEVICE_MODEL := TL-WR741N/ND
   DEVICE_VARIANT := v4
@@ -393,7 +358,7 @@ endef
 TARGET_DEVICES += tplink_tl-wr841-v8
 
 define Device/tplink_tl-wr841-v9
-  $(Device/tplink-4mlzma)
+  $(Device/tplink-8mlzma)
   SOC := qca9533
   DEVICE_MODEL := TL-WR841N/ND
   DEVICE_VARIANT := v9
@@ -499,7 +464,7 @@ define Device/tplink_tl-wr941-v4
   DEVICE_ALT0_MODEL := TL-WR941N
   DEVICE_ALT0_VARIANT := v4
   TPLINK_HWID := 0x09410004
-  SUPPORTED_DEVICES += tl-wr741nd
+  SUPPORTED_DEVICES += tl-wr941nd
 endef
 TARGET_DEVICES += tplink_tl-wr941-v4
 

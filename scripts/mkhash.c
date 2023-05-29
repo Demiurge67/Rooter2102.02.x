@@ -105,6 +105,7 @@ be32enc(void *buf, uint32_t u)
 	p[2] = ((uint8_t) ((u >> 8) & 0xff));
 	p[3] = ((uint8_t) (u & 0xff));
 }
+#endif
 
 static void
 be64enc(void *buf, uint64_t u)
@@ -131,7 +132,6 @@ be32dec(const void *buf)
 
 	return (((uint32_t) be16dec(p)) << 16) | be16dec(p + 2);
 }
-#endif
 
 #define MD5_DIGEST_LENGTH	16
 

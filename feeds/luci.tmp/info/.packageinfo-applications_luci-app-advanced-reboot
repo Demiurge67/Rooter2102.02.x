@@ -3,7 +3,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-advanced-reboot
 Submenu: 3. Applications
-Version: 1.0.1-3
+Version: 1.0.0-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-mod-admin-full +jshn
 Conflicts: 
 Menu-Depends: 
@@ -118,26 +118,6 @@ License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-advanced-reboot - Čeština (Czech)
-Stan Grishin <stangri@melmac.net>
-@@
-
-Package: luci-i18n-advanced-reboot-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-advanced-reboot
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-advanced-reboot - da translation
-Maintainer: Stan Grishin <stangri@melmac.net>
-Source: 
-License: GPL-3.0-or-later
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-advanced-reboot - Dansk (Danish)
 Stan Grishin <stangri@melmac.net>
 @@
 

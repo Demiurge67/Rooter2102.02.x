@@ -22,11 +22,13 @@ nr_bw() {
 	case $BW in
 		"0"|"1"|"2"|"3"|"4"|"5")
 			BW=$((($(echo $BW) + 1) * 5)) ;;
-		"6"|"7"|"8"|"9"|"10"|"11"|"12")
+		"6"|"7"|"8")
 			BW=$((($(echo $BW) - 2) * 10)) ;;
-		"13")
+		"9"|"10"|"11")
+			BW=$((($(echo $BW) - 1) * 10)) ;;
+		"12")
 			BW="200" ;;
-		"14")
+		"13")
 			BW="400" ;;
 	esac
 }
@@ -65,7 +67,7 @@ NR_NSA=$(echo $OX | grep -o "+QENG:[ ]\?\"NR5G-NSA\",")
 NR_SA=$(echo $OX | grep -o "+QENG: \"SERVINGCELL\",[^,]\+,\"NR5G-SA\",\"[DFT]\{3\}\",")
 if [ -n "$NR_NSA" ]; then
 	QENG=",,"$(echo $OX" " | grep -o "+QENG: \"LTE\".\+\"NR5G-NSA\"," | tr " " ",")
-	QENG5=$(echo $OX | grep -o "+QENG:[ ]\?\"NR5G-NSA\",[0-9]\{3\},[0-9]\{2,3\},[0-9]\{1,5\},-[0-9]\{2,5\},[-0-9]\{1,3\},-[0-9]\{2,3\},[0-9]\{1,7\},[0-9]\{1,3\}.\{1,6\}")
+	QENG5=$(echo $OX | grep -o "+QENG:[ ]\?\"NR5G-NSA\",[0-9]\{3\},[0-9]\{2,3\},[0-9]\{1,5\},-[0-9]\{2,5\},[-0-9]\{1,3\},-[0-9]\{2,3\},[0-9]\{6,7\},[0-9]\{1,3\}.\{1,6\}")
 	if [ -z "$QENG5" ]; then
 		QENG5=$(echo $OX | grep -o "+QENG:[ ]\?\"NR5G-NSA\",[0-9]\{3\},[0-9]\{2,3\},[0-9]\{1,5\},-[0-9]\{2,3\},[-0-9]\{1,3\},-[0-9]\{2,3\}")
 		if [ -n "$QENG5" ]; then
@@ -152,12 +154,7 @@ case $RAT in
 				SINR=$((($(echo $SINRR) * 2) -20))" dB"
 			fi
 		fi
-		if [ -n "$(echo $QENG | cut -d, -f21)" ]; then
-			CQI=$(echo $QENG | cut -d, -f19 | grep "^[0-9]\+$")
-			if [ -n "$SINR" -a -n "$CQI" -a "$CQI" != "0" ]; then
-				SINR=$SINR" (CQI $CQI)"
-			fi
-		fi
+
 		if [ -n "$NR_NSA" ]; then
 			MODE="LTE/NR EN-DC"
 			echo "0" > /tmp/modnetwork
@@ -172,11 +169,7 @@ case $RAT in
 						nr_bw
 						LBAND=$LBAND" (Bandwidth $BW MHz)"
 					fi
-					if [ "$SCHV" -ge 123400 ]; then
-						CHANNEL=$CHANNEL", "$SCHV
-					else
-						CHANNEL=$CHANNEL", -"
-					fi
+					CHANNEL=$CHANNEL", "$SCHV
 				else
 					LBAND=$LBAND"<br />nxx (unknown NR5G band)"
 					CHANNEL=$CHANNEL", -"
@@ -276,13 +269,13 @@ if [ -n "$QRSRP" ] && [ "$RAT" != "WCDMA" ]; then
 	if [ "$QRSRPtype" == "NR5G" ]; then
 		if [ -n "$NR_SA" ]; then
 			RSCP=$QRSRP1
-			if [ -n "$QRSRP2" -a "$QRSRP2" != "-32768" ]; then
+			if [ -n "$QRPRP2" -a "$QRSRP2" != "-32768" ]; then
 				RSCP1="RxD "$QRSRP2
 			fi
-			if [ -n "$QRSRP3" -a "$QRSRP3" != "-32768" -a "$QRSRP3" != "-44" ]; then
+			if [ -n "$QRSRP3" -a "$QRSRP3" != "-32768" ]; then
 				RSCP=$RSCP" dBm<br />"$QRSRP3
 			fi
-			if [ -n "$QRSRP4" -a "$QRSRP4" != "-32768" -a "$QRSRP4" != "-44" ]; then
+			if [ -n "$QRSRP4" -a "$QRSRP4" != "-32768" ]; then
 				RSCP1="RxD "$QRSRP4
 			fi
 		else

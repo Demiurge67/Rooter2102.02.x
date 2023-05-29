@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-10-30 15:06+0000\n"
-"Last-Translator: MaycoH <hudec.marian@hotmail.com>\n"
+"PO-Revision-Date: 2021-08-03 19:09+0000\n"
+"Last-Translator: Marek Ľach <graweeld@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationstransmission/sk/>\n"
 "Language: sk\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:65
 msgid "Alternative download speed"
@@ -18,60 +18,59 @@ msgstr "Alternatívna rýchlosť sťahovania"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:59
 msgid "Alternative speed enabled"
-msgstr "Alternatívna rýchlosť povolená"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:277
 msgid "Alternative speed time begin"
-msgstr "Začiatok doby alternatívnej rýchlosti"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:283
 msgid "Alternative speed time day"
-msgstr "Dni alternatívnej rýchlosti"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:280
 msgid "Alternative speed time end"
-msgstr "Koniec doby alternatívnej rýchlosti"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:274
 msgid "Alternative speed timing enabled"
-msgstr "Alternatívne časovanie rýchlosti povolené"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:62
 msgid "Alternative upload speed"
-msgstr "Alternatívna rýchlosť odosielania"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:113
 msgid "Automatically start added torrents"
-msgstr "Automaticky spustiť pridané torrenty"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:56
-#, fuzzy
 msgid "Bandwidth settings"
-msgstr "Nastavenia rýchlosti prenosu"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:174
 msgid "Binding address IPv4"
-msgstr "Zviazanie s IPv4 adresou"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:176
 msgid "Binding address IPv6"
-msgstr "Zviazanie s IPv6 adresou"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:86
 msgid "Block list enabled"
-msgstr "Povoliť čiernu listinu"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:89
 msgid "Blocklist URL"
-msgstr "URL čierneho zoznamu"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:83
 msgid "Blocklists"
-msgstr "Čierne zoznamy"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:131
 msgid "Cache size in MB"
-msgstr "Veľkosť medzipamäte v MB"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:50
 msgid "Config file directory"
@@ -79,15 +78,15 @@ msgstr "Adresár konfiguračného súboru"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:53
 msgid "Custom Web UI directory"
-msgstr "Vlastný adresár Web UI"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:133
 msgid "DHT enabled"
-msgstr "Povoliť DHT"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:151
 msgid "Debug"
-msgstr "Ladenie"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:97
 msgid "Download directory"
@@ -95,19 +94,19 @@ msgstr "Adresár na stiahnutie"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:211
 msgid "Download queue enabled"
-msgstr "Povoliť frontu sťahovania"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:217
 msgid "Download queue size"
-msgstr "Veľkosť fronty sťahovania"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:121
 msgid "Enable watch directory"
-msgstr "Povoliť sledovanie priečinka"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:47
 msgid "Enabled"
-msgstr "Zapnuté"
+msgstr "Povolené"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:136
 msgid "Encryption"
@@ -119,23 +118,23 @@ msgstr "Chyba"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:107
 msgid "Fast"
-msgstr "Rýchla"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:94
 msgid "Files and Locations"
-msgstr "Súbory a umiestnenia"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:108
 msgid "Full"
-msgstr "Plná"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:183
 msgid "Global peer limit"
-msgstr "Globálny peer limit"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:44
 msgid "Global settings"
-msgstr "Globálne nastavenia"
+msgstr ""
 
 #: applications/luci-app-transmission/root/usr/share/rpcd/acl.d/luci-app-transmission.json:3
 msgid "Grant UCI access for luci-app-transmission"
@@ -143,43 +142,43 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:289
 msgid "Idle seeding limit"
-msgstr "Limit nečinnosti pre seedovanie"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:286
 msgid "Idle seeding limit enabled"
-msgstr "Limit nečinnosti pre seedovanie povolený"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:102
 msgid "Incomplete directory"
-msgstr "Priečinok pre nedokončené sťahovania"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:99
 msgid "Incomplete directory enabled"
-msgstr "Povoliť priečinok pre nedokončené sťahovania"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:150
 msgid "Info"
-msgstr "Informácie"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:144
 msgid "LPD enabled"
-msgstr "Povoliť LPD"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:141
 msgid "Lazy bitfield enabled"
-msgstr "Povoliť Lazy Bitfield"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:147
 msgid "Message level"
-msgstr "Úroveň logovania"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:128
 msgid "Miscellaneous"
-msgstr "Ostatné"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:148
 msgid "None"
-msgstr "Žiadny"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:283
 msgid ""
@@ -187,54 +186,50 @@ msgid ""
 "enabled, add a value. For Sunday - 1, Monday - 2, Tuesday - 4, Wednesday - "
 "8, Thursday - 16, Friday - 32, Saturday - 64"
 msgstr ""
-"Číslo/bitové pole. Začnite s 0, potom pre každý deň, kedy chcete mať "
-"plánovač povolený, pridajte hodnotu. Na nedeľu - 1, pondelok - 2, utorok - "
-"4, stredu - 8, štvrtok - 16, piatok - 32, sobotu - 64"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:106
 msgid "Off"
-msgstr "Vypnuté"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:38
 msgid "Open Web Interface"
-msgstr "Otvoriť webové rozhranie"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:153
 msgid "PEX enabled"
-msgstr "Povoliť PEX"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:190
 msgid "Peer Port settings"
-msgstr "Nastavenia peer portu"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:178
 msgid "Peer congestion algorithm"
-msgstr "Algoritmus proti zahlteniu"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:185
 msgid "Peer limit per torrent"
-msgstr "Peer limit na torrent"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:193
 msgid "Peer port"
-msgstr "Peer port"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:198
 msgid "Peer port random high"
-msgstr "Peer port náhodný najvyšší"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:201
 msgid "Peer port random low"
-msgstr "Peer port náhodný najnižší"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:195
 msgid "Peer port random on start"
-msgstr "Náhodný peer port pri štarte"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:171
-#, fuzzy
 msgid "Peer settings"
-msgstr "Nastavenia peer"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:187
 msgid "Peer socket <abbr title=\"Type of Service\">TOS</abbr>"
@@ -242,19 +237,19 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:204
 msgid "Port forwarding enabled"
-msgstr "Povoliť presmerovanie portov"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:105
 msgid "Preallocation"
-msgstr "Prealokácia"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:138
 msgid "Prefer encrypted"
-msgstr "Preferovať šifrovanie"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:137
 msgid "Prefer unencrypted"
-msgstr "Preferovať nešifrovane"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:156
 msgid "Prefetch enabled"
@@ -391,8 +386,8 @@ msgstr ""
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
 msgid ""
 "This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
+"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer noopener"
+"\">tcp-congestion-control</a>."
 msgstr ""
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3

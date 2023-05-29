@@ -132,26 +132,6 @@ Description:     Translation for luci-app-radicale - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-radicale-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-radicale
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-radicale - da translation
-Maintainer: 
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-radicale - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-radicale-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

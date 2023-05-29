@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:41+0200\n"
-"PO-Revision-Date: 2022-12-27 18:50+0000\n"
+"PO-Revision-Date: 2021-08-18 10:44+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/apcups.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/apcups.json:2
@@ -51,7 +51,7 @@ msgstr "Familia de direcciones"
 msgid "Aggregate number of connected users"
 msgstr "Agregar número de usuarios conectados"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr "Aplicar intervalo »"
 
@@ -254,15 +254,15 @@ msgstr "Uso de espacio en disco"
 msgid "Disk Usage"
 msgstr "Uso de disco"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr "Mostrar Host »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "Mostrar lapso de tiempo »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr "No actualizar"
 
@@ -341,15 +341,15 @@ msgstr "Configuración del complemento Entropía"
 msgid "Entropy monitoring enabled"
 msgstr "Monitoreo de entropía activado"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr "Cada 30 segundos"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr "Cada 5 segundos"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr "Cada minuto"
 
@@ -557,7 +557,7 @@ msgid "Load monitoring enabled"
 msgstr "Monitoreo de carga activado"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
 msgstr "Cargando datos…"
 
@@ -581,17 +581,13 @@ msgstr ""
 "Los valores máximos para un período se pueden usar en lugar de los promedios "
 "cuando no se usa 'only average RRAs'"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
-msgstr "Cantidad máxima de paquetes perdidos"
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
 msgstr "Máximo número de conexiones"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:20
 msgid "Maximum packet size"
-msgstr "Tamaño máximo de paquete"
+msgstr "Tamaño maximo de paquete"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/memory.js:10
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/memory.json:2
@@ -786,7 +782,7 @@ msgid_plural "Monitoring %d disks"
 msgstr[0] "Monitorear un disco"
 msgstr[1] "Monitorear %d discos"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "Monitorear un host"
@@ -860,7 +856,7 @@ msgstr "Comunicación de red activada"
 msgid "Network plugins"
 msgstr "Plugins de red"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr "No se encontraron datos de RRD"
 
@@ -869,9 +865,9 @@ msgid ""
 "Note: as pages are rendered by user 'nobody', the *.rrd files, the storage "
 "directory and all its parent directories need to be world readable."
 msgstr ""
-"Nota: como las páginas son procesadas por el usuario 'nobody', los archivos "
-"*.rrd, el directorio de almacenamiento y todos sus directorios principales "
-"deben ser legibles para todo el mundo."
+"Nota: como las páginas son representadas por el usuario 'nobody', los "
+"archivos *.rrd, el directorio de almacenamiento y todos sus directorios "
+"principales deben ser legibles en todo el mundo."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/syslog.js:23
 msgid "Notify level"
@@ -911,7 +907,7 @@ msgstr "Archivos de estado de OpenVPN"
 msgid "Output plugins"
 msgstr "Plugins de salida"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "Visión general"
 
@@ -988,7 +984,7 @@ msgstr "Configuración del plugin \"Herramienta RRD\""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/cpu.js:27
 msgid "Report also the value for the idle metric"
-msgstr "Informar también el valor para la métrica inactiva"
+msgstr "Informe también el valor de la métrica inactiva"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/cpu.js:14
 msgid "Report by CPU"
@@ -1079,7 +1075,7 @@ msgstr "Establece el nivel de registro de syslog."
 msgid "Setup"
 msgstr "Configuración"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr "Configuración de collectd"
 
@@ -1146,7 +1142,7 @@ msgstr "Splash Leases"
 msgid "Splash Leases Plugin Configuration"
 msgstr "Configuración del complemento \"Splash Leases\""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "Estadísticas"
@@ -1433,7 +1429,7 @@ msgid ""
 "directory. This can render the device unusable!</strong>"
 msgstr ""
 "El plugin \"rrdtool\" almacena datos en ficheros de bb.dd. RRD que son la "
-"base para los diagramas.<br /><br /><strong>¡Atención: Configurar valores "
+"base para los diagramas.<br /><br /><strong>¡Ojo: Configurar valores "
 "incorrectos puede hacer que se use mucho espacio en el directorio temporal y "
 "puede hacer que el dispositivo funcione mal!</strong>"
 
@@ -1491,7 +1487,7 @@ msgstr ""
 "El plugin \"uptime\" recopila estadísticas sobre el tiempo de actividad del "
 "sistema."
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr "Todavía no hay datos RRD disponibles para representar gráficos."
 
@@ -1595,15 +1591,6 @@ msgstr "Usuario"
 msgid "Verbose monitoring"
 msgstr "Monitorización detallada"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
-"Cuando un host no ha respondido a esta cantidad de paquetes seguidos, vuelva "
-"a resolver el nombre de host en DNS. Útil para hosts DNS dinámicos. El valor "
-"predeterminado es -1 = desactivado."
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
 msgstr "Cuando no se selecciona ninguno, se supervisarán todos los discos."
@@ -1641,7 +1628,7 @@ msgstr "Configuración plugin \"Wireless iwinfo\""
 msgid "Writing *.rrd files to %s"
 msgstr "Escribir archivos *.rrd en %s"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."

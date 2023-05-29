@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LuCI: statistics\n"
 "POT-Creation-Date: 2017-10-17 22:00+0300\n"
-"PO-Revision-Date: 2022-02-15 13:57+0000\n"
+"PO-Revision-Date: 2021-06-22 17:33+0000\n"
 "Last-Translator: Anton Kikin <a.a.kikin@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/ru/>\n"
@@ -10,9 +10,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.7.1-dev\n"
 "Project-Info: Это технический перевод, не дословный. Главное-удобный русский "
 "интерфейс, все проверялось в графическом режиме, совместим с другими apps\n"
 
@@ -53,7 +53,7 @@ msgstr "Тип адреса"
 msgid "Aggregate number of connected users"
 msgstr "Общее число подключенных пользователей"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr "Применить интервал »"
 
@@ -256,15 +256,15 @@ msgstr "Использовано места на диске"
 msgid "Disk Usage"
 msgstr "Использование диска"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr "Показать хост »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "Показать за промежуток »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr "Не обновлять"
 
@@ -343,15 +343,15 @@ msgstr "Настройка плагина «Энтропия»"
 msgid "Entropy monitoring enabled"
 msgstr "Мониторинг энтропии включён"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr "Каждые 30 секунд"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr "Каждые 5 секунд"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr "Каждую минуту"
 
@@ -472,7 +472,7 @@ msgstr "Хост, на котором работает chrony"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:51
 msgid "Hostname"
-msgstr "Имя"
+msgstr "Имя хоста"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/olsrd.js:15
 msgid "IP or hostname where to get the txtinfo output from"
@@ -562,7 +562,7 @@ msgid "Load monitoring enabled"
 msgstr "Мониторинг загрузки включён"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
 msgstr "Загрузка данных…"
 
@@ -585,10 +585,6 @@ msgid ""
 msgstr ""
 "Максимальные значения для периода могут использоваться вместо средних "
 "значений, когда не используется опция «Создавать только средние RRA»"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
-msgstr "Максимальное количество пропущенных пакетов"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
@@ -799,7 +795,7 @@ msgstr[0] "Мониторинг одного диска"
 msgstr[1] "Мониторинг %d дисков"
 msgstr[2] "Мониторинг %d дисков"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "Мониторинг одного хоста"
@@ -878,7 +874,7 @@ msgstr "Сетевой плагин включён"
 msgid "Network plugins"
 msgstr "Сетевые плагины"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr "Данные RRD не найдены"
 
@@ -928,7 +924,7 @@ msgstr "Файлы состояния службы OpenVPN"
 msgid "Output plugins"
 msgstr "Плагины вывода"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "Обзор"
 
@@ -1098,7 +1094,7 @@ msgstr "Устанавливает уровень журналирования s
 msgid "Setup"
 msgstr "Настройка"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr "Настройка collectd"
 
@@ -1165,7 +1161,7 @@ msgstr "Splash Leases"
 msgid "Splash Leases Plugin Configuration"
 msgstr "Настройка плагина «Splash Leases»"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "Статистика"
@@ -1486,7 +1482,7 @@ msgstr ""
 msgid "The uptime plugin collects statistics about the uptime of the system."
 msgstr "Плагин «Uptime» собирает статистику о времени работы системы."
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr "Пока нет данных RRD для отображения графиков."
 
@@ -1585,15 +1581,6 @@ msgstr "Пользователь"
 msgid "Verbose monitoring"
 msgstr "Расширенная статистика"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
-"Если хост не ответил на указанное количество пакетов подряд, повторно "
-"разрешить имя хоста в DNS. Это полезно для хостов с динамическим DNS. По "
-"умолчанию -1 = отключено."
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
 msgstr "Если ни один диск не будет выбран, будут отслеживаться все."
@@ -1620,7 +1607,7 @@ msgstr "При включении, отображаются значения в 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/iwinfo.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/iwinfo.json:2
 msgid "Wireless"
-msgstr "Беспроводная сеть"
+msgstr "Беспроводная"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/iwinfo.js:7
 msgid "Wireless iwinfo Plugin Configuration"
@@ -1630,7 +1617,7 @@ msgstr "Настройка плагина «Wi-Fi»"
 msgid "Writing *.rrd files to %s"
 msgstr "Запись *.rrd файлов в %s"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."

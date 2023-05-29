@@ -6,33 +6,29 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=minizip-ng
-PKG_VERSION:=3.0.4
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_NAME:=minizip
+PKG_VERSION:=2.9.3
+PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/zlib-ng/minizip-ng/tar.gz/$(PKG_VERSION)?
-PKG_HASH:=2ab219f651901a337a7d3c268128711b80330a99ea36bdc528c76b591a624c3c
+PKG_SOURCE_URL:=https://codeload.github.com/nmoinvaz/minizip/tar.gz/$(PKG_VERSION)?
+PKG_HASH:=f64b2d228a03673a8ec36a53402e2108437226fd9170d49b7f0c0bca94708b93
 
 PKG_MAINTAINER:=David Woodhouse <dwmw2@infradead.org>
 PKG_LICENSE:=Zlib
 PKG_LICENSE_FILES:=LICENSE
 
+PKG_BUILD_PARALLEL:=1
+
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
 CMAKE_OPTIONS += \
-	-DCMAKE_POSITION_INDEPENDENT_CODE=ON \
 	-DINSTALL_INC_DIR=/usr/include/minizip \
 	-DBUILD_SHARED_LIBS=ON \
 	-DMZ_BZIP2=OFF \
-	-DMZ_COMPAT=ON \
-	-DMZ_ICONV=OFF \
-	-DMZ_LIBBSD=OFF \
-	-DMZ_LZMA=OFF \
-	-DMZ_OPENSSL=OFF \
-	-DMZ_PKCRYPT=OFF \
-	-DMZ_ZSTD=OFF
+	-DMZ_LIBBSD=OFF
+
 
 define Package/minizip
   TITLE:=Fork of the popular zip manipulation library found in the zlib distribution

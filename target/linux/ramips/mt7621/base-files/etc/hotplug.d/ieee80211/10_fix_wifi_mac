@@ -18,6 +18,7 @@ case "$board" in
 		hw_mac_addr=$(macaddr_unsetbit $hw_mac_addr 28)
 		[ "$PHYNBR" = "1" ] && macaddr_setbit_la $hw_mac_addr > /sys${DEVPATH}/macaddress
 		;;
+
 	cudy,x6)
 		hw_mac_addr="$(mtd_get_mac_binary factory 0x4)"
 		macaddr_add $hw_mac_addr "$PHYNBR" > /sys${DEVPATH}/macaddress
@@ -70,10 +71,11 @@ case "$board" in
 		[ "$PHYNBR" = "0" ] && macaddr_add $hw_mac_addr 1 > /sys${DEVPATH}/macaddress
 		[ "$PHYNBR" = "1" ] && macaddr_add $hw_mac_addr 2 > /sys${DEVPATH}/macaddress
 		;;
-	netgear,wax202)
-		hw_mac_addr=$(mtd_get_mac_ascii Config mac)
-		[ "$PHYNBR" = "0" ] && macaddr_add $hw_mac_addr 2 > /sys${DEVPATH}/macaddress
-		[ "$PHYNBR" = "1" ] && macaddr_add $hw_mac_addr 3 > /sys${DEVPATH}/macaddress
+	oraybox,x3a)
+		if [ "$PHYNBR" = "1" ]; then
+			hw_mac_addr="$(mtd_get_mac_binary factory 0x4)"
+			macaddr_setbit_la "$(macaddr_add $hw_mac_addr 0x100000)" > /sys${DEVPATH}/macaddress
+		fi
 		;;
 	mts,wg430223)
 		hw_mac_addr=$(macaddr_add $(mtd_get_mac_encrypted_arcadyan "board_data") 1)
@@ -82,12 +84,6 @@ case "$board" in
 		hw_mac_addr=$(macaddr_setbit   $hw_mac_addr 27)
 		hw_mac_addr=$(macaddr_unsetbit $hw_mac_addr 28)
 		[ "$PHYNBR" = "1" ] && macaddr_setbit_la $hw_mac_addr > /sys${DEVPATH}/macaddress
-		;;
-	oraybox,x3a)
-		if [ "$PHYNBR" = "1" ]; then
-			hw_mac_addr="$(mtd_get_mac_binary factory 0x4)"
-			macaddr_setbit_la "$(macaddr_add $hw_mac_addr 0x100000)" > /sys${DEVPATH}/macaddress
-		fi
 		;;
 	raisecom,msg1500-x-00)
 		[ "$PHYNBR" = "0" ] && \
@@ -105,11 +101,5 @@ case "$board" in
 	yuncore,ax820)
 		[ "$PHYNBR" = "1" ] && \
 			macaddr_setbit_la "$(mtd_get_mac_binary Factory 0xe000)" > /sys${DEVPATH}/macaddress
-		;;
-	zyxel,nwa50ax|\
-	zyxel,nwa55axe)
-		hw_mac_addr="$(mtd_get_mac_binary mrd 0x1fff8)"
-		[ "$PHYNBR" = "0" ] && macaddr_add $hw_mac_addr 1 > /sys${DEVPATH}/macaddress
-		[ "$PHYNBR" = "1" ] && macaddr_add $hw_mac_addr 2 > /sys${DEVPATH}/macaddress
 		;;
 esac

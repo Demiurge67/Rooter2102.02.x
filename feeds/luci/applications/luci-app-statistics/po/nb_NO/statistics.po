@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-02-28 10:31+0000\n"
+"PO-Revision-Date: 2021-04-04 07:26+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/nb_NO/>\n"
@@ -8,12 +8,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/apcups.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/apcups.json:2
 msgid "APC UPS"
-msgstr "APC-UPS"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/apcups.js:6
 msgid "APCUPS Plugin Configuration"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Aggregate number of connected users"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr ""
 
@@ -249,15 +249,15 @@ msgstr "Disk Forbruk"
 msgid "Disk Usage"
 msgstr "Disk Anvendelse"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "Vis tidsperiode »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr ""
 
@@ -336,15 +336,15 @@ msgstr ""
 msgid "Entropy monitoring enabled"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr ""
 
@@ -546,7 +546,7 @@ msgid "Load monitoring enabled"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
 msgstr ""
 
@@ -566,10 +566,6 @@ msgstr ""
 msgid ""
 "Max values for a period can be used instead of averages when not using 'only "
 "average RRAs'"
-msgstr ""
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
@@ -773,7 +769,7 @@ msgid_plural "Monitoring %d disks"
 msgstr[0] ""
 msgstr[1] ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] ""
@@ -847,7 +843,7 @@ msgstr ""
 msgid "Network plugins"
 msgstr "Nettverks plugin"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr ""
 
@@ -895,7 +891,7 @@ msgstr ""
 msgid "Output plugins"
 msgstr "Utdata Plugin"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "Oversikt"
 
@@ -1062,7 +1058,7 @@ msgstr ""
 msgid "Setup"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr ""
 
@@ -1129,7 +1125,7 @@ msgstr ""
 msgid "Splash Leases Plugin Configuration"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "Statistikk"
@@ -1439,7 +1435,7 @@ msgstr ""
 msgid "The uptime plugin collects statistics about the uptime of the system."
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr ""
 
@@ -1539,12 +1535,6 @@ msgstr "Bruker"
 msgid "Verbose monitoring"
 msgstr "Detaljert overvåking"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
 msgstr ""
@@ -1580,7 +1570,7 @@ msgstr ""
 msgid "Writing *.rrd files to %s"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."
@@ -1600,9 +1590,8 @@ msgid "cUrl Plugin Configuration"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:139
-#, fuzzy
 msgid "none"
-msgstr "ingen"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/df.js:107
 msgid "one device"

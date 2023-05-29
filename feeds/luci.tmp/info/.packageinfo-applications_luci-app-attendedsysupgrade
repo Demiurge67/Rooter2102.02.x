@@ -115,25 +115,6 @@ Description:     Translation for luci-app-attendedsysupgrade - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-attendedsysupgrade-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-attendedsysupgrade
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-attendedsysupgrade - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-attendedsysupgrade - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-attendedsysupgrade-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x
@@ -207,6 +188,25 @@ Source:
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-attendedsysupgrade - Español (Spanish)
+
+@@
+
+Package: luci-i18n-attendedsysupgrade-fa
+Default: LUCI_LANG_fa||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-attendedsysupgrade
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-attendedsysupgrade - fa translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-attendedsysupgrade - 
 
 @@
 

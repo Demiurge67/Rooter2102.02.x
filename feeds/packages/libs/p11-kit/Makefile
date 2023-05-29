@@ -8,21 +8,22 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=p11-kit
-PKG_VERSION:=0.24.1
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=0.23.22
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://github.com/p11-glue/p11-kit/releases/download/$(PKG_VERSION)
-PKG_HASH:=d8be783efd5cd4ae534cee4132338e3f40f182c3205d23b200094ec85faaaef8
+PKG_HASH:=8a8f40153dd5a3f8e7c03e641f8db400133fb2a6a9ab2aee1b6d0cb0495ec6b6
 
 PKG_MAINTAINER:=Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=COPYING
 
 PKG_INSTALL:=1
+PKG_BUILD_DEPENDS:=meson/host
 
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/meson.mk
+include ../../devel/meson/meson.mk
 
 define Package/p11-kit
   SECTION:=libs
@@ -47,8 +48,7 @@ MESON_ARGS += \
 	-Dstrict=false \
 	-Dsystemd=disabled \
 	-Dgtk_doc=false \
-	-Dman=false \
-	-Dnls=false
+	-Dman=false
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/p11-kit-1/p11-kit/

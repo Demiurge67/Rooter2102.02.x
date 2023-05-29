@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ksmbd-tools
-PKG_VERSION:=3.4.5
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=3.3.9
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/cifsd-team/ksmbd-tools/tar.gz/$(PKG_VERSION)?
-PKG_HASH:=e22e5bef29ffa2670fc82c490ad4dc6eb00963b4f963dd1852c811b437c77ee1
+PKG_HASH:=7c2c86130912d780df69f26d797d4bd88cf31876a86fdad17032ab684bfe7d8a
 
 PKG_MAINTAINER:=Andy Walsh <andy.walsh44+github@gmail.com>
 PKG_LICENSE:=GPL-2.0-or-later
@@ -87,12 +87,6 @@ define Package/ksmbd-avahi-service/description
 
   This package contains the service definition for announcing the
   Ksmbd (smb/445) Daemon service via mDNS/DNS-SD.
-endef
-
-define Package/ksmbd-hotplug
-  $(call Package/ksmbd-tools/Default)
-  TITLE+= hotplug script for auto sharing
-  DEPENDS:=+blockd
 endef
 
 CONFIGURE_ARGS += \

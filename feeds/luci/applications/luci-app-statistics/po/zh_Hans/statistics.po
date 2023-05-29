@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:40+0200\n"
-"PO-Revision-Date: 2023-03-11 13:38+0000\n"
-"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2021-08-18 10:44+0000\n"
+"Last-Translator: Eric <spice2wolf@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsstatistics/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/apcups.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/apcups.json:2
@@ -55,7 +55,7 @@ msgstr "地址簇"
 msgid "Aggregate number of connected users"
 msgstr "连接用户总数"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr "应用间隔 »"
 
@@ -65,7 +65,7 @@ msgstr "等待 %s 的电子邮件输入"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:59
 msgid "Base Directory"
-msgstr "基础目录"
+msgstr "基本目录"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/netlink.js:16
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/snmp6.js:16
@@ -256,15 +256,15 @@ msgstr "磁盘空间使用情况"
 msgid "Disk Usage"
 msgstr "磁盘使用情况"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr "显示主机"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "显示时间段"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr "不要刷新"
 
@@ -343,15 +343,15 @@ msgstr "熵插件配置"
 msgid "Entropy monitoring enabled"
 msgstr "熵值监控已启用"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr "每 30 秒"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr "每 5 秒"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr "每分钟"
 
@@ -554,9 +554,9 @@ msgid "Load monitoring enabled"
 msgstr "已启用负载监控"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
-msgstr "加载数据中…"
+msgstr "正在加载数据…"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/syslog.js:14
 msgid "Log level"
@@ -575,10 +575,6 @@ msgid ""
 "Max values for a period can be used instead of averages when not using 'only "
 "average RRAs'"
 msgstr "在不使用“仅平均 RRA”的情况下，可以使用一段时间的最大值而不是平均值"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
-msgstr "最大丢包数"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
@@ -773,7 +769,7 @@ msgid "Monitoring one disk"
 msgid_plural "Monitoring %d disks"
 msgstr[0] "正监控 %d 块磁盘"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "正监控 %d 个主机"
@@ -842,7 +838,7 @@ msgstr "已启用网络通信"
 msgid "Network plugins"
 msgstr "Network 插件"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr "未找到 RRD 数据"
 
@@ -892,7 +888,7 @@ msgstr "OpenVPN 状态文件"
 msgid "Output plugins"
 msgstr "Output 插件"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "概览"
 
@@ -1059,7 +1055,7 @@ msgstr "设置系统日志日志级别。"
 msgid "Setup"
 msgstr "设置"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr "设置collectd"
 
@@ -1126,7 +1122,7 @@ msgstr "Splash Leases"
 msgid "Splash Leases Plugin Configuration"
 msgstr "Splash Leases 插件配置"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "统计"
@@ -1414,7 +1410,7 @@ msgstr "unixsock 插件创建一个 unix 套接字可用于读取 Collectd 实�
 msgid "The uptime plugin collects statistics about the uptime of the system."
 msgstr "运行时间插件收集系统启动时间的统计信息。"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr "尚无可用的RRD数据来制作图表。"
 
@@ -1510,14 +1506,6 @@ msgstr "用户"
 msgid "Verbose monitoring"
 msgstr "详细监测"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
-"当主机连着未响应这个数量的数据包时，在 DNS 中重新解析主机名。对动态 DNS 主机"
-"有用。默认值是 -1 =禁用。"
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
 msgstr "未选取时，将监测所有磁盘。"
@@ -1552,7 +1540,7 @@ msgstr "无线 iwinfo 插件配置"
 msgid "Writing *.rrd files to %s"
 msgstr "正在写入 *.rrd 文件到 %s"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."

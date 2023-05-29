@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-08-27 12:56+0000\n"
-"Last-Translator: Iskren Mihaylov <iskren.mihaylov91@gmail.com>\n"
+"PO-Revision-Date: 2021-06-01 13:26+0000\n"
+"Last-Translator: Kalin Iliev <kalin.t.iliev@gmail.com>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationscommands/bg/>\n"
 "Language: bg\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8.1-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:16
 msgid "A short textual description of the configured command"
@@ -22,73 +22,72 @@ msgid ""
 "Allow executing the command and downloading its output without prior "
 "authentication"
 msgstr ""
-"Позволяване изпълнение на командата и сваляне на аутпута й без аутентикация"
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:22
 msgid "Allow the user to provide additional command line arguments"
-msgstr "Позволи на потребителя да въведе допълнителни командни аргументи"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:162
 msgid "Arguments:"
-msgstr "Аргументи:"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:66
 msgid "Binary data not displayed, download instead."
-msgstr "Бинарни данни не са показани, свалете ги вместо това."
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:71
 msgid "Code:"
-msgstr "Код:"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:182
 msgid "Collecting data..."
-msgstr "Събиране данни..."
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:18
 msgid "Command"
-msgstr "Команда"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands_public.htm:30
 msgid "Command executed successfully."
-msgstr "Командата е изпълнена успешно."
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands_public.htm:32
 msgid "Command exited with status code"
-msgstr "Командата приключи с код"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:73
 msgid "Command failed"
-msgstr "Командата се провали"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:19
 msgid "Command line to execute"
-msgstr "Команден ред за изпълнение"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:73
 msgid "Command successful"
-msgstr "Успешна команда"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:160
 msgid "Command:"
-msgstr "Команда:"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/controller/commands.lua:9
 msgid "Configure"
-msgstr "Конфигурирай"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/controller/commands.lua:7
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:6
 #: applications/luci-app-commands/luasrc/view/commands.htm:144
 msgid "Custom Commands"
-msgstr "Персонализирани команди"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:21
 msgid "Custom arguments"
-msgstr "Персонализирани аргументи"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/controller/commands.lua:8
 msgid "Dashboard"
-msgstr "Табло"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:15
 msgid "Description"
@@ -96,60 +95,58 @@ msgstr "Описание"
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:166
 msgid "Download"
-msgstr "Сваляне"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:123
 msgid "Download execution result"
-msgstr "Сваляне резултат от изпълнение"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:79
 msgid "Failed to execute command!"
-msgstr "Провалено изпълнение на команда!"
+msgstr ""
 
 #: applications/luci-app-commands/root/usr/share/rpcd/acl.d/luci-app-commands.json:3
 msgid "Grant UCI access for luci-app-commands"
-msgstr "Разреши UCI достъп за luci-app-commands"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:168
 msgid "Link"
-msgstr "Връзка"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:53
 msgid "Loading"
-msgstr "Зареждане"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:123
 msgid "Or display result"
-msgstr "Или покажи резултат"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:24
 msgid "Public access"
-msgstr "Публичен достъп"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:165
 msgid "Run"
-msgstr "Изпълни"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands_public.htm:41
 msgid "Standard Error"
-msgstr "Стандартна грешка"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands_public.htm:36
 msgid "Standard Output"
-msgstr "Стандартен аутпут"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/model/cbi/commands.lua:7
 msgid ""
 "This page allows you to configure custom shell commands which can be easily "
 "invoked from the web interface."
 msgstr ""
-"На тази страница можете да настроите персонализирани шел команди, които да "
-"извиквате лесно през уеб интерфейса."
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:150
 msgid "This section contains no values yet"
-msgstr "Секцията всеоще не съдържа стойности"
+msgstr ""
 
 #: applications/luci-app-commands/luasrc/view/commands.htm:54
 msgid "Waiting for command to complete..."
-msgstr "Изчакване командата да приключи..."
+msgstr ""

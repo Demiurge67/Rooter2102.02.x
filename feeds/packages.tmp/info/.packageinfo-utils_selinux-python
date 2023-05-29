@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/selinux-python/Makefile
 
 Package: selinux-audit2allow
-Version: 3.2-1
+Version: 3.1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3 +python3-libselinux +python3-sepolgen +libselinux +libsepol
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +11,7 @@ Category: Utilities
 Repository: base
 Title: selinux-audit2allow
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.2.tar.gz
+Source: selinux-python-3.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 Type: ipkg
@@ -23,7 +23,7 @@ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 @@
 
 Package: selinux-chcat
-Version: 3.2-1
+Version: 3.1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3 +python3-libselinux
 Conflicts: 
 Menu-Depends: 
@@ -33,7 +33,7 @@ Category: Utilities
 Repository: base
 Title: selinux-chcat
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.2.tar.gz
+Source: selinux-python-3.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 Type: ipkg
@@ -45,7 +45,7 @@ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 @@
 
 Package: selinux-semanage
-Version: 3.2-1
+Version: 3.1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3 +python3-libselinux +python3-sepolicy +python3-libsemanage +setools
 Conflicts: 
 Menu-Depends: 
@@ -55,7 +55,7 @@ Category: Utilities
 Repository: base
 Title: selinux-semanage
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.2.tar.gz
+Source: selinux-python-3.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 Type: ipkg
@@ -68,7 +68,7 @@ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 
 Package: python3-sepolgen
 Submenu: Python
-Version: 3.2-1
+Version: 3.1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3 +python3-libselinux
 Conflicts: 
 Menu-Depends: 
@@ -78,7 +78,7 @@ Category: Languages
 Repository: base
 Title: python3-sepolgen
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.2.tar.gz
+Source: selinux-python-3.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 Type: ipkg
@@ -91,7 +91,7 @@ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 
 Package: python3-sepolicy
 Submenu: Python
-Version: 3.2-1
+Version: 3.1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3 +python3-libselinux
 Conflicts: 
 Menu-Depends: 
@@ -101,7 +101,7 @@ Category: Languages
 Repository: base
 Title: python3-sepolicy
 Maintainer: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Source: selinux-python-3.2.tar.gz
+Source: selinux-python-3.1.tar.gz
 License: GPL-2.0-only
 LicenseFiles: COPYING
 Type: ipkg

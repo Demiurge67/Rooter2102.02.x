@@ -115,25 +115,6 @@ Description:     Translation for luci-app-unbound - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-unbound-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-unbound
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-unbound - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-unbound - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-unbound-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

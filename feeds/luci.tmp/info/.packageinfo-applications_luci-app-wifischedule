@@ -115,25 +115,6 @@ Description:     Translation for luci-app-wifischedule - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-wifischedule-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-wifischedule
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-wifischedule - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-wifischedule - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-wifischedule-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x
@@ -606,6 +587,25 @@ Source:
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-wifischedule - Tiếng Việt (Vietnamese)
+
+@@
+
+Package: luci-i18n-wifischedule-yue
+Default: LUCI_LANG_yue||(ALL&&m)
+Version: x
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-wifischedule
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: luci-app-wifischedule - yue translation
+Maintainer: 
+Source: 
+Type: ipkg
+Hidden: 1
+Description:     Translation for luci-app-wifischedule - 
 
 @@
 

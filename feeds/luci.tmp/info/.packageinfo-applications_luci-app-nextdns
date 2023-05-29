@@ -115,25 +115,6 @@ Description:     Translation for luci-app-nextdns - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-nextdns-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-nextdns
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-nextdns - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-nextdns - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-nextdns-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

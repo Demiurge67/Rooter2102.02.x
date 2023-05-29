@@ -121,26 +121,6 @@ Description:     Translation for luci-app-bcp38 - Čeština (Czech)
 Toke Høiland-Jørgensen <toke@toke.dk>
 @@
 
-Package: luci-i18n-bcp38-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-bcp38
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-bcp38 - da translation
-Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-bcp38 - Dansk (Danish)
-Toke Høiland-Jørgensen <toke@toke.dk>
-@@
-
 Package: luci-i18n-bcp38-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

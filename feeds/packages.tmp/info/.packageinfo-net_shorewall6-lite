@@ -1,10 +1,9 @@
 Source-Makefile: feeds/packages/net/shorewall6-lite/Makefile
-Build-Depends: HOST_OS_MACOS:fakeuname/host
 
 Package: shorewall6-lite
 Submenu: Firewall
-Version: 5.2.8-3
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +ip @IPV6 +ip6tables +shorewall-core
+Version: 5.2.8-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +ip +ip6tables +shorewall-core
 Conflicts: 
 Menu-Depends: 
 Provides: 

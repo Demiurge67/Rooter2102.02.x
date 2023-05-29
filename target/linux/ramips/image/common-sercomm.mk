@@ -27,7 +27,7 @@ define Build/sercomm-factory-awi
 	$(call Build/sercomm-write-pid,$@ $$((0x80)) $@.hdrfactory)
 	$(call Build/sercomm-footer,$@.footer)
 	$(call Build/sercomm-write-pid,$@.footer $$((0x90)) $@.hdrfactory)
-	cat $(IMAGE_KERNEL).data $@ $@.footer | $(MKHASH) md5 | \
+	cat $(IMAGE_KERNEL).data $@ $@.footer | $(MKHASH) md5sum | \
 		awk '{print $$1}' | tr -d '\n' | dd seek=$$((0x1e0)) \
 		of=$@.hdrfactory bs=1 conv=notrunc 2>/dev/null
 	$(call Build/sercomm-kernel-factory,$(IMAGE_KERNEL).data \
@@ -45,7 +45,7 @@ define Build/sercomm-factory-cqr
 	$(call Build/sercomm-write-pid,$(IMAGE_KERNEL).data $$((0x70)) \
 		$@.hdrfactory)
 	$(call Build/sercomm-write-pid,$@ $$((0x80)) $@.hdrfactory)
-	cat $(IMAGE_KERNEL).data $@ | $(MKHASH) md5 | \
+	cat $(IMAGE_KERNEL).data $@ | $(MKHASH) md5sum | \
 		awk '{print $$1}' | tr -d '\n' | \
 		dd seek=$$((0x1e0)) of=$@.hdrfactory bs=1 \
 		conv=notrunc 2>/dev/null
@@ -181,7 +181,7 @@ define Device/sercomm_cxx
   SERCOMM_ROOTFS_OFFSET := 0x1000000
   SERCOMM_KERNEL2_OFFSET := 0xa00100
   SERCOMM_ROOTFS2_OFFSET := 0x3000000
-  IMAGE/factory.img := append-ubi | check-size | sercomm-factory-cqr
+  IMAGE/factory.img := append-ubi | sercomm-factory-cqr
 endef
 
 define Device/sercomm_dxx
@@ -191,7 +191,7 @@ define Device/sercomm_dxx
   LZMA_TEXT_START := 0x82800000
   SERCOMM_KERNEL_OFFSET := 0x400100
   SERCOMM_ROOTFS_OFFSET := 0x1000000
-  IMAGE/factory.img := append-ubi | check-size | sercomm-part-tag rootfs | \
+  IMAGE/factory.img := append-ubi | sercomm-part-tag rootfs | \
 	sercomm-prepend-tagged-kernel kernel | gzip | sercomm-payload | \
 	sercomm-crypto
 endef

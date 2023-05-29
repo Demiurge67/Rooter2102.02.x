@@ -1,13 +1,13 @@
 Source-Makefile: feeds/packages/utils/mariadb/Makefile
-Build-Depends: libevent2 mariadb/host !BUILD_NLS:libiconv
+Build-Depends: libevent2 mariadb/host !BUILD_NLS:libiconv !BUILD_NLS:gettext
 Build-Depends/host: libxml2/host
 Build-Types: host
 
 Package: mariadb-client
 Menu: 1
 Submenu: Database
-Version: 10.6.10-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +BUILD_NLS:libiconv-full +libatomic +libopenssl +libstdcpp +zlib +libedit
+Version: 10.4.17-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-client-base
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -16,8 +16,8 @@ Category: Utilities
 Repository: base
 Title: MariaDB database client
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description: MariaDB is a very fast and robust SQL database server.
@@ -31,9 +31,34 @@ https://mariadb.org/
 Michal Hrusecky <Michal@Hrusecky.net>
 @@
 
+Package: mariadb-client-base
+Submenu: Database
+Version: 10.4.17-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-common +BUILD_NLS:libiconv-full +libatomic +libopenssl +libstdcpp +zlib @!USE_UCLIBC +libedit
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: MariaDB database client base
+Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING THIRDPARTY
+Type: ipkg
+Description: MariaDB is a very fast and robust SQL database server.
+
+This package provides the foundation for mariadb-client. It installs the
+configuration and the dependencies.
+
+https://mariadb.org/
+Michal Hrusecky <Michal@Hrusecky.net>
+@@
+
 Package: mariadb-client-extra
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-client
 Conflicts: 
 Menu-Depends: 
@@ -43,8 +68,8 @@ Category: Utilities
 Repository: base
 Title: MariaDB database client extra
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description: MariaDB is a very fast and robust SQL database server.
@@ -70,7 +95,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 Package: mariadb-server
 Menu: 1
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server-base
 Conflicts: 
 Menu-Depends: 
@@ -80,8 +105,8 @@ Category: Utilities
 Repository: base
 Title: MariaDB database server
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description: MariaDB is a very fast and robust SQL database server.
@@ -101,8 +126,8 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-base
 Submenu: Database
-Version: 10.6.10-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +BUILD_NLS:libiconv-full +libatomic +libopenssl +libstdcpp +zlib +!KERNEL_IO_URING:libaio +KERNEL_IO_URING:liburing +liblzma +libpcre2 +resolveip +sudo
+Version: 10.4.17-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-common +BUILD_NLS:libiconv-full +libatomic +libopenssl +libstdcpp +zlib @!USE_UCLIBC +libaio +liblzma +libpcre +resolveip
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -112,8 +137,8 @@ Repository: base
 Title: MariaDB database server base
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
 Require-User: mariadb=376:mariadb=376
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description: MariaDB is a very fast and robust SQL database server.
@@ -128,7 +153,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-extra
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -138,8 +163,8 @@ Category: Utilities
 Repository: base
 Title: MariaDB database server extra
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description: MariaDB is a very fast and robust SQL database server.
@@ -180,7 +205,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-auth-ed25519
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -190,8 +215,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -204,7 +229,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-auth-gssapi
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server +PACKAGE_mariadb-server-plugin-auth-gssapi:krb5-libs
 Conflicts: 
 Menu-Depends: 
@@ -214,8 +239,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -228,7 +253,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-auth-pam
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server +PACKAGE_mariadb-server-plugin-auth-pam:libpam
 Conflicts: 
 Menu-Depends: 
@@ -238,8 +263,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -252,7 +277,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-auth-pam-v1
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server +PACKAGE_mariadb-server-plugin-auth-pam-v1:libpam
 Conflicts: 
 Menu-Depends: 
@@ -262,8 +287,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -276,7 +301,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-disks
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -286,8 +311,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -300,7 +325,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-feedback
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -310,8 +335,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -324,7 +349,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-file-key-management
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -334,8 +359,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -348,7 +373,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-archive
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -358,8 +383,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -372,7 +397,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-blackhole
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -382,8 +407,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -396,7 +421,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-connect
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server +PACKAGE_mariadb-server-plugin-ha-connect:libxml2
 Conflicts: 
 Menu-Depends: 
@@ -406,8 +431,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -420,7 +445,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-federated
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -430,8 +455,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -444,7 +469,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-federatedx
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -454,8 +479,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -468,7 +493,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-sphinx
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -478,8 +503,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -492,7 +517,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-ha-spider
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -502,8 +527,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -516,7 +541,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-handlersocket
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -526,8 +551,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -540,7 +565,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-locales
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -550,8 +575,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -564,7 +589,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-metadata-lock-info
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -574,8 +599,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -588,7 +613,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-query-cache-info
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -598,8 +623,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -612,7 +637,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-query-response-time
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -622,8 +647,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -636,7 +661,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-server-audit
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -646,8 +671,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -660,7 +685,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-simple-password-check
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -670,8 +695,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -684,7 +709,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-sql-errlog
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -694,8 +719,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.
@@ -708,7 +733,7 @@ Michal Hrusecky <Michal@Hrusecky.net>
 
 Package: mariadb-server-plugin-wsrep-info
 Submenu: Database
-Version: 10.6.10-0
+Version: 10.4.17-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread mariadb-server
 Conflicts: 
 Menu-Depends: 
@@ -718,8 +743,8 @@ Category: Utilities
 Repository: base
 Title: mariadb-server plugin
 Maintainer: Michal Hrusecky <Michal@Hrusecky.net>
-Source: mariadb-10.6.10.tar.gz
-License: GPL-2.0-only
+Source: mariadb-10.4.17.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING THIRDPARTY
 Type: ipkg
 Description:     MariaDB is a very fast and robust SQL database server.

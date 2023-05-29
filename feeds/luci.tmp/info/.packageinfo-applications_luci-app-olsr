@@ -115,25 +115,6 @@ Description:     Translation for luci-app-olsr - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-olsr-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-olsr
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-olsr - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-olsr - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-olsr-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

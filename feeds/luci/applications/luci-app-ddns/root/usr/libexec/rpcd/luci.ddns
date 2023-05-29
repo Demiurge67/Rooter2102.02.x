@@ -109,18 +109,18 @@ local methods = {
 					tonumber(s["force_interval"]) or 72,
 					s["force_unit"] or "hours" )
 
-				local check_seconds = calc_seconds(
-					tonumber(s["check_interval"]) or 10,
-					s["check_unit"] or "minutes" )
+				-- process running but update needs to happen
+				-- problems if force_seconds > uptime
+				force_seconds = (force_seconds > uptime) and uptime or force_seconds
 
 				if last_update > 0 then
-					local epoch = os.time() - uptime + last_update
+					local epoch = os.time() - uptime + last_update + force_seconds
 					-- use linux date to convert epoch
 					converted_last_update = epoch2date(epoch,date_format)
-					next_update = epoch2date(epoch + force_seconds + check_seconds)
+					next_update = epoch2date(epoch + force_seconds)
 				end
 
-				if pid > 0 and ( last_update + force_seconds + check_seconds - uptime ) <= 0 then
+				if pid > 0 and ( last_update + force_seconds - uptime ) <= 0 then
 					next_update = "Verify"
 
 				-- run once
@@ -153,25 +153,20 @@ local methods = {
 	},
 	get_ddns_state = {
 		call = function()
+			local ipkg = require "luci.model.ipkg"
 			local uci = UCI.cursor()
 			local dateformat = uci:get("ddns", "global", "ddns_dateformat") or "%F %R"
 			local services_mtime = fs.stat(ddns_package_path .. "/list", 'mtime')
 			uci:unload("ddns")
+			local ver, srv_ver_cmd
 			local res = {}
-			local ver
 
-			local ok, ctrl = pcall(io.lines, "/usr/lib/opkg/info/%s.control" % srv_name)
-			if ok then
-				for line in ctrl do
-					ver = line:match("^Version: (.+)$")
-
-					if ver then
-						break
-					end
-				end
+			if ipkg then
+				ver = ipkg.info(srv_name)[srv_name].Version
+			else
+				srv_ver_cmd = luci_helper .. " -V | awk {'print $2'} "
+				ver = util.exec(srv_ver_cmd)
 			end
-
-			ver = ver or util.trim(util.exec("%s -V | awk {'print $2'}" % luci_helper))
 
 			res['_version'] = ver and #ver > 0 and ver or nil
 			res['_enabled'] = sys.init.enabled("ddns")
@@ -276,8 +271,7 @@ local methods = {
 
 			res['has_cacerts'] = check_certs() or false
 			
-			res['has_ipv6'] = (fs.access("/proc/net/ipv6_route") and
-				(fs.access("/usr/sbin/ip6tables") or fs.access("/usr/sbin/nft")))
+			res['has_ipv6'] = (fs.access("/proc/net/ipv6_route") and fs.access("/usr/sbin/ip6tables"))
 
 			return res
 		end

@@ -2,7 +2,6 @@
 # Copyright (C) 2017 - 2018 OpenWrt.org
 
 START=90
-STOP=10
 
 USE_PROCD=1
 
@@ -83,6 +82,7 @@ start_service() {
     -cache "$dir_cache" \
     -conf "$dir_etc" \
     -db "$dir_db" \
+    -g "$NAME" \
     -log "$dir_log" \
     -recordings "$dir_recordings" \
     -run "$dir_run" \

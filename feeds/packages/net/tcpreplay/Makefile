@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=tcpreplay
-PKG_VERSION:=4.4.1
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=4.3.4
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://github.com/appneta/tcpreplay/releases/download/v$(PKG_VERSION)
-PKG_HASH:=51f70ed14be5913f19c25cdfa530e98c14cedab1c76fbdd26eca7b61b57344f2
+PKG_HASH:=42c055106e55852c29d94bb6e1b9e001a0723349f2985eb893a47d384c85002b
 
 PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=docs/LICENSE
@@ -35,7 +35,7 @@ define Package/tcpreplay/default
   CATEGORY:=Network
   URL:=http://tcpreplay.appneta.com/
   MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
-  DEPENDS:=+librt +libpcap +libdnet +USE_MUSL:musl-fts
+  DEPENDS:=+librt +libpcap +libdnet
 endef
 
 define Package/tcpbridge
@@ -127,16 +127,11 @@ define Package/tcpreplay-all/description
   to support switches, routers, and IP Flow/NetFlow appliances. 
 endef
 
-ifneq ($(CONFIG_USE_MUSL),)
-	TARGET_LDFLAGS+= -lfts
-endif
-
 CONFIGURE_VARS += \
 	ac_cv_lib_nl_nl_cache_alloc=no \
 	ac_cv_lib_nl_genl_3_genl_connect=no \
 	ac_cv_lib_nl_3_nl_cache_alloc=no \
-	ac_cv_lib_dbus_1_dbus_malloc=no \
-	ac_cv_path_pcncfg=no
+	ac_cv_lib_dbus_1_dbus_malloc=no
 
 CONFIGURE_ARGS += \
 	--enable-force-pf \

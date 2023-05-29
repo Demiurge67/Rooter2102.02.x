@@ -121,26 +121,6 @@ Description:     Translation for luci-app-squid - Čeština (Czech)
 Marko Ratkaj <marko.ratkaj@sartura.hr>
 @@
 
-Package: luci-i18n-squid-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-squid
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-squid - da translation
-Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-squid - Dansk (Danish)
-Marko Ratkaj <marko.ratkaj@sartura.hr>
-@@
-
 Package: luci-i18n-squid-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

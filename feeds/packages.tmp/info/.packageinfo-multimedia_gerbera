@@ -1,9 +1,10 @@
 Source-Makefile: feeds/packages/multimedia/gerbera/Makefile
-Build-Depends: libmatroska pugixml spdlog !BUILD_NLS:libiconv
+Build-Depends: libmatroska pugixml spdlog taglib !BUILD_NLS:libiconv !BUILD_NLS:gettext ninja/host
+Build-Depends/host: ninja/host
 
 Package: gerbera
-Version: 1.10.0-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +file +libnpupnp +libsqlite3 +libexif +libuuid +libfmt +libatomic +taglib +BUILD_PATENTED:libffmpeg +BUILD_NLS:libiconv-full
+Version: 1.7.0-0
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +file +libnpupnp +libsqlite3 +libexif +libuuid +libfmt +libatomic +BUILD_PATENTED:libffmpeg +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -13,7 +14,7 @@ Repository: base
 Title: A free media server
 Maintainer: 
 Require-User: gerbera:gerbera
-Source: gerbera-1.10.0.tar.gz
+Source: gerbera-1.7.0.tar.gz
 License: GPL-2.0-or-later
 LicenseFiles: LICENSE.md
 Type: ipkg

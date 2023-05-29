@@ -9,12 +9,12 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=rtpengine
-PKG_VERSION:=9.5.3.2
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=8.5.5.1
+PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-mr$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/sipwise/rtpengine/tar.gz/mr$(PKG_VERSION)?
-PKG_HASH:=03d8da1b5efcaa17ef88f306046f49e30ca87b3998c26a13bd96df922f8e729f
+PKG_HASH:=962368495343d6e7d3e9c45a8a8499972c2af3cd068f4758f3d2abf40a465d84
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-mr$(PKG_VERSION)
 
@@ -29,7 +29,7 @@ PKG_MAINTAINER:=Sebastian Kemper <sebastian_ml@gmx.net>
 # errors.
 PKG_BUILD_PARALLEL:=0
 
-PKG_BUILD_DEPENDS:=gperf/host perl/host
+PKG_BUILD_DEPENDS:=gperf/host
 
 # With below variable set, $(PKG_SYMVERS_DIR)/rtpengine.symvers gets generated
 # from kernel-module/Module.symvers.
@@ -48,7 +48,6 @@ ENGINE_DEPENDS := \
 	+libopenssl \
 	+libpcap \
 	+libpcre \
-	+libwebsockets-openssl \
 	+xmlrpc-c-client \
 	+zlib
 
@@ -57,10 +56,9 @@ ENGINE_DEPENDS_TRANSCODING := \
 	+bcg729 \
 	+libffmpeg-full \
 	+libmariadb \
-	+libspandsp3
+	+libspandsp
 
 RECORDING_DEPENDS := \
-	+bcg729 \
 	+glib2 \
 	+libffmpeg-full \
 	+libmariadb \
@@ -210,7 +208,6 @@ $(call Package/rtpengine/Default)
   FILES:=$(PKG_BUILD_DIR)/kernel-module/xt_RTPENGINE.$(LINUX_KMOD_SUFFIX)
   AUTOLOAD:=$(call AutoProbe,xt_RTPENGINE)
   DEPENDS := \
-	  +PACKAGE_kmod-ipt-rtpengine:kmod-crypto-aead \
 	  +PACKAGE_kmod-ipt-rtpengine:kmod-crypto-hash \
 	  +PACKAGE_kmod-ipt-rtpengine:kmod-ipt-core
   MODPARAMS.xt_RTPENGINE := \
@@ -242,9 +239,7 @@ ifeq ($(QUILT),)
 	cd "$(PKG_BUILD_DIR)" && \
 		$(FIND) . -maxdepth 2 -name "*Makefile" | \
 		xargs  -I{} $(SED) \
-		'/shell which dpkg-/s/dpkg/OpenWrt-has-no-dpkg/' {} && \
-		$(SED) 's|#!/usr/bin/perl|#!$(STAGING_DIR_HOSTPKG)/usr/bin/perl|' \
-		utils/const_str_hash
+		'/shell which dpkg-/s/dpkg/OpenWrt-has-no-dpkg/' {}
 endif
 endef
 

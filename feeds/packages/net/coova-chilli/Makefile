@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=coova-chilli
-PKG_VERSION:=1.6
-PKG_RELEASE:=$(AUTORELEASE).1
+PKG_VERSION:=1.5
+PKG_RELEASE:=4
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/coova/coova-chilli/tar.gz/$(PKG_VERSION)?
-PKG_HASH:=26b2bead6fd9c18eb736fb0a0f8709922de4e4fedee1122193f82706eb2b9305
+PKG_HASH:=75e15fd00a870b8a95df1440977c688a05a109f90b57bf679b931101d427d0fb
 
 PKG_MAINTAINER:=Jaehoon You <teslamint@gmail.com>
 PKG_LICENSE:=GPL-2.0-or-later
@@ -68,7 +68,7 @@ endef
 define KernelPackage/ipt-coova
   URL:=http://www.coova.org/CoovaChilli
   SUBMENU:=Netfilter Extensions
-  DEPENDS:=+kmod-ipt-core +libxtables
+  DEPENDS:=coova-chilli +kmod-ipt-core +libxtables
   TITLE:=Coova netfilter module
   FILES:=$(PKG_BUILD_DIR)/src/linux/xt_*.$(LINUX_KMOD_SUFFIX)
   AUTOLOAD:=$(call AutoProbe,xt_coova)
@@ -76,6 +76,8 @@ endef
 
 define KernelPackage/ipt-coova/description
 	Netfilter kernel module for CoovaChilli
+	Includes:
+	- coova
 endef
 
 DISABLE_NLS=
@@ -130,6 +132,8 @@ define Package/coova-chilli/install
 	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/etc/chilli.conf $(1)/etc/
 	$(INSTALL_DIR) $(1)/etc/chilli
 	$(CP) $(PKG_INSTALL_DIR)/etc/chilli/* $(1)/etc/chilli/
+	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
+	$(INSTALL_DATA) ./files/chilli.hotplug $(1)/etc/hotplug.d/iface/30-chilli
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/chilli* $(1)/usr/sbin/
 	$(INSTALL_DIR) $(1)/usr/lib/

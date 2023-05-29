@@ -1,7 +1,9 @@
 Source-Makefile: feeds/packages/devel/pkgconf/Makefile
+Build-Depends: meson/host ninja/host
+Build-Depends/host: ninja/host
 
 Package: libpkgconf
-Version: 1.8.0-0
+Version: 1.7.3-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -11,7 +13,7 @@ Category: Libraries
 Repository: base
 Title: libpkgconf
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: pkgconf-1.8.0.tar.xz
+Source: pkgconf-1.7.3.tar.xz
 License: MIT
 LicenseFiles: COPYING
 Type: ipkg
@@ -24,7 +26,7 @@ Rosen Penev <rosenp@gmail.com>
 @@
 
 Package: pkgconf
-Version: 1.8.0-0
+Version: 1.7.3-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libpkgconf
 Conflicts: 
 Menu-Depends: 
@@ -34,7 +36,7 @@ Category: Development
 Repository: base
 Title: pkgconf
 Maintainer: Rosen Penev <rosenp@gmail.com>
-Source: pkgconf-1.8.0.tar.xz
+Source: pkgconf-1.7.3.tar.xz
 License: MIT
 LicenseFiles: COPYING
 Type: ipkg

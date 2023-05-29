@@ -242,7 +242,6 @@ return view.extend({
 
 		o = s.taboption('general', form.Flag, 'enabled', _('Enabled'));
 		o.rmempty  = false;
-		o.default = true;
 		o.editable = true;
 
 		o = s.taboption('general', form.DummyValue, '_device', _('Device'));

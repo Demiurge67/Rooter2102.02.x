@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-19 19:36+0200\n"
-"PO-Revision-Date: 2023-01-13 20:18+0000\n"
-"Last-Translator: slundi <slundi@gmail.com>\n"
+"PO-Revision-Date: 2021-04-11 16:26+0000\n"
+"Last-Translator: SRay <seb@isostorm.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/apcups.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/apcups.json:2
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Aggregate number of connected users"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr "Appliquer l'intervalle »"
 
@@ -157,7 +157,7 @@ msgstr "Commentaire / Numéro de règle"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:174
 msgid "Configure…"
-msgstr "Configuration…"
+msgstr "Configurer…"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/conntrack.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/conntrack.json:2
@@ -195,7 +195,7 @@ msgstr "Configuration du greffon DF"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dhcpleases.js:7
 msgid "DHCP Leases"
-msgstr "Baux DHCP"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/dhcpleases.js:6
 msgid "DHCP Leases Plugin Configuration"
@@ -203,7 +203,7 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/dhcpleases.js:14
 msgid "DHCP leases file"
-msgstr "Fichier de baux DHCP"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/dns.js:10
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/dns.json:2
@@ -252,15 +252,15 @@ msgstr "Utilisation de l'espace-disque"
 msgid "Disk Usage"
 msgstr "Espace-disque"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "Afficher période »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr "Ne pas rafraîchir"
 
@@ -329,7 +329,7 @@ msgstr "Activé"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/entropy.js:10
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/entropy.json:2
 msgid "Entropy"
-msgstr "Entropie"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/entropy.js:6
 msgid "Entropy Plugin Configuration"
@@ -339,15 +339,15 @@ msgstr ""
 msgid "Entropy monitoring enabled"
 msgstr "Surveillance de l’entropie activée"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr "Toutes les 30 secondes"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr "Toutes les 5 secondes"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr "Chaque minute"
 
@@ -411,7 +411,7 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:86
 msgid "General plugins"
-msgstr "Plugins généraux"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/openvpn.js:15
 msgid "Generate a separate graph for each logged user"
@@ -514,7 +514,7 @@ msgstr "Interruptions"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:31
 msgid "Interval for pings"
-msgstr "Intervalle pour les pings"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/iptables.js:8
 msgid "Iptables Plugin Configuration"
@@ -537,7 +537,7 @@ msgstr "Hôte en écoute"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:44
 msgid "Listen port"
-msgstr "Port d'écoute"
+msgstr "Puerto de escucha"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:32
 msgid "Listener interfaces"
@@ -552,7 +552,7 @@ msgid "Load monitoring enabled"
 msgstr "Surveillance de la charge activée"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
 msgstr "Chargement des données…"
 
@@ -572,10 +572,6 @@ msgstr "Correspondance avec les règles IPv6 d'iptables"
 msgid ""
 "Max values for a period can be used instead of averages when not using 'only "
 "average RRAs'"
-msgstr ""
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
 msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
@@ -780,7 +776,7 @@ msgid_plural "Monitoring %d disks"
 msgstr[0] "Surveillance d’un disque"
 msgstr[1] "Surveillance de %d disques"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "Surveillance d’un hôte"
@@ -854,7 +850,7 @@ msgstr "Communication réseau activée"
 msgid "Network plugins"
 msgstr "Greffons liés au réseau"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr "Aucune donnée RRD trouvée"
 
@@ -866,7 +862,7 @@ msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/syslog.js:23
 msgid "Notify level"
-msgstr "Niveau de notification"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:77
 msgid "Number of threads for data collection"
@@ -892,17 +888,17 @@ msgstr "OpenVPN"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/openvpn.js:7
 msgid "OpenVPN Plugin Configuration"
-msgstr "Configuration du plugin OpenVPN"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/openvpn.js:27
 msgid "OpenVPN status files"
-msgstr "Fichiers d’état OpenVPN"
+msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/collectd.js:88
 msgid "Output plugins"
 msgstr "Greffons liés aux résultats"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "Aperçu"
 
@@ -1069,7 +1065,7 @@ msgstr ""
 msgid "Setup"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr "Configurer collectd"
 
@@ -1136,7 +1132,7 @@ msgstr ""
 msgid "Splash Leases Plugin Configuration"
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "Statistiques"
@@ -1368,7 +1364,7 @@ msgid ""
 "filter-statistics for selected interfaces."
 msgstr ""
 "Le greffon de lien-réseau récupère sur les interfaces sélectionnées des "
-"informations avancées liées à la QOS, aux classes et au filtrage."
+"informations  avancées liées à la QOS, aux classes et au filtrage."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/network.js:7
 msgid ""
@@ -1378,10 +1374,10 @@ msgid ""
 "instance, in server mode the local instance receives data from other hosts."
 msgstr ""
 "Le greffon réseau fournit des communications-réseau entre différentes "
-"instances collectd : ce programme peut fonctionner à la fois comme client et "
+"instances collectd : ce programme peut fonctionner à la fois comme client et "
 "serveur. En mode client, les données collectées localement sont transférées "
 "à un serveur, en mode serveur, l'instance collectd locale reçoit des "
-"informations d'autres hôtes."
+"informations  d'autres hôtes."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:7
 msgid ""
@@ -1455,7 +1451,7 @@ msgstr ""
 msgid "The uptime plugin collects statistics about the uptime of the system."
 msgstr ""
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr ""
 "Il n'y a pas encore de données RRD disponibles pour le rendu des graphiques."
@@ -1529,7 +1525,7 @@ msgstr "Configuration du greffon de socket Unix"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/uptime.js:15
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/uptime.json:2
 msgid "Uptime"
-msgstr "Durée de fonctionnement"
+msgstr "Temps de service"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/uptime.js:6
 msgid "Uptime Plugin Configuration"
@@ -1555,12 +1551,6 @@ msgstr "Utilisateur"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/netlink.js:21
 msgid "Verbose monitoring"
 msgstr "Surveillance verbeuse"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
@@ -1597,7 +1587,7 @@ msgstr ""
 msgid "Writing *.rrd files to %s"
 msgstr "Écriture de fichiers *.rrd dans %s"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."

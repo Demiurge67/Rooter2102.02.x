@@ -21,6 +21,8 @@ PKG_LICENSE_FILES:=LICENSE
 
 PKG_CPE_ID:=cpe:/a:apache:apr-util
 
+PKG_BUILD_PARALLEL:=1
+
 PKG_CONFIG_DEPENDS := \
 	CONFIG_PACKAGE_libaprutil-crypto-openssl \
 	CONFIG_PACKAGE_libaprutil-dbd-mysql \

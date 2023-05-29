@@ -28,7 +28,6 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_libstrophe-expat
 
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/nls.mk
 
 define Package/libstrophe
 	SECTION:=libs

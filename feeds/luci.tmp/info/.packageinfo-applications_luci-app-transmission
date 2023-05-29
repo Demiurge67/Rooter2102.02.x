@@ -115,25 +115,6 @@ Description:     Translation for luci-app-transmission - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-transmission-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-transmission
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-transmission - da translation
-Maintainer: 
-Source: 
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-transmission - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-transmission-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

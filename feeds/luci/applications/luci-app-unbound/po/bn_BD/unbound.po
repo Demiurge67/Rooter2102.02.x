@@ -1,14 +1,8 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-08 17:53+0000\n"
-"Last-Translator: Rayhan Nabi <rayhanjanam@gmail.com>\n"
-"Language-Team: Bengali (Bangladesh) <https://hosted.weblate.org/projects/"
-"openwrt/luciapplicationsunbound/bn_BD/>\n"
 "Language: bn_BD\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:160
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:53
@@ -186,7 +180,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zones.lua:39
 msgid "Enable"
-msgstr "সক্রিয় করুন"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:102
 msgid "Enable DNS64"
@@ -222,7 +216,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:29
 msgid "Enabled"
-msgstr "সক্রিয়"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:297
 msgid "Extended Statistics"
@@ -419,7 +413,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:42
 msgid "Log"
-msgstr "লগ করুন"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:58
 msgid "Manual Conf"
@@ -555,7 +549,7 @@ msgstr ""
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/server.lua:11
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/uciedit.lua:11
 msgid "Save"
-msgstr "সংরক্ষণ করুন"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/zone-details.lua:67
 msgid "Server Port"
@@ -605,7 +599,7 @@ msgstr ""
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:39
 msgid "Status"
-msgstr "অবস্থা"
+msgstr ""
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:273
 msgid "Strict Minimize"

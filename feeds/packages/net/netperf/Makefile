@@ -9,13 +9,12 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netperf
 PKG_VERSION:=2.7.0
-PKG_RELEASE:=3
+PKG_RELEASE:=2
 PKG_LICENSE:=Custom
 
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=https://github.com/HewlettPackard/netperf
-PKG_MIRROR_HASH:=fa46ffc25a00c925167d96e4c57131b5b650ea725b12b69ff6feabec759b271d
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE_URL:=ftp://ftp.netperf.org/netperf/
+PKG_HASH:=842af17655835c8be7203808c3393e6cb327a8067f3ed1f1053eb78b4e40375a
 
 PKG_CPE_ID:=cpe:/a:netperf:netperf
 
@@ -25,7 +24,7 @@ define Package/netperf
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Network performance measurement tool
-  URL:=https://github.com/HewlettPackard/netperf
+  URL:=http://www.netperf.org/
   MAINTAINER:=Toke Høiland-Jørgensen <toke@toke.dk>
 endef
 

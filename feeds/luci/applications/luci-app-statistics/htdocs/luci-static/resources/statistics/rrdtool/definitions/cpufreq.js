@@ -26,8 +26,6 @@ return baseclass.extend({
 				detail: true,
 				title: "%H: Frequency transitions - core %pi",
 				alt_autoscale: true,
-				y_min: "0",
-				y_max: "2",
 				vlabel: "Transitions",
 				number_format: "%3.2lf%s",
 				data: {

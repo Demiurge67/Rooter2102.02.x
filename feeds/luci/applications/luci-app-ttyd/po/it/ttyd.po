@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-29 11:24+0000\n"
-"Last-Translator: Dex94 <Dasvaresu@dr.com>\n"
+"PO-Revision-Date: 2021-04-23 07:02+0000\n"
+"Last-Translator: Diego Depaoli <trebestie@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsttyd/it/>\n"
 "Language: it\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Accept only one client and exit on disconnection"
-msgstr "Accetta solo un client ed esci alla disconnessione"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:15
 msgid "Add instance"
@@ -20,15 +20,13 @@ msgstr "Aggiungi istanza"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:40
 msgid "Allow URL args"
-msgstr "Consenti parametri URL"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:40
 msgid ""
 "Allow client to send command line arguments in URL (eg: http://"
 "localhost:7681?arg=foo&arg=bar)"
 msgstr ""
-"Consenti al client di inviare argomenti della riga di comando nell'URL (ad "
-"esempio: http://localhost:7681?arg=foo&arg=bar)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:50
 msgid "Check origin"
@@ -130,7 +128,7 @@ msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
 msgid "Notice"
-msgstr "Avviso"
+msgstr "Notizia"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Once"
@@ -138,7 +136,7 @@ msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "Port"
-msgstr "Porta"
+msgstr "Port"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:20
 msgid "Port to listen (default: 7681, use `0` for random port)"
@@ -146,13 +144,13 @@ msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
-"Random ttyd port (port=0) is not supported.<br />Change to a fixed port and "
+"Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
 "try again."
 msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:42
 msgid "Read-only"
-msgstr "Sola lettura"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:62
 msgid "SSL"

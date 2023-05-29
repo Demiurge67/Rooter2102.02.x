@@ -5,9 +5,8 @@
 
 return baseclass.extend({
 	trigger: _("Network device activity (kernel: netdev)"),
-	description: _('The LED flashes with link status and activity on the configured interface.'),
 	kernel: true,
-	addFormOptions: function(s) {
+	addFormOptions(s){
 		var o;
 
 		o = s.option(widgets.DeviceSelect, '_net_dev', _('Device'));

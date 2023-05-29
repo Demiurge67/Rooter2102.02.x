@@ -7,17 +7,17 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=minimalist-pcproxy
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_SOURCE_VERSION:=2d6d1b0b0a3b79a9b4a9b0a7606a84600a967bcb
+PKG_VERSION:=2015-01-12-$(PKG_SOURCE_VERSION)
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/fingon/minimalist-pcproxy.git
-PKG_SOURCE_DATE:=2014-12-12
-PKG_SOURCE_VERSION:=2d6d1b0b0a3b79a9b4a9b0a7606a84600a967bcb
-PKG_MIRROR_HASH:=0065015e8063a20ee79f1ade4ac2e173a5ff6cffe762521271ec7b849bb956a7
-
 PKG_MAINTAINER:=Markus Stenberg <fingon@iki.fi>
-PKG_LICENSE:=BSD-3-Clause
-PKG_LICENSE_FILES:=LICENSE
+PKG_LICENSE:=GPL-2.0
+
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -31,12 +31,12 @@ define Package/minimalist-pcproxy
 endef
 
 define Package/minimalist-pcproxy/description
-  This package contains a daemon which can be used to forward
-  PCP (Port Control Protocol - RFC6887) requests requests to PCP remote servers.
+This package contains a daemon which can be used to forward
+PCP (Port Control Protocol - RFC6887) requests requests to PCP remote servers.
 
-  In and of itself, it is not very useful, but combined with hnetd+miniupnpd
-  it allows for control of NAT forwarding and firewall pinholes from multiple
-  hops away.
+In and of itself, it is not very useful, but combined with hnetd+miniupnpd
+it allows for control of NAT forwarding and firewall pinholes from multiple
+hops away.
 endef
 
 define Package/minimalist-pcproxy/install

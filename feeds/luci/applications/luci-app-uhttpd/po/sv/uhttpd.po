@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-09-10 07:18+0000\n"
-"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"PO-Revision-Date: 2019-10-17 20:20+0000\n"
+"Last-Translator: Mattias Münster <mattiasmun@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsuhttpd/sv/>\n"
 "Language: sv\n"
@@ -10,22 +10,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 3.9.1-dev\n"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:135
 msgid ""
 "(/old/path=/new/path) or (just /old/path which becomes /cgi-prefix/old/path)"
 msgstr ""
-"(/gammal/genväg=/ny/genväg) eller (bara /gammal/genväg som blir /cgi-prefix/"
-"gammal/genväg)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:145
 msgid "404 Error"
-msgstr "404-fel"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:7
 msgid "A lightweight single-threaded HTTP(S) server"
-msgstr "En resurssnål enkeltrådad HTTP(S)-server"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:20
 msgid "Advanced Settings"
@@ -33,41 +31,40 @@ msgstr "Avancerade inställningar"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:135
 msgid "Aliases"
-msgstr "Alias"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:149
 msgid "Base directory for files to be served"
-msgstr "Basmapp för filer som ska publiceras"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "Bind to specific interface:port (by specifying interface address"
 msgstr ""
-"Bind till ett specifikt gränssnitt:port (genom att ange gränssnittets address"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:126
 msgid "CGI filetype handler"
-msgstr "Hanterare för filtypen CGI"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:153
 msgid "CGI is disabled if not present."
-msgstr "CGI är avstängt om ej närvarande."
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:142
 msgid "Config file (e.g. for credentials for Basic Auth)"
-msgstr "Konfig-fil (t.ex för uppgifter till standardautentisering)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:187
 msgid "Connection reuse"
-msgstr "Återanvändning av anslutningen"
+msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:229
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
 msgid "Country"
 msgstr "Land"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:173
 msgid "Disable JSON-RPC authorization via ubus session API"
-msgstr "Stäng av JSON-RPC-autentisering via ubus-sessionens API"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:129
 msgid "Do not follow symlinks outside document root"
@@ -75,7 +72,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:132
 msgid "Do not generate directory listings."
-msgstr "Generera inte mapp-listningar."
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:148
 msgid "Document root"
@@ -83,7 +80,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:122
 msgid "E.g specify with index.html and index.php when using PHP"
-msgstr "T.ex ange med index.html och index.php när PHP används"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:160
 msgid "Embedded Lua interpreter is disabled if not present."
@@ -115,31 +112,27 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
-msgstr "HTTP-lyssnare (adress:port)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
 msgid "HTTPS Certificate (DER or PEM format)"
-msgstr "HTTPS-certifikat (DER eller PEM-format)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
 msgid "HTTPS Private Key (DER or PEM format)"
-msgstr "Privat nyckel för HTTPS (DER eller PEM-format)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
-msgstr "HTTPS-lyssnare (adress:port)"
-
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "If empty, a random/unique value is used in cert generation"
 msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:90
 msgid "Ignore private IPs on public interface"
-msgstr "Ignorera privata IP-adresser på publikt gränssnitt"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:122
 msgid "Index page(s)"
-msgstr "Index-sida(orna)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:126
 msgid ""
@@ -149,15 +142,15 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:214
 msgid "Length of key in bits"
-msgstr "Nyckelns längd i bits"
+msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:223
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:227
 msgid "Location"
-msgstr "Plats"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:197
 msgid "Maximum number of connections"
-msgstr "Maximalt antal anslutningar"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:201
 msgid "Maximum number of script requests"
@@ -169,11 +162,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:182
 msgid "Maximum wait time for network activity"
-msgstr "Maximal väntetid för nätverksaktivitet"
-
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "Organization"
-msgstr "Organisation"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:166
 msgid "Override path for ubus socket"
@@ -195,7 +184,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:86
 msgid "Redirect all HTTP to HTTPS"
-msgstr "Dirigera om HTTP till HTTPS"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:109
 msgid "Remove configuration for certificate and key"
@@ -203,18 +192,18 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:98
 msgid "Remove old certificate and key"
-msgstr "Ta bort gammalt certifikat och nyckel"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:218
 msgid "Server Hostname"
-msgstr "Värdnamn för server"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:20
 msgid ""
 "Settings which are either rarely needed or which affect serving the WebUI"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:226
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:224
 msgid "State"
 msgstr "Skick"
 
@@ -225,8 +214,6 @@ msgstr ""
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:110
 msgid "This permanently deletes the cert, key, and configuration to use same."
 msgstr ""
-"Det här tar permanent bort cert, nyckeln och konfigurationen för att använda "
-"samma."
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:210
 msgid "Valid for # of Days"
@@ -248,7 +235,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:142
 msgid "Will not use HTTP authentication if not present"
-msgstr "Kommer inte att använda HTTP-autentisering om det inte är tillgängligt"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:218
 msgid "a.k.a CommonName"
@@ -257,7 +244,7 @@ msgstr ""
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
 #: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
-msgstr "uHTTPd"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:205
 msgid "uHTTPd Self-signed Certificate Parameters"

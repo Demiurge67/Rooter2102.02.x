@@ -51,7 +51,7 @@ msgstr "アドレス ファミリ"
 msgid "Aggregate number of connected users"
 msgstr "接続ユーザー数の総計"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr "間隔を適用 »"
 
@@ -254,15 +254,15 @@ msgstr "ディスク スペース使用量"
 msgid "Disk Usage"
 msgstr "ディスクの使用"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr "ホストを表示 »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "期間表示 »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr "リフレッシュしない"
 
@@ -341,15 +341,15 @@ msgstr "エントロピー プラグイン設定"
 msgid "Entropy monitoring enabled"
 msgstr "エントロピー監視が有効"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr "30 秒毎"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr "5 秒毎"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr "1 分毎"
 
@@ -555,7 +555,7 @@ msgid "Load monitoring enabled"
 msgstr "負荷監視が有効"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
 msgstr "データを読み込み中…"
 
@@ -578,10 +578,6 @@ msgid ""
 msgstr ""
 "'RRAの平均のみ' を使用しないとき、平均値の代わりに一定期間の最大値を使用でき"
 "ます。"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
-msgstr ""
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
@@ -777,7 +773,7 @@ msgid "Monitoring one disk"
 msgid_plural "Monitoring %d disks"
 msgstr[0] "%d 個のディスクを監視中"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "%d 個のホストを監視中"
@@ -846,7 +842,7 @@ msgstr "ネットワーク通信が有効"
 msgid "Network plugins"
 msgstr "ネットワーク プラグイン"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr "RRD データが見つかりません"
 
@@ -897,7 +893,7 @@ msgstr "OpenVPN ステータス ファイル"
 msgid "Output plugins"
 msgstr "出力プラグイン"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "概要"
 
@@ -1064,7 +1060,7 @@ msgstr "syslog ログレベルを設定します。"
 msgid "Setup"
 msgstr "設定"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr "collectd のセットアップ"
 
@@ -1131,7 +1127,7 @@ msgstr "スプラッシュ・リース"
 msgid "Splash Leases Plugin Configuration"
 msgstr "スプラッシュ・リース・プラグインの設定"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "統計"
@@ -1458,7 +1454,7 @@ msgstr ""
 msgid "The uptime plugin collects statistics about the uptime of the system."
 msgstr "稼働時間 プラグインは、システムの稼働時間についての統計を収集します。"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr "グラフの描画に利用可能な RRD データがありません。"
 
@@ -1560,12 +1556,6 @@ msgstr "ユーザー"
 msgid "Verbose monitoring"
 msgstr "詳細モニタリング"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
 msgstr "選択されない場合、全ディスクが監視されます。"
@@ -1601,7 +1591,7 @@ msgstr "無線LAN iwinfo プラグイン設定"
 msgid "Writing *.rrd files to %s"
 msgstr "*.rrd ファイルを %s に書き込み中"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."

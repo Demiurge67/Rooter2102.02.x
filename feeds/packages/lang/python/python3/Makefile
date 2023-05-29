@@ -16,10 +16,10 @@ PKG_VERSION:=$(PYTHON3_VERSION).$(PYTHON3_VERSION_MICRO)
 
 PKG_SOURCE:=Python-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://www.python.org/ftp/python/$(PKG_VERSION)
-PKG_HASH:=5ae03e308260164baba39921fdb4dbf8e6d03d8235a939d4582b33f0b5e46a83
+PKG_HASH:=397920af33efc5b97f2e0b57e91923512ef89fc5b3c1d21dbfc8c4828ce0108a
 
-PKG_MAINTAINER:=Jeffery To <jeffery.to@gmail.com>
-PKG_LICENSE:=PSF-2.0
+PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>, Jeffery To <jeffery.to@gmail.com>
+PKG_LICENSE:=Python/2.0
 PKG_LICENSE_FILES:=LICENSE Doc/copyright.rst Doc/license.rst Modules/_ctypes/darwin/LICENSE Modules/_ctypes/libffi_osx/LICENSE Modules/expat/COPYING
 PKG_CPE_ID:=cpe:/a:python:python
 
@@ -40,10 +40,11 @@ HOST_BUILD_DIR:=$(BUILD_DIR_HOST)/Python-$(PKG_VERSION)
 
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_python3-pkg-resources \
-	CONFIG_PACKAGE_python3-setuptools CONFIG_PACKAGE_python3-pip
+	CONFIG_PACKAGE_python3-setuptools CONFIG_PACKAGE_python3-pip \
+	CONFIG_PYTHON3_BLUETOOTH_SUPPORT
 
-PKG_BUILD_DEPENDS:=bluez python3/host
-HOST_BUILD_DEPENDS:=bzip2/host libffi/host
+PKG_BUILD_DEPENDS:=python3/host
+HOST_BUILD_DEPENDS:=bzip2/host expat/host libffi/host
 
 include $(INCLUDE_DIR)/host-build.mk
 include $(INCLUDE_DIR)/package.mk
@@ -90,7 +91,7 @@ endef
 define Package/python3-light
 $(call Package/python3/Default)
   TITLE:=Python $(PYTHON3_VERSION) light installation
-  DEPENDS:=+python3-base +libffi +libbz2
+  DEPENDS:=+python3-base +libffi +libbz2 +PYTHON3_BLUETOOTH_SUPPORT:bluez-libs +libuuid
 endef
 
 define Package/python3-light/config
@@ -135,21 +136,21 @@ define Package/python3/description
   It's python3-light + all other packages.
 endef
 
+TARGET_CONFIGURE_OPTS+= \
+	READELF="$(TARGET_CROSS)readelf"
+
+MAKE_FLAGS+=\
+	LD="$(TARGET_CC)"
+
+EXTRA_CFLAGS+= \
+	-DNDEBUG -fno-inline
 EXTRA_LDFLAGS+= \
 	-L$(PKG_BUILD_DIR) \
 	-L$(STAGING_DIR)/usr/lib -L$(STAGING_DIR)/lib
 
-# Workaround for hardfloat mips
-# https://bugs.python.org/issue46265
-ifneq ($(findstring mips,$(CONFIG_ARCH)),)
-ifeq ($(CONFIG_HAS_FPU),y)
-CONFIGURE_VARS += \
-	ax_cv_check_cflags___fno_semantic_interposition=no
-endif
-endif
-
-MAKE_VARS += \
-	PYTHONSTRICTEXTENSIONBUILD=1
+DISABLE_BLUETOOTH:= \
+	ac_cv_header_bluetooth_bluetooth_h=no \
+	ac_cv_header_bluetooth_h=no
 
 CONFIGURE_ARGS+= \
 	--enable-optimizations \
@@ -158,11 +159,11 @@ CONFIGURE_ARGS+= \
 	--without-cxx-main \
 	--without-ensurepip \
 	--without-pymalloc \
-	--disable-test-modules \
 	$(if $(CONFIG_IPV6),--enable-ipv6) \
 	$(if $(findstring mips,$(CONFIG_ARCH)),,--with-lto) \
 	CONFIG_SITE="$(PKG_BUILD_DIR)/config.site" \
-	OPT="$(TARGET_CFLAGS)"
+	OPT="$(TARGET_CFLAGS)" \
+	$(if $(CONFIG_PYTHON3_BLUETOOTH_SUPPORT),,$(DISABLE_BLUETOOTH))
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
@@ -316,10 +317,6 @@ HOST_LDFLAGS += \
 	-Wl,--no-as-needed -lrt
 endif
 
-# Would be nice to be able to do this, but hosts are very fiddly
-# HOST_MAKE_VARS += \
-# 	PYTHONSTRICTEXTENSIONBUILD=1
-
 ifeq ($(HOST_OS),Darwin)
 HOST_CONFIGURE_VARS += \
 	ac_cv_header_libintl_h=no
@@ -327,18 +324,12 @@ HOST_MAKE_VARS += \
 	USE_PYTHON_CONFIG_PY=1
 endif
 
-# FIXME: remove when removing patch '028-host-python-support-ssl-with-libressl.patch'
-HOST_CFLAGS += \
-	-DOPENWRT_HOST_BUILD
-
 HOST_CONFIGURE_ARGS+= \
 	--enable-optimizations \
 	--with-ensurepip=upgrade \
 	--with-system-expat=$(STAGING_DIR_HOSTPKG) \
-	--with-ssl-default-suites=openssl \
 	--without-cxx-main \
 	--without-pymalloc \
-	--disable-test-modules \
 	CONFIG_SITE=
 
 define Host/Configure

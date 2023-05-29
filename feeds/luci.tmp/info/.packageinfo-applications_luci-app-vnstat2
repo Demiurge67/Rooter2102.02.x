@@ -121,26 +121,6 @@ Description:     Translation for luci-app-vnstat2 - Čeština (Czech)
 Jan Hoffmann <jan@3e8.eu>
 @@
 
-Package: luci-i18n-vnstat2-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-vnstat2
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-vnstat2 - da translation
-Maintainer: Jan Hoffmann <jan@3e8.eu>
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-vnstat2 - Dansk (Danish)
-Jan Hoffmann <jan@3e8.eu>
-@@
-
 Package: luci-i18n-vnstat2-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-12-28 11:28+0000\n"
-"Last-Translator: Matthaiks <kitynska@gmail.com>\n"
+"PO-Revision-Date: 2020-09-01 02:24+0000\n"
+"Last-Translator: Marcin Net <marcin.net@linux.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsttyd/pl/>\n"
 "Language: pl\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.2.1-dev\n"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Accept only one client and exit on disconnection"
@@ -149,10 +149,10 @@ msgstr "Port do nasłuchiwania (domyślnie: 7681, użyj `0`dla losowego portu)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
-"Random ttyd port (port=0) is not supported.<br />Change to a fixed port and "
+"Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
 "try again."
 msgstr ""
-"Losowy port ttyd (port=0) nie jest obsługiwany.<br />Zmień na port stały i "
+"Losowy port ttyd (port=0) nie jest obsługiwany.<br>Zmień na port stały i "
 "spróbuj ponownie."
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:42

@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/utils/acsccid/Makefile
-Build-Depends: libtool libiconv !BUILD_NLS:libiconv
+Build-Depends: libtool gettext libiconv !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: acsccid
-Version: 1.1.8-2
+Version: 1.1.8-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +BUILD_NLS:libiconv-full +libusb-1.0 +libpcsclite
 Conflicts: 
 Menu-Depends: 
@@ -12,7 +12,7 @@ Category: Libraries
 Repository: base
 Title: PCSC driver for ACS USB CCID smart card readers
 Maintainer: Vincent JARDIN <vjardin@free.fr>
-Source: acsccid-1.1.8.tar.gz
+Source: v1.1.8.tar.gz
 License: LGPL-2.1-or-later
 LicenseFiles: COPYING
 Type: ipkg

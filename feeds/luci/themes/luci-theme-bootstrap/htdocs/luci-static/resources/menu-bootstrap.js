@@ -22,6 +22,14 @@ return baseclass.extend({
 			if (node)
 				this.renderTabMenu(node, url);
 		}
+
+		document.addEventListener('poll-start', this.handleBodyMargin);
+		document.addEventListener('poll-stop', this.handleBodyMargin);
+		document.addEventListener('uci-new-changes', this.handleBodyMargin);
+		document.addEventListener('uci-clear-changes', this.handleBodyMargin);
+		window.addEventListener('resize', this.handleBodyMargin);
+
+		this.handleBodyMargin();
 	},
 
 	renderTabMenu: function(tree, url, level) {
@@ -88,7 +96,9 @@ return baseclass.extend({
 			var isActive = (L.env.requestpath.length ? children[i].name == L.env.requestpath[0] : i == 0);
 
 			ul.appendChild(E('li', { 'class': isActive ? 'active' : null }, [
-				E('a', { 'href': L.url(children[i].name) }, [ _(children[i].title) ])
+				E('a', { 'href': L.url(children[i].name) }, [ _(children[i].title) ]),
+				' ',
+				E('span', { 'class': 'divider' }, [ '|' ])
 			]));
 
 			if (isActive)
@@ -97,5 +107,12 @@ return baseclass.extend({
 
 		if (ul.children.length > 1)
 			ul.style.display = '';
+	},
+
+	handleBodyMargin: function(ev) {
+		var body = document.querySelector('body'),
+		    head = document.querySelector('header');
+
+		body.style.marginTop = head.offsetHeight + 'px';
 	}
 });

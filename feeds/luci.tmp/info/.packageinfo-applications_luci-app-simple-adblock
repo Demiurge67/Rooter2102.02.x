@@ -3,8 +3,8 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 
 Package: luci-app-simple-adblock
 Submenu: 3. Applications
-Version: 1.9.3-3
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-base +simple-adblock +jsonfilter
+Version: 1.8.7-3
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-compat +luci-mod-admin-full +simple-adblock
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -32,13 +32,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ar translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - العربية (Arabic)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-bg
@@ -52,13 +52,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - bg translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - български (Bulgarian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-bn
@@ -72,13 +72,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - bn translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - বাংলা (Bengali)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-ca
@@ -92,13 +92,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ca translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Català (Catalan)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-cs
@@ -112,33 +112,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - cs translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Čeština (Czech)
-Stan Grishin <stangri@melmac.ca>
-@@
-
-Package: luci-i18n-simple-adblock-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-simple-adblock
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-simple-adblock - da translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
-Source: 
-License: GPL-3.0-or-later
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-simple-adblock - Dansk (Danish)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-de
@@ -152,13 +132,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - de translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Deutsch (German)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-el
@@ -172,13 +152,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - el translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Ελληνικά (Greek)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-en
@@ -192,13 +172,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - en translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - English
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-es
@@ -212,13 +192,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - es translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Español (Spanish)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-fi
@@ -232,13 +212,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - fi translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Suomi (Finnish)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-fr
@@ -252,13 +232,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - fr translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Français (French)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-he
@@ -272,13 +252,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - he translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - עִבְרִית (Hebrew)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-hi
@@ -292,13 +272,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - hi translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - हिंदी (Hindi)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-hu
@@ -312,13 +292,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - hu translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Magyar (Hungarian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-it
@@ -332,13 +312,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - it translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Italiano (Italian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-ja
@@ -352,13 +332,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ja translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - 日本語 (Japanese)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-ko
@@ -372,13 +352,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ko translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - 한국어 (Korean)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-mr
@@ -392,13 +372,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - mr translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Marāṭhī (Marathi)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-ms
@@ -412,13 +392,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ms translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Bahasa Melayu (Malay)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-no
@@ -432,13 +412,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - no translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Norsk (Norwegian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-pl
@@ -452,13 +432,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - pl translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Polski (Polish)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-pt
@@ -472,13 +452,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - pt translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Português (Portuguese)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-pt-br
@@ -492,13 +472,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - pt-br translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Português do Brasil (Brazilian Portuguese)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-ro
@@ -512,13 +492,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ro translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Română (Romanian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-ru
@@ -532,13 +512,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - ru translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Русский (Russian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-sk
@@ -552,13 +532,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - sk translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Slovenčina (Slovak)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-sv
@@ -572,13 +552,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - sv translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Svenska (Swedish)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-tr
@@ -592,13 +572,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - tr translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Türkçe (Turkish)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-uk
@@ -612,13 +592,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - uk translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Українська (Ukrainian)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-vi
@@ -632,13 +612,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - vi translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - Tiếng Việt (Vietnamese)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-zh-cn
@@ -652,13 +632,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - zh-cn translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - 简体中文 (Chinese Simplified)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 Package: luci-i18n-simple-adblock-zh-tw
@@ -672,13 +652,13 @@ Section: luci
 Category: LuCI
 Repository: base
 Title: luci-app-simple-adblock - zh-tw translation
-Maintainer: Stan Grishin <stangri@melmac.ca>
+Maintainer: Stan Grishin <stangri@melmac.net>
 Source: 
 License: GPL-3.0-or-later
 Type: ipkg
 Hidden: 1
 Description:     Translation for luci-app-simple-adblock - 繁體中文 (Chinese Traditional)
-Stan Grishin <stangri@melmac.ca>
+Stan Grishin <stangri@melmac.net>
 @@
 
 

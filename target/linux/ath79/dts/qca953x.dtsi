@@ -60,10 +60,10 @@
 				reg = <0x18030000 0x100>;
 				#phy-cells = <0>;
 
-				reset-names = "usb-phy-analog", "usb-phy", "usb-suspend-override";
-				resets = <&rst 11>, <&rst 4>, <&rst 3>;
+				reset-names = "usb-phy", "usb-suspend-override";
+				resets = <&rst 4>, <&rst 3>;
 
-				status = "disabled";
+				status = "okay";
 			};
 
 			gpio: gpio@18040000 {
@@ -162,8 +162,6 @@
 			interrupt-parent = <&intc2>;
 			interrupts = <1>;
 
-			device_type = "pci";
-
 			resets = <&rst 6>, <&rst 7>;
 			reset-names = "hc", "phy";
 
@@ -200,10 +198,7 @@
 			phy-names = "usb-phy";
 			phys = <&usb_phy>;
 
-			status = "disabled";
-
-			#address-cells = <1>;
-			#size-cells = <0>;
+			status = "okay";
 		};
 
 		spi: spi@1f000000 {

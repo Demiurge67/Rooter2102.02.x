@@ -24,8 +24,6 @@ my $scriptdir = dirname($0);
 my @mirrors;
 my $ok;
 
-my $check_certificate = $ENV{DOWNLOAD_CHECK_CERTIFICATE} eq "y";
-
 $url_filename or $url_filename = $filename;
 
 sub localmirrors {
@@ -56,8 +54,10 @@ sub localmirrors {
 
 sub which($) {
 	my $prog = shift;
-	my $res = `command -v $prog`;
+	my $res = `which $prog`;
 	$res or return undef;
+	$res =~ /^no / and return undef;
+	$res =~ /not found/ and return undef;
 	return $res;
 }
 
@@ -65,8 +65,8 @@ sub hash_cmd() {
 	my $len = length($file_hash);
 	my $cmd;
 
-	$len == 64 and return "$ENV{'MKHASH'} sha256";
-	$len == 32 and return "$ENV{'MKHASH'} md5";
+	$len == 64 and return "mkhash sha256";
+	$len == 32 and return "mkhash md5";
 	return undef;
 }
 
@@ -74,7 +74,7 @@ sub download_cmd($) {
 	my $url = shift;
 	my $have_curl = 0;
 
-	if (open CURL, "curl --version 2>/dev/null |") {
+	if (open CURL, '-|', 'curl', '--version') {
 		if (defined(my $line = readline CURL)) {
 			$have_curl = 1 if $line =~ /^curl /;
 		}
@@ -82,14 +82,8 @@ sub download_cmd($) {
 	}
 
 	return $have_curl
-		? (qw(curl -f --connect-timeout 20 --retry 5 --location),
-			$check_certificate ? () : '--insecure',
-			shellwords($ENV{CURL_OPTIONS} || ''),
-			$url)
-		: (qw(wget --tries=5 --timeout=20 --output-document=-),
-			$check_certificate ? () : '--no-check-certificate',
-			shellwords($ENV{WGET_OPTIONS} || ''),
-			$url)
+		? (qw(curl -f --connect-timeout 20 --retry 5 --location --insecure), shellwords($ENV{CURL_OPTIONS} || ''), $url)
+		: (qw(wget --tries=5 --timeout=20 --no-check-certificate --output-document=-), shellwords($ENV{WGET_OPTIONS} || ''), $url)
 	;
 }
 
@@ -202,10 +196,6 @@ foreach my $mirror (@ARGV) {
 		}
 	} elsif ($mirror =~ /^\@OPENWRT$/) {
 		# use OpenWrt source server directly
-	} elsif ($mirror =~ /^\@DEBIAN\/(.+)$/) {
-		push @mirrors, "https://ftp.debian.org/debian/$1";
-		push @mirrors, "https://mirror.leaseweb.com/debian/$1";
-		push @mirrors, "https://mirror.netcologne.de/debian/$1";
 	} elsif ($mirror =~ /^\@APACHE\/(.+)$/) {
 		push @mirrors, "https://mirror.netcologne.de/apache.org/$1";
 		push @mirrors, "https://mirror.aarnet.edu.au/pub/apache/$1";
@@ -229,8 +219,7 @@ foreach my $mirror (@ARGV) {
 		push @mirrors, "http://mirror.internode.on.net/pub/gnu/$1";
 		push @mirrors, "http://mirror.navercorp.com/gnu/$1";
 		push @mirrors, "ftp://mirrors.rit.edu/gnu/$1";
-		push @mirrors, "ftp://download.xs4all.nl/pub/gnu/$1";
-		push @mirrors, "https://ftp.gnu.org/gnu/$1";
+		push @mirrors, "ftp://download.xs4all.nl/pub/gnu/";
 	} elsif ($mirror =~ /^\@SAVANNAH\/(.+)$/) {
 		push @mirrors, "https://mirror.netcologne.de/savannah/$1";
 		push @mirrors, "https://mirror.csclub.uwaterloo.ca/nongnu/$1";
@@ -256,7 +245,6 @@ foreach my $mirror (@ARGV) {
 			push @mirrors, "ftp://www.mirrorservice.org/sites/ftp.kernel.org/pub/$dir";
 		}
 	} elsif ($mirror =~ /^\@GNOME\/(.+)$/) {
-		push @mirrors, "https://download.gnome.org/sources/$1";
 		push @mirrors, "https://mirror.csclub.uwaterloo.ca/gnome/sources/$1";
 		push @mirrors, "http://ftp.acc.umu.se/pub/GNOME/sources/$1";
 		push @mirrors, "http://ftp.kaist.ac.kr/gnome/sources/$1";
@@ -303,3 +291,4 @@ while (!-f "$target/$filename") {
 }
 
 $SIG{INT} = \&cleanup;
+

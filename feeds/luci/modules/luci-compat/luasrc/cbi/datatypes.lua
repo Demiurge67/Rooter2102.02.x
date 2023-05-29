@@ -13,49 +13,34 @@ module "luci.cbi.datatypes"
 
 
 _M['or'] = function(v, ...)
-	local i, n = 1, select('#', ...)
-	while i <= n do
+	local i
+	for i = 1, select('#', ...), 2 do
 		local f = select(i, ...)
+		local a = select(i+1, ...)
 		if type(f) ~= "function" then
-			i = i + 1
-			local c = v
-			if type(f) == "number" then
-				c = tonumber(c)
-			end
-			if f == c then
+			if f == v then
 				return true
 			end
-		else
-			i = i + 2
-			local a = select(i-1, ...)
-			if f(v, unpack(a)) then
-				return true
-			end
+			i = i - 1
+		elseif f(v, unpack(a)) then
+			return true
 		end
 	end
 	return false
 end
 
 _M['and'] = function(v, ...)
-	local i, n = 1, select('#', ...)
-	while i <= n do
+	local i
+	for i = 1, select('#', ...), 2 do
 		local f = select(i, ...)
+		local a = select(i+1, ...)
 		if type(f) ~= "function" then
-			i = i + 1
-			local c = v
-			if type(f) == "number" then
-				c = tonumber(c)
-			end
-			if f ~= c then
+			if f ~= v then
 				return false
 			end
 			i = i - 1
-		else
-			i = i + 2
-			local a = select(i-1, ...)
-			if not f(v, unpack(a)) then
-				return false
-			end
+		elseif not f(v, unpack(a)) then
+			return false
 		end
 	end
 	return true

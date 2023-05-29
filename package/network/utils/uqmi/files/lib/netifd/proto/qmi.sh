@@ -94,8 +94,7 @@ proto_qmi_setup() {
 		fi
 	done
 
-	if uqmi -s -d "$device" --uim-get-sim-state | grep -q '"Not supported"\|"Invalid QMI command"' &&
-	   uqmi -s -d "$device" --get-pin-status | grep -q '"Not supported"\|"Invalid QMI command"' ; then
+	if uqmi -s -d "$device" --get-pin-status | grep '"Not supported"\|"Invalid QMI command"' > /dev/null; then
 		[ -n "$pincode" ] && {
 			uqmi -s -d "$device" --verify-pin1 "$pincode" > /dev/null || uqmi -s -d "$device" --uim-verify-pin1 "$pincode" > /dev/null || {
 				echo "Unable to verify PIN"
@@ -105,12 +104,9 @@ proto_qmi_setup() {
 			}
 		}
 	else
+		. /usr/share/libubox/jshn.sh
 		json_load "$(uqmi -s -d "$device" --get-pin-status)"
 		json_get_var pin1_status pin1_status
-		if [ -z "$pin1_status" ]; then
-			json_load "$(uqmi -s -d "$device" --uim-get-sim-state)"
-			json_get_var pin1_status pin1_status
-		fi
 		json_get_var pin1_verify_tries pin1_verify_tries
 
 		case "$pin1_status" in
@@ -148,13 +144,12 @@ proto_qmi_setup() {
 				echo "PIN already verified"
 				;;
 			*)
-				echo "PIN status failed (${pin1_status:-sim_not_present})"
+				echo "PIN status failed ($pin1_status)"
 				proto_notify_error "$interface" PIN_STATUS_FAILED
 				proto_block_restart "$interface"
 				return 1
 			;;
 		esac
-		json_cleanup
 	fi
 
 	if [ -n "$plmn" ]; then
@@ -250,8 +245,7 @@ proto_qmi_setup() {
 
 	echo "Starting network $interface"
 
-	pdptype="$(echo "$pdptype" | awk '{print tolower($0)}')"
-
+	pdptype=$(echo "$pdptype" | awk '{print tolower($0)}')
 	[ "$pdptype" = "ip" -o "$pdptype" = "ipv6" -o "$pdptype" = "ipv4v6" ] || pdptype="ip"
 
 	if [ "$pdptype" = "ip" ]; then
@@ -289,7 +283,7 @@ proto_qmi_setup() {
 		fi
 
 		# Check data connection state
-		connstat=$(uqmi -s -d "$device" --set-client-id wds,"$cid_4" --get-data-status)
+		connstat=$(uqmi -s -d "$device" --get-data-status)
 		[ "$connstat" == '"connected"' ] || {
 			echo "No data link!"
 			uqmi -s -d "$device" --set-client-id wds,"$cid_4" --release-client-id wds > /dev/null 2>&1
@@ -326,7 +320,7 @@ proto_qmi_setup() {
 		fi
 
 		# Check data connection state
-		connstat=$(uqmi -s -d "$device" --set-client-id wds,"$cid_6" --get-data-status)
+		connstat=$(uqmi -s -d "$device" --get-data-status)
 		[ "$connstat" == '"connected"' ] || {
 			echo "No data link!"
 			uqmi -s -d "$device" --set-client-id wds,"$cid_6" --release-client-id wds > /dev/null 2>&1

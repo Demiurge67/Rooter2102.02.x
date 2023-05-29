@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/net/geth/Makefile
-Build-Depends: golang/host !BUILD_NLS:libiconv
+Build-Depends: golang/host !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: geth
 Version: 1.9.25-1

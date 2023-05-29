@@ -121,26 +121,6 @@ Description:     Translation for luci-app-qos - Čeština (Czech)
 
 @@
 
-Package: luci-i18n-qos-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-qos
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-qos - da translation
-Maintainer: 
-Source: 
-License: Apache-2.0
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-qos - Dansk (Danish)
-
-@@
-
 Package: luci-i18n-qos-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

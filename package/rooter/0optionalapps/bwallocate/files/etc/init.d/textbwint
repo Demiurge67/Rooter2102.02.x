@@ -8,7 +8,5 @@ log() {
 
 start()
 {
-	uci set bwmon.general.enabled="1"
-	uci commit bwmon
 	/usr/lib/bwmon/textbw.sh &
 }

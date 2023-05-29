@@ -12,8 +12,7 @@ validate_section_socat()
 {
 	uci_load_validate socat socat "$1" "$2" \
 		'enable:bool:1' \
-		'SocatOptions:or(string, list(string))' \
-		'user:string:root'
+		'SocatOptions:or(string, list(string))'
 }
 
 append_param_command()
@@ -24,7 +23,6 @@ append_param_command()
 socat_instance()
 {
 	local is_list
-	local user
 
 	[ "$2" = 0 ] || {
 		echo "validation failed"
@@ -40,10 +38,6 @@ socat_instance()
 		procd_append_param command $SocatOptions
 	else
 		config_list_foreach "$1" SocatOptions append_param_command
-	fi
-	config_get user "$1" user
-	if [ -n "$user" ]; then
-		procd_set_param user $user
 	fi
 	procd_set_param stdout 1
 	procd_set_param stderr 1

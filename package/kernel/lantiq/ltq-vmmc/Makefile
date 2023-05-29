@@ -39,9 +39,6 @@ define KernelPackage/ltq-vmmc/config
 	source "$(SOURCE)/Config.in"
 endef
 
-MAKE_FLAGS += \
-	$(KERNEL_MAKE_FLAGS)
-
 CONFIGURE_ARGS += \
 	ARCH=$(LINUX_KARCH) \
 	--enable-linux-26 \

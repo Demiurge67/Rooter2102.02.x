@@ -5,8 +5,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=postgresql
-PKG_VERSION:=14.5
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=13.1
+PKG_RELEASE:=1
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=PostgreSQL
 PKG_CPE_ID:=cpe:/a:postgresql:postgresql
@@ -17,7 +17,7 @@ PKG_SOURCE_URL:=\
 	http://ftp.postgresql.org/pub/source/v$(PKG_VERSION) \
 	ftp://ftp.postgresql.org/pub/source/v$(PKG_VERSION)
 
-PKG_HASH:=d4f72cb5fb857c9a9f75ec8cf091a1771272802f2178f0b2e65b7b6ff64f4a30
+PKG_HASH:=12345c83b89aa29808568977f5200d6da00f88a035517f925293355432ffe61f
 
 PKG_USE_MIPS16:=0
 PKG_FIXUP:=autoreconf
@@ -70,7 +70,7 @@ endef
 define Package/pgsql-server
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+pgsql-cli +blockd
+  DEPENDS:=+pgsql-cli
   TITLE:=PostgreSQL databases Server
   URL:=http://www.postgresql.org/
   SUBMENU:=Database
@@ -82,23 +82,18 @@ PostgreSQL databases Server.
 endef
 
 PGSQL_SERVER_BIN := \
-	pg_amcheck \
 	pg_archivecleanup \
 	pg_basebackup \
-	pg_checksums \
 	pg_controldata \
 	pg_ctl \
 	pg_dump \
 	pg_dumpall \
 	pg_isready \
 	pg_recvlogical \
-	pg_receivewal \
 	pg_resetwal \
 	pg_restore \
-	pg_rewind \
+	pg_standby \
 	pg_upgrade \
-	pg_verifybackup \
-	pg_waldump \
 	postgres \
 	initdb
 
@@ -108,17 +103,14 @@ PGSQL_CLI_EXTRA_BIN := \
 	createuser	\
 	dropdb		\
 	dropuser	\
-	oid2name	\
 	pgbench		\
 	reindexdb	\
-	vacuumdb	\
-	vacuumlo
+	vacuumdb
 
 PGSQL_CONFIG_VARS:= \
 	pgac_cv_snprintf_long_long_int_format="%lld" \
 	pgac_cv_snprintf_size_t_support=yes \
 	USE_DEV_URANDOM=1 \
-	ac_cv_file__dev_urandom="/dev/urandom" \
 	ZIC=zic
 
 ifeq ($(CONFIG_USE_UCLIBC),y)

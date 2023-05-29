@@ -250,6 +250,10 @@ msgstr "TLS engedélyezése és ügyfélszerep feltételezése"
 msgid "Enable TLS and assume server role"
 msgstr "TLS engedélyezése és kiszolgálószerep feltételezése"
 
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
+msgid "Enable a compression algorithm"
+msgstr "Tömörítési algoritmus engedélyezése"
+
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:278
 msgid "Enable internal datagram fragmentation"
 msgstr "Belső adatcsomag-darabolás engedélyezése"
@@ -440,7 +444,7 @@ msgstr "Ifconfig tároló állandóvá vagy nem állandóvá tétele"
 msgid "Ping remote every n seconds over TCP/UDP port"
 msgstr "Távoli gép pingelése N másodpercenként TCP/UDP porton keresztül"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:32
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:28
 msgid "Please edit this file directly in a terminal session."
 msgstr "Szerkessze ezt a fájlt közvetlenül egy terminál munkamenetben."
 
@@ -562,37 +566,20 @@ msgid "Run up/down scripts for all restarts"
 msgstr ""
 "Felkapcsolási és lekapcsolási parancsfájlok futtatása minden újraindításnál"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:41
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:37
 msgid "Save"
 msgstr "Mentés"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:65
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:61
 msgid ""
 "Section to add an optional 'auth-user-pass' file with your credentials (%s)"
 msgstr ""
 "Egy szakasz egy nem kötelező „auth-user-pass” fájl hozzáadásához a "
 "hitelesítési adatokkal (%s)"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:44
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:40
 msgid "Section to modify the OVPN config file (%s)"
 msgstr "Egy szakasz az OVPN beállítófájl módosításához (%s)"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
-msgid ""
-"Security recommendation: It is recommended to not enable compression and set "
-"this parameter to `no`"
-msgstr ""
-"Biztonsági javaslat: javasolt a tömörítést kikapcsolni és ezt a paramétert "
-"`no`-ra állítani"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
-msgid ""
-"Security recommendation: It is recommended to not enable compression and set "
-"this parameter to `stub-v2`"
-msgstr ""
-"Biztonsági javaslat: javasolt a tömörítést kikapcsolni és ezt a paramétert "
-"`stub-v2`-re állítani"
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:85
 msgid "Select template ..."
@@ -751,7 +738,7 @@ msgstr "Átmeneti könyvtár az ügyfélkapcsolódás visszatérési fájljához
 msgid "The 'Name' field must not be empty!"
 msgstr "A „Name” mező nem lehet üres!"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:22
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:18
 msgid ""
 "The OVPN config file (%s) could not be found, please check your "
 "configuration."
@@ -770,7 +757,7 @@ msgstr "A kulcsirány a „tls-auth” és „secret” beállításoknál"
 msgid "The lowest supported TLS version"
 msgstr "A legalacsonyabb támogatott TLS verzió"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:31
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:27
 msgid ""
 "The size of the OVPN config file (%s) is too large for online editing in "
 "LuCI (&ge; 100 KB)."
@@ -798,6 +785,11 @@ msgstr "Feltöltés"
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload ovpn file"
 msgstr "OVPN fájl feltöltése"
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
+msgid "Use fast LZO compression"
+msgstr "Gyors LZO-tömörítés használata"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:510
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:97

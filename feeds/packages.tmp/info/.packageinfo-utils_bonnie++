@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/utils/bonnie++/Makefile
 
 Package: bonniexx
-Version: 2.00a-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libpthread
+Version: 1.98-4
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp +libpthread
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -11,7 +11,7 @@ Category: Utilities
 Repository: base
 Title: Bonnie++ - hard drive bottleneck testing program.
 Maintainer: 
-Source: bonnie++-2.00a.tgz
+Source: bonnie++-1.98.tgz
 License: GPL-2.0
 LicenseFiles: copyright.txt
 Type: ipkg

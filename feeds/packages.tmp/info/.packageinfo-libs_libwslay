@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/libwslay/Makefile
 
 Package: libwslay
-Version: 1.1.1-0
+Version: 1.1.1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -10,7 +10,7 @@ Section: libs
 Category: Libraries
 Repository: base
 Title: Wslay is a WebSocket library written in C
-Maintainer: Peter van Dijk <peter.van.dijk@powerdns.com>
+Maintainer: James Taylor <james@jtaylor.id.au>
 Source: release-1.1.1.tar.gz
 License: MIT
 LicenseFiles: COPYING
@@ -23,7 +23,7 @@ Description:    Wslay is a WebSocket library written in C. It implements the pro
    Wslay only supports data transfer part of WebSocket protocol and does not perform opening
    handshake in HTTP.
 https://tatsuhiro-t.github.io/wslay/
-Peter van Dijk <peter.van.dijk@powerdns.com>
+James Taylor <james@jtaylor.id.au>
 @@
 
 

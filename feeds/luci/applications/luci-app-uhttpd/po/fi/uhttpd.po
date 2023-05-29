@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-12-04 18:40+0000\n"
+"PO-Revision-Date: 2020-05-21 18:50+0000\n"
 "Last-Translator: Hannu Nyman <hannu.nyman@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsuhttpd/fi/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:135
 msgid ""
@@ -19,11 +19,11 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:145
 msgid "404 Error"
-msgstr "404-virhe"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:7
 msgid "A lightweight single-threaded HTTP(S) server"
-msgstr "Kevyt, yksisäikeinen HTTP(S)-palvelin"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:20
 msgid "Advanced Settings"
@@ -31,7 +31,7 @@ msgstr "Lisäasetukset"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:135
 msgid "Aliases"
-msgstr "Aliakset"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:149
 msgid "Base directory for files to be served"
@@ -52,13 +52,13 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:142
 msgid "Config file (e.g. for credentials for Basic Auth)"
-msgstr "Asetustiedosto (esim. Basic Authin kirjautumistietoja varten)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:187
 msgid "Connection reuse"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:229
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
 msgid "Country"
 msgstr "Maa"
 
@@ -69,7 +69,6 @@ msgstr ""
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:129
 msgid "Do not follow symlinks outside document root"
 msgstr ""
-"Älä seuraa symbolisia linkkejä tiedostojen juurihakemiston ulkopuolelle"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:132
 msgid "Do not generate directory listings."
@@ -77,7 +76,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:148
 msgid "Document root"
-msgstr "Dokumenttien juurihakemisto"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:122
 msgid "E.g specify with index.html and index.php when using PHP"
@@ -105,30 +104,26 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:18
 msgid "General Settings"
-msgstr "Yleiset asetukset"
+msgstr "Yleisasetukset"
 
 #: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
 msgid "Grant UCI access for luci-app-uhttpd"
-msgstr "Salli UCI-pääsy luci-app-uhttpd:lle"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
-msgstr "HTTP-kuuntelijat (osoite:portti)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
 msgid "HTTPS Certificate (DER or PEM format)"
-msgstr "HTTPS-varmenne (DER- tai PEM-muoto)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
 msgid "HTTPS Private Key (DER or PEM format)"
-msgstr "HTTPS:n yksityinen avain (DER- tai PEM-muoto)"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
-msgstr "HTTPS-kuuntelija (osoite:portti)"
-
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "If empty, a random/unique value is used in cert generation"
 msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:90
@@ -149,13 +144,13 @@ msgstr ""
 msgid "Length of key in bits"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:223
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:227
 msgid "Location"
-msgstr "Sijainti"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:197
 msgid "Maximum number of connections"
-msgstr "Yhteyksien enimmäismäärä"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:201
 msgid "Maximum number of script requests"
@@ -167,10 +162,6 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:182
 msgid "Maximum wait time for network activity"
-msgstr ""
-
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "Organization"
 msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:166
@@ -193,7 +184,7 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:86
 msgid "Redirect all HTTP to HTTPS"
-msgstr "Uudelleenohjaa kaikki HTTP-liikenne HTTPS:ksi"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:109
 msgid "Remove configuration for certificate and key"
@@ -205,16 +196,16 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:218
 msgid "Server Hostname"
-msgstr "Palvelimen isäntänimi"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:20
 msgid ""
 "Settings which are either rarely needed or which affect serving the WebUI"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:226
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:224
 msgid "State"
-msgstr "Tila"
+msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:192
 msgid "TCP Keepalive"

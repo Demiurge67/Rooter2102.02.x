@@ -1,6 +1,6 @@
 return {
-	name = "doh.libredns.gr",
-	label = _("LibreDNS - GR"),
+	name = "LibreDNS",
+	label = _("LibreDNS"),
 	resolver_url = "https://doh.libredns.gr/dns-query",
 	bootstrap_dns = "116.202.176.26,1.1.1.1",
 	help_link = "https://libredns.gr/",

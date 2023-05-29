@@ -5,41 +5,48 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openwisp-config
+PKG_SOURCE_VERSION:=0.5.0
 PKG_RELEASE:=1
 
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/openwisp/openwisp-config.git
+PKG_MIRROR_HASH:=337a3a9542a0898da9f951256b0d19b6bc87ced98f4ec6dc9646172b551880ef
 PKG_MAINTAINER:=Federico Capoano <f.capoano@openwisp.io>
 PKG_LICENSE:=GPL3.0-or-later
-
-PKG_SOURCE_URL:=https://github.com/openwisp/openwisp-config.git
-PKG_MIRROR_HASH:=7daa10a9d170e665f33a5555a246b4da2223c2d8d0e8a047edb01701c8886986
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=1.0.1
+PKGARCH:=all
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/openwisp-config
-  TITLE:=Remote configuration management agent
-  CATEGORY:=Administration
-  SECTION:=admin
-  SUBMENU:=openwisp
-  DEPENDS:=+curl \
-    +lua \
-    +libuci-lua \
-    +luafilesystem \
-    +luci-lib-nixio \
-    +ca-certificates
-  PKGARCH:=all
-  URL:=https://openwisp.org
+define Package/openwisp-config/default
+	TITLE:=Remote configuration management agent ($(2) variant)
+	CATEGORY:=Administration
+	SECTION:=admin
+	SUBMENU:=openwisp
+	DEPENDS:=+curl +lua +libuci-lua +luafilesystem +luci-lib-nixio $(3)
+	VARIANT:=$(1)
+	PKGARCH:=all
+	URL:=http://openwisp.org
 endef
+
+Package/openwisp-config-openssl=$(call Package/openwisp-config/default,openssl,OpenSSL,+ca-certificates +libopenssl)
+Package/openwisp-config-mbedtls=$(call Package/openwisp-config/default,mbedtls,mbedTLS,+ca-certificates +libmbedtls)
+Package/openwisp-config-wolfssl=$(call Package/openwisp-config/default,wolfssl,WolfSSL,+ca-certificates +libwolfssl)
+Package/openwisp-config-nossl=$(call Package/openwisp-config/default,nossl,No SSL)
 
 define Build/Compile
 endef
 
-define Package/openwisp-config/conffiles
+define Package/openwisp-config-$(BUILD_VARIANT)/conffiles
 /etc/config/openwisp
 endef
 
-define Package/openwisp-config/install
+CONFIG_OPENWISP_UCI:=ssl
+
+ifeq ($(BUILD_VARIANT),nossl)
+    CONFIG_OPENWISP_UCI:=nossl
+endif
+
+define Package/openwisp-config-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) \
 		$(1)/usr/sbin \
 		$(1)/etc/init.d \
@@ -55,7 +62,7 @@ define Package/openwisp-config/install
 		$(PKG_BUILD_DIR)/openwisp-config/files/openwisp.init \
 		$(1)/etc/init.d/openwisp_config
 
-	$(INSTALL_CONF) $(PKG_BUILD_DIR)/openwisp-config/files/openwisp.config \
+	$(INSTALL_CONF) $(PKG_BUILD_DIR)/openwisp-config/files/openwisp-$(CONFIG_OPENWISP_UCI).config \
 		$(1)/etc/config/openwisp
 
 	$(INSTALL_BIN) \
@@ -97,4 +104,7 @@ define Package/openwisp-config/install
 	$(CP) $(PKG_BUILD_DIR)/VERSION $(1)/etc/openwisp/
 endef
 
-$(eval $(call BuildPackage,openwisp-config))
+$(eval $(call BuildPackage,openwisp-config-openssl))
+$(eval $(call BuildPackage,openwisp-config-mbedtls))
+$(eval $(call BuildPackage,openwisp-config-wolfssl))
+$(eval $(call BuildPackage,openwisp-config-nossl))

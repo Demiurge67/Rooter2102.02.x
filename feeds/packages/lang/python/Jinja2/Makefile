@@ -5,13 +5,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=Jinja2
-PKG_VERSION:=3.0.3
+PKG_VERSION:=3.0.1
 PKG_RELEASE:=$(AUTORELEASE)
 
 PYPI_NAME:=$(PKG_NAME)
-PKG_HASH:=611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7
+PKG_HASH:=703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4
 
-PKG_MAINTAINER:=Josef Schlehofer <josef.schlehofer@nic.cz>
+PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=LICENSE
 PKG_CPE_ID:=cpe:/a:pocoo:jinja2

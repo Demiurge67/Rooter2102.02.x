@@ -1,19 +1,9 @@
 {
 	"luci-proto-wireguard": {
 		"description": "Grant access to LuCI Wireguard procedures",
-		"read": {
-			"file": {
-				"/usr/bin/qrencode --inline --8bit --type=SVG --output=- -- *": [ "exec" ]
-			},
-			"uci": [ "ddns", "system" ]
-		},
 		"write": {
 			"ubus": {
-				"luci.wireguard": [
-					"generateKeyPair",
-					"getPublicAndPrivateKeyFromPrivate",
-					"generatePsk"
-				]
+				"luci.wireguard": [ "generateKeyPair" ]
 			}
 		}
 	}

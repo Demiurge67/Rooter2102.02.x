@@ -1,5 +1,6 @@
 Source-Makefile: feeds/packages/libs/libmatroska/Makefile
-Build-Depends: libebml
+Build-Depends: libebml ninja/host
+Build-Depends/host: ninja/host
 
 Package: libmatroska
 Version: 1.6.3-0

@@ -28,22 +28,13 @@ return baseclass.extend({
 		var s = '%.1f\xa0%s, %d\xa0%s'.format(rt.rate / 1000, _('Mbit/s'), rt.mhz, _('MHz')),
 		    ht = rt.ht, vht = rt.vht,
 			mhz = rt.mhz, nss = rt.nss,
-			mcs = rt.mcs, sgi = rt.short_gi,
-			he = rt.he, he_gi = rt.he_gi,
-			he_dcm = rt.he_dcm;
+			mcs = rt.mcs, sgi = rt.short_gi;
 
 		if (ht || vht) {
 			if (vht) s += ', VHT-MCS\xa0%d'.format(mcs);
 			if (nss) s += ', VHT-NSS\xa0%d'.format(nss);
 			if (ht)  s += ', MCS\xa0%s'.format(mcs);
 			if (sgi) s += ', ' + _('Short GI').replace(/ /g, '\xa0');
-		}
-
-		if (he) {
-			s += ', HE-MCS\xa0%d'.format(mcs);
-			if (nss) s += ', HE-NSS\xa0%d'.format(nss);
-			if (he_gi) s += ', HE-GI\xa0%d'.format(he_gi);
-			if (he_dcm) s += ', HE-DCM\xa0%d'.format(he_dcm);
 		}
 
 		return s;
@@ -57,18 +48,21 @@ return baseclass.extend({
 		ev.currentTarget.disabled = true;
 		ev.currentTarget.blur();
 
-		/* Disconnect client before adding to maclist */
-		wifinet.disconnectClient(mac, true, 5, 60000);
-
 		if (exec == 'addlist') {
-			wifinet.maclist.push(mac);
+			var macs = [ mac ]
 
-			uci.set('wireless', wifinet.sid, 'maclist', wifinet.maclist);
+			for (var mac in this.iface_maclist) {
+				macs.push(mac)
+			}
+
+			uci.set('wireless', wifinet.sid, 'maclist', macs);
 
 			return uci.save()
 				.then(L.bind(L.ui.changes.init, L.ui.changes))
 				.then(L.bind(L.ui.changes.displayChanges, L.ui.changes));
 		}
+
+		wifinet.disconnectClient(mac, true, 5, 60000);
 	},
 
 	handleGetWPSStatus: function(wifinet) {
@@ -127,7 +121,7 @@ return baseclass.extend({
 
 			var WPS_button = null;
 
-			if (net.isWPSEnabled) {
+			if (this.isWPSEnabled[net.sid]) {
 				if (net.wps_status == 'Active') {
 					WPS_button = E('button', {
 						'class' : 'cbi-button cbi-button-remove',
@@ -196,7 +190,7 @@ return baseclass.extend({
 				}, this, radios_networks_hints[i])));
 
 				if (hasWPS && uci.get('wireless', radios_networks_hints[i].sid, 'wps_pushbutton') == '1') {
-					radios_networks_hints[i].isWPSEnabled = true;
+					this.isWPSEnabled[radios_networks_hints[i].sid] = true;
 					tasks.push(L.resolveDefault(this.handleGetWPSStatus(radios_networks_hints[i].getIfname()), null)
 						.then(L.bind(function(net, data) {
 							net.wps_status = data ? data.pbc_status : _('No Data');
@@ -209,6 +203,8 @@ return baseclass.extend({
 			});
 		}, this));
 	},
+
+	isDeviceAdded: {},
 
 	render: function(data) {
 		var seen = {},
@@ -240,14 +236,14 @@ return baseclass.extend({
 		var rows = [];
 
 		for (var i = 0; i < networks.length; i++) {
-			var macfilter = uci.get('wireless', networks[i].sid, 'macfilter'),
-			    maclist = {};
+			var macfilter = uci.get('wireless', networks[i].sid, 'macfilter');
 
 			if (macfilter != null && macfilter != 'disable') {
-				networks[i].maclist = L.toArray(uci.get('wireless', networks[i].sid, 'maclist'));
-				for (var j = 0; j < networks[i].maclist.length; j++) {
-					var mac = networks[i].maclist[j].toUpperCase();
-					maclist[mac] = true;
+				this.isDeviceAdded = {};
+				var macs = L.toArray(uci.get('wireless', networks[i].sid, 'maclist'));
+				for (var j = 0; j < macs.length; j++) {
+					var mac = macs[j].toUpperCase();
+					this.isDeviceAdded[mac] = true;
 				}
 			}
 
@@ -330,7 +326,7 @@ return baseclass.extend({
 					if (assoclist.firstElementChild.childNodes.length < 6)
 						assoclist.firstElementChild.appendChild(E('th', { 'class': 'th cbi-section-actions' }));
 
-					if (macfilter != null && macfilter != 'disable' && !maclist[bss.mac]) {
+					if (macfilter != null && macfilter != 'disable' && !this.isDeviceAdded[bss.mac]) {
 						row.push(new L.ui.ComboButton('button', {
 								'addlist': macfilter == 'allow' ?  _('Add to Whitelist') : _('Add to Blacklist'),
 								'disconnect': _('Disconnect')

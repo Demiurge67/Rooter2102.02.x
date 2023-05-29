@@ -3,30 +3,19 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=batman-adv
-PKG_VERSION:=2022.0
+PKG_VERSION:=2021.1
 PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://downloads.open-mesh.org/batman/releases/batman-adv-$(PKG_VERSION)
-PKG_HASH:=49338705bc207709ac84d766688e702571009c827c0a320788ea51fb887714aa
+PKG_HASH:=bf77843d8dead75342d673ce7021e4ad037447ce18c64056ae1e3202039934d0
 PKG_EXTMOD_SUBDIRS:=net/batman-adv
 
 PKG_MAINTAINER:=Simon Wunderlich <sw@simonwunderlich.de>
 PKG_LICENSE:=GPL-2.0-only MIT
 PKG_LICENSE_FILES:=LICENSES/preferred/GPL-2.0 LICENSES/preferred/MIT
 
-PKG_BUILD_PARALLEL:=1
-
 STAMP_CONFIGURED_DEPENDS := $(STAGING_DIR)/usr/include/mac80211-backport/backport/autoconf.h
-
-PKG_CONFIG_DEPENDS += \
-	CONFIG_BATMAN_ADV_BATMAN_V \
-	CONFIG_BATMAN_ADV_BLA \
-	CONFIG_BATMAN_ADV_DAT \
-	CONFIG_BATMAN_ADV_NC \
-	CONFIG_BATMAN_ADV_MCAST \
-	CONFIG_BATMAN_ADV_DEBUG \
-	CONFIG_BATMAN_ADV_TRACING
 
 include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/package.mk
@@ -72,7 +61,6 @@ PKG_EXTRA_CFLAGS:= \
 	$(patsubst CONFIG_%, -DCONFIG_%=1, $(patsubst %=y,%,$(filter %=y,$(PKG_EXTRA_KCONFIG)))) \
 
 NOSTDINC_FLAGS = \
-	$(KERNEL_NOSTDINC_FLAGS) \
 	-I$(PKG_BUILD_DIR)/net/batman-adv \
 	-I$(STAGING_DIR)/usr/include/mac80211-backport \
 	-I$(STAGING_DIR)/usr/include/mac80211-backport/uapi \

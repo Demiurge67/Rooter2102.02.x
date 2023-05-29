@@ -43,7 +43,7 @@ endef
 define Build/copy-kernel
 	rm -f $@ $@.elf
 	cp $< $@
-	cp $<.elf $@.elf
+	cp $< $@.elf
 endef
 
 define Build/elf-kernel
@@ -54,9 +54,6 @@ endef
 define Device/Default
   PROFILES = Default $$(DEVICE_NAME)
   KERNEL := copy-kernel | lzma-kernel
-  KERNEL_INITRAMFS = kernel-bin
-  KERNEL_INITRAMFS_NAME := vmlinux-initramfs.elf
-  KERNEL_INITRAMFS_SUFFIX := -kernel.elf
   IMAGES := sysupgrade.bin
   FILESYSTEMS := squashfs
 endef
@@ -70,7 +67,7 @@ define Device/generic
   IMAGE/kernel.lzma := elf-kernel | lzma-kernel
   IMAGE/rootfs.bin := append-rootfs | pad-rootfs | pad-to 128k
   IMAGE/sysupgrade.bin := append-rootfs | pad-rootfs | pad-to 128k | combined-image
-  DEVICE_IMG_NAME = $$(DEVICE_IMG_PREFIX)-$$(if $$(findstring kernel,$$(2)),,$$(1)-)$$(2)
+  IMAGE_NAME = $$(IMAGE_PREFIX)-$$(if $$(findstring kernel,$$(2)),,$$(1)-)$$(2)
 endef
 TARGET_DEVICES += generic
 

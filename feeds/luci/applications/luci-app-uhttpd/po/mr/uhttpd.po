@@ -58,7 +58,7 @@ msgstr ""
 msgid "Connection reuse"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:229
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
 msgid "Country"
 msgstr ""
 
@@ -126,10 +126,6 @@ msgstr ""
 msgid "HTTPS listener (address:port)"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "If empty, a random/unique value is used in cert generation"
-msgstr ""
-
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:90
 msgid "Ignore private IPs on public interface"
 msgstr ""
@@ -148,7 +144,7 @@ msgstr ""
 msgid "Length of key in bits"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:223
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:227
 msgid "Location"
 msgstr ""
 
@@ -166,10 +162,6 @@ msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:182
 msgid "Maximum wait time for network activity"
-msgstr ""
-
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:221
-msgid "Organization"
 msgstr ""
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:166
@@ -211,7 +203,7 @@ msgid ""
 "Settings which are either rarely needed or which affect serving the WebUI"
 msgstr ""
 
-#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:226
+#: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:224
 msgid "State"
 msgstr "स्थिती"
 

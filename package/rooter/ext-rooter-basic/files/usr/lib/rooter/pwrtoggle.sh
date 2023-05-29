@@ -4,7 +4,7 @@ ROOTER=/usr/lib/rooter
 ROOTER_LINK="/tmp/links"
 
 log() {
-        modlog "Power Toggle $CURRMODEM" "$@"
+        logger -t "Power Toggle" "$@"
 }
 
 ifname1="ifname"
@@ -17,11 +17,12 @@ waitfor() {
 	while [ -e /tmp/modgone ]; do
 		sleep 1
 		CNTR=`expr $CNTR + 1`
-		if [ $CNTR -gt 35 ]; then
+		if [ $CNTR -gt 10 ]; then
 			rm -f /tmp/modgone
 			break
 		fi
 	done
+	sleep 4
 }
 
 rebind() {
@@ -68,8 +69,9 @@ rebind() {
 		PORT=$1
 		log "Re-binding USB driver on $PORT to reset modem"
 		echo $PORT > /sys/bus/usb/drivers/usb/unbind
-		sleep 35
+		sleep 15
 		echo $PORT > /sys/bus/usb/drivers/usb/bind
+		sleep 10
 		ifdown wan$CURRMODEM
 		uci delete network.wan$CURRMODEM
 		uci set network.wan$CURRMODEM=interface

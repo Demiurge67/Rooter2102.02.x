@@ -95,7 +95,7 @@ var SSHPubkeyDecoder = baseclass.singleton({
 			return { type: 'DSA', bits: len1 * 8, comment: comment, options: options, fprint: fprint, src: s };
 
 		case 'ssh-ed25519':
-			return { type: 'EdDSA', curve: 'Curve25519', comment: comment, options: options, fprint: fprint, src: s };
+			return { type: 'ECDH', curve: 'Curve25519', comment: comment, options: options, fprint: fprint, src: s };
 
 		case 'ecdsa-sha2':
 			return { type: 'ECDSA', curve: curve, comment: comment, options: options, fprint: fprint, src: s };
@@ -112,7 +112,7 @@ function renderKeyItem(pubkey) {
 		click: isReadonlyView ? null : removeKey,
 		'data-key': pubkey.src
 	}, [
-		E('strong', [ pubkey.comment || _('Unnamed key') ]), E('br'),
+		E('strong', pubkey.comment || _('Unnamed key')), E('br'),
 		E('small', [
 			'%s, %s'.format(pubkey.type, pubkey.curve || _('%d Bit').format(pubkey.bits)),
 			pubkey.options ? E([], [
@@ -169,7 +169,7 @@ function addKey(ev) {
 	}
 	else if (!pubkey) {
 		ui.showModal(_('Add key'), [
-			E('div', { class: 'alert-message warning' }, _('The given SSH public key is invalid. Please supply proper public RSA, ED25519 or ECDSA keys.')),
+			E('div', { class: 'alert-message warning' }, _('The given SSH public key is invalid. Please supply proper public RSA or ECDSA keys.')),
 			E('div', { class: 'right' }, E('div', { class: 'btn', click: L.hideModal }, _('Close')))
 		]);
 	}
@@ -198,7 +198,7 @@ function removeKey(ev) {
 
 	L.showModal(_('Delete key'), [
 		E('div', _('Do you really want to delete the following SSH key?')),
-		E('pre', [ delkey ]),
+		E('pre', delkey),
 		E('div', { class: 'right' }, [
 			E('div', { class: 'btn', click: L.hideModal }, _('Cancel')),
 			' ',

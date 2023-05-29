@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-01-29 11:24+0000\n"
-"Last-Translator: Dex94 <Dasvaresu@dr.com>\n"
+"PO-Revision-Date: 2021-03-15 10:03+0000\n"
+"Last-Translator: Giovanni Giacobbi <giovanni@giacobbi.net>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsdcwapd/it/>\n"
 "Language: it\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:72
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:121
@@ -17,17 +17,16 @@ msgstr "Bridge"
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:45
 msgid "Channel Sets"
-msgstr "Set di canali"
+msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:89
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:102
 msgid "Data Channels"
-msgstr "Canali di dati"
+msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:102
 msgid "Define data channels over which outbound filtered packets will flow."
 msgstr ""
-"Definisce i canali dati su cui fluiranno i pacchetti filtrati in uscita."
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:179
 msgid ""
@@ -41,7 +40,7 @@ msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:213
 msgid "Destination port"
-msgstr "Porta di destinazione"
+msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:21
 msgid "Dual Channel Wi-Fi AP Daemon"
@@ -67,7 +66,7 @@ msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:27
 msgid "General"
-msgstr "Generale"
+msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:27
 msgid "General Settings"
@@ -83,7 +82,7 @@ msgstr "Interfacce"
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:161
 msgid "MAC Address"
-msgstr "Indirizzo MAC"
+msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:186
 msgid "Packet size"
@@ -108,7 +107,7 @@ msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:198
 msgid "Source port"
-msgstr "Porta di origine"
+msgstr ""
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:40
 msgid "Specify the temporary directory for dcwapd file storage."

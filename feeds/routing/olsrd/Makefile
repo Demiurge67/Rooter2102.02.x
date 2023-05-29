@@ -6,13 +6,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=olsrd
-PKG_SOURCE_DATE:=2022-03-18
+PKG_SOURCE_DATE:=2021-06-12
 PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/OLSR/olsrd.git
-PKG_SOURCE_VERSION:=1e771b4d31e36f9ffd0a04c3f8f83abb803ec309
-PKG_MIRROR_HASH:=2b238b179bc873902a0d094c0d3e43e0a373710763bdca4b6fec5eed431d4a8d
+PKG_SOURCE_VERSION:=4973feb538b5b98b9d8ac2f8f474202f6d73de78
+PKG_MIRROR_HASH:=705ff34d7ce13f59004b7fc91d852b8a6982538b58a78f4dfa552e212c1026eb
 
 PKG_MAINTAINER:=Nick Hainke <vincent@systemli.org>
 PKG_BUILD_PARALLEL:=0
@@ -34,7 +34,7 @@ endef
 define Package/olsrd
   $(call Package/olsrd/template)
   MENU:=1
-  DEPENDS:=+libpthread +libubus +iptables +IPV6:ip6tables
+  DEPENDS:=+libpthread
 endef
 
 define Package/olsrd/conffiles

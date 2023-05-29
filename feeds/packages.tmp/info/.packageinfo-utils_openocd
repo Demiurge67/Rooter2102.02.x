@@ -1,8 +1,8 @@
 Source-Makefile: feeds/packages/utils/openocd/Makefile
-Build-Depends: !BUILD_NLS:libiconv
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: openocd
-Version: v0.11.0-0
+Version: v0.11.0-rc1-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libusb-1.0 +libusb-compat +libftdi1 +hidapi +libgpiod
 Conflicts: 
 Menu-Depends: 
@@ -12,8 +12,8 @@ Category: Utilities
 Repository: base
 Title: OpenOCD Utility
 Maintainer: Paul Fertser <fercerpav@gmail.com>
-Source: openocd-v0.11.0.tar.xz
-License: GPL-2.0-only
+Source: openocd-v0.11.0-rc1.tar.xz
+License: GPL-2.0
 LicenseFiles: COPYING
 Type: ipkg
 Description: OpenOCD provides on-chip programming and debugging support with a

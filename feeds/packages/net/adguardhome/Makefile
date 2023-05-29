@@ -6,32 +6,25 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=adguardhome
-PKG_VERSION:=0.107.21
+PKG_VERSION:=0.104.3
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=v$(PKG_VERSION)
 PKG_SOURCE_URL:=https://github.com/AdguardTeam/AdGuardHome
-PKG_MIRROR_HASH:=b7a5e666471f44e405088c5719c6bd030058a80ede1832c246cd70c10dc3993e
+PKG_MIRROR_HASH:=9051c08ebefccd918cad9b487d2d3b2c4b276ac71f16706c2ae8ee2a37ba9d03
 
 PKG_LICENSE:=GPL-3.0-only
 PKG_LICENSE_FILES:=LICENSE.txt
 PKG_MAINTAINER:=Dobroslaw Kijowski <dobo90@gmail.com>
 
-PKG_BUILD_DEPENDS:=golang/host node/host node-yarn/host
+PKG_BUILD_DEPENDS:=golang/host node/host packr/host
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
 GO_PKG:=github.com/AdguardTeam/AdGuardHome
-GO_PKG_BUILD_PKG:=github.com/AdguardTeam/AdGuardHome
-
-AGH_BUILD_TIME:=$(shell date -d @$(SOURCE_DATE_EPOCH) +%FT%TZ%z)
-AGH_VERSION_PKG:=github.com/AdguardTeam/AdGuardHome/internal/version
-GO_PKG_LDFLAGS_X:=$(AGH_VERSION_PKG).channel=release \
-	$(AGH_VERSION_PKG).version=$(PKG_SOURCE_VERSION) \
-	$(AGH_VERSION_PKG).buildtime=$(AGH_BUILD_TIME) \
-	$(AGH_VERSION_PKG).goarm=$(GO_ARM) \
-	$(AGH_VERSION_PKG).gomips=$(GO_MIPS)
+GO_PKG_EXCLUDES:=dhcpd/standalone
+GO_PKG_LDFLAGS_X:=main.version=$(PKG_VERSION) main.channel=release main.goarm=$(GO_ARM)
 
 include $(INCLUDE_DIR)/package.mk
 include ../../lang/golang/golang-package.mk
@@ -46,7 +39,6 @@ endef
 
 define Package/adguardhome/conffiles
 /etc/adguardhome.yaml
-/etc/config/adguardhome
 endef
 
 define Package/adguardhome/description
@@ -56,7 +48,9 @@ endef
 define Build/Compile
 	( \
 		pushd $(PKG_BUILD_DIR) ; \
-		make js-deps js-build ; \
+		npm --prefix client ci ; \
+		npm --prefix client run build-prod ; \
+		packr -z -v -i internal ; \
 		popd ; \
 		$(call GoPackage/Build/Compile) ; \
 	)
@@ -66,9 +60,6 @@ define Package/adguardhome/install
 	$(call GoPackage/Package/Install/Bin,$(1))
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/adguardhome.init $(1)/etc/init.d/adguardhome
-
-	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_DATA) ./files/adguardhome.config $(1)/etc/config/adguardhome
 endef
 
 $(eval $(call GoBinPackage,adguardhome))

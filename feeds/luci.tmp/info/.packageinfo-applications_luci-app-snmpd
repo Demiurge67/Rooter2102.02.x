@@ -4,7 +4,7 @@ Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:lu
 Package: luci-app-snmpd
 Submenu: 3. Applications
 Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-base +snmpd
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-compat +luci-base +snmpd
 Conflicts: 
 Menu-Depends: 
 Provides: 

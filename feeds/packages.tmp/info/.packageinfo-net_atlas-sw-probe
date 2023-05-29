@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/net/atlas-sw-probe/Makefile
 
 Package: atlas-sw-probe
-Version: 5080-2
+Version: 5020-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +atlas-probe +PACKAGE_dropbear:dropbearconvert
 Conflicts: 
 Menu-Depends: 
@@ -10,8 +10,8 @@ Section: net
 Category: Network
 Repository: base
 Title: RIPE Atlas software probe
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: ripe-atlas-software-probe-5080.tar.gz
+Maintainer: Jan Pavlinec <jan.pavlinec@nic.cz>
+Source: ripe-atlas-software-probe-5020.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
 Type: ipkg
@@ -20,11 +20,11 @@ Description:   RIPE Atlas SW probe is software variant of RIPE Atlas Probe.
   Internet connectivity through ping, traceroute, DNS, SSL/TLS, NTP, and HTTP.
   Data are then collected, aggregated and published by the RIPE NCC.
 https://atlas.ripe.net/about/probes/
-Jan Pavlinec <jan.pavlinec1@gmail.com>
+Jan Pavlinec <jan.pavlinec@nic.cz>
 @@
 
 Package: atlas-sw-probe-rpc
-Version: 5080-2
+Version: 5020-4
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +atlas-probe +bind-dig +rpcd
 Conflicts: 
 Menu-Depends: 
@@ -33,14 +33,14 @@ Section: net
 Category: Network
 Repository: base
 Title: RPC service
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
-Source: ripe-atlas-software-probe-5080.tar.gz
+Maintainer: Jan Pavlinec <jan.pavlinec@nic.cz>
+Source: ripe-atlas-software-probe-5020.tar.gz
 License: GPL-3.0-or-later
 LicenseFiles: LICENSE
 Type: ipkg
 Description:   Provides ubus calls for probe.
 https://atlas.ripe.net/about/probes/
-Jan Pavlinec <jan.pavlinec1@gmail.com>
+Jan Pavlinec <jan.pavlinec@nic.cz>
 @@
 
 

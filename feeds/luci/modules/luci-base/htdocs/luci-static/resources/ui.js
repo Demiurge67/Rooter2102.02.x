@@ -156,18 +156,6 @@ var UIElement = baseclass.extend(/** @lends LuCI.ui.AbstractElement.prototype */
 	},
 
 	/**
-	 * Returns the current validation error
-	 *
-	 * @instance
-	 * @memberof LuCI.ui.AbstractElement
-	 * @returns {string}
-	 * The validation error at this time
-	 */
-	getValidationError: function() {
-		return this.validationError || '';
-	},
-
-	/**
 	 * Force validation of the current input value.
 	 *
 	 * Usually input validation is automatically triggered by various DOM events
@@ -255,12 +243,10 @@ var UIElement = baseclass.extend(/** @lends LuCI.ui.AbstractElement.prototype */
 
 		this.node.addEventListener('validation-success', L.bind(function(ev) {
 			this.validState = true;
-			this.validationError = '';
 		}, this));
 
 		this.node.addEventListener('validation-failure', L.bind(function(ev) {
 			this.validState = false;
-			this.validationError = ev.detail.message;
 		}, this));
 	},
 
@@ -777,7 +763,7 @@ var UISelect = UIElement.extend(/** @lends LuCI.ui.Select.prototype */ {
 		    keys = Object.keys(this.choices);
 
 		if (this.options.sort === true)
-			keys.sort(L.naturalCompare);
+			keys.sort();
 		else if (Array.isArray(this.options.sort))
 			keys = this.options.sort;
 
@@ -1056,7 +1042,7 @@ var UIDropdown = UIElement.extend(/** @lends LuCI.ui.Dropdown.prototype */ {
 		var keys = Object.keys(this.choices);
 
 		if (this.options.sort === true)
-			keys.sort(L.naturalCompare);
+			keys.sort();
 		else if (Array.isArray(this.options.sort))
 			keys = this.options.sort;
 
@@ -2208,7 +2194,7 @@ var UIDynamicList = UIElement.extend(/** @lends LuCI.ui.DynamicList.prototype */
 			'id': this.options.id,
 			'class': 'cbi-dynlist',
 			'disabled': this.options.disabled ? '' : null
-		}, E('div', { 'class': 'add-item control-group' }));
+		}, E('div', { 'class': 'add-item' }));
 
 		if (this.choices) {
 			if (this.options.placeholder != null)
@@ -2859,8 +2845,13 @@ var UIFileUpload = UIElement.extend(/** @lends LuCI.ui.FileUpload.prototype */ {
 		    rows = E('ul');
 
 		list.sort(function(a, b) {
-			return L.naturalCompare(a.type == 'directory', b.type == 'directory') ||
-			       L.naturalCompare(a.name, b.name);
+			var isDirA = (a.type == 'directory'),
+			    isDirB = (b.type == 'directory');
+
+			if (isDirA != isDirB)
+				return isDirA < isDirB;
+
+			return a.name > b.name;
 		});
 
 		for (var i = 0; i < list.length; i++) {
@@ -3030,7 +3021,7 @@ function scrubMenu(node) {
 		for (var k in node.children) {
 			var child = scrubMenu(node.children[k]);
 
-			if (child.title && !child.firstchild_ineligible)
+			if (child.title)
 				hasSatisfiedChild = hasSatisfiedChild || child.satisfied;
 		}
 	}
@@ -3120,24 +3111,7 @@ var UIMenu = baseclass.singleton(/** @lends LuCI.ui.menu.prototype */ {
 			if (!node.children[k].hasOwnProperty('title'))
 				continue;
 
-			var subnode = Object.assign(node.children[k], { name: k });
-
-			if (L.isObject(subnode.action) && subnode.action.path != null &&
-			    (subnode.action.type == 'alias' || subnode.action.type == 'rewrite')) {
-				var root = this.menu,
-				    path = subnode.action.path.split('/');
-
-				for (var i = 0; root != null && i < path.length; i++)
-					root = L.isObject(root.children) ? root.children[path[i]] : null;
-
-				if (root)
-					subnode = Object.assign({}, subnode, {
-						children: root.children,
-						action: root.action
-					});
-			}
-
-			children.push(subnode);
+			children.push(Object.assign(node.children[k], { name: k }));
 		}
 
 		return children.sort(function(a, b) {
@@ -3147,306 +3121,8 @@ var UIMenu = baseclass.singleton(/** @lends LuCI.ui.menu.prototype */ {
 			if (wA != wB)
 				return wA - wB;
 
-			return L.naturalCompare(a.name, b.name);
+			return a.name > b.name;
 		});
-	}
-});
-
-var UITable = baseclass.extend(/** @lends LuCI.ui.table.prototype */ {
-	__init__: function(captions, options, placeholder) {
-		if (!Array.isArray(captions)) {
-			this.initFromMarkup(captions);
-
-			return;
-		}
-
-		var id = options.id || 'table%08x'.format(Math.random() * 0xffffffff);
-
-		var table = E('table', { 'id': id, 'class': 'table' }, [
-			E('tr', { 'class': 'tr table-titles', 'click': UI.prototype.createHandlerFn(this, 'handleSort') })
-		]);
-
-		this.id = id;
-		this.node = table
-		this.options = options;
-
-		var sorting = this.getActiveSortState();
-
-		for (var i = 0; i < captions.length; i++) {
-			if (captions[i] == null)
-				continue;
-
-			var th = E('th', { 'class': 'th' }, [ captions[i] ]);
-
-			if (typeof(options.captionClasses) == 'object')
-				DOMTokenList.prototype.add.apply(th.classList, L.toArray(options.captionClasses[i]));
-
-			if (options.sortable !== false && (typeof(options.sortable) != 'object' || options.sortable[i] !== false)) {
-				th.setAttribute('data-sortable-row', true);
-
-				if (sorting && sorting[0] == i)
-					th.setAttribute('data-sort-direction', sorting[1] ? 'desc' : 'asc');
-			}
-
-			table.firstElementChild.appendChild(th);
-		}
-
-		if (placeholder) {
-			var trow = table.appendChild(E('tr', { 'class': 'tr placeholder' })),
-			    td = trow.appendChild(E('td', { 'class': 'td' }, placeholder));
-
-			if (typeof(captionClasses) == 'object')
-				DOMTokenList.prototype.add.apply(td.classList, L.toArray(captionClasses[0]));
-		}
-
-		DOMTokenList.prototype.add.apply(table.classList, L.toArray(options.classes));
-	},
-
-	update: function(data, placeholder) {
-		var placeholder = placeholder || this.options.placeholder || _('No data', 'empty table placeholder'),
-		    sorting = this.getActiveSortState();
-
-		if (!Array.isArray(data))
-			return;
-
-		if (sorting) {
-			var list = data.map(L.bind(function(row) {
-				return [ this.deriveSortKey(row[sorting[0]], sorting[0]), row ];
-			}, this));
-
-			list.sort(function(a, b) {
-				return sorting[1]
-					? -L.naturalCompare(a[0], b[0])
-					: L.naturalCompare(a[0], b[0]);
-			});
-
-			data.length = 0;
-
-			list.forEach(function(item) {
-				data.push(item[1]);
-			});
-		}
-
-		this.data = data;
-		this.placeholder = placeholder;
-
-		var n = 0,
-		    rows = this.node.querySelectorAll('tr, .tr'),
-		    trows = [],
-		    headings = [].slice.call(this.node.firstElementChild.querySelectorAll('th, .th')),
-		    captionClasses = this.options.captionClasses,
-		    trTag = (rows[0] && rows[0].nodeName == 'DIV') ? 'div' : 'tr',
-		    tdTag = (headings[0] && headings[0].nodeName == 'DIV') ? 'div' : 'td';
-
-		data.forEach(function(row) {
-			trows[n] = E(trTag, { 'class': 'tr' });
-
-			for (var i = 0; i < headings.length; i++) {
-				var text = (headings[i].innerText || '').trim();
-				var raw_val = Array.isArray(row[i]) ? row[i][0] : null;
-				var disp_val = Array.isArray(row[i]) ? row[i][1] : row[i];
-				var td = trows[n].appendChild(E(tdTag, {
-					'class': 'td',
-					'data-title': (text !== '') ? text : null,
-					'data-value': raw_val
-				}, (disp_val != null) ? ((disp_val instanceof DocumentFragment) ? disp_val.cloneNode(true) : disp_val) : ''));
-
-				if (typeof(captionClasses) == 'object')
-					DOMTokenList.prototype.add.apply(td.classList, L.toArray(captionClasses[i]));
-
-				if (!td.classList.contains('cbi-section-actions'))
-					headings[i].setAttribute('data-sortable-row', true);
-			}
-
-			trows[n].classList.add('cbi-rowstyle-%d'.format((n++ % 2) ? 2 : 1));
-		});
-
-		for (var i = 0; i < n; i++) {
-			if (rows[i+1])
-				this.node.replaceChild(trows[i], rows[i+1]);
-			else
-				this.node.appendChild(trows[i]);
-		}
-
-		while (rows[++n])
-			this.node.removeChild(rows[n]);
-
-		if (placeholder && this.node.firstElementChild === this.node.lastElementChild) {
-			var trow = this.node.appendChild(E(trTag, { 'class': 'tr placeholder' })),
-			    td = trow.appendChild(E(tdTag, { 'class': 'td' }, placeholder));
-
-			if (typeof(captionClasses) == 'object')
-				DOMTokenList.prototype.add.apply(td.classList, L.toArray(captionClasses[0]));
-		}
-
-		return this.node;
-	},
-
-	render: function() {
-		return this.node;
-	},
-
-	/** @private */
-	initFromMarkup: function(node) {
-		if (!dom.elem(node))
-			node = document.querySelector(node);
-
-		if (!node)
-			throw 'Invalid table selector';
-
-		var options = {},
-		    headrow = node.querySelector('tr, .tr');
-
-		if (!headrow)
-			return;
-
-		options.classes = [].slice.call(node.classList).filter(function(c) { return c != 'table' });
-		options.sortable = [];
-		options.captionClasses = [];
-
-		headrow.querySelectorAll('th, .th').forEach(function(th, i) {
-			options.sortable[i] = !th.classList.contains('cbi-section-actions');
-			options.captionClasses[i] = [].slice.call(th.classList).filter(function(c) { return c != 'th' });
-		});
-
-		headrow.addEventListener('click', UI.prototype.createHandlerFn(this, 'handleSort'));
-
-		this.id = node.id;
-		this.node = node;
-		this.options = options;
-	},
-
-	/** @private */
-	deriveSortKey: function(value, index) {
-		var opts = this.options || {},
-		    hint, m;
-
-		if (opts.sortable == true || opts.sortable == null)
-			hint = 'auto';
-		else if (typeof( opts.sortable) == 'object')
-			hint =  opts.sortable[index];
-
-		if (dom.elem(value)) {
-			if (value.hasAttribute('data-value'))
-				value = value.getAttribute('data-value');
-			else
-				value = (value.innerText || '').trim();
-		}
-
-		switch (hint || 'auto') {
-		case true:
-		case 'auto':
-			m = /^([0-9a-fA-F:.]+)(?:\/([0-9a-fA-F:.]+))?$/.exec(value);
-
-			if (m) {
-				var addr, mask;
-
-				addr = validation.parseIPv6(m[1]);
-				mask = m[2] ? validation.parseIPv6(m[2]) : null;
-
-				if (addr && mask != null)
-					return '%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x%04x'.format(
-						addr[0], addr[1], addr[2], addr[3], addr[4], addr[5], addr[6], addr[7],
-						mask[0], mask[1], mask[2], mask[3], mask[4], mask[5], mask[6], mask[7]
-					);
-				else if (addr)
-					return '%04x%04x%04x%04x%04x%04x%04x%04x%02x'.format(
-						addr[0], addr[1], addr[2], addr[3], addr[4], addr[5], addr[6], addr[7],
-						m[2] ? +m[2] : 128
-					);
-
-				addr = validation.parseIPv4(m[1]);
-				mask = m[2] ? validation.parseIPv4(m[2]) : null;
-
-				if (addr && mask != null)
-					return '%03d%03d%03d%03d%03d%03d%03d%03d'.format(
-						addr[0], addr[1], addr[2], addr[3],
-						mask[0], mask[1], mask[2], mask[3]
-					);
-				else if (addr)
-					return '%03d%03d%03d%03d%02d'.format(
-						addr[0], addr[1], addr[2], addr[3],
-						m[2] ? +m[2] : 32
-					);
-			}
-
-			m = /^(?:(\d+)d )?(\d+)h (\d+)m (\d+)s$/.exec(value);
-
-			if (m)
-				return '%05d%02d%02d%02d'.format(+m[1], +m[2], +m[3], +m[4]);
-
-			m = /^(\d+)\b(\D*)$/.exec(value);
-
-			if (m)
-				return '%010d%s'.format(+m[1], m[2]);
-
-			return String(value);
-
-		case 'ignorecase':
-			return String(value).toLowerCase();
-
-		case 'numeric':
-			return +value;
-
-		default:
-			return String(value);
-		}
-	},
-
-	/** @private */
-	getActiveSortState: function() {
-		if (this.sortState)
-			return this.sortState;
-
-		var page = document.body.getAttribute('data-page'),
-		    key = page + '.' + this.id,
-		    state = session.getLocalData('tablesort');
-
-		if (L.isObject(state) && Array.isArray(state[key]))
-			return state[key];
-
-		return null;
-	},
-
-	/** @private */
-	setActiveSortState: function(index, descending) {
-		this.sortState = [ index, descending ];
-
-		if (!this.options.id)
-			return;
-
-		var page = document.body.getAttribute('data-page'),
-		    key = page + '.' + this.id,
-		    state = session.getLocalData('tablesort');
-
-		if (!L.isObject(state))
-			state = {};
-
-		state[key] = this.sortState;
-
-		session.setLocalData('tablesort', state);
-	},
-
-	/** @private */
-	handleSort: function(ev) {
-		if (!ev.target.matches('th[data-sortable-row]'))
-			return;
-
-		var th = ev.target,
-		    direction = (th.getAttribute('data-sort-direction') == 'asc'),
-		    index = 0;
-
-		this.node.firstElementChild.querySelectorAll('th').forEach(function(other_th, i) {
-			if (other_th !== th)
-				other_th.removeAttribute('data-sort-direction');
-			else
-				index = i;
-		});
-
-		th.setAttribute('data-sort-direction', direction ? 'desc' : 'asc');
-
-		this.setActiveSortState(index, direction);
-		this.update(this.data, this.placeholder);
 	}
 });
 
@@ -3560,8 +3236,7 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 
 		var rect = target.getBoundingClientRect(),
 		    x = rect.left              + window.pageXOffset,
-		    y = rect.top + rect.height + window.pageYOffset,
-		    above = false;
+		    y = rect.top + rect.height + window.pageYOffset;
 
 		tooltipDiv.className = 'cbi-tooltip';
 		tooltipDiv.innerHTML = '▲ ';
@@ -3570,15 +3245,7 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 		if (target.hasAttribute('data-tooltip-style'))
 			tooltipDiv.classList.add(target.getAttribute('data-tooltip-style'));
 
-		if ((y + tooltipDiv.offsetHeight) > (window.innerHeight + window.pageYOffset))
-			above = true;
-
-		var dropdown = target.querySelector('ul.dropdown[style]:first-child');
-
-		if (dropdown && dropdown.style.top)
-			above = true;
-
-		if (above) {
+		if ((y + tooltipDiv.offsetHeight) > (window.innerHeight + window.pageYOffset)) {
 			y -= (tooltipDiv.offsetHeight + target.offsetHeight);
 			tooltipDiv.firstChild.data = '▼ ' + tooltipDiv.firstChild.data.substr(2);
 		}
@@ -4399,16 +4066,10 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 							'class': 'btn',
 							'click': UI.prototype.hideModal
 						}, [ _('Close') ]), ' ',
-						new UIComboButton('0', {
-							0: [ _('Save & Apply') ],
-							1: [ _('Apply unchecked') ]
-						}, {
-							classes: {
-								0: 'btn cbi-button cbi-button-positive important',
-								1: 'btn cbi-button cbi-button-negative important'
-							},
-							click: L.bind(function(ev, mode) { this.apply(mode == '0') }, this)
-						}).render(), ' ',
+						E('button', {
+							'class': 'cbi-button cbi-button-positive important',
+							'click': L.bind(this.apply, this, true)
+						}, [ _('Save & Apply') ]), ' ',
 						E('button', {
 							'class': 'cbi-button cbi-button-reset',
 							'click': L.bind(this.revert, this)
@@ -4478,26 +4139,6 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 		},
 
 		/** @private */
-		checkConnectivityAffected: function() {
-			return L.resolveDefault(fs.exec_direct('/usr/libexec/luci-peeraddr', null, 'json')).then(L.bind(function(info) {
-				if (L.isObject(info) && Array.isArray(info.inbound_interfaces)) {
-					for (var i = 0; i < info.inbound_interfaces.length; i++) {
-						var iif = info.inbound_interfaces[i];
-
-						for (var j = 0; this.changes && this.changes.network && j < this.changes.network.length; j++) {
-							var chg = this.changes.network[j];
-
-							if (chg[0] == 'set' && chg[1] == iif && (chg[2] == 'proto' || chg[2] == 'ipaddr' || chg[2] == 'netmask'))
-								return iif;
-						}
-					}
-				}
-
-				return null;
-			}, this));
-		},
-
-		/** @private */
 		rollback: function(checked) {
 			if (checked) {
 				this.displayStatus('warning spinning',
@@ -4534,7 +4175,7 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 							method: 'post',
 							timeout: L.env.apply_timeout * 1000,
 							query: { sid: L.env.sessionid, token: L.env.token }
-						}).then(call, call.bind(null, { status: 0 }, null, 0));
+						}).then(call);
 					}, delay);
 				};
 
@@ -4634,65 +4275,35 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 			this.displayStatus('notice spinning',
 				E('p', _('Starting configuration apply…')));
 
-			(new Promise(function(resolveFn, rejectFn) {
-				if (!checked)
-					return resolveFn(false);
+			request.request(L.url('admin/uci', checked ? 'apply_rollback' : 'apply_unchecked'), {
+				method: 'post',
+				query: { sid: L.env.sessionid, token: L.env.token }
+			}).then(function(r) {
+				if (r.status === (checked ? 200 : 204)) {
+					var tok = null; try { tok = r.json(); } catch(e) {}
+					if (checked && tok !== null && typeof(tok) === 'object' && typeof(tok.token) === 'string')
+						UI.prototype.changes.confirm_auth = tok;
 
-				UI.prototype.changes.checkConnectivityAffected().then(function(affected) {
-					if (!affected)
-						return resolveFn(true);
+					UI.prototype.changes.confirm(checked, Date.now() + L.env.apply_rollback * 1000);
+				}
+				else if (checked && r.status === 204) {
+					UI.prototype.changes.displayStatus('notice',
+						E('p', _('There are no changes to apply')));
 
-					UI.prototype.changes.displayStatus('warning', [
-						E('h4', _('Connectivity change')),
-						E('p', _('The network access to this device could be interrupted by changing settings of the "%h" interface.').format(affected)),
-						E('p', _('If the IP address used to access LuCI changes, a <strong>manual reconnect to the new IP</strong> is required within %d seconds to confirm the settings, otherwise modifications will be reverted.').format(L.env.apply_rollback)),
-						E('div', { 'class': 'right' }, [
-							E('button', {
-								'class': 'btn',
-								'click': rejectFn,
-							}, [ _('Cancel') ]), ' ',
-							E('button', {
-								'class': 'btn cbi-button-action important',
-								'click': resolveFn.bind(null, true)
-							}, [ _('Apply with revert after connectivity loss') ]), ' ',
-							E('button', {
-								'class': 'btn cbi-button-negative important',
-								'click': resolveFn.bind(null, false)
-							}, [ _('Apply and keep settings') ])
-						])
-					]);
-				});
-			})).then(function(checked) {
-				request.request(L.url('admin/uci', checked ? 'apply_rollback' : 'apply_unchecked'), {
-					method: 'post',
-					query: { sid: L.env.sessionid, token: L.env.token }
-				}).then(function(r) {
-					if (r.status === (checked ? 200 : 204)) {
-						var tok = null; try { tok = r.json(); } catch(e) {}
-						if (checked && tok !== null && typeof(tok) === 'object' && typeof(tok.token) === 'string')
-							UI.prototype.changes.confirm_auth = tok;
+					window.setTimeout(function() {
+						UI.prototype.changes.displayStatus(false);
+					}, L.env.apply_display * 1000);
+				}
+				else {
+					UI.prototype.changes.displayStatus('warning',
+						E('p', _('Apply request failed with status <code>%h</code>')
+							.format(r.responseText || r.statusText || r.status)));
 
-						UI.prototype.changes.confirm(checked, Date.now() + L.env.apply_rollback * 1000);
-					}
-					else if (checked && r.status === 204) {
-						UI.prototype.changes.displayStatus('notice',
-							E('p', _('There are no changes to apply')));
-
-						window.setTimeout(function() {
-							UI.prototype.changes.displayStatus(false);
-						}, L.env.apply_display * 1000);
-					}
-					else {
-						UI.prototype.changes.displayStatus('warning',
-							E('p', _('Apply request failed with status <code>%h</code>')
-								.format(r.responseText || r.statusText || r.status)));
-
-						window.setTimeout(function() {
-							UI.prototype.changes.displayStatus(false);
-						}, L.env.apply_display * 1000);
-					}
-				});
-			}, this.displayStatus.bind(this, false));
+					window.setTimeout(function() {
+						UI.prototype.changes.displayStatus(false);
+					}, L.env.apply_display * 1000);
+				}
+			});
 		},
 
 		/**
@@ -4884,8 +4495,6 @@ var UI = baseclass.extend(/** @lends LuCI.ui.prototype */ {
 	},
 
 	menu: UIMenu,
-
-	Table: UITable,
 
 	AbstractElement: UIElement,
 

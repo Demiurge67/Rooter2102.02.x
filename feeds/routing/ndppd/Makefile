@@ -9,19 +9,20 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ndppd
 PKG_VERSION:=0.2.5
-PKG_RELEASE:=2
+PKG_RELEASE:=1
 
 # Latest release
 PKG_SOURCE_URL:=https://codeload.github.com/DanielAdolfsson/ndppd/tar.gz/$(PKG_VERSION)?
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_HASH:=ee934167f8357f0bd0015e201a77fbe4d028c59e89dc98113805c6855e1c3992
-PKG_LICENSE:=GPL-3.0-or-later
+PKG_LICENSE:=GPL-3.0+
 
 # Development snapshot
 #PKG_SOURCE_URL=git://github.com/Tuhox/ndppd.git
 #PKG_SOURCE_VERSION=master
 #PKG_SOURCE_SUBDIR=$(PKG_NAME)-$(PKG_VERSION)
 
+include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ndppd
@@ -30,7 +31,7 @@ define Package/ndppd
   TITLE:=NDP Proxy Daemon
   URL:=http://www.priv.nu/projects/ndppd/
   MAINTAINER:=Gabriel Kerneis <gabriel@kerneis.info>
-  DEPENDS:=@IPV6 +libstdcpp
+  DEPENDS:=@IPV6 $(CXX_DEPENDS)
 endef
 
 define Package/ndppd/description

@@ -3,7 +3,7 @@ Build-Depends: libtirpc
 
 Package: conntrack
 Submenu: Firewall
-Version: 1.4.6-3
+Version: 1.4.6-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libnetfilter-conntrack +libnetfilter-cttimeout +libnetfilter-cthelper +libnetfilter-queue
 Conflicts: 
 Menu-Depends: 
@@ -26,7 +26,7 @@ Jo-Philipp Wich <jo@mein.io>
 
 Package: conntrackd
 Submenu: Firewall
-Version: 1.4.6-3
+Version: 1.4.6-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libnetfilter-conntrack +libnetfilter-cttimeout +libnetfilter-cthelper +libnetfilter-queue
 Conflicts: 
 Menu-Depends: 

@@ -1,7 +1,7 @@
 --- a/src/dsp/dsp.h
 +++ b/src/dsp/dsp.h
-@@ -128,7 +128,7 @@ extern "C" {
- #define WEBP_HAVE_NEON
+@@ -95,7 +95,7 @@ extern "C" {
+ #define WEBP_USE_INTRINSICS
  #endif
  
 -#if defined(__mips__) && !defined(__mips64) && \

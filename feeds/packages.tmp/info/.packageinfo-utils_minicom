@@ -1,9 +1,9 @@
 Source-Makefile: feeds/packages/utils/minicom/Makefile
-Build-Depends: !BUILD_NLS:libiconv
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: minicom
 Submenu: Terminal
-Version: 2.8-0
+Version: 2.7.1-2
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +libncurses
 Conflicts: 
 Menu-Depends: 
@@ -13,12 +13,12 @@ Category: Utilities
 Repository: base
 Title: Terminal emulation program
 Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>
-Source: minicom-2.8.tar.bz2
-License: GPL-2.0-or-later
+Source: minicom-2.7.1.tar.gz
+License: GPL-2.0
 LicenseFiles: COPYING
 Type: ipkg
 Description: Terminal emulation program
-https://salsa.debian.org/minicom-team/minicom
+http://alioth.debian.org/projects/minicom/
 Álvaro Fernández Rojas <noltari@gmail.com>
 @@
 

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-09 21:28+0200\n"
-"PO-Revision-Date: 2022-10-10 21:04+0000\n"
-"Last-Translator: garis <garis94@gmail.com>\n"
+"PO-Revision-Date: 2021-05-07 11:32+0000\n"
+"Last-Translator: Omar Destefani <omar.destefani@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationstransmission/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:65
 msgid "Alternative download speed"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:50
 msgid "Config file directory"
-msgstr "Cartella file di configurazione"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:53
 msgid "Custom Web UI directory"
@@ -92,7 +92,7 @@ msgstr "Debug"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:97
 msgid "Download directory"
-msgstr "Cartella download"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:211
 msgid "Download queue enabled"
@@ -112,7 +112,7 @@ msgstr "Abilitato"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:136
 msgid "Encryption"
-msgstr "Crittografia"
+msgstr "Criptazione"
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:149
 msgid "Error"
@@ -295,11 +295,11 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:266
 msgid "RPC password"
-msgstr "Password RPC"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:239
 msgid "RPC port"
-msgstr "Porta RPC"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:230
 msgid "RPC settings"
@@ -307,7 +307,7 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:263
 msgid "RPC username"
-msgstr "Utente RPC"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:256
 msgid "RPC whitelist"
@@ -343,7 +343,7 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:51
 msgid "Run daemon as user"
-msgstr "Esegui il daemon come utente"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:271
 msgid "Scheduling"
@@ -388,8 +388,8 @@ msgstr ""
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:179
 msgid ""
 "This is documented on <a href=\"https://www.irif.fr/~jch/software/bittorrent/"
-"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer "
-"noopener\">tcp-congestion-control</a>."
+"tcp-congestion-control.html\" target=\"_blank\" rel=\"noreferrer noopener"
+"\">tcp-congestion-control</a>."
 msgstr ""
 
 #: applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json:3
@@ -420,7 +420,7 @@ msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:181
 msgid "hours"
-msgstr "ore"
+msgstr ""
 
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:277
 #: applications/luci-app-transmission/htdocs/luci-static/resources/view/transmission.js:280

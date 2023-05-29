@@ -5,9 +5,9 @@
 	exit 1
 }
 
-[ -n "$1" ] || ./build/mkbasepot.sh
+./build/mkbasepot.sh
 
-find "${1:-.}" -name '*.pot' -and -not -name base.pot | \
+find . -name '*.pot' -and -not -name base.pot | \
 	while read path; do
 		dir="${path%/po/templates/*}"
 		echo -n "Updating ${path#./} ... "
@@ -15,10 +15,4 @@ find "${1:-.}" -name '*.pot' -and -not -name base.pot | \
 		echo "done"
 	done
 
-if [ -n "$1" ]; then
-	find "$1" -path '*/templates/*.pot' -printf '%h ' | \
-		xargs -r -n 1 dirname | \
-		xargs -r -n 1 ./build/i18n-update.pl
-else
-	./build/i18n-update.pl
-fi
+./build/i18n-update.pl

@@ -16,6 +16,8 @@ conf_local_file=$dyndir/named.conf.local
 session_key_name=local-ddns
 session_key_file=/var/run/named/session.key
 
+dyn_file=$(mktemp -u /tmp/dhcpd.XXXXXX)
+
 time2seconds() {
 	local timestring=$1
 	local multiplier number suffix
@@ -44,31 +46,6 @@ time2seconds() {
 			;;
 	esac
 	echo $(( number * multiplier ))
-}
-
-trim() {
-	local arg="$1"
-
-	echo "$arg" | sed -e 's/^ *//' -e 's/ *$//'
-}
-
-rfc1918_prefix() {
-	local octets="$(echo "${1%%/*}" | cut -d. -f1)"
-
-	[ "$octets" = "10" ] && { echo "$octets"; return; }
-
-	octets="$(echo "${1%%/*}" | cut -d. -f1-2)"
-
-	case "$octets" in
-	172.1[6789]|172.2[0-9]|172.3[01]|192.168)
-		echo "$octets"
-		;;
-	esac
-}
-
-no_ipv6() {
-	[ -n "$(named-checkconf -px \
-		| sed -r -ne '1N; N; /^\tlisten-on-v6  ?\{\n\t\t"none";\n\t\};$/{ p; q; }; D')" ]
 }
 
 # duplicated from dnsmasq init script
@@ -145,14 +122,12 @@ append_routes() {
 	for tuple in $tuples; do
 		local network prefix router save octets compacted
 
-		tuple="$(trim "$tuple")"
-
 		save="${tuple% *}"
-		router="$(trim "${tuple#${save} }")"
+		router="${tuple#${save} }"
 
-		network="$(trim "${save%/[0-9]*}")"
-
-		prefix="$(trim "${save##${network}/}")"
+		network="${save%/[0-9]*}"
+		prefix="${save##${network}}"
+		prefix="${prefix:1}"
 
 		octets=$((($prefix + 7) / 8))
 		compacted="$(echo "$network" | cut -d. -f1-$octets)"
@@ -218,8 +193,7 @@ static_domain_add() {
 		revip="$(rev_str "$ip" ".")"
 
 		update "$name.$domain." IN A "$ip"
-		[ -n "$(rfc1918_prefix "$ip")" ] && \
-			update "$revip.in-addr.arpa." IN PTR "$name.$domain."
+		update "$revip.in-addr.arpa." IN PTR "$name.$domain."
 	done
 }
 
@@ -264,7 +238,7 @@ static_srvhost_add() {
 	config_get weight "$cfg" "weight"
 	[ -n "$weight" ] || return 0
 
-	update "$srv.$domain." IN SRV "$priority" "$weight" "$port" "$target.$domain"
+	update "$srv.$domain." IN SRV "$priority" "$weight" "$port" "$target"
 }
 
 static_srvhosts() {
@@ -396,10 +370,15 @@ dhcpd_add() {
 
 	[ static = "$proto" ] || return 0
 
-	local octets="$(rfc1918_prefix "$subnet")"
-
-	[ -n "$octets" ] && rfc1918_nets="$rfc1918_nets${rfc1918_nets:+ }$octets"
-
+	local pair="$(echo "${subnet%%/*}" | cut -d. -f1-2)"
+	case "$pair" in
+	10.*)
+		rfc1918_nets="$rfc1918_nets${rfc1918_nets:+ }10"
+		;;
+	172.1[6789]|172.2[0-9]|172.3[01]|192.168)
+		rfc1918_nets="$rfc1918_nets${rfc1918_nets:+ }$pair"
+		;;
+	esac
 	[ $synthesize -eq 0 ] && return
 
 	config_get_bool dynamicdhcp "$cfg" "dynamicdhcp" 1
@@ -560,8 +539,6 @@ start_service() {
 	else
 		. /lib/functions/network.sh
 
-		local dyn_file=$(mktemp -u /tmp/dhcpd.XXXXXX)
-
 		config_load dhcp
 
 		local rfc1918_nets=""
@@ -597,15 +574,10 @@ EOF
 		static_srvhosts >> $config_file
 
 		if [ $dynamicdns -eq 1 ]; then
-			local args=
+			nsupdate -l -v $dyn_file
 
-			no_ipv6 && args="-4"
-
-			nsupdate -l -v $args $dyn_file
-
+			rm -f $dyn_file
 		fi
-
-		rm -f $dyn_file
 
 		[ -z "$dhcp_ifs" ] && return 0
 	fi

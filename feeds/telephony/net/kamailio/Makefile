@@ -9,12 +9,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=kamailio
-PKG_VERSION:=5.5.2
-PKG_RELEASE:=$(AUTORELEASE)
+PKG_VERSION:=5.4.2
+PKG_RELEASE:=1
 
 PKG_SOURCE_URL:=https://www.kamailio.org/pub/kamailio/$(PKG_VERSION)/src
 PKG_SOURCE:=kamailio-$(PKG_VERSION)_src.tar.gz
-PKG_HASH:=998f337d0561b5d814ebb5c59b160e0c856e7c9f3e53bcee0f3285d003d1c05c
+PKG_HASH:=e710824d6810d3053ec79a39ee532c51bb91738a07f16c3a103aa07e0f8b80b5
 PKG_USE_MIPS16:=0
 
 PKG_LICENSE:=GPL-2.0+
@@ -120,7 +120,6 @@ MODULES_AVAILABLE:= \
 	ldap \
 	log_custom \
 	lost \
-	lrkproxy \
 	mangler \
 	matrix \
 	maxfwd \
@@ -213,7 +212,7 @@ MODULES_AVAILABLE:= \
 	uid_gflags \
 	uid_uri_db \
 	uri_db \
-	userblocklist \
+	userblacklist \
 	usrloc \
 	utils \
 	uuid \
@@ -235,7 +234,6 @@ PKG_CONFIG_DEPENDS:= \
 
 include $(INCLUDE_DIR)/nls.mk
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/kernel.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-version.mk
 
 # Build reproducibly
@@ -413,8 +411,6 @@ CPU_MIPS2:=mips32 24kc 34kc 4kec 74kc
 endif
 
 MAKE_FLAGS += \
-	OS=linux \
-	OSREL=$(LINUX_UNAME_VERSION) \
 	$(if $(findstring $(call qstrip,$(CONFIG_CPU_TYPE)),$(CPU_MIPS2)),ARCH="mips2",ARCH="$(ARCH)") \
 	CC_EXTRA_OPTS="$(TARGET_CFLAGS) $(TARGET_CPPFLAGS)" \
 	LD="$(TARGET_CC)" \
@@ -436,9 +432,6 @@ define Build/Prepare
 	# Upstream adds "-funroll-loops" to compiler flags, which increases
 	# binary size significantly. Remove this flag.
 	$(SED) 's/[ ]*-funroll-loops//' $(PKG_BUILD_DIR)/src/Makefile.defs
-	# Also remove -march=arm... flags as they can clash with
-	# CONFIG_TARGET_OPTIMIZATION.
-	$(SED) 's/-march=armv[0-7a-z-]*[ ]*//' $(PKG_BUILD_DIR)/src/Makefile.defs
 endef
 
 define Build/Configure
@@ -559,7 +552,6 @@ $(eval $(call BuildKamailioModule,lcr,Least Cost Routing,,+kamailio-mod-tm +libp
 $(eval $(call BuildKamailioModule,ldap,LDAP connector,,+libopenldap))
 $(eval $(call BuildKamailioModule,log_custom,Logging to custom backends,,))
 $(eval $(call BuildKamailioModule,lost,HELD and LOST routing,,+kamailio-mod-http-client,))
-$(eval $(call BuildKamailioModule,lrkproxy,pylrkproxy media stream relay,,,))
 $(eval $(call BuildKamailioModule,mangler,SDP mangling,,))
 $(eval $(call BuildKamailioModule,matrix,Matrix operations,,))
 $(eval $(call BuildKamailioModule,maxfwd,Max-Forward processor,,))
@@ -652,7 +644,7 @@ $(eval $(call BuildKamailioModule,uid_domain,Domains management,,))
 $(eval $(call BuildKamailioModule,uid_gflags,Global attributes and flags,,))
 $(eval $(call BuildKamailioModule,uid_uri_db,Database URI operations,,))
 $(eval $(call BuildKamailioModule,uri_db,Database-backend SIP URI checking,,))
-$(eval $(call BuildKamailioModule,userblocklist,User blocklists,,+kamailio-lib-libtrie))
+$(eval $(call BuildKamailioModule,userblacklist,User blacklists,,+kamailio-lib-libtrie))
 $(eval $(call BuildKamailioModule,usrloc,User location,,))
 $(eval $(call BuildKamailioModule,utils,Misc utilities,,+libcurl,))
 $(eval $(call BuildKamailioModule,uuid,UUID utilities,,+libuuid))

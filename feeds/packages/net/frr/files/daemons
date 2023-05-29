@@ -13,7 +13,6 @@ nhrpd=no
 eigrpd=no
 babeld=no
 sharpd=no
-pathd=no
 pbrd=no
 bfdd=no
 fabricd=no

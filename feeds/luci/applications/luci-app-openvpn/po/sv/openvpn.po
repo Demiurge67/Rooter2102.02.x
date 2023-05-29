@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-12-06 15:41+0000\n"
+"PO-Revision-Date: 2021-03-19 04:16+0000\n"
 "Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenvpn/sv/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:364
 msgid "'net30', 'p2p', or 'subnet'"
@@ -18,7 +18,7 @@ msgstr "'net30', 'p2p', eller 'subnät'"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:481
 msgid "Accept options pushed from server"
-msgstr "Acceptera alternativ som skickas från server"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:92
 msgid "Add"
@@ -26,11 +26,11 @@ msgstr "Lägg till"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:225
 msgid "Add route after establishing connection"
-msgstr "Lägg till rutt efter att anslutningen har etablerats"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:92
 msgid "Add template based configuration"
-msgstr "Lägg till mall-baserad konfiguration"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:748
 msgid "Additional authentication over TLS"
@@ -43,11 +43,11 @@ msgstr "Tillåt klient-till-klienttraffik"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:422
 msgid "Allow multiple clients with same certificate"
-msgstr "Tillåt flertalet klienter med samma certifikat"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:740
 msgid "Allow only one session"
-msgstr "Tillåt endast en session"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:193
 msgid "Allow remote to change its IP or port"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:457
 msgid "Allowed maximum of connected clients"
-msgstr "Maximalt antalet tillåtna ansluta klienter"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:462
 msgid "Allowed maximum of internal"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:467
 msgid "Allowed maximum of new connections"
-msgstr "Maximalt antalet nya tillåtna anslutningar"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:68
 msgid "Append log to file"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:486
 msgid "Authenticate using username/password"
-msgstr "Autentisera med användarnamn/lösenord"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:556
 msgid "Automatically redirect default route"
@@ -80,8 +80,6 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:11
 msgid "Below is a list of configured OpenVPN instances and their current state"
 msgstr ""
-"Nedan är en lista över konfigurerade OpenVPN-instanser och deras nuvarande "
-"tillstånd"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:120
 msgid "Call down cmd/script before TUN/TAP close"
@@ -95,7 +93,7 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:80
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:17
 msgid "Change process priority"
-msgstr "Ändra process-prioritet"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:40
 msgid "Change to directory before initialization"
@@ -111,7 +109,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:392
 msgid "Client is disabled"
-msgstr "Klienten är avstängd"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/pageswitch.htm:20
 msgid "Configuration category"
@@ -120,7 +118,7 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:477
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:53
 msgid "Configure client mode"
-msgstr "Ställ in klient-läge"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:377
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:37
@@ -130,15 +128,15 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:372
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:33
 msgid "Configure server mode"
-msgstr "Ställ in server-läge"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:540
 msgid "Connect through Socks5 proxy"
-msgstr "Anslut genom Socks5-proxy"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:520
 msgid "Connect to remote host through an HTTP proxy"
-msgstr "Anslut till en fjärrvärd genom en HTTP-proxy"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:515
 msgid "Connection retry interval"
@@ -146,7 +144,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:564
 msgid "Cryptography"
-msgstr "Kryptografi"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:233
 msgid "Delay n seconds after connection"
@@ -159,7 +157,7 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:662
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
 msgid "Diffie-Hellman parameters"
-msgstr "Diffie-Hellman-parametrar"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:427
 msgid "Directory for custom client config files"
@@ -184,7 +182,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:237
 msgid "Don't add routes automatically"
-msgstr "Lägg inte till rutter automatiskt"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:760
 msgid "Don't cache --askpass or --auth-user-pass passwords"
@@ -192,7 +190,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:245
 msgid "Don't drop incoming tun packets with same destination as host"
-msgstr "Släpp inte inkommande tun-paket med samma destination som värden"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:387
 msgid "Don't inherit global push options"
@@ -200,7 +198,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:72
 msgid "Don't log timestamps"
-msgstr "Logga inte tidsstämplar"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:241
 msgid "Don't pull routes automatically"
@@ -208,11 +206,11 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:332
 msgid "Don't re-read key on restart"
-msgstr "Läs inte om nyckel vid omstart"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:261
 msgid "Don't use adaptive lzo compression"
-msgstr "Använd inte adaptiv lzo-komprimering"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:221
 msgid "Don't warn on ifconfig inconsistencies"
@@ -220,7 +218,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:88
 msgid "Echo parameters to log"
-msgstr "Eka parametrar till logg"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:253
 msgid "Empirically measure MTU"
@@ -242,11 +240,15 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:653
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:678
 msgid "Enable TLS and assume client role"
-msgstr "Aktivera TLS och anta klient-roll"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:648
 msgid "Enable TLS and assume server role"
-msgstr "Aktivera TLS och anta server-roll"
+msgstr ""
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
+msgid "Enable a compression algorithm"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:278
 msgid "Enable internal datagram fragmentation"
@@ -270,7 +272,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:128
 msgid "Execute shell cmd after routes are added"
-msgstr "Kör skal-kommando efter att rutterna har lagts till"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:132
 msgid "Execute shell command on remote IP change"
@@ -428,7 +430,7 @@ msgstr ""
 msgid "Ping remote every n seconds over TCP/UDP port"
 msgstr ""
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:32
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:28
 msgid "Please edit this file directly in a terminal session."
 msgstr "Vänligen redigera den här filen direkt i en terminal-session."
 
@@ -549,30 +551,17 @@ msgstr ""
 msgid "Run up/down scripts for all restarts"
 msgstr ""
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:41
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:37
 msgid "Save"
 msgstr "Spara"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:65
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:61
 msgid ""
 "Section to add an optional 'auth-user-pass' file with your credentials (%s)"
 msgstr ""
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:44
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:40
 msgid "Section to modify the OVPN config file (%s)"
-msgstr ""
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
-msgid ""
-"Security recommendation: It is recommended to not enable compression and set "
-"this parameter to `no`"
-msgstr ""
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
-msgid ""
-"Security recommendation: It is recommended to not enable compression and set "
-"this parameter to `stub-v2`"
 msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:85
@@ -585,7 +574,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:15
 msgid "Service"
-msgstr "Tjänst"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:266
 msgid "Set TCP/UDP MTU"
@@ -731,7 +720,7 @@ msgstr ""
 msgid "The 'Name' field must not be empty!"
 msgstr ""
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:22
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:18
 msgid ""
 "The OVPN config file (%s) could not be found, please check your "
 "configuration."
@@ -750,7 +739,7 @@ msgstr ""
 msgid "The lowest supported TLS version"
 msgstr ""
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:31
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:27
 msgid ""
 "The size of the OVPN config file (%s) is too large for online editing in "
 "LuCI (&ge; 100 KB)."
@@ -771,10 +760,15 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload"
-msgstr "Ladda upp"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload ovpn file"
+msgstr ""
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
+msgid "Use fast LZO compression"
 msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:510

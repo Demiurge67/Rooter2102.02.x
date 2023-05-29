@@ -8,11 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-pytz
-PKG_VERSION:=2022.7
+PKG_VERSION:=2021.1
 PKG_RELEASE:=1
 
 PYPI_NAME:=pytz
-PKG_HASH:=7ccfae7b4b2c067464a6733c6261673fdb8fd1be905460396b97a073e9fa683a
+PKG_HASH:=83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da
 
 PKG_MAINTAINER:=Alexandru Ardelean <ardeleanalex@gmail.com>
 PKG_LICENSE:=MIT

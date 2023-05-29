@@ -2,7 +2,7 @@
 
 LED=0
 SM=$(uci get system.wifi)
-if [ -z "$SM" ]; then
+if [ -z $SM ]; then
 	uci set system.wifi=led
 	uci set system.wifi.name="5Ghzwifi"
 	uci set system.wifi.sysfs="wifi"

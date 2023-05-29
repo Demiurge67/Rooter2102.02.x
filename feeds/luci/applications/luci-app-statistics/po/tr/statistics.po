@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-02-18 20:58+0000\n"
-"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"PO-Revision-Date: 2021-08-22 19:59+0000\n"
+"Last-Translator: Erdinc <erdincbeldek@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsstatistics/tr/>\n"
 "Language: tr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/statistics/rrdtool/definitions/apcups.js:7
 #: applications/luci-app-statistics/root/usr/share/luci/statistics/plugins/apcups.json:2
@@ -49,7 +49,7 @@ msgstr "Adres ailesi"
 msgid "Aggregate number of connected users"
 msgstr "Toplam bağlı kullanıcı sayısı"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:237
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:228
 msgid "Apply interval »"
 msgstr "Aralığı uygula »"
 
@@ -250,15 +250,15 @@ msgstr "Disk Alanı Kullanımı"
 msgid "Disk Usage"
 msgstr "Disk kullanımı"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:221
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:212
 msgid "Display Host »"
 msgstr "Ana Bilgisayarı Görüntüle »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:229
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:220
 msgid "Display timespan »"
 msgstr "Zaman aralığını görüntüle »"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:195
 msgid "Do not refresh"
 msgstr "Yenileme"
 
@@ -337,15 +337,15 @@ msgstr "Entropi Eklenti Yapılandırması"
 msgid "Entropy monitoring enabled"
 msgstr "Entropi izleme etkinleştirildi"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:206
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:197
 msgid "Every 30 seconds"
 msgstr "30 saniyede bir"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:205
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:196
 msgid "Every 5 seconds"
 msgstr "5 saniyede bir"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:207
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:198
 msgid "Every minute"
 msgstr "Her dakika"
 
@@ -556,7 +556,7 @@ msgid "Load monitoring enabled"
 msgstr "Yük izleme etkinleştirildi"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:30
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:117
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:108
 msgid "Loading data…"
 msgstr "Veri yükleniyor…"
 
@@ -579,10 +579,6 @@ msgid ""
 msgstr ""
 "Bir dönem için maksimum değerler, 'yalnızca ortalama RRA'lar' "
 "kullanılmadığında ortalamalar yerine kullanılabilir"
-
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
-msgid "Maximum Missed Packets"
-msgstr "Maksimum Kaçırılan Paketler"
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
@@ -777,7 +773,7 @@ msgid "Monitoring one disk"
 msgid_plural "Monitoring %d disks"
 msgstr[0] "%d diskleri izleniyor"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "%d ana bilgisayarları izleniyor"
@@ -846,7 +842,7 @@ msgstr "Ağ iletişimi etkinleştirildi"
 msgid "Network plugins"
 msgstr "Ağ eklentileri"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:178
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:169
 msgid "No RRD data found"
 msgstr "RRD verisi bulunamadı"
 
@@ -897,7 +893,7 @@ msgstr "OpenVPN durum dosyaları"
 msgid "Output plugins"
 msgstr "Çıktı eklentileri"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:46
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:60
 msgid "Overview"
 msgstr "Genel bakış"
 
@@ -1065,7 +1061,7 @@ msgstr "Sistem günlüğü günlük düzeyini ayarlar."
 msgid "Setup"
 msgstr "Kurulum"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:185
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:176
 msgid "Setup collectd"
 msgstr "Collectd kurulumu"
 
@@ -1132,7 +1128,7 @@ msgstr "Splash Kiraları"
 msgid "Splash Leases Plugin Configuration"
 msgstr "Splash Kiraları Eklenti Yapılandırması"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:213
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:204
 #: applications/luci-app-statistics/root/usr/share/luci/menu.d/luci-app-statistics.json:3
 msgid "Statistics"
 msgstr "İstatistik"
@@ -1464,7 +1460,7 @@ msgstr ""
 "Çalışma süresi eklentisi, sistemin çalışma süresi hakkında istatistikler "
 "toplar."
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:179
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:170
 msgid "There is no RRD data available yet to render graphs."
 msgstr "Grafikleri işlemek için henüz mevcut bir RRD verisi yok."
 
@@ -1566,15 +1562,6 @@ msgstr "Kullanıcı"
 msgid "Verbose monitoring"
 msgstr "Ayrıntılı izleme"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
-msgid ""
-"When a host has not replied to this number of packets in a row, re-resolve "
-"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
-msgstr ""
-"Bir ana makine arka arkaya bu sayıda pakete yanıt vermediğinde, ana makine "
-"adını DNS'de yeniden çözümle. Dinamik DNS ana makineleri için faydalıdır. "
-"Öntanımlı değer -1 = devre dışıdır."
-
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."
 msgstr "Hiçbiri seçilmediğinde, tüm diskler izlenecektir."
@@ -1611,7 +1598,7 @@ msgstr "Kablosuz iwinfo Eklentisi Yapılandırması"
 msgid "Writing *.rrd files to %s"
 msgstr "*.rrd dosyaları %s 'ye yazılıyor"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:180
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/graphs.js:171
 msgid ""
 "You need to configure <em>collectd</em> to gather data into <em>.rrd</em> "
 "files."

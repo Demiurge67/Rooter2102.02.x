@@ -11,10 +11,10 @@ PKG_NAME:=asterisk-chan-dongle
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/wdoekes/asterisk-chan-dongle.git
-PKG_SOURCE_VERSION:=3d046f7d6842298c6838b5ce5b51d495d383b158
-PKG_SOURCE_DATE=2021-10-06
+PKG_SOURCE_VERSION:=328b2b7ded3b3c59c2e6c7e7afca6b0ac6f146ce
+PKG_SOURCE_DATE=2020-05-28
 PKG_RELEASE:=1
-PKG_MIRROR_HASH:=d485c89a7230ab8c318eed6c3a954b154d7e53cc7a0194abf96f4dcb83e6909c
+PKG_MIRROR_HASH:=b0af444840340722ecee111a7b1f819de441acf290799ae11bc18e16569c6388
 
 PKG_FIXUP:=autoreconf
 
@@ -62,21 +62,6 @@ define Package/asterisk-chan-dongle/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/etc/dongle.conf $(1)/etc/asterisk
 	$(INSTALL_DIR) $(1)$(MODULES_DIR)
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/chan_dongle.so $(1)$(MODULES_DIR)
-endef
-
-define Package/asterisk-chan-dongle/postinst
-#!/bin/sh
-if [ -z "$${IPKG_INSTROOT}" ]; then
-  echo
-  echo "o-------------------------------------------------------------------o"
-  echo "| asterisk-chan-dongle note                                         |"
-  echo "o-------------------------------------------------------------------o"
-  echo "| Adding the \"asterisk\" user to the \"dialout\" group might be        |"
-  echo "| required for asterisk to be able to access the dongle.            |"
-  echo "o-------------------------------------------------------------=^_^=-o"
-  echo
-fi
-exit 0
 endef
 
 $(eval $(call BuildPackage,asterisk-chan-dongle))

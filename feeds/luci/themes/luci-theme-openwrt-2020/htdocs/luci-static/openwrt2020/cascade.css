@@ -15,10 +15,6 @@
  	src: url("GalanoGrotesqueW00-Regular.woff2") format("woff2");
 }
 
-:root[lang="bg"], :root[lang="ru"], :root[lang="uk"], :root[lang="el"], :root[lang="he"] {
-	--regular-font: "Helvetica";
-}
-
 /*
  * resets and base style
  */
@@ -56,10 +52,6 @@ body {
 	flex-direction: column;
 	min-height: 100%;
 	min-width: 100%;
-}
-
-abbr[title], acronym[title] {
-	text-decoration: dotted underline;
 }
 
 /*
@@ -156,8 +148,7 @@ abbr[title], acronym[title] {
 }
 
 #mainmenu {
-	flex: 1 1 100px;
-	max-width: 250px;
+	flex: 1 1 200px;
 	background: var(--main-dark-color);
 	color: var(--main-bright-color);
 	padding: 1em;
@@ -636,10 +627,6 @@ ul > li {
 	list-style: disc;
 }
 
-p > a {
-	text-decoration: underline;
-}
-
 /*
  * widgets
  */
@@ -676,7 +663,7 @@ p > a {
 	padding: 0;
 	text-align: center;
 	width: 100%;
-	max-width: 150px;
+	max-width: 100px;
 }
 
 .ifacebox-head {
@@ -868,6 +855,7 @@ p > a {
 }
 
 .alert-message .btn {
+	background: inherit;
 	box-shadow: 0 0 2px var(--secondary-bright-color);
 }
 

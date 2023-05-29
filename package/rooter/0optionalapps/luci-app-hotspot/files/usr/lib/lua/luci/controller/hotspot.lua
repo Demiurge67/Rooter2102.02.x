@@ -5,13 +5,8 @@ translate = I18N.translate
 
 function index()
 	local page
-	local multilock = luci.model.uci.cursor():get("custom", "multiuser", "multi") or "0"
-	local rootlock = luci.model.uci.cursor():get("custom", "multiuser", "root") or "0"
-	if (multilock == "0") or (multilock == "1" and rootlock == "1") then
-		entry({"admin", "hotspot"}, firstchild(), translate("Wifi Hotspot"), 29).dependent=false
-		page = entry({"admin", "hotspot", "hotspot"}, template("hotspot/hotspot"), _(translate("Hotspot Manager")), 5)
-		page.dependent = true
-	end
+	page = entry({"admin", "services", "hotspot"}, template("hotspot/hotspot"), _(translate("Wifi Hotspot Manager")), 34)
+	page.dependent = true
 
 	entry({"admin", "services", "check_spot"}, call("action_check_spot"))
 	entry({"admin", "services", "set_mode"}, call("action_set_mode"))
@@ -63,14 +58,13 @@ function action_check_spot()
 	if rv["ssid"] == nil then
 		rv["ssid"] = "No Connection"
 	end
-	fre = luci.model.uci.cursor():get("travelmate", "global", "freq")
-	encr = luci.model.uci.cursor():get("wireless", "wwan" .. fre, "encryption")
+	encr = luci.model.uci.cursor():get("wireless", "wwan", "encryption")
 	if encr == "none" then
 		rv["encryp"] = translate("Open")
 	else
 		rv["encryp"] = translate("Encrypted")
 	end
-	rv["disable"] = luci.model.uci.cursor():get("wireless", "wwan" .. fre, "disabled")
+	rv["disable"] = luci.model.uci.cursor():get("wireless", "wwan", "disabled")
 	
 	dual = luci.model.uci.cursor():get("travelmate", "global", "radcnt")
 	rv["dual"] = dual
@@ -80,14 +74,9 @@ function action_check_spot()
 	end
 	rv['freq'] = freq
 
-	device = luci.model.uci.cursor():get("wireless", "wwan" .. fre, "device")
+	device = luci.model.uci.cursor():get("wireless", "wwan", "device")
 	device = string.sub(device, 6, 7)
-	if fre == "2" then
-		fre="0"
-	else
-		fre="1"
-	end
-	rv["band"] = fre
+	rv["band"] = device
 
 	luci.http.prepare_content("application/json")
 	luci.http.write_json(rv)

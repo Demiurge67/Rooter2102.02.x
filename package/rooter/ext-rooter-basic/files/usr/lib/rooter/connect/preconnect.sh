@@ -4,7 +4,7 @@ ROOTER=/usr/lib/rooter
 ROOTER_LINK="/tmp/links"
 
 log() {
-	modlog "PreConnect $CURRMODEM" "$@"
+	logger -t "PreConnect" "$@"
 }
 
 CURRMODEM=$1

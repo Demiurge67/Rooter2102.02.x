@@ -7,7 +7,7 @@
 			"recurse": true
 		},
 		"auth": {
-			"methods": [ "cookie:sysauth_https", "cookie:sysauth_http" ],
+			"methods": [ "cookie:sysauth" ],
 			"login": true
 		}
 	},
@@ -87,8 +87,7 @@
 		},
 		"depends": {
 			"acl": [ "luci-base" ]
-		},
-		"firstchild_ineligible": true
+		}
 	},
 
 	"admin/uci": {
@@ -115,7 +114,7 @@
 			"post": true
 		},
 		"auth": {
-			"methods": [ "cookie:sysauth_https", "cookie:sysauth_http" ]
+			"methods": [ "cookie:sysauth" ]
 		}
 	},
 
@@ -128,7 +127,7 @@
 			"post": true
 		},
 		"auth": {
-			"methods": [ "cookie:sysauth_https", "cookie:sysauth_http" ]
+			"methods": [ "cookie:sysauth" ]
 		}
 	},
 

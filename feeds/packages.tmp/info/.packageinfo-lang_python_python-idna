@@ -2,7 +2,7 @@ Source-Makefile: feeds/packages/lang/python/python-idna/Makefile
 
 Package: python3-idna
 Submenu: Python
-Version: 3.3-0
+Version: 3.2-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +python3-light +python3-codecs
 Conflicts: 
 Menu-Depends: 
@@ -11,8 +11,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: IDNA library
-Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: idna-3.3.tar.gz
+Maintainer: Jeffery To <jeffery.to@gmail.com>, Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: idna-3.2.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.rst
 Type: ipkg
@@ -21,12 +21,12 @@ Description: A library to support the Internationalised Domain Names in Applicat
 is often referred to as "IDNA2008" and can produce different results
 from the earlier standard from 2003.
 https://github.com/kjd/idna
-Jeffery To <jeffery.to@gmail.com>
+Jeffery To <jeffery.to@gmail.com>, Alexandru Ardelean <ardeleanalex@gmail.com>
 @@
 
 Package: python3-idna-src
 Submenu: Python
-Version: 3.3-0
+Version: 3.2-1
 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
 Conflicts: 
 Menu-Depends: 
@@ -35,8 +35,8 @@ Section: lang
 Category: Languages
 Repository: base
 Title: IDNA library (sources)
-Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: idna-3.3.tar.gz
+Maintainer: Jeffery To <jeffery.to@gmail.com>, Alexandru Ardelean <ardeleanalex@gmail.com>
+Source: idna-3.2.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE.rst
 Type: ipkg
@@ -47,7 +47,7 @@ from the earlier standard from 2003.
 
     This package contains the Python source files for python3-idna.
 https://github.com/kjd/idna
-Jeffery To <jeffery.to@gmail.com>
+Jeffery To <jeffery.to@gmail.com>, Alexandru Ardelean <ardeleanalex@gmail.com>
 @@
 Config:
     depends on PACKAGE_python3-idna

@@ -1,20 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2023-03-18 11:40+0000\n"
-"Last-Translator: Zi <znlambov@gmail.com>\n"
-"Language-Team: Bulgarian <https://hosted.weblate.org/projects/openwrt/"
-"luciapplicationsnut/bg/>\n"
+"PO-Revision-Date: 2019-01-09 06:58-0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:216
 msgid "Additional Shutdown Time(s)"
-msgstr "Допълнително време за изключване"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:37
 msgid "Addresses on which to listen"
@@ -113,7 +111,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:40
 msgid "Enable"
-msgstr "Разрешаване"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:138
 msgid ""
@@ -144,7 +142,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:10
 msgid "Global Settings"
-msgstr "Глобални настройки"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:13
 msgid "Go to NUT CGI"
@@ -173,7 +171,7 @@ msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:41
 msgid "IP Address"
-msgstr "IP адрес"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:95
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:104
@@ -564,7 +562,7 @@ msgstr ""
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:234
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:16
 msgid "Username"
-msgstr "Потребителско име"
+msgstr ""
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:238
 msgid "Vendor (regex)"

@@ -14,8 +14,6 @@ shift
 INTERFACES="$*"
 
 ACTIVE=0
-NO_NEIGHBORS_COUNT=0
-MIN_KICK=5
 
 log() {
     local msg="$1"
@@ -69,42 +67,36 @@ reboot_now() {
 no_neighbors() {
     log "No Neighbors Available!"
 
-    NO_NEIGHBORS_COUNT=$(($NO_NEIGHBORS_COUNT+1))
-
     if [ $ACTIVE -eq 0 ]; then
         return 0
     fi
 
-    if [ $SAVE_LOGS -eq 1 ]; then
+    if [ $SAVE_LOGS ]; then
         log "Saving Logs!"
         write_logs
     fi
 
-    if [ $USE_WATCHDOG -eq 0 ] && [ $NO_NEIGHBORS_COUNT -gt $MIN_KICK ]; then
-        reboot_now 10
+    if [ $USE_WATCHDOG -eq 0 ]; then
+        reboot_now
     fi
 }
 
 log "Naywatch Started!"
 
 neighbors() {
-    if [ $ACTIVE -eq 0 ]; then
-        log "Naywatch Activated!"
-    fi
     ACTIVE=1
-    NO_NEIGHBORS_COUNT=0
-    if [ $USE_WATCHDOG -eq 1 ]; then
+    if [ $USE_WATCHDOG ]; then
         echo 1 >&3
     fi
 }
 
 not_active() {
-    if [ $USE_WATCHDOG -eq 1 ]; then
+    if [ $USE_WATCHDOG ]; then
         echo 1 >&3
     fi 
 }
 
-if [ $USE_WATCHDOG -eq 1 ]; then
+if [ $USE_WATCHDOG ]; then
     activate_watchdog
 fi
 

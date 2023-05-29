@@ -4,7 +4,7 @@ ROOTER=/usr/lib/rooter
 ROOTER_LINK="/tmp/links"
 
 log() {
-	modlog "Create Connection $CURRMODEM" "$@"
+	logger -t "Create Connection" "$@"
 }
 
 ifname1="ifname"

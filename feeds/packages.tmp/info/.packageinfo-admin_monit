@@ -1,5 +1,5 @@
 Source-Makefile: feeds/packages/admin/monit/Makefile
-Build-Depends: libtool libiconv
+Build-Depends: libtool gettext libiconv
 
 Package: monit
 Version: 5.26.0-2

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-29 10:52+0000\n"
-"Last-Translator: Simona Iacob <s@zp1.net>\n"
+"PO-Revision-Date: 2020-01-14 15:23+0000\n"
+"Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsclamav/ro/>\n"
 "Language: ro\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:143
 msgid "10"
@@ -58,68 +58,68 @@ msgstr "600"
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:123
 msgid "Block encrypted archives"
-msgstr "Blocați arhivele criptate"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:22
 #: applications/luci-app-clamav/root/usr/share/luci/menu.d/luci-app-clamav.json:3
 msgid "ClamAV"
-msgstr "ClamAV"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:147
 msgid "Database check every N sec"
-msgstr "Verificarea bazei de date la fiecare N sec"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:88
 msgid "Detect broken executables"
-msgstr "Detectarea executabilelor rupte"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:73
 msgid "Detect possibly unwanted apps"
-msgstr "Detectați aplicațiile posibil nedorite"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:45
 msgid "Enable verbose logging"
-msgstr "Activați consemnarea verbală a jurnalelor"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:63
 msgid "Follow directory symlinks"
-msgstr "Urmăriți legăturile simbolice din directoare"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:68
 msgid "Follow file symlinks"
-msgstr "Urmăriți legăturile simbolice ale fișierelor"
+msgstr ""
 
 #: applications/luci-app-clamav/root/usr/share/rpcd/acl.d/luci-app-clamav.json:3
 msgid "Grant UCI access for luci-app-clamav"
-msgstr "Acordă acces la UCI pentru luci-app-clamav"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:30
 msgid "Log"
-msgstr "Jurnal"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:50
 msgid "Log additional infection info"
-msgstr "Înregistrați informații suplimentare despre infecție"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:40
 msgid "Log time with each message"
-msgstr "Înregistrați timpul cu fiecare mesaj"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:58
 msgid "Max directory scan depth"
-msgstr "Adâncimea maximă de scanare a directorului"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:141
 msgid "Max number of threads"
-msgstr "Numărul maxim de fire"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:34
 msgid "Max size of log file"
-msgstr "Dimensiunea maximă a fișierului jurnal"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:152
 msgid "Max size of scanned file"
-msgstr "Dimensiunea maximă a fișierului scanat"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:41
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:46
@@ -142,47 +142,47 @@ msgstr "Nu"
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:136
 msgid "Port range, highest port"
-msgstr "Gama de porturi, cel mai înalt port"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:131
 msgid "Port range, lowest port"
-msgstr "Gama de porturi, cel mai mic port"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:83
 msgid "Scan ELF files"
-msgstr "Scanarea fișierelor ELF"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:93
 msgid "Scan MS Office and .msi files"
-msgstr "Scanați fișierele MS Office și .msi"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:113
 msgid "Scan RFC1341 messages split over many emails"
-msgstr "Scanarea mesajelor RFC1341 împărțite în mai multe e-mailuri"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:118
 msgid "Scan archives"
-msgstr "Scanați arhivele"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:108
 msgid "Scan emails"
-msgstr "Scanați e-mailurile"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:98
 msgid "Scan pdf files"
-msgstr "Scanarea fișierelor pdf"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:78
 msgid "Scan portable executables"
-msgstr "Scanarea executabilelor portabile"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:103
 msgid "Scan swf files"
-msgstr "Scanare fișiere swf"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:29
 msgid "Settings"
-msgstr "Setări"
+msgstr ""
 
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:42
 #: applications/luci-app-clamav/luasrc/model/cbi/clamav.lua:47

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-10-28 15:05+0000\n"
-"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
+"PO-Revision-Date: 2021-05-13 01:23+0000\n"
+"Last-Translator: semih <semiht@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenvpn/tr/>\n"
 "Language: tr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:364
 msgid "'net30', 'p2p', or 'subnet'"
@@ -248,6 +248,10 @@ msgstr "TLS'yi etkinleştirin ve istemci rolünü üstlenin"
 msgid "Enable TLS and assume server role"
 msgstr "TLS'yi etkinleştirin ve sunucu rolünü üstlenin"
 
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
+msgid "Enable a compression algorithm"
+msgstr ""
+
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:278
 msgid "Enable internal datagram fragmentation"
 msgstr "Dahili datagram parçalanmasını etkinleştirin"
@@ -435,7 +439,7 @@ msgid "Ping remote every n seconds over TCP/UDP port"
 msgstr ""
 "TCP / UDP bağlantı noktası üzerinden n saniyede bir uzaktan ping gönder"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:32
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:28
 msgid "Please edit this file directly in a terminal session."
 msgstr "Lütfen bu dosyayı doğrudan bir terminal oturumunda düzenleyin."
 
@@ -558,37 +562,20 @@ msgid "Run up/down scripts for all restarts"
 msgstr ""
 "Tüm yeniden başlatmalar için komut dosyalarını yukarı / aşağı çalıştırın"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:41
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:37
 msgid "Save"
 msgstr "Kaydet"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:65
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:61
 msgid ""
 "Section to add an optional 'auth-user-pass' file with your credentials (%s)"
 msgstr ""
 "Kimlik bilgilerinizle (%s) isteğe bağlı bir 'auth-user-pass' dosyası ekleme "
 "bölümü"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:44
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:40
 msgid "Section to modify the OVPN config file (%s)"
 msgstr "OVPN yapılandırma dosyasını değiştirme bölümü (%s)"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
-msgid ""
-"Security recommendation: It is recommended to not enable compression and set "
-"this parameter to `no`"
-msgstr ""
-"Güvenlik önerisi: Sıkıştırmanın etkinleştirilmemesi ve bu parametrenin "
-"\"hayır\" olarak ayarlanması önerilir"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
-msgid ""
-"Security recommendation: It is recommended to not enable compression and set "
-"this parameter to `stub-v2`"
-msgstr ""
-"Güvenlik önerisi: Sıkıştırmanın etkinleştirilmemesi ve bu parametrenin "
-"\"stub-v2\" olarak ayarlanması önerilir"
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:85
 msgid "Select template ..."
@@ -747,7 +734,7 @@ msgstr "Client-connect dönüş dosyası için geçici dizin"
 msgid "The 'Name' field must not be empty!"
 msgstr "'Ad' alanı boş olmamalıdır!"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:22
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:18
 msgid ""
 "The OVPN config file (%s) could not be found, please check your "
 "configuration."
@@ -768,7 +755,7 @@ msgstr "'tls-auth' ve 'secret' seçeneklerinin temel yönü"
 msgid "The lowest supported TLS version"
 msgstr "Desteklenen en düşük TLS sürümü"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:31
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-file.lua:27
 msgid ""
 "The size of the OVPN config file (%s) is too large for online editing in "
 "LuCI (&ge; 100 KB)."
@@ -796,6 +783,11 @@ msgstr "Yükle"
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload ovpn file"
 msgstr "Ovpn dosyasını yükle"
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
+msgid "Use fast LZO compression"
+msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:510
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:97

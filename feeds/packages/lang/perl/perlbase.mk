@@ -328,7 +328,7 @@ $(eval $(call BuildPackage,perlbase-cwd))
 define Package/perlbase-data
 $(call Package/perlbase-template)
 TITLE:=Data perl module
-DEPENDS+=+perlbase-bytes +perlbase-essential +perlbase-scalar
+DEPENDS+=+perlbase-bytes +perlbase-essential
 endef
 
 define Package/perlbase-data/install

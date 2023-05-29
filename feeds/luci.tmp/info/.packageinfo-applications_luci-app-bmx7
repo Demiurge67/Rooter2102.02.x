@@ -121,26 +121,6 @@ Description:     Translation for luci-app-bmx7 - Čeština (Czech)
 Roger Pueyo <roger.pueyo@guifi.net> Pau Escrich <p4u@dabax.net>
 @@
 
-Package: luci-i18n-bmx7-da
-Default: LUCI_LANG_da||(ALL&&m)
-Version: x
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread luci-app-bmx7
-Conflicts: 
-Menu-Depends: 
-Provides: 
-Section: luci
-Category: LuCI
-Repository: base
-Title: luci-app-bmx7 - da translation
-Maintainer: Roger Pueyo <roger.pueyo@guifi.net> Pau Escrich <p4u@dabax.net>
-Source: 
-License: GPL-2.0-or-later
-Type: ipkg
-Hidden: 1
-Description:     Translation for luci-app-bmx7 - Dansk (Danish)
-Roger Pueyo <roger.pueyo@guifi.net> Pau Escrich <p4u@dabax.net>
-@@
-
 Package: luci-i18n-bmx7-de
 Default: LUCI_LANG_de||(ALL&&m)
 Version: x

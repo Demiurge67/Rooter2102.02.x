@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2022-02-15 13:57+0000\n"
+"PO-Revision-Date: 2020-09-29 14:41+0000\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopkg/sk/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:1044
 msgid "Actions"
@@ -46,7 +46,7 @@ msgstr "Zrušiť"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:1031
 msgid "Clear"
-msgstr "Vymazať"
+msgstr "Vyčistiť"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:1048
 msgid "Configure opkg…"
@@ -76,7 +76,7 @@ msgstr "Zobrazených %d-%d z %d"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:1036
 msgid "Download and install package"
-msgstr "Prevziať a nainštalovať balík"
+msgstr "Stiahnuť a nainštalovať balíček"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:901
 msgid "Errors"
@@ -84,7 +84,7 @@ msgstr "Chyby"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:878
 msgid "Executing package manager"
-msgstr "Spúšťanie správcu balíkov"
+msgstr "Výkonný správca balíkov"
 
 #: applications/luci-app-opkg/htdocs/luci-static/resources/view/opkg.js:1028
 msgid "Filter"

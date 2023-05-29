@@ -4,22 +4,21 @@ I18N = require "luci.i18n"
 translate = I18N.translate
 
 function index()
-	
+	entry({"admin", "modem"}, firstchild(), translate("Modem"), 25).dependent=false
+	entry({"admin", "modem", "prof"}, cbi("rooter/profiles"), translate("Connection Profile"), 2)
+	entry({"admin", "modem", "nets"}, template("rooter/net_status"), translate("Network Status"), 30)
 	local multilock = uci:get("custom", "multiuser", "multi") or "0"
 	local rootlock = uci:get("custom", "multiuser", "root") or "0"
 	if (multilock == "0") or (multilock == "1" and rootlock == "1") then
-		entry({"admin", "modem"}, firstchild(), translate("Modem"), 25).dependent=false
-		entry({"admin", "modem", "prof"}, cbi("rooter/profiles"), translate("Connection Profile"), 2)
-		entry({"admin", "modem", "nets"}, template("rooter/net_status"), translate("Network Status"), 30)
 		entry({"admin", "modem", "debug"}, template("rooter/debug"), translate("Debug Information"), 50)
 		entry({"admin", "modem", "cust"}, cbi("rooter/customize"), translate("Custom Modem Ports"), 55)
-		entry({"admin", "modem", "log"}, template("rooter/log"), translate("Connection Log"), 60)
-		entry({"admin", "modem", "misc"}, template("rooter/misc"), translate("Miscellaneous"), 40)
 	end
-	if (multilock == "1" and rootlock == "0") then
-		entry({"admin", "system", "misc"}, template("rooter/bandlock"), translate("Band Lock and Scan"), 40)
-	end
+	entry({"admin", "modem", "log"}, template("rooter/log"), translate("Connection Log"), 60)
+	entry({"admin", "modem", "misc"}, template("rooter/misc"), translate("Miscellaneous"), 40)
 	
+	entry({"admin", "modem", "block"},
+		template("rooter/bandlock"))
+
 	entry({"admin", "modem", "get_csq"}, call("action_get_csq"))
 	entry({"admin", "modem", "change_port"}, call("action_change_port"))
 	entry({"admin", "modem", "change_mode"}, call("action_change_mode"))
@@ -164,42 +163,42 @@ function action_check_misc()
 				file:close()
 			end
 			
-			rv["cenable"] = luci.model.uci.cursor():get("custom", "bandlock", "cenable" .. miscnum)
+			rv["cenable"] = luci.model.uci.cursor():get("custom", "bandlock", "cenable")
 			if rv["cenable"] == nil then
 				rv["cenable"] = "0"
 			end
-			rv["earfcn"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn" .. miscnum)
+			rv["earfcn"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn")
 			if rv["earfcn"] == nil then
 				rv["earfcn"] = "0"
 			end
-			rv["pci"] = luci.model.uci.cursor():get("custom", "bandlock", "pci" .. miscnum)
+			rv["pci"] = luci.model.uci.cursor():get("custom", "bandlock", "pci")
 			if rv["pci"] == nil then
 				rv["pci"] = "0"
 			end
 			
-			rv["earfcn1"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn1" .. miscnum)
+			rv["earfcn1"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn1")
 			if rv["earfcn1"] == nil then
 				rv["earfcn1"] = "0"
 			end
-			rv["pci1"] = luci.model.uci.cursor():get("custom", "bandlock", "pci1" .. miscnum)
+			rv["pci1"] = luci.model.uci.cursor():get("custom", "bandlock", "pci1")
 			if rv["pci1"] == nil then
 				rv["pci1"] = "0"
 			end
 			
-			rv["earfcn2"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn2" .. miscnum)
+			rv["earfcn2"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn2")
 			if rv["earfcn2"] == nil then
 				rv["earfcn2"] = "0"
 			end
-			rv["pci2"] = luci.model.uci.cursor():get("custom", "bandlock", "pci2" .. miscnum)
+			rv["pci2"] = luci.model.uci.cursor():get("custom", "bandlock", "pci2")
 			if rv["pci2"] == nil then
 				rv["pci2"] = "0"
 			end
 			
-			rv["earfcn3"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn3" .. miscnum)
+			rv["earfcn3"] = luci.model.uci.cursor():get("custom", "bandlock", "earfcn3")
 			if rv["earfcn3"] == nil then
 				rv["earfcn3"] = "0"
 			end
-			rv["pci3"] = luci.model.uci.cursor():get("custom", "bandlock", "pci3" .. miscnum)
+			rv["pci3"] = luci.model.uci.cursor():get("custom", "bandlock", "pci3")
 			if rv["pci3"] == nil then
 				rv["pci3"] = "0"
 			end
@@ -214,13 +213,9 @@ function action_check_misc()
 				line = file:read("*line")
 				rv["bndstr5g"] = line
 				line = file:read("*line")
-				rv["bndstr5gsa"] = line
-				line = file:read("*line")
 				rv["bndsup"] = line
 				line = file:read("*line")
 				rv["bndsup5g"] = line
-				line = file:read("*line")
-				rv["bndsup5gsa"] = line
 				line = file:read("*line")
 				ca = line
 				if ca ~= nil then
@@ -440,8 +435,8 @@ function action_get_csq()
 	rv["proto"] = file:read("*line")
 	rv["pci"] = file:read("*line")
 	rv["sinr"] = file:read("*line")
-	rv["lat"] = file:read("*line")
-	rv["long"] = file:read("*line")
+	--rv["lat"] = file:read("*line")
+	--rv["long"] = file:read("*line")
 
 	file:close()
 
@@ -581,22 +576,16 @@ end
 function action_externalip()
 	local rv ={}
 
-	--os.execute("curl -s https://api64.ipify.org?format=json > /tmp/ipip")
+	os.execute("rm -f /tmp/ipip; wget -O /tmp/ipip http://ipecho.net/plain > /dev/null 2>&1")
 	file = io.open("/tmp/ipip", "r")
 	if file == nil then
 		rv["extip"] = translate("Not Available")
 	else
-		line = file:read("*line")
-		s, e = line:find("ip\":\"")
-		cs, ce = line:find("\"", e+1)
-		rv["extip"] = line:sub(e+1, cs-1)
-		file:close()
-		tfile = io.open("/tmp/ipip", "w")
-		tfile:write(rv["extip"], "\n")
-		tfile:close()
+		rv["extip"] = file:read("*line")
 		if rv["extip"] == nil then
 			rv["extip"] = translate("Not Available")
 		end
+		file:close()
 	end
 
 	luci.http.prepare_content("application/json")

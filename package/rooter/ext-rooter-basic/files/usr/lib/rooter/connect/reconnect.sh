@@ -1,12 +1,12 @@
 #!/bin/sh
 
-ROOTER=/usr/lib/rooter
+ROOTER_LINK="/tmp/links"
 
 log() {
-	modlog "Reconnect Modem $CURRMODEM" "$@"
+	logger -t "Reconnect Modem" "$@"
 }
 
 CURRMODEM=$1
 log "Re-starting Connection for Modem $CURRMODEM"
-$ROOTER/luci/restart.sh $CURRMODEM 11
+$ROOTER_LINK/create_proto$CURRMODEM $CURRMODEM 1
 

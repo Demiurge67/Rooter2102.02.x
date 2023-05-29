@@ -10,7 +10,7 @@ Section: libs
 Category: Libraries
 Repository: base
 Title: CZMQ High-level C binding for ZeroMQ
-Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Maintainer: Jan Pavlinec <jan.pavlinec@nic.cz>
 Source: czmq-4.2.1.tar.gz
 License: MPL-2.0
 LicenseFiles: LICENSE
@@ -18,7 +18,7 @@ Type: ipkg
 Description:   High-level C binding for ZeroMQ which is high-performance asynchronous messaging
   library, aimed at use in distributed or concurrent applications.
 http://czmq.zeromq.org
-Jan Pavlinec <jan.pavlinec1@gmail.com>
+Jan Pavlinec <jan.pavlinec@nic.cz>
 @@
 
 
