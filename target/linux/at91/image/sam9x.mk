@@ -190,6 +190,7 @@ define Device/CONEL-LR77v2
   DEVICE_DTS := conel-LR77v2
   KERNEL := kernel-bin | append-dtb | gzip | uImage gzip
   KERNEL_INITRAMFS := kernel-bin | append-dtb | gzip | uImage gzip
+  KERNEL_LOADADDR := 0x8000
   IMAGES := sysupgrade.bin kernel.bin initramfs.bin
   IMAGE/initramfs.bin := append-kernel |  append-rootfs |  append-metadata |  gzip | uImage gzip
   IMAGE/sysupgrade.bin := append-kernel | pad-to 64k | append-rootfs | pad-rootfs | append-metadata | check-size 

@@ -1,25 +1,40 @@
-/dts-v1/;
+// SPDX-License-Identifier: GPL-2.0-or-later
+/*
+ * DTS file for SPEAr320 Conel RBv2/LR77v2
+ *
+ * Copyright 2023 &&&&&&&&&&& <&&&&&&&&@kernel.org>
+ */
+ 
+ /dts-v1/;
 
-/#include "spear3xx.dtsi"/;
 / {
+	#address-cells = <0x01>;
+	#size-cells = <0x01>;
+	interrupt-parent = <0x01>;
 	model = "Conel RBv2";
-	compatible = "st,spear320-evb\0st,spear320";
-
-	chosen {bootargs = "console=ttyS0,115200
+	compatible = "st,spear320-evb", "st,spear320";
+	
+	chosen {
+		bootargs = "console=ttyS0,  115200
 	};
-
-	aliases {
+	
+	cpus {
+		cpu@0 {
+			compatible = "arm,arm926ej-s";
+		};
 	};
-
-
+	
+	memory {
+		reg = <0x00 0x40000000>;
 	};
 
 	ahb {
 		#address-cells = <0x01>;
 		#size-cells = <0x01>;
 		compatible = "simple-bus";
-		ranges = <0x40000000 0x40000000 0x80000000 0xd0000000 0xd0000000 0x30000000>;
-
+		ranges = <0x40000000 0x40000000 0x80000000 
+			0xd0000000 0xd0000000 0x30000000>;
+			
 		interrupt-controller@f1100000 {
 			compatible = "arm,pl190-vic";
 			interrupt-controller;
@@ -28,20 +43,20 @@
 			linux,phandle = <0x01>;
 			phandle = <0x01>;
 		};
-
+		
 		dma@fc400000 {
-			compatible = "arm,pl080\0arm,primecell";
-			reg = <0xfc400000 0x1000>;
-			interrupt-parent = <0x01>;
-			interrupts = <0x08>;
-			status = "okay";
+		compatible = "arm,pl080", "arm,primecell";
+		reg = <0xfc400000 0x1000>;
+		interrupt-parent = <1>;
+		interrupts = <8>;
+		status = "okay";
 		};
 
 		eth@e0800000 {
 			compatible = "st,spear600-gmac";
 			reg = <0xe0800000 0x8000>;
 			interrupts = <0x17 0x16>;
-			interrupt-names = "macirq\0eth_wake_irq";
+			interrupt-names = "macirq", "eth_wake_irq";
 			phy-mode = "mii";
 			status = "okay";
 		};
@@ -110,7 +125,7 @@
 		};
 
 		spi@d0100000 {
-			compatible = "arm,pl022\0arm,primecell";
+			compatible = "arm,pl022", "arm,primecell";
 			reg = <0xd0100000 0x1000>;
 			interrupts = <0x14>;
 			#address-cells = <0x01>;
@@ -137,149 +152,90 @@
 		};
 
 		ehci@e1800000 {
-			compatible = "st,spear600-ehci\0usb-ehci";
+			compatible = "st,spear600-ehci", "usb-ehci";
 			reg = <0xe1800000 0x1000>;
 			interrupts = <0x1a>;
 			status = "okay";
 		};
 
 		ohci@e1900000 {
-			compatible = "st,spear600-ohci\0usb-ohci";
+			compatible = "st,spear600-ohci", "usb-ohci";
 			reg = <0xe1900000 0x1000>;
 			interrupts = <0x19>;
 			status = "okay";
 		};
 
 		ohci@e2100000 {
-			compatible = "st,spear600-ohci\0usb-ohci";
+			compatible = "st,spear600-ohci", "usb-ohci";
 			reg = <0xe2100000 0x1000>;
 			interrupts = <0x1b>;
 			status = "okay";
 		};
-
-		apb {
-			#address-cells = <0x01>;
-			#size-cells = <0x01>;
-			compatible = "simple-bus";
-			ranges = <0xa0000000 0xa0000000 0x20000000 0xd0000000 0xd0000000 0x30000000>;
-
-			gpio@fc980000 {
-				compatible = "arm,pl061\0arm,primecell";
-				reg = <0xfc980000 0x1000>;
-				interrupts = <0x0b>;
-				gpio-controller;
-				#gpio-cells = <0x02>;
-				interrupt-controller;
-				#interrupt-cells = <0x02>;
-				status = "okay";
-			};
-
-			i2c@d0180000 {
-				#address-cells = <0x01>;
-				#size-cells = <0x00>;
-				compatible = "snps,designware-i2c";
-				reg = <0xd0180000 0x1000>;
-				interrupts = <0x15>;
-				status = "okay";
-			};
-
-			rtc@fc900000 {
-				compatible = "st,spear600-rtc";
-				reg = <0xfc900000 0x1000>;
-				interrupts = <0x0a>;
-				status = "disabled";
-			};
-
-			serial@d0000000 {
-				compatible = "arm,pl011\0arm,primecell";
-				reg = <0xd0000000 0x1000>;
-				interrupts = <0x13>;
-				status = "okay";
-				pinctrl-names = "default";
-				pinctrl-0;
-			};
-
-			wdt@fc880000 {
-				compatible = "arm,sp805\0arm,primecell";
-				reg = <0xfc880000 0x1000>;
-				interrupts = <0x0c>;
-				status = "disabled";
-			};
-
-			timer@f0000000 {
-				compatible = "st,spear-timer";
-				reg = <0xf0000000 0x400>;
-				interrupts = <0x02>;
-				status = "okay";
-			};
-
-			i2c@a7000000 {
-				#address-cells = <0x01>;
-				#size-cells = <0x00>;
-				compatible = "snps,designware-i2c";
-				reg = <0xa7000000 0x1000>;
-				interrupts = <0x15>;
-				interrupt-parent = <0x02>;
-				status = "disabled";
-			};
-
-			serial@a3000000 {
-				compatible = "arm,pl011\0arm,primecell";
-				reg = <0xa3000000 0x1000>;
-				interrupts = <0x0d>;
-				interrupt-parent = <0x02>;
-				status = "okay";
-				pinctrl-names = "default";
-				pinctrl-0;
-			};
-
-			serial@a4000000 {
-				compatible = "arm,pl011\0arm,primecell";
-				reg = <0xa4000000 0x1000>;
-				interrupts = <0x0e>;
-				interrupt-parent = <0x02>;
-				status = "okay";
-				pinctrl-names = "default";
-				pinctrl-0;
-			};
-
-			gpio@b3000000 {
-				compatible = "st,spear-plgpio";
-				reg = <0xb3000000 0x1000>;
-				#interrupt-cells = <0x01>;
-				interrupt-controller;
-				gpio-controller;
-				#gpio-cells = <0x02>;
-				gpio-ranges = <0x03 0x00 0x00 0x66>;
-				status = "disabled";
-				st-plgpio,ngpio = <0x66>;
-				st-plgpio,enb-reg = <0x24>;
-				st-plgpio,wdata-reg = <0x34>;
-				st-plgpio,dir-reg = <0x44>;
-				st-plgpio,ie-reg = <0x64>;
-				st-plgpio,rdata-reg = <0x54>;
-				st-plgpio,mis-reg = <0x84>;
-				st-plgpio,eit-reg = <0x94>;
-			};
-
-			adc@d0080000 {
-				compatible = "st,spear-adc";
-				reg = <0xd0080000 0x1000>;
-				interrupts = <0x12>;
-				status = "okay";
-			};
-
-			timer@fc800000 {
-				compatible = "st,spear-gpt";
-				reg = <0xfc800000 0x80 0xfc800080 0x80 0xfcb00000 0x80 0xfcb00080 0x80>;
-				interrupts = <0x04 0x05 0x06 0x07>;
-				interrupt-parent = <0x01>;
-				gpt,parent_clk_name = "pll3_clk";
-				status = "okay";
-			};
+		
+		clcd@90000000 {
+			compatible = "arm,pl110", "arm,primecell";
+			reg = <0x90000000 0x1000>;
+			interrupts = <0x08>;
+			interrupt-parent = <0x02>;
+			status = "disabled";
 		};
 
-		pinmux@b3000000 {
+		sdhci@70000000 {
+			compatible = "st,sdhci-spear";
+			reg = <0x70000000 0x100>;
+			interrupts = <0x0a>;
+			interrupt-parent = <0x02>;
+			status = "disabled";
+		};
+
+		interrupt-controller@0xb3000000 {
+			compatible = "st,spear320-shirq";
+			reg = <0xb3000000 0x1000>;
+			interrupts = <0x1e 0x1c 0x1d 0x01>;
+			#interrupt-cells = <0x01>;
+			interrupt-controller;
+			linux,phandle = <0x02>;
+			phandle = <0x02>;
+		};
+
+		spi@a5000000 {
+			compatible = "arm,pl022", "arm,primecell";
+			reg = <0xa5000000 0x1000>;
+			interrupts = <0x0f>;
+			interrupt-parent = <0x02>;
+			#address-cells = <0x01>;
+			#size-cells = <0x00>;
+			status = "disabled";
+		};
+
+		spi@a6000000 {
+			compatible = "arm,pl022", "arm,primecell";
+			reg = <0xa6000000 0x1000>;
+			interrupts = <0x10>;
+			interrupt-parent = <0x02>;
+			#address-cells = <0x01>;
+			#size-cells = <0x00>;
+			status = "disabled";
+		};
+
+		pwm@a8000000 {
+			compatible = "st,spear-pwm";
+			reg = <0xa8000000 0x1000>;
+			#pwm-cells = <0x02>;
+			status = "disabled";
+		};
+
+		eth@ab000000 {
+			compatible = "st,spear320-macb";
+			reg = <0xab000000 0x2000>;
+			interrupt-parent = <0x02>;
+			interrupts = <0x12 0x14>;
+			interrupt-names = "macb2_irq","macb2_wakeirq";
+			status = "okay";
+			phy-mode = "rmii";
+		};
+		
+				pinmux@b3000000 {
 			compatible = "st,spear320-pinmux";
 			reg = <0xb3000000 0x1000>;
 			#gpio-range-cells = <0x03>;
@@ -355,76 +311,129 @@
 			};
 		};
 
-		clcd@90000000 {
-			compatible = "arm,pl110\0arm,primecell";
-			reg = <0x90000000 0x1000>;
-			interrupts = <0x08>;
-			interrupt-parent = <0x02>;
-			status = "disabled";
-		};
-
-		flash@4c000000 {
-			compatible = "st,spear600-fsmc-nand";
+		apb {
 			#address-cells = <0x01>;
 			#size-cells = <0x01>;
-			reg = <0x4c000000 0x1000 0x50000000 0x10 0x50020000 0x10 0x50010000 0x10>;
-			reg-names = "fsmc_regs\0nand_data\0nand_addr\0nand_cmd";
-			status = "okay";
-		};
+			compatible = "simple-bus";
+			ranges = <0xa0000000 0xa0000000 0x20000000 0xd0000000 0xd0000000 0x30000000>;
 
-		sdhci@70000000 {
-			compatible = "st,sdhci-spear";
-			reg = <0x70000000 0x100>;
-			interrupts = <0x0a>;
-			interrupt-parent = <0x02>;
-			status = "disabled";
-		};
+			gpio@fc980000 {
+				compatible = "arm,pl061", "arm,primecell";
+				reg = <0xfc980000 0x1000>;
+				interrupts = <0x0b>;
+				gpio-controller;
+				#gpio-cells = <0x02>;
+				interrupt-controller;
+				#interrupt-cells = <0x02>;
+				status = "okay";
+			};
 
-		interrupt-controller@0xb3000000 {
-			compatible = "st,spear320-shirq";
-			reg = <0xb3000000 0x1000>;
-			interrupts = <0x1e 0x1c 0x1d 0x01>;
-			#interrupt-cells = <0x01>;
-			interrupt-controller;
-			linux,phandle = <0x02>;
-			phandle = <0x02>;
-		};
+			i2c@d0180000 {
+				#address-cells = <0x01>;
+				#size-cells = <0x00>;
+				compatible = "snps,designware-i2c";
+				reg = <0xd0180000 0x1000>;
+				interrupts = <0x15>;
+				status = "okay";
+			};
 
-		spi@a5000000 {
-			compatible = "arm,pl022\0arm,primecell";
-			reg = <0xa5000000 0x1000>;
-			interrupts = <0x0f>;
-			interrupt-parent = <0x02>;
-			#address-cells = <0x01>;
-			#size-cells = <0x00>;
-			status = "disabled";
-		};
+			rtc@fc900000 {
+				compatible = "st,spear600-rtc";
+				reg = <0xfc900000 0x1000>;
+				interrupts = <0x0a>;
+				status = "disabled";
+			};
 
-		spi@a6000000 {
-			compatible = "arm,pl022\0arm,primecell";
-			reg = <0xa6000000 0x1000>;
-			interrupts = <0x10>;
-			interrupt-parent = <0x02>;
-			#address-cells = <0x01>;
-			#size-cells = <0x00>;
-			status = "disabled";
-		};
+			serial@d0000000 {
+				compatible = "arm,pl011", "arm,primecell";
+				reg = <0xd0000000 0x1000>;
+				interrupts = <0x13>;
+				status = "okay";
+				pinctrl-names = "default";
+				pinctrl-0;
+			};
 
-		pwm@a8000000 {
-			compatible = "st,spear-pwm";
-			reg = <0xa8000000 0x1000>;
-			#pwm-cells = <0x02>;
-			status = "disabled";
-		};
+			wdt@fc880000 {
+				compatible = "arm,sp805", "arm,primecell";
+				reg = <0xfc880000 0x1000>;
+				interrupts = <0x0c>;
+				status = "disabled";
+			};
 
-		eth@ab000000 {
-			compatible = "st,spear320-macb";
-			reg = <0xab000000 0x2000>;
-			interrupt-parent = <0x02>;
-			interrupts = <0x12 0x14>;
-			interrupt-names = "macb2_irq\0macb2_wakeirq";
-			status = "okay";
-			phy-mode = "rmii";
+			timer@f0000000 {
+				compatible = "st,spear-timer";
+				reg = <0xf0000000 0x400>;
+				interrupts = <0x02>;
+				status = "okay";
+			};
+
+			i2c@a7000000 {
+				#address-cells = <0x01>;
+				#size-cells = <0x00>;
+				compatible = "snps,designware-i2c";
+				reg = <0xa7000000 0x1000>;
+				interrupts = <0x15>;
+				interrupt-parent = <0x02>;
+				status = "disabled";
+			};
+
+			serial@a3000000 {
+				compatible = "arm,pl011", "arm,primecell";
+				reg = <0xa3000000 0x1000>;
+				interrupts = <0x0d>;
+				interrupt-parent = <0x02>;
+				status = "okay";
+				pinctrl-names = "default";
+				pinctrl-0;
+			};
+
+			serial@a4000000 {
+				compatible = "arm,pl011", "arm,primecell";
+				reg = <0xa4000000 0x1000>;
+				interrupts = <0x0e>;
+				interrupt-parent = <0x02>;
+				status = "okay";
+				pinctrl-names = "default";
+				pinctrl-0;
+			};
+
+			gpio@b3000000 {
+				compatible = "st,spear-plgpio";
+				reg = <0xb3000000 0x1000>;
+				#interrupt-cells = <0x01>;
+				interrupt-controller;
+				gpio-controller;
+				#gpio-cells = <0x02>;
+				gpio-ranges = <0x03 0x00 0x00 0x66>;
+				status = "disabled";
+				st-plgpio,ngpio = <0x66>;
+				st-plgpio,enb-reg = <0x24>;
+				st-plgpio,wdata-reg = <0x34>;
+				st-plgpio,dir-reg = <0x44>;
+				st-plgpio,ie-reg = <0x64>;
+				st-plgpio,rdata-reg = <0x54>;
+				st-plgpio,mis-reg = <0x84>;
+				st-plgpio,eit-reg = <0x94>;
+			};
+
+			adc@d0080000 {
+				compatible = "st,spear-adc";
+				reg = <0xd0080000 0x1000>;
+				interrupts = <0x12>;
+				status = "okay";
+			};
+
+			timer@fc800000 {
+				compatible = "st,spear-gpt";
+				reg = <0xfc800000 0x80 0xfc800080 0x80 
+				0xfcb00000 0x80 0xfcb00080 0x80>;
+				
+				interrupts = <0x04 0x05 0x06 0x07>;
+				interrupt-parent = <0x01>;
+				gpt,parent_clk_name = "pll3_clk";
+				status = "okay";
+			};
 		};
 	};
 };
+

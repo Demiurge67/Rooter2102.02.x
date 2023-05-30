@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 ARCH:=arm
 BOARD:=at91
 BOARDNAME:=Microchip (Atmel AT91)
-FEATURES:=ext4 squashfs targz usb usbgadget ubifs
+FEATURES:=ext4 squashfs targz usb spi nand usbgadget ubifs
 SUBTARGETS:=sama5 sam9x
 
 KERNEL_PATCHVER:=5.4
